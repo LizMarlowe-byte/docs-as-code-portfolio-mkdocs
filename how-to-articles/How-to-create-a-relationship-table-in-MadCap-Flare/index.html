@@ -1,0 +1,1301 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Technical content created using a Docs-as-Code workflow">
+      
+      
+      
+      
+        <link rel="prev" href="../../api-guides/Spotify-API-Guide/">
+      
+      
+        <link rel="next" href="../../technical-reference-guides/Optiflow_CloudSync_CRM_Integration_Guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>How to create a relationship table in MadCap Flare - Liz Marlowe — Technical Writing Content (MkDocs)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#i-about-this-article" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Liz Marlowe — Technical Writing Content (MkDocs)" class="md-header__button md-logo" aria-label="Liz Marlowe — Technical Writing Content (MkDocs)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Liz Marlowe — Technical Writing Content (MkDocs)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to create a relationship table in MadCap Flare
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Liz Marlowe — Technical Writing Content (MkDocs)" class="md-nav__button md-logo" aria-label="Liz Marlowe — Technical Writing Content (MkDocs)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Liz Marlowe — Technical Writing Content (MkDocs)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/Docmost-User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docmost User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/Taiga-User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taiga User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api-guides/OpenWeatherMap-API-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWeatherMap API Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api-guides/Spotify-API-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spotify API Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To Articles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How-To Articles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to create a relationship table in MadCap Flare
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to create a relationship table in MadCap Flare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-about-this-article" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ℹ️ About this article
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Table of Contents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-relationship-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Add Relationship Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-up-your-toc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Set up your TOC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-row-in-the-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Create Row in the Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-add-topics-to-the-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Add Topics to the Row
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-link-same-topic-types-to-each-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Link Same Topic Types to Each Other
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-final-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Final Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Reference Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Reference Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-reference-guides/Optiflow_CloudSync_CRM_Integration_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optiflow CloudSync CRM Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-reference-guides/AuroraOps-Platform-5.2.0-Release-Notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AuroraOps Platform 5.2.0 Release Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-about-this-article" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ℹ️ About this article
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Table of Contents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-relationship-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Add Relationship Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-up-your-toc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Set up your TOC
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-create-row-in-the-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Create Row in the Table
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-add-topics-to-the-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Add Topics to the Row
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-link-same-topic-types-to-each-other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Link Same Topic Types to Each Other
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-final-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Final Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h2 id="i-about-this-article">ℹ️ About this article<a class="headerlink" href="#i-about-this-article" title="Permanent link">&para;</a></h2>
+<p>I created this article to address a documentation gap I noticed in <a href="https://www.madcapsoftware.com/"><em>MadCap Flare's</em></a> <img src="../images/Flare_icon.png" alt= "MadCap Flare icon" width="20" style="vertical-align:middle; margin-left:10px;" /> official guidance on <em>relationship tables</em>, a DITA-based feature that dynamically links related topics. </p>
+<p>While the feature is documented conceptually, the official instructions lack practical examples, real-world use cases, and the level of detail content developers need to implement it confidently. After receiving recurring feedback from writers on my team who struggled to apply the feature, I created these instructions to provide clear explanations, actionable steps, and structured best practices that support both understanding and successful application.</p>
+<p>As a <strong>Senior Content Developer</strong> at Verint Systems, Inc., I incorporated these types of features into our style guide and shared them during monthly documentation meetings as part of an initiative to streamline our authoring tool processes. Using relationship tables across our group reduced broken links by 35% and improved navigation for users. This piece reflects my ability to simplify technical concepts, streamline content workflows, and deliver documentation that enhances the user experience. </p>
+<hr />
+<h1 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h1>
+<ol>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#target-audience">Target audience</a></li>
+<li><a href="#key-concepts">Key concepts</a></li>
+<li><a href="#before-you-begin">Before you begin</a></li>
+<li><a href="#steps">Steps</a></li>
+<li><a href="#tips">Tips</a></li>
+<li><a href="#result">Result</a></li>
+<li><a href="#additional-resources">Additional resources</a></li>
+</ol>
+<h1 id="overview">📝 Overview</h1>
+
+<p>In MadCap Flare, <em>relationship tables</em> allow you to create groups of related topics and define how they link to each other. Unlike regular cross-references, links in relationship tables are dynamic. Because related links are generated at build time from the table, removing a topic from a row (or the project) prevents stale links from appearing after you rebuild.</p>
+<h1 id="target-audience">🎯 Target audience</h1>
+
+<p>This guide is intended for technical writers, content developers, and documentation specialists who already use MadCap Flare and want to streamline topic linking with relationship tables.</p>
+<h1 id="key-concepts">💡 Key concepts</h1>
+
+<p>In a relationship table:</p>
+<ul>
+<li>
+<p>Each <em>row</em> in the table encapsulates a specific <em>subject</em>. <br>For example, your relationship table includes the content in a specific user guide. One row in the table includes content in the chapter, <em>Getting Started</em>.</p>
+</li>
+<li>
+<p>Topics related to the subject of the row are included in one of three columns, according to the topic type: <em>concept</em>, <em>task</em>, or <em>reference</em>. <br>For example, you have two concept topics called <em>Workforce Optimization overview</em> and <em>Navigating WFO workspaces</em>, two task topics called <em>Sign in to the portal</em> and <em>Sign out of the portal</em>, and one reference topic called <em>Quick access icons</em>.</p>
+</li>
+<li>
+<p>By default, <em>different</em> topic types in the same row automatically link to one another in your output. <br>For example, by default, the <em>Workforce Optimization overview</em> topic, the <em>Sign in to the portal</em> topic, and the <em>Quick access icons</em> topics all link to each other.</p>
+</li>
+<li>
+<p>By default, the <em>same</em> topic types in the same row do <em>not</em> link to each other in your output. <br>For example, by default, the two task topics, <em>Sign in to the portal</em> and <em>Sign out of the portal</em>, do <em>not</em> link to each other.</p>
+</li>
+<li>
+<p>To link the <em>same</em> topic types in the same row to each other, you need to define those topics as a <strong>Family</strong>. Once you do that, topics in the same <strong>Family</strong> link to each other in your output. <br>For example, define the task topics, <em>Sign in to the portal</em> and <em>Sign out of the portal</em>, as a <strong>Family</strong>. As a result, they link to each other in the output.</p>
+</li>
+</ul>
+<p>This example shows a relationship table for a <em>Getting Started</em> chapter, with concept, task, and reference topics grouped in one row. The accompanying table explains the function of each numbered element.</p>
+<hr />
+<p><img alt="Relationship table concept" src="../../images/Create_rel_table1ab.png" title="Relationship table concept" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Seq.#</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Name of the relationship table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Row in the relationship table.</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><em>Concept</em> topics related to the subject of the row.</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><em>Tasks</em> topics related to the subject of the row.</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"><em>Reference</em> topics related to the subject of the row.</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">By default, <em>different</em> topic types in the same row link to one another in your output.</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">To link <em>same</em> topic types to each other, define those topics as a <strong>Family</strong>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="before-you-begin">✅ Before you begin</h1>
+
+<ul>
+<li>
+<p>Ensure you have a working installation of MadCap Flare.</p>
+</li>
+<li>
+<p>Ensure you have a DITA-structured guide where each topic is one of three types: <em>concept</em>, <em>task</em>, or <em>reference</em>.</p>
+</li>
+<li>
+<p>Basic familiarity with MadCap Flare is assumed; this guide does <em>not</em> cover introductory concepts.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> It’s OK if your guide currently includes a <strong>Related topics</strong> element. After creating a relationship table, you can replace the existing element entirely or use both—keeping <strong>Related topics</strong> in some chapters and the relationship table in others.</p>
+</blockquote>
+<hr />
+<h1 id="steps">📌 Steps</h1>
+
+<p>To automatically and dynamically link related topics in a guide, create a relationship table. You can edit a relationship table at any time. When working in a project with multiple TOCs, create a new relationship table for each TOC.</p>
+<p><strong>Steps:</strong></p>
+<p><a href="#1-add-relationship-table">1. Add Relationship Table</a><br />
+<a href="#2-set-up-your-toc">2. Set up your TOC</a><br />
+<a href="#3-create-row-in-the-table">3. Create Row in the Table</a><br />
+<a href="#4-add-topics-to-the-row">4. Add Topics to the Row</a><br />
+<a href="#5-link-same-topic-types-to-each-other">5. Link Same Topic Types to Each Other</a><br />
+<a href="#6-final-steps">6. Final Steps</a></p>
+<h2 id="1-add-relationship-table">1. Add Relationship Table<a class="headerlink" href="#1-add-relationship-table" title="Permanent link">&para;</a></h2>
+<p>From Project Organizer, add a new relationship table.</p>
+<ol>
+<li>
+<p>From <strong>View</strong>, select <strong>Project Organizer</strong>.</p>
+</li>
+<li>
+<p>From <strong>Project</strong>, right-click the <strong>Advanced</strong> folder and select <strong>Add Relationship Table</strong>.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Add relationship table" src="../../images/Create_rel_table2.png" title="Add relationship table" /></p>
+<hr />
+<ol>
+<li>
+<p>On the <strong>Add File</strong> screen:</p>
+</li>
+<li>
+<p>Under <strong>Source</strong>, leave the default <strong>New from template</strong>. </p>
+</li>
+<li>
+<p>For <strong>File Name</strong>, enter a filename for the relationship table. </p>
+</li>
+<li>
+<p>Select <strong>Add</strong>.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Add file" src="../../images/Create_rel_table3.png" title="Add file" /></p>
+<hr />
+<p>The system saves the relationship table in the <strong>Advanced</strong> folder. On the right pane, you now have an empty relationship table that you can start filling in with your related topics.</p>
+<hr />
+<p><img alt="Relationship table added" src="../../images/Create_rel_table4.png" title="Relationship table added" /></p>
+<hr />
+<h2 id="2-set-up-your-toc">2. Set up your TOC<a class="headerlink" href="#2-set-up-your-toc" title="Permanent link">&para;</a></h2>
+<p>To easily move the topics from your TOC to your relationship table, move your TOC to appear alongside your relationship table.</p>
+<ol>
+<li>By selecting the five lines that appear in the corner of your TOC file, click and drag your TOC.</li>
+</ol>
+<hr />
+<p><img alt="Click and drag your TOC" src="../../images/Create_rel_table5.png" title="Click and drag your TOC" /></p>
+<hr />
+<ol>
+<li>When you do that, Flare displays multiple shaded squares, prompting you to place the TOC in a specific location on the screen. For example, to place the TOC on the right side, select the square that is shaded on the right.</li>
+</ol>
+<hr />
+<p><img alt="Place TOC in shaded square" src="../../images/Create_rel_table6.png" title="Place TOC in shaded square" /></p>
+<hr />
+<ol>
+<li>From your TOC, navigate to the chapter that includes the topics you want to add to the relationship table.</li>
+</ol>
+<hr />
+<p><img alt="Navigate to chapter in TOC" src="../../images/Create_rel_table7.png" title="Navigate to chapter in TOC" /></p>
+<hr />
+<h2 id="3-create-row-in-the-table">3. Create Row in the Table<a class="headerlink" href="#3-create-row-in-the-table" title="Permanent link">&para;</a></h2>
+<p>Create the first row in your relationship table. </p>
+<ol>
+<li>From the <strong>Row Name</strong> column in your relationship table, right-click and select <strong>Row Properties</strong>.</li>
+</ol>
+<hr />
+<p><img alt="Select Row Properties" src="../../images/Create_rel_table8.png" title="Select Row Properties" /></p>
+<hr />
+<ol>
+<li>In the <strong>Row Type</strong> field, enter the name of the row (or subject), and click <strong>OK</strong>. <br>For example, I want to put links to topics related to getting up and running in an application called Workforce Optimization. Therefore, the name of my row is <strong>Getting Started</strong>.</li>
+</ol>
+<hr />
+<p><img alt="Enter row name" src="../../images/Create_rel_table9.png" title="Enter row name" /></p>
+<hr />
+<p>The system displays the name of the row in the <strong>Row Name</strong> column.</p>
+<hr />
+<p><img alt="Row created" src="../../images/Create_rel_table10.png" title="Row created" /></p>
+<hr />
+<h2 id="4-add-topics-to-the-row">4. Add Topics to the Row<a class="headerlink" href="#4-add-topics-to-the-row" title="Permanent link">&para;</a></h2>
+<p>From your TOC, drag and drop the relevant topics to the row in your relationship table.</p>
+<ol>
+<li>Review your TOC to determine which topics should be linked in the row.</li>
+</ol>
+<p>For example, for my <strong>Getting Started</strong> row, I want to link the concept topic, <em>Workforce Optimization overview</em>, with the other topics in that chapter. I also want to link the two task topics, <em>Sign in to the portal</em> and <em>Sign out of the portal</em>, to each other.</p>
+<ol>
+<li>Drag and drop the topics to the relevant topic type column. </li>
+</ol>
+<p>For example:</p>
+<ul>
+<li>
+<p>Drag and drop the concept topics, <em>Workforce Optimization overview</em> and <em>Navigating WFO workspaces</em>, to the <strong>concept</strong> column. </p>
+</li>
+<li>
+<p>Drag and drop the task topics, <em>Sign in to the portal</em> and <em>Sign out of the portal</em>, to the <strong>task</strong> column. </p>
+</li>
+<li>
+<p>Drag and drop the reference topic, <em>Quick access icons</em>, to the <strong>reference</strong> column.</p>
+</li>
+</ul>
+<hr />
+<p><img alt="Drag and drop topics" src="../../images/Create_rel_table11.png" title="Drag and drop topics" /></p>
+<hr />
+<h2 id="5-link-same-topic-types-to-each-other">5. Link Same Topic Types to Each Other<a class="headerlink" href="#5-link-same-topic-types-to-each-other" title="Permanent link">&para;</a></h2>
+<p>By default, <em>different</em> topic types in the same row in your relationship table will link to one another. To link topics of the <em>same</em> topic type to each other, define them as a <strong>Family</strong>.</p>
+<ol>
+<li>From the first topic to be included in the <strong>Family</strong>, right-click and select <strong>Cell Properties</strong>.</li>
+</ol>
+<hr />
+<p><img alt="Select Cell Properties" src="../../images/Create_rel_table12.png" title="Select Cell Properties" /></p>
+<hr />
+<ol>
+<li>On the <strong>Cell Properties</strong> screen, from the <strong>Collection Type</strong> drop-down list, select <strong>Family</strong>.</li>
+</ol>
+<hr />
+<p><img alt="Select Family for collection type" src="../../images/Create_rel_table13.png" title="Select Family for collection type" /></p>
+<hr />
+<ol>
+<li>Select <strong>OK</strong>.</li>
+</ol>
+<p>The cell you selected is now shaded green, indicating that there is a <strong>Family</strong> connection between these same topic types. Now, the concept topics, <em>Workforce Optimization overview</em> and <em>Navigating WFO workspaces</em>, will link to one another. </p>
+<hr />
+<p><img alt="Family connection between topics" src="../../images/Create_rel_table14.png" title="Family connection between topics" /></p>
+<hr />
+<ol>
+<li>Repeat these steps for all topics of the same topic type that you want to link to one another.</li>
+</ol>
+<hr />
+<h2 id="6-final-steps">6. Final Steps<a class="headerlink" href="#6-final-steps" title="Permanent link">&para;</a></h2>
+<p>Add all relevant topics to your relationship table. In addition, add your relationship table snippet to the end of all relevant topics, and update and build your target files. Then, review your output.</p>
+<ol>
+<li>
+<p>Do steps #<a href="#1-add-relationship-table">1</a>-<a href="#5-link-same-topic-types-to-each-other">5</a> for all rows in your relationship table.</p>
+</li>
+<li>
+<p>Insert the relationship table snippet in every topic included in your relationship table:</p>
+</li>
+<li>
+<p>From a topic for which you want to add the relationship table snippet, scroll to the bottom of the topic (where your <strong>Related topics</strong> heading is usually inserted).</p>
+</li>
+<li>
+<p>Go to <strong>Content Explorer</strong>.</p>
+</li>
+<li>
+<p>From the <strong>Content</strong> folder, go to <strong>Resources</strong> and <strong>Snippets</strong>.</p>
+</li>
+<li>
+<p>From the <strong>Snippets</strong> folder, drag the snippet, <strong>mast_RelTable.flsnp</strong>, to the bottom of the topic.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Insert relationship table snippet in topics" src="../../images/Create_rel_table15.png" title="Insert relationship table snippet in topics" /></p>
+<hr />
+<blockquote>
+<p><strong>Note:</strong> If you have existing <strong>Related topic</strong> elements and links where you are inserting the snippets, remove those elements so they do <em>not</em> appear in the output.</p>
+</blockquote>
+<ol>
+<li>For every target file, from the <strong>Relationship Table</strong> tab, select the relationship table you created. <br>This ensures the relationship table links get included in the output.</li>
+</ol>
+<hr />
+<p><img alt="Select relationship table for targets" src="../../images/Create_rel_table16.png" title="Select relationship table for targets" /></p>
+<hr />
+<ol>
+<li>Build all relevant targets.</li>
+</ol>
+<hr />
+<h1 id="tips">💡 Tips</h1>
+
+<ul>
+<li>
+<p>For large guides, it makes sense to create a relationship table for every chapter in your guide. For smaller guides, up to 50 pages, use a single relationship table.</p>
+</li>
+<li>
+<p>Every row in a relationship table must have <em>at least two</em> topics. If there are <em>only</em> two topics, they either need to be of <em>different</em> topic types or the <em>same</em> topic type linked together as a <em>Family</em>.</p>
+</li>
+<li>
+<p>By default, all topics of different topic types in the same row link to each other. Therefore, make sure that <em>all</em> of those topics are actually related to one another. If it does <em>not</em> make sense to link all of them, go granular! Create another row with a more granular subject and link less topics to one another. It is better to have <em>less</em> and <em>more</em> directly related topic links at the end of a topic, than a ton of somewhat or not at all related topic links at the end of a topic.</p>
+</li>
+<li>
+<p>Do <em>not</em> include chapter page .htm files in a relationship table. Chapter pages typically have their own format with a set <strong>Related topics</strong> snippet and your output will look messy if you add the relationship table snippet to it as well.</p>
+</li>
+<li>
+<p>Do <em>not</em> include topics in a relationship table that are part of a workflow. The workflow topic itself has links for each step in the workflow. Including more links on top of that is confusing to the user, and takes away from the specified and directed nature of the workflow.</p>
+</li>
+<li>
+<p>When linking task topics, your output might result in the same topic link appearing under the <strong>Before you begin</strong> heading at the beginning of a task, and under the <strong>Related topics</strong> heading at the end of the same task. Although not ideal, it is okay if this happens. The benefits of using relationship tables outweigh the minor DITA infraction of having the same link twice within the same topic.</p>
+</li>
+</ul>
+<hr />
+<h1 id="result">✅ Result</h1>
+
+<p>View your output. Make sure that the related topics generated by your relationship table are what you expected.</p>
+<hr />
+<p><img alt="View your output" src="../../images/Create_rel_table17.png" title="View your output" /></p>
+<hr />
+<blockquote>
+<p><strong>Note:</strong> If the links are <em>not</em> what you expected, open your relationship table, edit it, rebuild your targets, and check again. It's ok to not get it right the first time! It takes time to understand how to build the relationship tables in a way that results in the right output.</p>
+</blockquote>
+<p>For more information and technical support for MadCap Flare, see <a href="#additional-resources">Additional resources</a>.</p>
+<hr />
+<h1 id="additional-resources">🔗 Additional Resources</h1>
+
+<ul>
+<li><a href="https://help.madcapsoftware.com/flare2025r2/Content/Flare/Home.htm">MadCap Flare Desktop Help</a></li>
+<li><a href="https://www.madcapsoftware.com/support/">MadCap Software Support Center</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

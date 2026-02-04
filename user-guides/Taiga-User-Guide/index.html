@@ -1,0 +1,2818 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Technical content created using a Docs-as-Code workflow">
+      
+      
+      
+      
+        <link rel="prev" href="../Docmost-User-Guide/">
+      
+      
+        <link rel="next" href="../../api-guides/OpenWeatherMap-API-Guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Taiga User Guide - Liz Marlowe — Technical Writing Content (MkDocs)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#i-about-this-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Liz Marlowe — Technical Writing Content (MkDocs)" class="md-header__button md-logo" aria-label="Liz Marlowe — Technical Writing Content (MkDocs)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Liz Marlowe — Technical Writing Content (MkDocs)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Taiga User Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Liz Marlowe — Technical Writing Content (MkDocs)" class="md-nav__button md-logo" aria-label="Liz Marlowe — Technical Writing Content (MkDocs)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Liz Marlowe — Technical Writing Content (MkDocs)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docmost-User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docmost User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taiga User Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taiga User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-about-this-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ℹ️ About this guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-taiga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to Taiga
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Taiga">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taiga-deployment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taiga deployment options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target audience
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-your-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create your account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-project-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining project settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining project settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-project-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update project details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-new-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add new members
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-role-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Define role permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-custom-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a custom field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-new-issue-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a new issue type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrum-project-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrum project workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrum-backlog-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrum backlog management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scrum backlog management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-epic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create an epic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-user-story" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a user story
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a task
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrum-sprint-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrum sprint execution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scrum sprint execution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a sprint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assign-user-stories-to-a-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assign user stories to a sprint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-progress-and-complete-user-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track progress and complete user stories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-management-beyond-scrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project management beyond Scrum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project management beyond Scrum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manage-a-kanban-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage a Kanban board
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-the-team-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage the team board
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api-guides/OpenWeatherMap-API-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWeatherMap API Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api-guides/Spotify-API-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spotify API Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To Articles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How-To Articles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-articles/How-to-create-a-relationship-table-in-MadCap-Flare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to create a relationship table in MadCap Flare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Reference Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Reference Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-reference-guides/Optiflow_CloudSync_CRM_Integration_Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optiflow CloudSync CRM Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical-reference-guides/AuroraOps-Platform-5.2.0-Release-Notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AuroraOps Platform 5.2.0 Release Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-about-this-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ℹ️ About this guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-taiga" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to Taiga
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to Taiga">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taiga-deployment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Taiga deployment options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target audience
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-your-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create your account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a project
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-project-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining project settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defining project settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-project-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update project details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-new-members" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add new members
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-role-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Define role permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-custom-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a custom field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-a-new-issue-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a new issue type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrum-project-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrum project workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrum-backlog-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrum backlog management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scrum backlog management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-epic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create an epic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-user-story" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a user story
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a task
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scrum-sprint-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scrum sprint execution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scrum sprint execution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a sprint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assign-user-stories-to-a-sprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assign user stories to a sprint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#track-progress-and-complete-user-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Track progress and complete user stories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-management-beyond-scrum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project management beyond Scrum
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project management beyond Scrum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manage-a-kanban-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage a Kanban board
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manage-the-team-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manage the team board
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h2 id="i-about-this-guide">ℹ️ About this guide<a class="headerlink" href="#i-about-this-guide" title="Permanent link">&para;</a></h2>
+<p>I created this user guide for <em>Taiga</em> <img src="../images/Taiga_icon.png" alt="Taiga icon" width="25" />, an open-source project management platform designed for Agile teams, to demonstrate a structured, task-oriented approach that improves clarity and usability beyond the official documentation.</p>
+<p>The official Taiga documentation is minimal and developer-oriented, focusing mostly on installation, upgrade, backup and restore, and API content. This guide is designed for project managers and Agile practitioners, providing a logical workflow and step-by-step instructions for essential tasks—creating projects, managing backlogs and sprints, collaborating with teammates, and leveraging Agile workflows efficiently. This writing sample reflects my ability to transform technical concepts into actionable, accessible instructions that elevate the user experience.</p>
+<p>I chose Taiga because it represents a modern, real-world tool built for Agile teams and project managers, and requires structured, user-friendly documentation.</p>
+<p>To achieve this, I focused on the following:</p>
+<ul>
+<li>
+<p>Applied best practices for user guides, including task-oriented content, clear headings, and purposeful visuals.</p>
+</li>
+<li>
+<p>Ensured consistency and accessibility through simplified English, WCAG-compliant labels for images (alt text), and logical navigation.</p>
+</li>
+<li>
+<p>Highlighted Agile-specific features to demonstrate efficient project management and team collaboration.</p>
+</li>
+</ul>
+<p>With over a decade of experience in Agile environments, I recognized Taiga's strength in supporting iterative workflows. Its robust implementation of Scrum and Kanban—including sprint planning, backlog management, and burn-down charts—makes it a powerful tool for Agile teams. I also appreciated its built-in system for reporting and resolving bugs, and its ability to customize statuses, attributes, and automation rules to reflect unique team processes.</p>
+<blockquote>
+<p><em><strong>Note:</strong> This user guide is based on a real open-source application and was created exclusively for portfolio purposes. Some content has been adapted to showcase technical writing best practices and may not reflect the application’s latest functionality. For accurate and up-to-date information, refer to the official Taiga documentation.</em></p>
+</blockquote>
+<hr />
+<h1 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h1>
+<ol>
+<li><a href="#introduction-to-taiga">Introduction to Taiga</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#defining-project-settings">Defining project settings</a></li>
+<li><a href="#scrum-project-workflow">Scrum project workflow</a></li>
+<li><a href="#scrum-backlog-management">Scrum backlog management</a></li>
+<li><a href="#scrum-sprint-execution">Scrum sprint execution</a></li>
+<li><a href="#project-management-beyond-scrum">Project management beyond Scrum</a></li>
+</ol>
+<h1 id="introduction-to-taiga">Introduction to Taiga<a class="headerlink" href="#introduction-to-taiga" title="Permanent link">&para;</a></h1>
+<p><em>Taiga</em> is an open-source project management tool with an intuitive interface and comprehensive support for Agile methodologies, including Scrum and Kanban.</p>
+<p><strong>Topics</strong>:</p>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#taiga-deployment-options">Taiga deployment options</a></li>
+<li><a href="#key-features">Key features</a></li>
+<li><a href="#target-audience">Target audience</a></li>
+</ul>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Taiga helps project managers organize, track, and prioritize work using Agile methodologies, including Scrum and Kanban frameworks. As a powerful alternative to Jira or Trello, Taiga helps teams define deliverables, align priorities, and maintain transparency across ongoing activities and resource allocation.</p>
+<p>Using Taiga, you can easily manage daily standups with your team. Create user stories that capture all required tasks, and include attachments, story points, internal requirements, client requests, and dependencies. Generate individual or bulk tasks and drag them into clear status swim lanes on the Sprint Taskboard. Story points, due dates, and blocked tasks are prominently displayed, making it simple to track high-priority items and assist team members facing blockers.</p>
+<p>As Taiga offers robust customization options, you can easily configure and customize epics, user stories, tasks, issue workflows, custom fields, role permissions, integrations, and plugins. Create a project wiki for documentation and other content. To encourage team collaboration and engagement, highlight team member skills and contributions on the unique team board, such as highlighting a <em>Bug Hunter</em> for issue reporting. In addition, use Taiga's powerful search capabilities to find any type of data across your project.</p>
+<hr />
+<p><img alt="Taiga overview" src="../../images/Taiga_overview.png" title="Taiga overview" /></p>
+<hr />
+<h2 id="taiga-deployment-options">Taiga deployment options<a class="headerlink" href="#taiga-deployment-options" title="Permanent link">&para;</a></h2>
+<p>When choosing the best deployment option, consider your team’s size, familiarity with Linux and Docker, and the required level of technical support.</p>
+<p>There are two main types of deployment options:</p>
+<ul>
+<li>
+<p><strong>Taiga Cloud deployment</strong>: Download and install the Cloud-based version from <a href="https://taiga.io/" title="Taiga's website">Taiga's website</a>. </p>
+<p>The <strong>Taiga Cloud Basic</strong> deployment is free. For technical support, tap into the wealth of help articles, troubleshooting tips, and FAQs on the <a href="https://community.taiga.io/" title="Taiga Community page">Taiga Community page</a>. For dedicated, hands-on support from Taiga, purchase <strong>Taiga Cloud with Premium Support</strong> for $70 per month. </p>
+</li>
+</ul>
+<hr />
+<p><img alt="Taiga Cloud deployments" src="../../images/Taiga_Cloud.png" title="Taiga Cloud deployments" /></p>
+<hr />
+<ul>
+<li>
+<p><strong>Taiga Self-hosted deployment</strong>: Host Taiga on your own or using a third-party platform with varying levels of support.</p>
+<p>If you or members of your team have Linux and Docker experience and you want to host Taiga on your own platform, the <strong>Self-Managed</strong> hosted deployment is for you. It is free, ideal for teams of less than 10 people, and provides an easy self-download, installation, and upgrade process. </p>
+<p>For a minimal fee of $10 per month and for teams of less than 20 people, the <strong>Automated-Hosting</strong> option is optimal, providing a fully managed download, installation and upgrade process, and enterprise-grade security. </p>
+<p>For larger teams of more than 25 people and for premium support, check out the <strong>Managed for You</strong> option. Install this version behind your own firewall and VPN. Installation and upgrades are fully managed and supported.</p>
+</li>
+</ul>
+<hr />
+<p><img alt="Taiga Self-hosted deployments" src="../../images/Taiga_Self_hosted.png" title="Taiga Self-hosted deployments" /></p>
+<hr />
+<blockquote>
+<p><strong>Note:</strong> For updated pricing information for all deployment options, see <a href="https://taiga.io/" title="Taiga's website">Taiga's website</a>.</p>
+</blockquote>
+<h2 id="key-features">Key features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Intuitive project management tool for Agile methodologies</strong>: Organize, track, and prioritize work based on Agile entities using a user-friendly, intuitive user interface.</li>
+<li><strong>Daily team stand-up management</strong>: Drag and drop stories and tasks into clear status swim lanes on a Sprint Taskboard or Kanban board.</li>
+<li><strong>Detailed, granular Agile entity creation</strong>: Create user stories with attachments, story points, internal requirements, client requests, and dependencies. Create tasks with attachments, due dates, and priorities.</li>
+<li><strong>High visibility of urgent and blocked work</strong>: Urgent and blocked tasks and stories are clearly marked, making it simple to track high-priority items and assist team members facing blockers.</li>
+<li><strong>Customizable Agile entities</strong>: Customize epics, user stories, tasks, issue workflows, custom fields, role permissions, integrations, and plugins.</li>
+<li><strong>Wiki content management</strong>: Add content to a wiki, including documentation, specs, and out-of-the-box project information.</li>
+<li><strong>Team collaboration and engagement</strong>: Highlight team member skills and contributions on the unique Team page, such as nominating a <em>Bug Hunter</em> for issue reporting.</li>
+</ul>
+<h2 id="target-audience">Target audience<a class="headerlink" href="#target-audience" title="Permanent link">&para;</a></h2>
+<p>This guide is intended for project managers and team leads who manage work using Agile methodologies, including Scrum and Kanban frameworks.</p>
+<h1 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
+<p>Create your account for the Taiga Cloud Basic deployment option. Then, set up your first project in Taiga.</p>
+<p><strong>Topics</strong>:</p>
+<ul>
+<li><a href="#create-your-account">Create your account</a></li>
+<li><a href="#create-a-project">Create a project</a></li>
+</ul>
+<h2 id="create-your-account">Create your account<a class="headerlink" href="#create-your-account" title="Permanent link">&para;</a></h2>
+<p>Create your account using the Taiga Cloud Basic deployment option.</p>
+<blockquote>
+<p><strong>Note:</strong> For more information about other types of deployment options, see <a href="#taiga-deployment-options">Taiga deployment options</a>.</p>
+</blockquote>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>To create your Taiga account, go to the <a href="https://tree.taiga.io/register">Taiga register account page</a>.</p>
+</li>
+<li>
+<p>On the <a href="https://tree.taiga.io/register">Taiga register account page</a>, complete the fields.</p>
+</li>
+</ol>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Alternatively, you can log in with GitHub or GitLab.</p>
+</blockquote>
+<hr />
+<p><img alt="Create your Taiga account" src="../../images/Taiga1.png" title="Create your Taiga account" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">Enter your username.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Full Name</td>
+<td style="text-align: left;">Enter your first and last name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Email</td>
+<td style="text-align: left;">Enter your email address.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Password</td>
+<td style="text-align: left;">Enter a unique password.</td>
+</tr>
+<tr>
+<td style="text-align: left;">When creating a new account, you agree to your terms of service and privacy policy.</td>
+<td style="text-align: left;">Select this setting.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Select <strong>Sign Up</strong>.</li>
+</ol>
+<p>After you create an account, you can create your first <a href="#create-a-project">project</a>. </p>
+<h2 id="create-a-project">Create a project<a class="headerlink" href="#create-a-project" title="Permanent link">&para;</a></h2>
+<p>Create a <em>project</em>, which is the top-level container for organizing your team's work. For example, in a Scrum environment, a project can contain all of your epics, stories, tasks, and issues related to a specific software release.</p>
+<p>You can create a Scrum or Kanban project. You can also copy an existing project and modify as required, or import a project from Taiga or other platforms (including Jira, Github, Trello, or Asana).</p>
+<p><strong>Before you begin</strong></p>
+<p><a href="#create-your-account">Create your account</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>From the <a href="https://tree.taiga.io/">Taiga</a> home page, select <strong>New Project</strong>.</li>
+</ol>
+<hr />
+<p><img alt="Select new project" src="../../images/Taiga2.png" title="Select new project" /></p>
+<hr />
+<ol>
+<li>On the <strong>Create Project</strong> screen, select the type of project you want to create.  </li>
+</ol>
+<p>To get more information about Scrum and Kanban, select the information icon 
+   <img src="../images/Taiga3a.png" style="width:25px; vertical-align:middle;" /> next to each option.</p>
+<hr />
+<p><img alt="Create project" src="../../images/Taiga3.png" title="Create project" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Project Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Scrum</td>
+<td style="text-align: left;">Create a Scrum project, which is an iterative and incremental Agile software development methodology for managing product development. <br>Scrum allows you to prioritize and solve your tasks in short time cycles. All work is managed in the product backlog, which contains tasks that are prioritized according to when the work needs to be delivered. <br>Product backlogs are broken down into manageable, specific periods of time called sprints. Each sprint contains specific user stories from the backlog that need to be delivered by the end of that sprint. The project advances as the backlog becomes depleted.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Kanban</td>
+<td style="text-align: left;">Create a Kanban project, which is a workflow-based Agile software development methodology for managing product development. <br>Kanban allows you to divide project development into stages. Work is managed on Kanban cards, like index cards or post-it notes, where each card details every task or user story that needs to be completed. The Kanban board is used to track progress by moving each card from one stage to the next.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Duplicate Project</td>
+<td style="text-align: left;">Copy an existing project and modify as required.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Import Project</td>
+<td style="text-align: left;">Import a project from Taiga or other platforms (including Jira, Github, Trello, or Asana).</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>If you selected <strong>Scrum</strong>, <strong>Kanban</strong>, or <strong>Duplicate Project</strong>, enter your project details.</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> If you selected <strong>Duplicate Project</strong>, select the project you want to duplicate, and then enter your project details. If you selected <strong>Import Project</strong>, select the platform of the project you want to import and browse and select the project to import.</p>
+</blockquote>
+<hr />
+<p><img alt="Enter project details" src="../../images/Taiga4.png" title="Enter project details" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Project Name</td>
+<td style="text-align: left;">Enter a unique name for your project.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Project Description</td>
+<td style="text-align: left;">Enter a description for your project, which can include the type of entities the project will include (epics, stories, tasks, etc.) the target software release, and even details about the team members.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Public Project / Private Project</td>
+<td style="text-align: left;">Select whether the project is open to all users (<strong>Public</strong>) or just the project's team members (<strong>Private</strong>). <br>The number of public projects you can create is determined by your <a href="#taiga-deployment-options">Taiga subscription plan</a>. For more information, see <a href="https://community.taiga.io/t/whats-the-difference-between-public-and-private-projects/139">What's the difference between public and private projects?</a></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Select <strong>Create Project</strong>.</li>
+</ol>
+<p>The system creates the new project. From here, you can start populating your project with stories, tasks, and issues. <br>For example, if you selected a Scrum project, you can start creating user stories for your product backlog (see <a href="#create-a-user-story">Create a user story</a>).</p>
+<hr />
+<p><img alt="New project created" src="../../images/Taiga5.png" title="New project created" /></p>
+<hr />
+<blockquote>
+<p>💡 <strong>Tip:</strong> Before creating your user stories, you might find it useful to define your project settings, including adding team members to your project, customizing specific Agile entities (such as custom fields and adding new story points), and defining project modules and roles. If that is your preferred workflow, see <a href="#defining-project-settings">Defining project settings</a>.</p>
+</blockquote>
+<h1 id="defining-project-settings">Defining project settings<a class="headerlink" href="#defining-project-settings" title="Permanent link">&para;</a></h1>
+<p>Define specific settings for your project, including updating project details, adding team members to the project, defining role permissions, and customizing specific Taiga attributes.</p>
+<blockquote>
+<p><strong>Note:</strong> For portfolio purposes, this section includes a curated list of tasks.</p>
+</blockquote>
+<p><strong>Topics</strong>:</p>
+<ul>
+<li><a href="#update-project-details">Update project details</a></li>
+<li><a href="#add-new-members">Add new members</a></li>
+<li><a href="#define-role-permissions">Define role permissions</a></li>
+<li><a href="#create-a-custom-field">Create a custom field</a></li>
+<li><a href="#add-a-new-issue-type">Add a new issue type</a></li>
+</ul>
+<h2 id="update-project-details">Update project details<a class="headerlink" href="#update-project-details" title="Permanent link">&para;</a></h2>
+<p>Update existing project settings (such as name, description, logo, owner, and public/private status). The fields are the same as during creation unless noted. For first-time setup, see <a href="#create-a-project">Create a project</a>. The items below call out update-only behaviors and additional options.</p>
+<p><strong>Before you begin</strong></p>
+<p><a href="#create-a-project">Create a project</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the <a href="https://tree.taiga.io/">Taiga</a> home page, under <strong>My projects</strong>, select the project you want.</p>
+</li>
+<li>
+<p>On the project page, from the left sidebar, select <strong>Settings</strong>.</p>
+</li>
+<li>
+<p>From the <strong>Project</strong> tab, select <strong>Project Details</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Project details</strong> page, update any relevant fields.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Update project details" src="../../images/Taiga_settings_1.png" title="Update project details" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Notes When Updating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Project Name</td>
+<td style="text-align: left;">Rename the project. (Same field as during creation.)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Project Description</td>
+<td style="text-align: left;">Update the description. (Same field as during creation.)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tags</td>
+<td style="text-align: left;">Add tags to group, filter, and organize projects. Tags appear on the dashboard for quick scanning.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Project Owner</td>
+<td style="text-align: left;">Reassign ownership to another team member.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Is this project looking for people?</td>
+<td style="text-align: left;">Toggle <strong>On</strong> to advertise you’re seeking teammates and specify desired profiles/skills.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Receive feedback from Taiga users?</td>
+<td style="text-align: left;">Toggle <strong>On</strong> to allow feedback from the broader Taiga community.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Public Project / Private Project</td>
+<td style="text-align: left;">Change visibility. For limits on public projects, see <a href="#taiga-deployment-options">Taiga deployment options</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>For field definitions shown during project creation (such as visibility and description), see <a href="#create-a-project">Create a project</a>.</p>
+<ol>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<p>The application saves your updates.</p>
+<blockquote>
+<p><strong>Note:</strong> If needed, you can also delete the project from this screen.</p>
+</blockquote>
+<h2 id="add-new-members">Add new members<a class="headerlink" href="#add-new-members" title="Permanent link">&para;</a></h2>
+<p>Add new members whom you want to contribute to your project. Typically, this includes people who have the skills and experience to do the stories and tasks you created (or plan on creating) in the backlog. It can also include managers, like a scrum master, who manages the team.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the <a href="https://tree.taiga.io/">Taiga</a> home page, under <strong>My projects</strong>, select the project you want.</p>
+</li>
+<li>
+<p>On the project page, from the left sidebar, select <strong>Settings</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Members</strong> tab.</p>
+</li>
+<li>
+<p>Select <strong>+ New Member</strong>.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Select + New Member" src="../../images/Taiga6.png" title="Select + New Member" /></p>
+<hr />
+<ol>
+<li>
+<p>Enter the email address of the new member and select the <img src="../images/Taiga8.png" alt="Taiga icon" width="25" /> icon.</p>
+</li>
+<li>
+<p>On the <strong>New Member</strong> screen, select the role of the new member (such as <strong>UX</strong>, <strong>Design</strong>, <strong>Front</strong>, <strong>Back</strong>, <strong>Product Owner</strong>, and <strong>Stakeholder</strong>).</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Enter role for new member" src="../../images/Taiga9.png" title="Enter role for new member" /></p>
+<hr />
+<ol>
+<li><em>Optional</em>. Add a personalized text to the invite that will be sent to the new member. For example: <em>Welcome to the DataLogix 2.0 project! We are excited to invite you as a new member to contribute to this project. Looking forward to working with you!</em></li>
+</ol>
+<hr />
+<p><img alt="Invite new member" src="../../images/Taiga10.png" title="Invite new member" /></p>
+<hr />
+<ol>
+<li>Select <strong>Invite</strong>.</li>
+</ol>
+<p>If users are already registered on Taiga, they will be added automatically to the project. Otherwise, they will receive an email invitation. On the <strong>Manage members</strong> screen, a row is added listing their name, email address, and assigned role with a <strong>Pending</strong> status. You can resend the invitation to any member with a <strong>Pending</strong> status.</p>
+<hr />
+<p><img alt="Pending member" src="../../images/Taiga11.png" title="Pending member" /></p>
+<hr />
+<ol>
+<li>Repeat steps 4-8 for all new members you want to invite to the project.</li>
+</ol>
+<p>When members have accepted the invite (or are added automatically), their status is changed to <strong>Active</strong>. If needed, you can change their role or enable them with admin permissions.</p>
+<hr />
+<p><img alt="Active members" src="../../images/Taiga_manage_members.png" title="Active members" /></p>
+<hr />
+<blockquote>
+<p><strong>Note:</strong> If needed, you can delete members from this screen by selecting the <strong>Delete member</strong> icon.</p>
+</blockquote>
+<h2 id="define-role-permissions">Define role permissions<a class="headerlink" href="#define-role-permissions" title="Permanent link">&para;</a></h2>
+<p>You can update the default permissions for defined roles (including <strong>Design</strong>, <strong>Front</strong>, <strong>Back</strong>, <strong>Product Owner</strong>, <strong>Stakeholder</strong>, and <strong>External User</strong> roles). In addition, you can create new roles and define specific permissions for these roles.</p>
+<p>Role permissions help control who can create, edit, or delete Agile entities, such as stories, tasks, and sprints.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the <a href="https://tree.taiga.io/">Taiga</a> home page, under <strong>My projects</strong>, select the project you want.</p>
+</li>
+<li>
+<p>On the project page, from the left sidebar, select <strong>Settings</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Permissions</strong> tab.</p>
+</li>
+<li>
+<p>To update the default permissions for a defined role, select the role (such as <strong>Design</strong>, <strong>Front</strong>, <strong>Back</strong>, etc.).</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Select role to update permissions" src="../../images/Taiga_permissions1.png" title="Select role to update permissions" /></p>
+<hr />
+<ol>
+<li>On the <strong>Permissions</strong> page, complete the fields.</li>
+</ol>
+<hr />
+<p><img alt="Update permissions for role" src="../../images/Taiga_permissions2.png" title="Update permissions for role" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">This role is part of the roles involved in estimating user story points.</td>
+<td style="text-align: left;">Do one of the following:<ul><li> To allow the role to be involved in estimating user story points, toggle this setting to the <strong>On</strong> position.</li><li>If you do <em>not</em> want the role to be involved in estimating user story points, toggle this setting to the <strong>Off</strong> position.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Agile entities (<strong>Epics</strong>, <strong>Sprints</strong>, <strong>User Stories</strong>, <strong>Tasks</strong>, etc.)</td>
+<td style="text-align: left;">To update the permissions for this role for a specific entity, select the entity. <br>For example, select <strong>User Stories</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Permissions</td>
+<td style="text-align: left;">Enable or disable the relevant permissions by toggling the settings to the <strong>On</strong> or <strong>Off</strong> positions. <br>For example, for the <strong>Back</strong> role, toggle the setting, <strong>Delete user stories</strong>, to the <strong>Off</strong> position. As a result, the member assigned to the <strong>Back</strong> role will not be able to delete user stories in the project.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>To set specific permissions for any user, including search engines, select the <strong>External User</strong> role and update permissions accordingly.</p>
+</li>
+<li>
+<p>To create a new role, select <strong>+ New Role</strong> and set permissions for the new role.</p>
+</li>
+</ol>
+<h2 id="create-a-custom-field">Create a custom field<a class="headerlink" href="#create-a-custom-field" title="Permanent link">&para;</a></h2>
+<p>When creating a new Agile entity in Taiga (such as an epic, user story, or task), there are default fields that define the entity. For example, when creating a new user story, some of the default fields include <strong>Subject</strong>, <strong>Description</strong>, and <strong>Points</strong>. To customize these entities for your project, you can add custom fields.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the <a href="https://tree.taiga.io/">Taiga</a> home page, under <strong>My projects</strong>, select the project you want.</p>
+</li>
+<li>
+<p>On the project page, from the left sidebar, select <strong>Settings</strong>.</p>
+</li>
+<li>
+<p>From the <strong>Attributes</strong> tab, select <strong>Custom Fields</strong>.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Select custom fields" src="../../images/Taiga_custom_fields1.png" title="Select custom fields" /></p>
+<hr />
+<ol>
+<li>For the entity for which you want to add a custom field, complete the fields.</li>
+</ol>
+<hr />
+<p><img alt="Add custom field" src="../../images/Taiga_custom_fields3.png" title="Add custom field" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">Enter the name of the custom field. <br>For example, if you are adding a field for acceptance criteria for user stories, enter: <strong>Acceptance Criteria</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Enter a description for the custom field. <br>For example, for <strong>Acceptance Criteria</strong>: <em>Set of clear, measurable conditions that a user story must satisfy to be considered complete and accepted by the product owner or stakeholders.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Type</td>
+<td style="text-align: left;">Select the valid input type for the field. <br>Valid values include: <strong>Text</strong>, <strong>Multi-line</strong>, <strong>Rich text</strong>, <strong>Date</strong>, <strong>URL</strong>, <strong>Dropdown</strong>, <strong>Checkbox</strong>, <strong>Number</strong>.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>To save your changes, hover over the row and select <strong>Update custom field</strong>.</p>
+</li>
+<li>
+<p>To edit or delete the custom field, after you save it, hover over the row again and select one of the following icons: </p>
+</li>
+<li>
+<p><strong>Edit custom field</strong></p>
+</li>
+<li>
+<p><strong>Delete custom field</strong> </p>
+</li>
+</ol>
+<hr />
+<p><img alt="Edit or delete custom field" src="../../images/Taiga_custom_fields4.png" title="Edit or delete custom field" /></p>
+<hr />
+<h2 id="add-a-new-issue-type">Add a new issue type<a class="headerlink" href="#add-a-new-issue-type" title="Permanent link">&para;</a></h2>
+<p>By default, the types of issues included in a project include <strong>Bug</strong>, <strong>Question</strong>, and <strong>Enhancement</strong>. You can add new issue types to your project, as required. </p>
+<p>For example, you might want to add an issue type that is related to work that is dependent on another member or team. For this purpose, you can add a new issue type called <strong>Dependency</strong>.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the <a href="https://tree.taiga.io/">Taiga</a> home page, under <strong>My projects</strong>, select the project you want.</p>
+</li>
+<li>
+<p>On the project page, from the left sidebar, select <strong>Settings</strong>.</p>
+</li>
+<li>
+<p>From the <strong>Attributes</strong> tab, select <strong>Types</strong>.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Select types" src="../../images/Taiga_issue_types1.png" title="Select types" /></p>
+<hr />
+<ol>
+<li>
+<p>On the <strong>Types</strong> page, select <strong>Add New</strong>.</p>
+</li>
+<li>
+<p>In the new row that appears:</p>
+</li>
+<li>
+<p>In the <strong>Color</strong> field, select a color that identifies the issue type. (Alternatively, enter the hexadecimal color code.)</p>
+</li>
+<li>
+<p>In the <strong>Name</strong> field, enter a name for the new issue type.</p>
+</li>
+<li>
+<p>To save your changes, hover over the row and select the checkmark.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Save issue type" src="../../images/Taiga_issue_types2.png" title="Save issue type" /></p>
+<hr />
+<h1 id="scrum-project-workflow">Scrum project workflow<a class="headerlink" href="#scrum-project-workflow" title="Permanent link">&para;</a></h1>
+<p>In Scrum, work typically moves through two main phases: </p>
+<ul>
+<li>
+<p><em>Backlog Management</em>: Prepare and prioritize work by creating and refining epics, user stories and tasks. </p>
+</li>
+<li>
+<p><em>Sprint Execution</em>: Create and plan sprints, assign stories and tasks to members, and track story and task progress through to completion.</p>
+</li>
+</ul>
+<hr />
+<p><img alt="Scrum project workflow" src="../../images/Taiga_scrum_project_workflow_new.png" title="Scrum project workflow" /></p>
+<hr />
+<p>The following table summarizes each step in the workflow.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Seq.#</th>
+<th style="text-align: left;">Step</th>
+<th style="text-align: left;">Phase</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><strong><a href="#create-an-epic">Create epics</a></strong></td>
+<td style="text-align: left;">Backlog Management</td>
+<td style="text-align: left;">Create <em>epics</em>, which group related user stories. Together, the user stories in an epic encapsulate work towards a specific product development.</td>
+<td style="text-align: left;">An epic called <em>User Management Accessibility Redesign</em> includes user stories that define development related to accessibility features in the User Management application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><strong><a href="#create-a-user-story">Create user stories</a></strong></td>
+<td style="text-align: left;">Backlog Management</td>
+<td style="text-align: left;">Within an epic and from the backlog, create <em>user stories</em> that define specific development needed to accomplish the goal of the epic.</td>
+<td style="text-align: left;">In the epic called <em>User Management Accessibility Redesign</em>, there's a user story called <em>Change UI Labels</em>, which defines changing the UI text headings to comply with WCAG requirements.</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><strong><a href="#create-a-task">Create tasks</a></strong></td>
+<td style="text-align: left;">Backlog Management</td>
+<td style="text-align: left;">Within each user story, create <em>tasks</em>, which break up the story work into smaller, manageable chunks that different members of the team can work on.</td>
+<td style="text-align: left;">For the user story, <em>Change UI Labels</em>, there are 3 tasks: <em>Propose New UI Labels</em>, <em>Update Text Labels in DB</em>, and <em>Test New UI Labels</em>. Each task is assigned to a different member of the team.</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><strong><a href="#create-a-sprint">Create a sprint</a></strong></td>
+<td style="text-align: left;">Sprint Execution</td>
+<td style="text-align: left;">Create a <em>sprint</em>, a timeboxed period for completing user stories. Typically, multiple sprints are created well in advance of their start dates.</td>
+<td style="text-align: left;">A sprint called <em>DLogix-S1</em> is a two-week sprint, starting on 1/12 and ending on 1/19.</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"><strong><a href="#assign-user-stories-to-a-sprint">Assign user stories to a sprint</a></strong></td>
+<td style="text-align: left;">Sprint Execution</td>
+<td style="text-align: left;">From the backlog, according to deployment priorities, related work, and development dependencies, determine which user stories should be assigned to upcoming sprints, and assign them accordingly.</td>
+<td style="text-align: left;">For the sprint, <em>DLogix-S1</em>, assign the following user stories: <em>Change UI Labels</em>, <em>Create New Filters</em>, and <em>Enhance Search</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;"><strong><a href="#track-progress-and-complete-user-stories">Track progress and complete user stories</a></strong></td>
+<td style="text-align: left;">Sprint Execution</td>
+<td style="text-align: left;">During a sprint, track the status of user stories on a sprint taskboard. During the daily standups, discuss any blockers, issues, and dependencies, and try to resolve them so that members can complete the work defined in the relevant stories. At the end of a sprint, all stories should have a completed status.</td>
+<td style="text-align: left;">One week into the <em>DLogix-S1</em> sprint, the stories, <em>Change UI Labels</em> and <em>Create New Filters</em> are <em>In Progress</em>, and <em>Enhance Search</em> has a dependency on another team that is currently being resolved.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="scrum-backlog-management">Scrum backlog management<a class="headerlink" href="#scrum-backlog-management" title="Permanent link">&para;</a></h1>
+<p>During backlog management, you prepare and prioritize work by creating the key entities you will use to manage work on a daily basis: <em>epics</em>, <em>user stories</em>, and <em>tasks</em>. Managing these entities and following the Scrum workflow helps you organize and prioritize work, with the goal of delivering value within the defined timebox.</p>
+<p><strong>Topics</strong>:</p>
+<ul>
+<li><a href="#create-an-epic">Create an epic</a></li>
+<li><a href="#create-a-user-story">Create a user story</a></li>
+<li><a href="#create-a-task">Create a task</a></li>
+</ul>
+<h2 id="create-an-epic">Create an epic<a class="headerlink" href="#create-an-epic" title="Permanent link">&para;</a></h2>
+<p>Create an <em>epic</em>, which groups related user stories. Together, the user stories in an epic encapsulate work towards a specific product development. </p>
+<p>For example, an epic called <em>User Management Accessibility Redesign</em> includes user stories that define development related to accessibility features in the User Management application.</p>
+<p><strong>Before you begin</strong></p>
+<p>Review the <a href="#scrum-project-workflow">Scrum project workflow</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the <a href="https://tree.taiga.io/">Taiga</a> home page, under <strong>My projects</strong>, select the project you want.</p>
+</li>
+<li>
+<p>On the project page, from the left sidebar, select <strong>Epics</strong>.</p>
+</li>
+<li>
+<p>Select <strong>+ Add Epic</strong>.</p>
+</li>
+<li>
+<p>On the following screen, enter your epic details.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Enter epic details" src="../../images/Taiga_epic1.png" title="Enter epic details" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Color ID</td>
+<td style="text-align: left;">Select a color that identifies the epic. <br>Alternatively, enter the hexadecimal color code.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Epic Name</td>
+<td style="text-align: left;">Enter a unique name for your epic. <br>For example: <em>User Management Accessibility Redesign</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Epic Description</td>
+<td style="text-align: left;">Enter a description for your epic, which should describe the type of product development for the epic. <br>For example: <em>Improve accessibility features in the User Management module to comply with WCAG 2.1 standards.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Attachments</td>
+<td style="text-align: left;">If desired, upload or drop any relevant attachments, such as feature specs, customer requirements, etc.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Team requirement / Client requirement / Blocked</td>
+<td style="text-align: left;">Select one of the following:<ul><li><strong>Team requirement</strong>: Work defined by user stories in the epic is work the development team feels is necessary but it is not a direct client request.</li><li><strong>Client requirement</strong>: Work defined by user stories in the epic is the result of a direct client request. .</li><li><strong>Blocked</strong>: Work defined by the user stories in this epic currently <em>cannot</em> be done, due to an external dependency or issue preventing its progress.</li></ul></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Select <strong>Create Epic</strong>.</li>
+</ol>
+<p>The system creates the new epic, and displays it in a new row on the <strong>Epics</strong> screen. </p>
+<hr />
+<p><img alt="New epic created" src="../../images/Taiga_epic2.png" title="New epic created" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">Name of the epic.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Project</td>
+<td style="text-align: left;">Project associated with the epic. <br>A blank value indicates that the project is the one in which the epic was created (the current project). If the epic was assigned to a project other than the one in which it was created, the name of the project is displayed in this field.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sprint</td>
+<td style="text-align: left;">Sprint to which the epic is assigned. <br><strong>Note</strong>: This field is often blank because epics span multiple sprints. They are <em>not</em> single-sprint items. Instead, epics are linked to their specific user stories or tasks, which get assigned to sprints.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Assigned</td>
+<td style="text-align: left;">Member of the project to which the epic is assigned. <br>By default, this field is blank. Typically, this is assigned to the specific team member who is responsible for the high-level goal or initiative of the epic.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Status</td>
+<td style="text-align: left;">Status of the epic. <br>By default, a new epic is set to <strong>New</strong>. Can be set to <strong>New</strong>, <strong>Ready</strong>, <strong>In Progress</strong>, <strong>Ready for Test</strong>, and <strong>Done</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Progress</td>
+<td style="text-align: left;">Calculated rollup that reflects the completion status of all associated user stories (or Kanban cards) linked to the epic. <br>This is <em>not</em> a manually editable field.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What to do next?</strong></p>
+<p><a href="#create-a-user-story"><strong>Create a user story</strong></a></p>
+<h2 id="create-a-user-story">Create a user story<a class="headerlink" href="#create-a-user-story" title="Permanent link">&para;</a></h2>
+<p>Create a <em>user story</em> that defines specific development needed to accomplish the goal of the epic.</p>
+<p>For example, in the epic called <em>User Management Accessibility Redesign</em>, create a user story called <em>Change UI Labels</em>, which defines changing the UI text headings to comply with WCAG requirements.</p>
+<blockquote>
+<p><strong>Note:</strong> There are two ways to create user stories—from the <strong>Epics</strong> dashboard or from the backlog. To emphasize the value of the project workflow, this procedure describes how to create user stories from the <strong>Epics</strong> dashboard. To create a user story from the backlog, select <strong>Scrum</strong> &gt; <strong>Backlog</strong>, select <strong>+ User Story</strong>, and associate the user story with the relevant epic.</p>
+</blockquote>
+<p><strong>Before you begin</strong></p>
+<p><a href="#create-an-epic">Create an epic</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>Select the epic for which you want to create a user story.</p>
+</li>
+<li>
+<p>Under <strong>Related user stories</strong>, select the <strong>+</strong> icon.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Select related user stories from epic" src="../../images/Taiga_userstory1.png" title="Select related user stories from epic" /></p>
+<hr />
+<ol>
+<li>On the <strong>Create a relationship with</strong> screen, complete the fields.</li>
+</ol>
+<hr />
+<p><img alt="Enter new story details" src="../../images/Taiga_userstory2.png" title="Enter new story details" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">New user story / existing user story</td>
+<td style="text-align: left;">Do one of the following:<ul><li>To create a new story for the epic, select <strong>New user story</strong>.</li><li>To select an existing story for the epic, select <strong>Existing user story</strong>.</li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;">Which project?</td>
+<td style="text-align: left;">Select the project with which you want to associate the user story.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Subject</td>
+<td style="text-align: left;">Enter the name of the story.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<p>The system saves the story under <strong>Related user stories</strong> for the epic.</p>
+<hr />
+<p><img alt="New story created" src="../../images/Taiga_userstory3.png" title="New story created" /></p>
+<hr />
+<ol>
+<li>Now that you created the story, select it again and complete the additional fields.</li>
+</ol>
+<hr />
+<p><img alt="Add story details" src="../../images/Taiga_storydetails_updated.png" title="Add story details" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Enter a description for the story, and select <strong>Save</strong>. <br>To write the description, use the Connextra template: "As a {user role}, I want to {achieve a goal/action} so that {I get a value or benefit}. For example: <em>As a user with visual impairments, I want clear and descriptive UI labels so that screen readers can interpret them correctly.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Attachments</td>
+<td style="text-align: left;">Upload any relevant files. <br>For example, this can include product specs, feature descriptions, etc.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Comments</td>
+<td style="text-align: left;">Enter any relevant comments about the story. <br>For example, this can include URLs, information about dependencies, potential issues, etc.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Points</td>
+<td style="text-align: left;">Enter the relevant story points for the relevant development areas. <br>For example, for a UI update, enter points for <strong>UX</strong>, <strong>Design</strong>, and <strong>Front</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Assigned</td>
+<td style="text-align: left;">Select <strong>+ Add assigned</strong> and select a member from the list. To assign the story to yourself, select <strong>Assign to me</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Watchers</td>
+<td style="text-align: left;">Select <strong>+ Add watchers</strong> and select the members you want to <em>watch</em> the story. These members will receive email notifications when there are story updates, and when the story's status changes.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>To create more stories for the epic, repeat these steps for the additional stories.</li>
+</ol>
+<p><strong>What to do next?</strong></p>
+<p><a href="#create-a-task">Create a task</a></p>
+<h2 id="create-a-task">Create a task<a class="headerlink" href="#create-a-task" title="Permanent link">&para;</a></h2>
+<p>Within each user story, create a <em>task</em>, which breaks up story work into smaller, manageable chunks that different members of the team can work on. </p>
+<p>For example, for the user story, <em>Change UI Labels</em>, there are 3 tasks: <em>Propose New UI Labels</em>, <em>Update Text Labels in DB</em>, and <em>Test New UI Labels</em>. Each task is assigned to a different member of the team.</p>
+<p><strong>Before you begin</strong></p>
+<p><a href="#create-a-user-story">Create a user story</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>On the <strong>User Story</strong> screen, for <strong>Tasks</strong>, select the <strong>+</strong> icon.</li>
+</ol>
+<hr />
+<p><img alt="Select to create a new task" src="../../images/Taiga_task1.png" title="Select to create a new task" /></p>
+<hr />
+<ol>
+<li>
+<p>Under <strong>Tasks</strong>, in the new row, do the following:</p>
+</li>
+<li>
+<p>Enter a name for the task. For example: <em>Propose new UI labels that meet WCAG guidelines</em>.</p>
+</li>
+<li>
+<p>From the drop-down menu next to the name, select the status of the task. By default, the status is <strong>New</strong>. (You can also update the status during the sprint on the sprint task board.)</p>
+</li>
+<li>
+<p>From the third drop-down menu, select the task, assign it to a member, and select <strong>Add</strong>.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Select assigned user" src="../../images/Taiga_task2.png" title="Select assigned user" /></p>
+<hr />
+<ol>
+<li>Hover over the row and select <strong>Save</strong>.</li>
+</ol>
+<hr />
+<p><img alt="Save new task" src="../../images/Taiga_task4.png" title="Save new task" /></p>
+<hr />
+<p>The system saves the new task.</p>
+<hr />
+<p><img alt="New task created" src="../../images/Taiga_task3.png" title="New task created" /></p>
+<hr />
+<ol>
+<li>To create more tasks for the story, repeat these steps for the additional tasks. </li>
+</ol>
+<hr />
+<p><img alt="Additional tasks created" src="../../images/Taiga_userstory4.png" title="Additional tasks created" /></p>
+<hr />
+<p><strong>What to do next?</strong></p>
+<p><a href="#scrum-sprint-execution">Scrum sprint execution</a></p>
+<h1 id="scrum-sprint-execution">Scrum sprint execution<a class="headerlink" href="#scrum-sprint-execution" title="Permanent link">&para;</a></h1>
+<p>During sprint execution, you deliver the work that was prepared during backlog management. This phase includes planning sprints, assigning prioritized user stories to the sprint backlog, and coordinating daily progress. </p>
+<p>Teams work collaboratively to complete stories within the sprint’s timebox, resolve blockers, and track progress using task boards or burndown charts. At the end of the sprint, completed work is reviewed and demonstrated, and the team reflects on improvements during the retrospective.</p>
+<p><strong>Topics</strong>:</p>
+<ul>
+<li><a href="#create-a-sprint">Create a sprint</a></li>
+<li><a href="#assign-user-stories-to-a-sprint">Assign user stories to a sprint</a></li>
+<li><a href="#track-progress-and-complete-user-stories">Track progress and complete user stories</a></li>
+</ul>
+<h2 id="create-a-sprint">Create a sprint<a class="headerlink" href="#create-a-sprint" title="Permanent link">&para;</a></h2>
+<p>Create a <em>sprint</em>, a timeboxed period for completing user stories. Typically, multiple sprints are created well in advance of their start dates.</p>
+<p><strong>Before you begin</strong></p>
+<p>Complete all steps in <a href="#scrum-backlog-management">Scrum backlog management</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>On the project page, from the left sidebar, select <strong>Scrum</strong> and <strong>Backlog</strong>.</li>
+</ol>
+<p>The backlog displays all existing user stories.</p>
+<hr />
+<p><img alt="User stories in the backlog" src="../../images/Taiga_sprints1.png" title="User stories in the backlog" /></p>
+<hr />
+<ol>
+<li>
+<p>From <strong>Sprints</strong>, select <strong>Add +</strong>.</p>
+</li>
+<li>
+<p>On the <strong>New sprint</strong> screen, enter the name of the sprint and the start and end dates, and select <strong>Save</strong>.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Create new sprint" src="../../images/Taiga_sprints2.png" title="Create new sprint" /></p>
+<hr />
+<ol>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<p>Under <strong>Sprints</strong>, the new sprint is now displayed.</p>
+<hr />
+<p><img alt="New sprint created" src="../../images/Taiga_sprints3.png" title="New sprint created" /></p>
+<hr />
+<p><strong>What to do next?</strong></p>
+<p><a href="#assign-user-stories-to-a-sprint">Assign user stories to a sprint</a></p>
+<h2 id="assign-user-stories-to-a-sprint">Assign user stories to a sprint<a class="headerlink" href="#assign-user-stories-to-a-sprint" title="Permanent link">&para;</a></h2>
+<p>From the backlog, according to deployment priorities, related work, and development dependencies, determine which user stories should be assigned to upcoming sprints, and assign them accordingly.</p>
+<p><strong>Before you begin</strong></p>
+<p><a href="#create-a-sprint">Create a sprint</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the <strong>Backlog</strong>, select the user stories you want to move to the sprint you created.</p>
+</li>
+<li>
+<p>Do one of the following:</p>
+</li>
+<li>
+<p>If the sprint to which you want to assign the stories is the latest sprint, select <strong>Move to latest sprint</strong>.</p>
+</li>
+<li>
+<p>Alternatively, drag and drop the selected stories to the sprint you created.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Move stories to sprint" src="../../images/Taiga_assign_user_stories_to_sprints1.png" title="Move stories to sprint" /></p>
+<hr />
+<p>The stories you selected are now assigned to the sprint.</p>
+<hr />
+<p><img alt="Stories assigned to sprint" src="../../images/Taiga_assign_user_stories_to_sprints2.png" title="Stories assigned to sprint" /></p>
+<hr />
+<p>The application calculates your velocity based on your story points allocated to the sprint. If you can add additional stories to the sprint without exceeding your velocity, the system prompts you to move the candidate user stories to the current sprint.</p>
+<ol>
+<li>To move candidate user stories to the current sprint, select <strong>Move to Current Sprint</strong>.</li>
+</ol>
+<p>The system updates the assigned stories to the sprint.</p>
+<p><strong>What to do next?</strong></p>
+<p><a href="#track-progress-and-complete-user-stories">Track progress and complete user stories</a></p>
+<h2 id="track-progress-and-complete-user-stories">Track progress and complete user stories<a class="headerlink" href="#track-progress-and-complete-user-stories" title="Permanent link">&para;</a></h2>
+<p>During a sprint, track the status of user stories on the <strong>Sprint Taskboard</strong>. </p>
+<p>During the daily standups, discuss any blockers, issues, and dependencies, and try to resolve them so that members can complete the work defined in the relevant stories. At the end of a sprint, all stories should have a completed status.</p>
+<p><strong>Before you begin</strong></p>
+<p><a href="#assign-user-stories-to-a-sprint">Assign user stories to a sprint</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>From the <strong>Backlog</strong>, select <strong>Sprint Taskboard</strong>.</li>
+</ol>
+<hr />
+<p><img alt="Select sprint taskboard" src="../../images/Taiga_trackprogress1.png" title="Select sprint taskboard" /></p>
+<hr />
+<blockquote>
+<p>💡 <strong>Tip:</strong> Alternatively, from the left sidebar, select <strong>Scrum &gt; {Sprint Name}</strong>. For example, select <strong>Scrum &gt; DataLogix-S1</strong>.</p>
+</blockquote>
+<ol>
+<li>View the Sprint Taskboard.</li>
+</ol>
+<hr />
+<p><img alt="View sprint taskboard" src="../../images/Taiga_trackprogress2.png" title="View sprint taskboard" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Seq. #</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Sprint name and time frame.</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Sprint status summary, including the number of total story points, completed story points, open tasks, closed tasks, and iocaine doses. <br>Iocaine doses are a Taiga-specific, playful gamification signal (a <em>Princess Bride</em> reference) that a teammate is taking on a difficult or outside-their-comfort-zone task, and may need extra support or time. See <strong>Iocaine Drinker</strong> in <a href="#manage-the-team-board">Manage the team board</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Burndown chart (when selected), which shows the sprint's approximate or projected progress based on estimated closed tasks.</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Zoom functionality, providing expanded and compact views of the board.</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Filter data (user stories and tasks) by keywords.</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Assigned user stories in the sprint.</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Status swim lanes, indicating the status of each task. <br>Drag and drop tasks to the relevant status lane. When all tasks are in the <strong>Closed</strong> lane, the story is closed.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>To display the burndown chart, select the <strong>Show statistics</strong> icon.</li>
+</ol>
+<p>This chart shows your team's progress in a sprint by displaying the remaining work against the time frame in which to complete it. The burndown chart helps identify if you're on track (below ideal line) or falling behind (above ideal line).</p>
+<hr />
+<p><img alt="Show burn-down chart" src="../../images/Taiga_trackprogress3.png" title="Show burn-down chart" /></p>
+<hr />
+<ol>
+<li>To add additional tasks to a story, select the <strong>+</strong> icon next to the story. You can also add multiple tasks at once using the <strong>bulk task</strong> icon <img src="../images/Taiga_trackprogress5.png" alt="Bulk Task icon" width="25" />.</li>
+</ol>
+<hr />
+<p><img alt="Add more story tasks" src="../../images/Taiga_trackprogress4.png" title="Add more story tasks" /></p>
+<hr />
+<ol>
+<li>
+<p>To accurately reflect any blockers and dependencies that arise, create any relevant issues:</p>
+</li>
+<li>
+<p>From <strong>Sprint Issues</strong>, select the <strong>+</strong> icon.</p>
+</li>
+<li>
+<p>Enter a description of the issue.</p>
+</li>
+<li>
+<p>Select <strong>Add Issue</strong>.</p>
+<p>Once an issue is created, you can track its progress, add attachments, assign to a specific member, edit, delete, or detach it from the sprint. For more information on issues, see <a href="#manage-issues">Manage issues</a>.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Manage issues" src="../../images/Taiga_trackprogress6.png" title="Manage issues" /></p>
+<hr />
+<ol>
+<li>During the daily standups, change the status of tasks as required. At the end of a sprint, all stories should have a completed status.</li>
+</ol>
+<hr />
+<p><img alt="Closed issues" src="../../images/Taiga_trackprogress7.png" title="Closed issues" /></p>
+<hr />
+<h1 id="project-management-beyond-scrum">Project management beyond Scrum<a class="headerlink" href="#project-management-beyond-scrum" title="Permanent link">&para;</a></h1>
+<p>Beyond Scrum, Taiga supports other project management methodologies. In addition to organizing work into timeboxed sprints and managing tasks and user stories, you can configure Taiga to use a Kanban board for a higher-level view of project progress. Issues may be tracked independently of sprints, and the Team Board can be utilized for any type of project to display team member roles, skills, and contributions.</p>
+<p><strong>Topics</strong>:</p>
+<ul>
+<li><a href="#manage-a-kanban-board">Manage a Kanban board</a></li>
+<li><a href="#manage-issues">Manage issues</a></li>
+<li><a href="#manage-the-team-board">Manage the team board</a></li>
+</ul>
+<h2 id="manage-a-kanban-board">Manage a Kanban board<a class="headerlink" href="#manage-a-kanban-board" title="Permanent link">&para;</a></h2>
+<p>Kanban is a high-level workflow-based Agile software development methodology for managing product development. Using Kanban, work is managed on cards, like virtual index cards or post-it notes, where each card details specific work to be completed. The Kanban board is used to track progress by moving each card from one stage to the next until completion.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the <a href="https://tree.taiga.io/">Taiga</a> home page, under <strong>My projects</strong>, select the project you want.</p>
+</li>
+<li>
+<p>On the project page, from the left sidebar, select <strong>Kanban</strong>.</p>
+</li>
+<li>
+<p>To create a new user story for your Kanban project, from any status swim lane, select the <strong>+</strong> icon. <br>For example, to create a new user story called <strong>Enhance Search</strong>, select the <strong>+</strong> icon from the <strong>New</strong> swim lane.</p>
+</li>
+<li>
+<p>On the <strong>New user story</strong> screen, complete the fields.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Create new user story" src="../../images/Taiga_kanban1.png" title="Create new user story" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Subject</td>
+<td style="text-align: left;">Enter a name for the story.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Enter the details about the story.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Attachments</td>
+<td style="text-align: left;">Drop any relevant attachments (such as a feature description or development spec).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Assign</td>
+<td style="text-align: left;">To assign the story to a member, select <strong>Assign</strong>, select the member you want. To assign the story to yourself, select <strong>Assign to me</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Points</td>
+<td style="text-align: left;">Select the area of development you want and enter the number of story points for that area. <br>For example, for a UI story, enter points for <strong>UX</strong> and <strong>Design</strong>.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>Select <strong>Create</strong>.</p>
+<p>The system creates the user story in the relevant status swim lane.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="New user story created in status swim lane" src="../../images/Taiga_kanban3.png" title="New user story created in status swim lane" /></p>
+<hr />
+<ol>
+<li>
+<p>To create multiple user stories in bulk:</p>
+</li>
+<li>
+<p>From any status swim lane, select the <strong>Add new bulk</strong> icon <img src="../images/Taiga_trackprogress5.png" alt="Bulk Task icon" width="25" />.</p>
+</li>
+<li>
+<p>On the <strong>New bulk insert</strong> screen, enter each story name on each line in the text box.</p>
+</li>
+<li>
+<p>Select <strong>Save</strong>.</p>
+<p>The system creates the user stories in the relevant status swim lanes. </p>
+</li>
+<li>
+<p>During project status meetings, change the status of stories as required until completion.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Kanban board" src="../../images/Taiga_kanban2.png" title="Kanban board" /></p>
+<hr />
+<h2 id="manage-issues">Manage issues<a class="headerlink" href="#manage-issues" title="Permanent link">&para;</a></h2>
+<p>Every project encounters issues, which may include bugs, questions, dependencies, or required enhancements necessary for completion. In Taiga, issues can be managed independently of Scrum or Kanban boards, allowing you to separate core work items from blockers and ancillary tasks. This approach helps maintain focus on primary deliverables while tracking and resolving obstacles efficiently.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the <a href="https://tree.taiga.io/">Taiga</a> home page, under <strong>My projects</strong>, select the project you want.</p>
+</li>
+<li>
+<p>On the project page, from the left sidebar, select <strong>Issues</strong>.</p>
+</li>
+<li>
+<p>To create a new issue, select <strong>+ New Issue</strong>.</p>
+</li>
+<li>
+<p>On the <strong>New issue</strong> screen, complete the fields.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Create new issue" src="../../images/Taiga_issue1.png" title="Create new issue" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Subject</td>
+<td style="text-align: left;">Enter a name for the issue.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Description</td>
+<td style="text-align: left;">Enter the details about the issue.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Attachments</td>
+<td style="text-align: left;">Drop any relevant attachments (such as a Figma screenshot).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Assign or Assign to me</td>
+<td style="text-align: left;">To assign the issue to a member, select <strong>Assign</strong> and select the member you want. To assign the issue to yourself, select <strong>Assign to me</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Type</td>
+<td style="text-align: left;">Select one of the following: <ul><li><strong>Bug</strong></li><li><strong>Question</strong></li><li><strong>Enhancement</strong></li></td>
+</tr>
+<tr>
+<td style="text-align: left;">Severity</td>
+<td style="text-align: left;">Select one of the following: <ul><li><strong>Wishlist</strong></li><li><strong>Minor</strong></li><li><strong>Normal</strong></li><li><strong>Important</strong></li><li><strong>Critical</strong></li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;">Priority</td>
+<td style="text-align: left;">Select one of the following: <ul><li><strong>Low</strong></li><li><strong>Normal</strong></li><li><strong>High</strong></li></ul></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Select <strong>Create</strong>.</li>
+</ol>
+<p>The new issue appears on the <strong>Issues</strong> page.</p>
+<hr />
+<p><img alt="New issue" src="../../images/Taiga_issue2.png" title="New issue" /></p>
+<hr />
+<ol>
+<li>
+<p>To create multiple issues in bulk:</p>
+</li>
+<li>
+<p>Select the <img src="../images/Taiga_trackprogress5.png" alt="Bulk Task icon" width="25" /> icon.</p>
+</li>
+<li>
+<p>On the <strong>New bulk insert</strong> screen, enter each issue name on each line in the text box.</p>
+</li>
+<li>
+<p>Select <strong>Save</strong>.</p>
+<p>The system creates the issues. </p>
+</li>
+<li>
+<p>To filter existing issues:</p>
+</li>
+<li>
+<p>Select <strong>Filters</strong>.</p>
+</li>
+<li>
+<p>Select either <strong>Include</strong> or <strong>Exclude</strong>.</p>
+</li>
+<li>
+<p>For each attribute (such as <strong>Type</strong>, <strong>Severity</strong>, <strong>Priority</strong>, <strong>Status</strong>, etc.), select the values you want.</p>
+</li>
+</ol>
+<hr />
+<p><img alt="Filter issues" src="../../images/Taiga_issue3.png" title="Filter issues" /></p>
+<hr />
+<ol>
+<li>As needed, change the status of issues as required until completion.</li>
+</ol>
+<h2 id="manage-the-team-board">Manage the team board<a class="headerlink" href="#manage-the-team-board" title="Permanent link">&para;</a></h2>
+<p>In Taiga, the team board can be utilized for any project type to display team member roles, skills, and contributions. It provides a centralized view of the people working on a project, including their roles, assignments, progress, strengths and skills. It helps teams align around shared objectives and manage capacity more effectively.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the <a href="https://tree.taiga.io/">Taiga</a> home page, under <strong>My projects</strong>, select the project you want.</p>
+</li>
+<li>
+<p>On the project page, from the left sidebar, select <strong>Team</strong>.</p>
+</li>
+</ol>
+<p>The system displays the team board, which lists all members in the project, their role, and their titles, which highlight their accomplishments.</p>
+<hr />
+<p><img alt="Team board" src="../../images/Taiga_team1.png" title="Team board" /></p>
+<hr />
+<p>The following table describes the titles on the team board, which highlight team member skills and contributions.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Title</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Mr. Wolf</td>
+<td style="text-align: left;">Member who has closed many issues.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Iocaine Drinker</td>
+<td style="text-align: left;">Member who has ingested many iocaine doses. <br>A fictional reference to <em>The Princess Bride</em>, a member who has ingested many iocaine doses in Taiga indicates that they have tackled difficult or outside-their-comfort-zone tasks. A user can mark an iocaine dose to indicate they’re tackling a difficult or outside‑their‑comfort‑zone task. (Also referenced on the Sprint Taskboard.)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cervantes</td>
+<td style="text-align: left;">Member who has edited many wiki pages.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bug Hunter</td>
+<td style="text-align: left;">Member who has reported many issues.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Night Shift</td>
+<td style="text-align: left;">Member who has closed many tasks.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total Power</td>
+<td style="text-align: left;">Total number of points, or accomplishments, that the member has achieved.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>To filter the team members by role, from <strong>Filters</strong>, select the role you want. <br>For example, to view all UX team members, select <strong>UX</strong>.</li>
+</ol>
+<hr />
+<p><img alt="Filter team members by role" src="../../images/Taiga_team2.png" title="Filter team members by role" /></p>
+<hr />
+<ol>
+<li>To view specific details about a team member, select the team member's name.</li>
+</ol>
+<p>The system displays details about the selected team member.</p>
+<hr />
+<p><img alt="View team member details" src="../../images/Taiga_team3.png" title="View team member details" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Detail</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Projects (Number)</td>
+<td style="text-align: left;">Number of projects with which the team member is associated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Closed US</td>
+<td style="text-align: left;">Number of user stories the team member has closed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Contact Count</td>
+<td style="text-align: left;">Number of contacts for the team member.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Timeline</td>
+<td style="text-align: left;">Date when the team member joined Taiga.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Projects (Tab)</td>
+<td style="text-align: left;">Names of the projects with which the team member is associated.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Likes</td>
+<td style="text-align: left;">Number of likes the team member has on their page.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Watched</td>
+<td style="text-align: left;">Entities that the team member "watches," including projects, epics, stories, tasks, and issues.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Contact List</td>
+<td style="text-align: left;">Names of the team member's contacts.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

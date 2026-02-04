@@ -1,0 +1,1788 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Technical content created using a Docs-as-Code workflow">
+      
+      
+      
+      
+        <link rel="prev" href="../../how-to-articles/How-to-create-a-relationship-table-in-MadCap-Flare/">
+      
+      
+        <link rel="next" href="../AuroraOps-Platform-5.2.0-Release-Notes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Optiflow CloudSync CRM Integration Guide - Liz Marlowe — Technical Writing Content (MkDocs)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#i-about-this-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Liz Marlowe — Technical Writing Content (MkDocs)" class="md-header__button md-logo" aria-label="Liz Marlowe — Technical Writing Content (MkDocs)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Liz Marlowe — Technical Writing Content (MkDocs)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Optiflow CloudSync CRM Integration Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Liz Marlowe — Technical Writing Content (MkDocs)" class="md-nav__button md-logo" aria-label="Liz Marlowe — Technical Writing Content (MkDocs)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Liz Marlowe — Technical Writing Content (MkDocs)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/Docmost-User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docmost User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/Taiga-User-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taiga User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api-guides/OpenWeatherMap-API-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenWeatherMap API Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api-guides/Spotify-API-Guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spotify API Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To Articles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How-To Articles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-articles/How-to-create-a-relationship-table-in-MadCap-Flare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to create a relationship table in MadCap Flare
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Reference Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Reference Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optiflow CloudSync CRM Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optiflow CloudSync CRM Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-about-this-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ℹ️ About this guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-the-optiflow-cloudsync-crm-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to the Optiflow-CloudSync CRM integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to the Optiflow-CloudSync CRM integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integration-feeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration feeds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-adapters-for-feeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure adapters for feeds
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target audience
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-retrieval-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data retrieval flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customer-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer onboarding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customer-cloudsync-crm-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer CloudSync CRM Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customer CloudSync CRM Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-change-data-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable change data capture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-user-and-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a new user and service account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-permission-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a permission set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assign-a-permission-set-to-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assign a permission set to a user
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-connected-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a connected app
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-connected-app-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure connected app policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-a-consumer-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate a consumer key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate-the-integration-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validate the integration configurations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../AuroraOps-Platform-5.2.0-Release-Notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AuroraOps Platform 5.2.0 Release Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-about-this-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ℹ️ About this guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-the-optiflow-cloudsync-crm-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction to the Optiflow-CloudSync CRM integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to the Optiflow-CloudSync CRM integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integration-feeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration feeds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-adapters-for-feeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure adapters for feeds
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#target-audience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Target audience
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-retrieval-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data retrieval flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customer-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer onboarding
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customer-cloudsync-crm-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer CloudSync CRM Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customer CloudSync CRM Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-change-data-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable change data capture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-new-user-and-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a new user and service account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-permission-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a permission set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assign-a-permission-set-to-a-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assign a permission set to a user
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-connected-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a connected app
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-connected-app-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configure connected app policies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-a-consumer-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate a consumer key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate-the-integration-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validate the integration configurations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h2 id="i-about-this-guide">ℹ️ About this guide<a class="headerlink" href="#i-about-this-guide" title="Permanent link">&para;</a></h2>
+<p>I created this guide to describe a fictional system integration between two sample platforms—<strong>Optiflow</strong> and <strong>CloudSync CRM</strong>—to demonstrate my ability to write clear, structured, and user-focused technical documentation for complex system integrations. This guide is <em>not</em> based on a real product. It uses generic names and data types while showcasing best practices.</p>
+<p>This guide provides step-by-step instructions for configuring authentication, enabling event feeds, and validating API connectivity. It organizes tasks into logical workflows and includes conceptual context, so readers understand why each step matters.</p>
+<p>To achieve this, I focused on:</p>
+<ul>
+<li>Applying industry best practices for integration guides, including prerequisites, workflows, and validation steps.</li>
+<li>Ensuring accessibility through logical navigation.</li>
+<li>Demonstrating technical depth with OAuth configuration, permission sets, and API testing.</li>
+</ul>
+<hr />
+<h1 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h1>
+<ol>
+<li><a href="#introduction-to-the-optiflow-cloudsync-crm-integration">Introduction to the Optiflow-CloudSync CRM integration</a></li>
+<li><a href="#customer-cloudsync-crm-setup">Customer CloudSync CRM setup</a></li>
+</ol>
+<hr />
+<h1 id="introduction-to-the-optiflow-cloudsync-crm-integration">Introduction to the Optiflow-CloudSync CRM integration<a class="headerlink" href="#introduction-to-the-optiflow-cloudsync-crm-integration" title="Permanent link">&para;</a></h1>
+<p>In the <em>Optiflow–CloudSync CRM</em> integration, CloudSync supplies customer engagement, ticket data, and real-time visibility updates from the CloudSync CRM system to the Optiflow system.</p>
+<p><strong>Topics:</strong></p>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#target-audience">Target audience</a></li>
+<li><a href="#data-retrieval-flow">Data retrieval flow</a></li>
+<li><a href="#customer-onboarding">Customer onboarding</a></li>
+</ul>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The Optiflow–CloudSync CRM integration uses a <em>push</em> method, where data is pushed to Optiflow by CloudSync. <em>No data is sent from Optiflow back to CloudSync</em>.</p>
+<p>Within CloudSync, the objects from which data is pushed for the integration include:</p>
+<ul>
+<li><strong>ChatSession</strong></li>
+<li><strong>SupportTicket</strong></li>
+<li><strong>VideoSession</strong></li>
+<li><strong>UserPresence</strong></li>
+</ul>
+<p>Optiflow also requests updates for mapping purposes to ensure usernames, statuses, and groups remain synchronized for ease of use and setup.</p>
+<p>This integration supports users of the <strong>CloudSync Service Hub</strong>, utilizing <strong>Chat Sessions</strong>, <strong>Video Support</strong>, and <strong>Support Ticket</strong> channels. The real-time monitoring feed leverages CloudSync’s Omnichannel presence to display active sessions in Optiflow dashboards.</p>
+<blockquote>
+<p>The Optiflow–CloudSync CRM integration uses the available <strong>CloudSync API suite</strong> and does <em>not</em> require installing any packages in your CloudSync environment. Some minor setup in CloudSync is required to provide authentication and populate the APIs with the required data.</p>
+</blockquote>
+<h3 id="integration-feeds">Integration feeds<a class="headerlink" href="#integration-feeds" title="Permanent link">&para;</a></h3>
+<p>The three types of feeds available in the Optiflow–CloudSync CRM integration include:</p>
+<ul>
+<li><strong>Customer Interaction Metrics (CIM):</strong> Provides details about customer engagement across channels.</li>
+<li><strong>Support Ticket Trends (STT):</strong> Supplies historical data about ticket volumes and resolution times (used for forecasting and resource planning).</li>
+<li><strong>Live Session Monitoring (LSM):</strong> Provides real-time visibility into active chat or video sessions (used for operational dashboards).</li>
+</ul>
+<h3 id="configure-adapters-for-feeds">Configure adapters for feeds<a class="headerlink" href="#configure-adapters-for-feeds" title="Permanent link">&para;</a></h3>
+<p>Configure the relevant adapters in Optiflow to receive the feeds you want:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">CloudSync → Optiflow Feed</th>
+<th style="text-align: left;">Optiflow Adapter</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Customer Interaction Metrics (CIM)</td>
+<td style="text-align: left;">CIM Adapter</td>
+<td style="text-align: left;">Historical interaction analytics</td>
+</tr>
+<tr>
+<td style="text-align: left;">Support Ticket Trends (STT)</td>
+<td style="text-align: left;">STT Adapter</td>
+<td style="text-align: left;">Ticket volume and resolution insights</td>
+</tr>
+<tr>
+<td style="text-align: left;">Live Session Monitoring (LSM)</td>
+<td style="text-align: left;">LSM Adapter</td>
+<td style="text-align: left;">Real-time session visibility</td>
+</tr>
+</tbody>
+</table>
+<h2 id="target-audience">Target audience<a class="headerlink" href="#target-audience" title="Permanent link">&para;</a></h2>
+<p>This guide is intended for technical users who want to integrate Optiflow with CloudSync CRM using the platform’s supported APIs, authentication workflows, and configuration tools.</p>
+<h2 id="data-retrieval-flow">Data retrieval flow<a class="headerlink" href="#data-retrieval-flow" title="Permanent link">&para;</a></h2>
+<p>In the Optiflow–CloudSync CRM integration, CloudSync CRM pushes new events (Push Topics, Change Data Capture, or User Data) to the CloudSync CRM Adapter in the Optiflow system. </p>
+<p>The CloudSync CRM Adapter:</p>
+<ul>
+<li>
+<p>Posts real-time data directly to the <strong>Live Session Monitoring (LSM)</strong> API.</p>
+</li>
+<li>
+<p>Aggregates trend and analytical data through a Data Processor, which posts this data to the <strong>Support Ticket Trends (STT)</strong> API and the <strong>Customer Interaction Metrics (CIM)</strong> API.</p>
+</li>
+</ul>
+<p>The following diagram illustrates this data flow, and the accompanying table describes each numbered step.</p>
+<hr />
+<p><img alt="Optiflow–CloudSync integration data flow" src="../../images/Optiflow_CloudSync_Integration_flow.png" title="Optiflow–CloudSync integration data flow" /></p>
+<hr />
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Step</th>
+<th style="text-align: left;">Source</th>
+<th style="text-align: left;">Destination</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Push Topics, Change Data Capture, and User Data</td>
+<td style="text-align: left;">CloudSync CRM Adapter</td>
+<td style="text-align: left;">CloudSync CRM pushes new events (Push Topics, Change Data Capture, and User Data) to the CloudSync CRM Adapter in the Optiflow system. <br>The CloudSync CRM Adapter in Optiflow Cloud receives these events and checks to make sure all statuses, groups, and user IDs are recognized. If any IDs are <em>not</em> mapped, the adapter calls the required REST API to retrieve the correct mappings.</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">CloudSync CRM Adapter</td>
+<td style="text-align: left;">Data Processor</td>
+<td style="text-align: left;">The CloudSync CRM Adapter in Optiflow Cloud gathers events for the historical data and posts the data to the Data Processor for aggregation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">CloudSync CRM Adapter</td>
+<td style="text-align: left;">Live Session Monitoring (LSM) API</td>
+<td style="text-align: left;">The CloudSync CRM Adapter posts real-time session monitoring directly to the Live Session Monitoring (LSM) API, as the data is received.</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Data Processor</td>
+<td style="text-align: left;">Support Ticket Trends (STT) API</td>
+<td style="text-align: left;">The Data Processor aggregates ticket trends in 15-minute intervals, and posts to the Support Ticket Trends (STT) API.</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Data Processor</td>
+<td style="text-align: left;">Customer Interaction Metrics (CIM)</td>
+<td style="text-align: left;">The Data Processor aggregates interaction metrics in daily intervals, and posts to the Customer Interaction Metrics (CIM) API.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="customer-onboarding">Customer onboarding<a class="headerlink" href="#customer-onboarding" title="Permanent link">&para;</a></h2>
+<p>The customer onboarding tasks for the Optiflow–CloudSync CRM integration are done by Optiflow and the customer.</p>
+<p>Most of the setup for this integration is done by Optiflow. However, there are required setup tasks that the customer needs to do in CloudSync, including providing authentication for the API calls, and setting up the data that is pushed to the CloudSync CRM adapter in Optiflow. This includes, but is not limited to, the connected app, push topics, and change data capture setup.</p>
+<p>The workflow includes the following steps:</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Responsible</th>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Optiflow</td>
+<td>Internal Authentication</td>
+<td>Optiflow sets up the internal cloud authentication tokens to ensure that the adapter can communicate with the Optiflow tenant.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Customer</td>
+<td><a href="#customer-cloudsync-crm-setup">Customer CloudSync CRM Setup</a></td>
+<td>The customer sets up the access flow from their CloudSync tenant to the Optiflow adapter. In addition, they enable the push topics and change data captures required for the desired channels.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Optiflow</td>
+<td>Deploy CloudSync CRM Adapter</td>
+<td>Optiflow enables the adapter, and populates it with the required parameters to supply the data points required for the Optiflow tenant.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="customer-cloudsync-crm-setup">Customer CloudSync CRM Setup<a class="headerlink" href="#customer-cloudsync-crm-setup" title="Permanent link">&para;</a></h1>
+<p>The customer administrator needs to set up the access flow from their CloudSync tenant to the Optiflow adapter.</p>
+<p><strong>Before you begin</strong></p>
+<p>Obtain a public certificate file named <strong>cloudsync.crt</strong> from an Optiflow engineer.</p>
+<p><strong>Workflow</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Seq.#</th>
+<th style="text-align: left;">Step</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><a href="#enable-change-data-capture">Enable change data capture</a></td>
+<td style="text-align: left;">If you are processing the STT and CIM APIs, select the relevant CDC (Change Data Capture) entities for the integration, which can include: <ul><li><strong>ChatSession</strong></li><li><strong>SupportTicket</strong></li><li><strong>VideoSession</strong></li><li><strong>UserPresence</strong></li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><a href="#create-a-new-user-and-service-account">Create a new user and service account</a></td>
+<td style="text-align: left;">Create a new user and associate the user with a service account, which is used by the integration to authenticate between CloudSync and Optiflow.</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><a href="#create-a-permission-set">Create a permission set</a></td>
+<td style="text-align: left;">Create a permission set to be used by the integration. The permission set includes permissions to allow CloudSync to push data to Optiflow.</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><a href="#assign-a-permission-set-to-a-user">Assign a permission set to a user</a></td>
+<td style="text-align: left;">Once you create the permission set, assign it to the new user you created.</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"><a href="#create-a-connected-app">Create a connected app</a></td>
+<td style="text-align: left;">Create the Integration Connected App, which is used to authenticate communication between CloudSync and Optiflow. It also provides security and limits related to the access of data in the integration.</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;"><a href="#configure-connected-app-policies">Configure connected app policies</a></td>
+<td style="text-align: left;">For the new Integration Connected App, configure system administration permissions and app policies.</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;"><a href="#generate-a-consumer-key">Generate a consumer key</a></td>
+<td style="text-align: left;">Generate the API access credentials from the Integration Connected App.</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;"><a href="#validate-the-integration-configurations">Validate the integration configurations</a></td>
+<td style="text-align: left;">To validate that everything is configured correctly for the integration, use the Postman collection to ensure you receive a successful response.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enable-change-data-capture">Enable change data capture<a class="headerlink" href="#enable-change-data-capture" title="Permanent link">&para;</a></h2>
+<p>If you are processing STT and CIM APIs, select the relevant CDC (Change Data Capture) entities for the integration, which can include: <strong>SupportTicket</strong>, <strong>ChatSession</strong>, <strong>UserPresence</strong>, and <strong>VideoSession</strong> objects.</p>
+<p><strong>Before you begin</strong></p>
+<p>Log on to the CloudSync tenant application as an administrator.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the CloudSync tenant application, from the <strong>Setup</strong> icon, select <strong>Setup</strong>.</p>
+</li>
+<li>
+<p>From the <strong>Quick Find</strong> text box, type: <strong>Change Data Capture</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Change Data Capture</strong>.</p>
+</li>
+</ol>
+<p>The <strong>Change Data Capture</strong> screen is displayed. In <strong>Available Entities</strong>, the system displays the CDC entities that are available to be selected for the change data capture service for the integration.</p>
+<ol>
+<li>From <strong>Available Entities</strong>, move the relevant CDC entities that are in scope for the integration to <strong>Selected Entities</strong>, which can include:<ul><li><strong>SupportTicket</strong></li><li><strong>ChatSession</strong></li><li><strong>VideoSession</strong></li><li><strong>UserPresence</strong></li></ul></li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> Only select the entities that are included in the integration. For example, if chats are not included, do <em>not</em> select <strong>ChatSession</strong>.</p>
+</blockquote>
+<ol>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<p>The CDC entities that you selected are included in the integration.</p>
+<p><strong>What to do next?</strong></p>
+<p><a href="#create-a-new-user-and-service-account">Create a new user and service account</a></p>
+<h2 id="create-a-new-user-and-service-account">Create a new user and service account<a class="headerlink" href="#create-a-new-user-and-service-account" title="Permanent link">&para;</a></h2>
+<p>Create a new user and associate the user with a service account, which is used by the integration to authenticate between CloudSync and Optiflow.</p>
+<p><strong>Before you begin</strong></p>
+<p><a href="#enable-change-data-capture">Enable change data capture</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the CloudSync tenant application, from the <strong>Quick Find</strong> text box, type: <strong>Users</strong>.</p>
+</li>
+<li>
+<p>From the <strong>All Users</strong> screen, select <strong>New User</strong>.</p>
+</li>
+<li>
+<p>On the <strong>New User</strong> screen, complete the following mandatory fields for the user:</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Last Name</td>
+<td style="text-align: left;">Last name of the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alias</td>
+<td style="text-align: left;">Shorter name representing the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Email</td>
+<td style="text-align: left;">User's valid email address, which is also used for verification in a later step.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Username</td>
+<td style="text-align: left;">Value that reflects the service account user for the integration. The username is shared with the Optiflow engineer at the end of the customer onboarding setup.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nickname</td>
+<td style="text-align: left;">Short name for the user or service account.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>Select <strong>Save</strong>.       </p>
+</li>
+<li>
+<p>Next to the <strong>Email</strong> field, select the <strong>Verify</strong> link to send a verification email to the user, and click <strong>OK</strong>.</p>
+</li>
+</ol>
+<p>The system sends an email to the user with a link to verify the account. </p>
+<ol>
+<li>From the <em>Welcome to CloudSync!</em> email, select <strong>Verify Account</strong>.     </li>
+</ol>
+<p>The system verifies the email account, and changes the <strong>Verify</strong> link next to the <strong>Email</strong> field to: <strong>Verified</strong>. The integration uses this user account to authenticate between CloudSync and Optiflow.                     </p>
+<p><strong>What to do next?</strong></p>
+<p><a href="#create-a-permission-set">Create a permission set</a></p>
+<h2 id="create-a-permission-set">Create a permission set<a class="headerlink" href="#create-a-permission-set" title="Permanent link">&para;</a></h2>
+<p>Create a new permission set to be used by the integration. You can define specific attributes for the permission set, including the label, API name, and license.</p>
+<p><strong>Before you begin</strong></p>
+<p><a href="#create-a-new-user-and-service-account">Create a new user and service account</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the CloudSync tenant application, from the <strong>Quick Find</strong> text box, type: <strong>Permission Sets</strong>.</p>
+</li>
+<li>
+<p>From the <strong>Permission Sets</strong> screen, create a new permission set by selecting <strong>New</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Permission Set Create</strong> screen, complete the following mandatory fields:</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Label</td>
+<td style="text-align: left;">Name of the permission set that displays in the tenant application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">API Name</td>
+<td style="text-align: left;">Name of the permission set that is used for the API name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">License</td>
+<td style="text-align: left;">CloudSync API Integration.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Select <strong>Save</strong>.</li>
+</ol>
+<p><strong>What to do next?</strong></p>
+<p><a href="#assign-a-permission-set-to-a-user">Assign a permission set to a user</a></p>
+<h2 id="assign-a-permission-set-to-a-user">Assign a permission set to a user<a class="headerlink" href="#assign-a-permission-set-to-a-user" title="Permanent link">&para;</a></h2>
+<p>Once you create the permission set, assign it to a specific user.</p>
+<p><strong>Before you begin</strong></p>
+<p><a href="#create-a-permission-set">Create a permission set</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>At the top of the <strong>Permission Set</strong> page, select <strong>Manage Assignments</strong>.</p>
+</li>
+<li>
+<p>At the upper right of the <strong>Current Assignments</strong> page, select <strong>Add Assignment</strong>.</p>
+</li>
+</ol>
+<p>The system displays all users in a list.</p>
+<ol>
+<li>
+<p>In the search text box, enter the user you created in <a href="#create-a-new-user-and-service-account">Create a new user and service account</a>.</p>
+</li>
+<li>
+<p>Select the check box next to the relevant user name, and select <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Set the expiration date for the assignment, and select <strong>Assign</strong>.</p>
+</li>
+</ol>
+<p>The system displays a confirmation message, stating that the assignments were successful.</p>
+<ol>
+<li>Select <strong>Done</strong>.</li>
+</ol>
+<p><strong>What to do next?</strong></p>
+<p><a href="#create-a-connected-app">Create a connected app</a></p>
+<h2 id="create-a-connected-app">Create a connected app<a class="headerlink" href="#create-a-connected-app" title="Permanent link">&para;</a></h2>
+<p>Create the Integration Connected App, which is used to authenticate communication between CloudSync and Optiflow. It also provides security and limits related to the access of data in the integration.</p>
+<p><strong>Before you begin</strong></p>
+<p><a href="#assign-a-permission-set-to-a-user">Assign a permission set to a user</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the <strong>Quick Find</strong> text box, type: <strong>App Manager</strong>.</p>
+</li>
+<li>
+<p>Select <strong>New Connected App</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Create a Connected App</strong>, and select <strong>Continue</strong>.</p>
+</li>
+<li>
+<p>On the <strong>New Connected App</strong> screen, under <strong>Basic Information</strong>, complete the following mandatory fields:</p>
+</li>
+<li>
+<p><strong>Connected App Name</strong></p>
+</li>
+<li>
+<p><strong>API Name</strong></p>
+</li>
+<li>
+<p><strong>Contact Email</strong> (must be a valid email address)</p>
+</li>
+<li>
+<p>From <strong>API (Enable OAuth Settings)</strong>, select <strong>Enable OAuth Settings</strong>.</p>
+</li>
+<li>
+<p>In <strong>Callback URL</strong>, enter a dummy URL, such as: <strong>https://dummy.com</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Use digital signatures</strong>.</p>
+</li>
+<li>
+<p>To upload the certificate provided by Optiflow, select <strong>Choose File</strong>, and browse and select the file, <strong>cloudsync.crt</strong> provided by an Optiflow engineer.</p>
+</li>
+<li>
+<p>Add the following <strong>Available OAuth Scopes</strong> to <strong>Selected OAuth Scopes</strong>:</p>
+<ul>
+<li>
+<p><strong>Manage user data via APIs (api)</strong></p>
+</li>
+<li>
+<p><strong>Perform requests at any time (refresh_token, offline_access)</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Verify the following are selected:</p>
+<ul>
+<li>
+<p><strong>Require Proof Key for Code Exchange (PKCE) Extension for Supported Authorization Flows</strong></p>
+</li>
+<li>
+<p><strong>Require Secret for Web Server Flow</strong></p>
+</li>
+<li>
+<p><strong>Require Secret for Refresh Token Flow</strong></p>
+</li>
+<li>
+<p><strong>Enable Client Credentials Flow</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Select <strong>Save</strong>, and then <strong>Continue</strong>.</p>
+</li>
+</ol>
+<p><strong>What to do next?</strong></p>
+<p><a href="#configure-connected-app-policies">Configure connected app policies</a></p>
+<h2 id="configure-connected-app-policies">Configure connected app policies<a class="headerlink" href="#configure-connected-app-policies" title="Permanent link">&para;</a></h2>
+<p>For the new Integration Connected App, configure system administration permissions and app policies.</p>
+<p><strong>Before you begin</strong></p>
+<p><a href="#create-a-connected-app">Create a connected app</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the connected app, select <strong>Manage</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Edit Policies</strong>.</p>
+</li>
+<li>
+<p>In <strong>OAuth Policies</strong>, from <strong>Permitted Users</strong>, select <strong>Admin approved users are pre-authorized</strong>.</p>
+</li>
+<li>
+<p>In <strong>Client Credentials Flow</strong>, in the <strong>Run As</strong> field, browse, and select the user you created for the integration.</p>
+</li>
+</ol>
+<p>The Client Credentials Flow defines the permissions used in the system-to-system communication. These permissions are defined for the user in the integration.</p>
+<ol>
+<li>
+<p>Select <strong>Save</strong>.</p>
+</li>
+<li>
+<p>In <strong>Profiles</strong>, select <strong>Manage Profiles</strong>.</p>
+</li>
+<li>
+<p>From the list of user profiles, select <strong>Minimum Access - API Only Integration</strong>, and select <strong>Save</strong>.</p>
+</li>
+</ol>
+<p><strong>What to do next?</strong></p>
+<p><a href="#generate-a-consumer-key">Generate a consumer key</a></p>
+<h2 id="generate-a-consumer-key">Generate a consumer key<a class="headerlink" href="#generate-a-consumer-key" title="Permanent link">&para;</a></h2>
+<p>Generate the API access credentials from the Integration Connected App.</p>
+<p><strong>Before you begin</strong></p>
+<p><a href="#configure-connected-app-policies">Configure connected app policies</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>
+<p>From the Setup view, select <strong>App Manager</strong>.</p>
+</li>
+<li>
+<p>From the app list, find the <strong>Integration Connected App</strong>.</p>
+</li>
+<li>
+<p>From the drop-down menu, select <strong>View</strong>.</p>
+</li>
+<li>
+<p>In <strong>API (Enable OAuth Settings)</strong>, select <strong>Manage Consumer Details</strong>.</p>
+</li>
+<li>
+<p>At the <strong>Verify Your Identity</strong> prompt, type the verification code sent to the verification email address, and select <strong>Verify</strong>.</p>
+</li>
+<li>
+<p>For the <strong>Consumer Key</strong>, select <strong>Copy</strong>.</p>
+</li>
+</ol>
+<p><strong>What to do next?</strong></p>
+<p><a href="#validate-the-integration-configurations">Validate the integration configurations</a></p>
+<h2 id="validate-the-integration-configurations">Validate the integration configurations<a class="headerlink" href="#validate-the-integration-configurations" title="Permanent link">&para;</a></h2>
+<p>To validate that everything is configured correctly for the integration, use the Postman collection to ensure you receive a successful response.</p>
+<p><strong>Before you begin</strong></p>
+<p><a href="#generate-a-consumer-key">Generate a consumer key</a></p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li>Open your Postman collection.</li>
+</ol>
+<p>If you are working with a CloudSync sandbox instance, make sure to use the following endpoint: https://test.cloudsync.com/services/oauth2/token (instead of the production endpoint: https://login.cloudsync.com/services/oauth2/token).</p>
+<ol>
+<li>
+<p>On the <strong>Variables</strong> tab, update the following key-value pairs with your credentials:</p>
+</li>
+<li>
+<p>grant_type: <strong>urn:ietf:params:oauth:grant-type:jwt-bearer</strong></p>
+</li>
+<li>
+<p>userID: <strong><Your username></strong></p>
+</li>
+<li>
+<p>consumerKey: <strong><Your Consumer Key copied from the previous step></strong></p>
+</li>
+<li>
+<p>cloudsyncTokenEndpoint: <strong><Your CloudSync Token Endpoint></strong></p>
+</li>
+<li>
+<p>Select <strong>Send</strong>.</p>
+</li>
+</ol>
+<p>If the configuration was defined correctly, the system displays a success response (200) when executing the Postman request.</p>
+<ol>
+<li>Upon receiving a success response (200), share the results with Optiflow for the CloudSync integration.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
