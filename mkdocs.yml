@@ -1,0 +1,65 @@
+site_name: Doc Site Using MkDocs
+site_description: Docs-as-code portfolio demonstrating MkDocs, IA, and CI/CD skills.
+site_url: https://lizmarlowe-byte.github.io/docs-as-code-portfolio-mkdocs/
+
+theme:
+  name: material
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+  # - tags   # enable if you’ve installed mkdocs-material>=9.x and want tagging UI
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - toc:
+      permalink: true
+  - tables
+  - fenced_code
+  - attr_list
+  - def_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  # ✅ New, supported emoji extension:
+  - material.extensions.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - About this Site: index.md
+  - User Guides:
+      - user-guides/Docmost-User-Guide.md
+      - user-guides/Taiga-User-Guide.md
+  - API Guides:
+      - api-guides/OpenWeatherMap-API-Guide.md
+      - api-guides/Spotify-API-Guide.md
+  - How-To Articles:
+      - how-to-articles/How-to-create-a-relationship-table-in-MadCap-Flare.md
+  - Technical Reference Guides:
+      - technical-reference-guides/Optiflow_CloudSync_CRM_Integration_Guide.md
+      - technical-reference-guides/AuroraOps-Platform-5.2.0-Release-Notes.md
+
+strict: true   # keep strict on once warnings are gone
