@@ -1,18 +1,9 @@
 # AuroraOps Platform 5.2.0 Release Notes
 The _AuroraOps Platform 5.2.0 Release Notes_ summarizes the new features, product enhancements, resolved issues, and known issues in **AuroraOps Platform 5.2.0**.
 
-## Table of Contents
-1. [AuroraOps Platform 5.2.0 overview](#auroraOps-platform-5.2.0-overview)
-2. [Target audience](#target-audience)
-3. [New features & enhancements](#new-features--enhancements)
-4. [Resolved issues](#resolved-issues)
-5. [Known issues](#known-issues)
-6. [Hotfixes](#hotfixes)
-7. [Additional notes](#additional-notes)
-
 ---
 
-<h1 id="auroraOps-platform-5.2.0-overview">📄 AuroraOps Platform 5.2.0 overview</h1> 
+<h1 id="auroraOps-platform-5.2.0-overview">📄 AuroraOps Platform 5.2.0 overview</h1> { data-toc-label="AuroraOps Platform 5.2.0 overview" }
 
 **Release Version:** 5.2.0  
 **Release Date:** February 5, 2026
@@ -23,13 +14,13 @@ For questions or support, contact the AuroraOps Support Team at *support@aurorao
 
 ---
 
-<h1 id="target-audience">🎯 Target audience</h1>
+<h1 id="target-audience">🎯 Target audience</h1> { data-toc-label="Target audience" }
 
 This document is intended for customers and partners who need to understand what’s new or improved in the AuroraOps Platform 5.2.0 release.
 
 ---
 
-<h1 id="new-features--enhancements">🚀 New features & enhancements </h1> 
+<h1 id="new-features--enhancements">🚀 New features & enhancements </h1> { data-toc-label="New features & enhancements" }
 
 ## 1. New sign-in flow
 
@@ -98,7 +89,7 @@ This includes:
 
 ---
 
-<h1 id="resolved-issues">🛠 Resolved issues </h1>
+<h1 id="resolved-issues">🛠 Resolved issues </h1> { data-toc-label="Resolved issues" }
 
 | Issue ID | Description | Resolution |
 |:----------|:-------------|:------------|
@@ -109,7 +100,7 @@ This includes:
 
 ---
 
-<h1 id="known-issues">⚠️ Known issues </h1>
+<h1 id="known-issues">⚠️ Known issues </h1> { data-toc-label="Known issues" }
 
 
 ## 1. Delayed webhook delivery under high load
@@ -140,7 +131,7 @@ When saving from the **Advanced Search** dialog box, clicking the **Save** butto
 A user creates a group, configures a scheduling period for the group, and assigns it to a queue. The user navigates to the Scheduling screen, but is unable to edit any scheduling values or run any other actions for the newly created group.
 **Workaround:** Refresh the Scheduling screen. After refreshing the screen, the user privileges are updated and all the actions the user is entitled to are enabled.
 
-<h1 id="hotfixes">🔧 Hotfixes</h1>
+<h1 id="hotfixes">🔧 Hotfixes</h1> { data-toc-label="Hotfixes" }
 
 | Hotfix ID | Release Date | Affected Version(s) | Description | Status |
 |:-----------|:--------------|:---------------------|:-------------|:--------|
@@ -150,7 +141,7 @@ A user creates a group, configures a scheduling period for the group, and assign
 
 ---
 
-<h1 id="additional-notes">📚 Additional notes </h1>
+<h1 id="additional-notes">📚 Additional notes </h1> { data-toc-label="Additional notes" }
 
 ## Deprecations
 

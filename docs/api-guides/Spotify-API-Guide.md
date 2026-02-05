@@ -1,20 +1,9 @@
 # Spotify Web API Guide
 The _Spotify API Guide_ describes a RESTful API that provides access to comprehensive music data for developers.
 
-## Table of Contents
-1. [Overview](#overview)
-2. [Base URL](#base-url)
-3. [Authentication](#authentication)
-4. [Rate limits](#rate-limits)
-5. [HTTP status and error codes](#http-status-and-error-codes)
-6. [Pagination](#pagination)
-7. [Getting started](#getting-started)
-8. [Tutorial: Request artist data](#tutorial-request-artist-data)
-9. [API reference](#api-reference)
-
 ---
 
-# Overview
+# Overview { data-toc-label="Overview" }
 
 _Spotify_ is a leading digital audio streaming service that gives you access to millions of songs, podcasts, and videos. Spotify is accessible for free with ads or through a paid Premium plan for ad-free listening, offline downloads, and higher audio quality. It allows users to create playlists, discover new music, and listen using various devices, including phones, computers, and tablets.
 
@@ -48,7 +37,7 @@ This guide is intended for developers who want to integrate Spotify features int
 
 ---
 
-# Base URL
+# Base URL { data-toc-label="Base URL" }
 
 All API requests are made to the following base URL. When constructing requests, append the endpoint paths to this root URL. For security, the API is served over **HTTPS**, and all endpoints are versioned.
 
@@ -59,7 +48,7 @@ https://api.spotify.com
 
 ---
 
-# Authentication
+# Authentication { data-toc-label="Authentication" }
 
 In the Spotify Web API, users grant consent for specific scopes to a registered client application. The application (server-side) authenticates to Spotify using its **client ID and client secret** (never exposed to end users) and requests access tokens to call the API. The server authenticates and authorizes the clients, and sends them access tokens, which are used by the clients to make API requests on behalf of the user or application.
 
@@ -103,7 +92,7 @@ Select the right grant type for the application you are building:
 
 ---
 
-# Rate limits
+# Rate limits { data-toc-label="Rate limits" }
 
 A rate limit is the number of requests the API can receive in a specific time period. Rate limiting ensures efficient API performance and prevents abuse. Once the limit is reached, API requests from the client will fail.
 
@@ -231,7 +220,7 @@ To apply for this mode, your business or organization first needs to be an appro
 
 ---
 
-# HTTP status and error codes
+# HTTP status and error codes { data-toc-label="HTTP status and error codes" }
 
 Spotify's Web API follows standard HTTP status codes, paired with JSON responses. 
 
@@ -271,7 +260,7 @@ Most error codes (4xx or 5xx) adhere to this JSON format:
 
 ---
 
-# Pagination
+# Pagination { data-toc-label="Pagination" }
 
 Pagination allows you to retrieve large sets of data in smaller, manageable chunks by using specific parameters to limit the amount of data sent in each API response. 
 
@@ -330,7 +319,7 @@ curl "https://api.spotify.com/v1/me/playlists?offset=20&limit=20" \
 
 ---
 
-# Getting started
+# Getting started { data-toc-label="Getting started" }
 
 From the Spotify Developer Dashboard, set up your account. Then, create your first app, which provides you with a _client ID_ and _client secret_. Finally, request an _access token_, which is a string that contains the credentials and permissions you need to access a given resource. 
 
@@ -507,7 +496,7 @@ For example:
 ```
 ---
 
-# Tutorial: Request artist data
+# Tutorial: Request artist data { data-toc-label="Tutorial: Request artist data" }
 
 This tutorial describes how to retrieve information about an artist. It involves appending the Spotify ID of the artist to the **Get Artist** endpoint, and including the access token using the `Authorization` header in the API request. 
 
@@ -605,7 +594,7 @@ For example:
 ```
 ---
 
-# API reference
+# API reference { data-toc-label="API reference" }
 
 The Spotify Web API Reference is designed to help developers integrate Spotify features into applications by providing clear examples, endpoint details, and request/response formats.
 

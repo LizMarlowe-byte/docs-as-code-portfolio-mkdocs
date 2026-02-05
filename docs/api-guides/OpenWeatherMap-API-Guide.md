@@ -1,20 +1,9 @@
 # OpenWeatherMap API Guide
 The _OpenWeatherMap API Guide_ describes a RESTful API that provides access to comprehensive weather data for developers.
 
-## Table of Contents
-1. [Overview](#overview)
-2. [Base URL](#base-url)
-3. [Authentication](#authentication)
-4. [Rate limits](#rate-limits)
-5. [HTTP status and error codes](#http-status-and-error-codes)
-6. [Pagination](#pagination)
-7. [Getting started](#getting-started)
-8. [Tutorial: Get current weather for a city](#tutorial-get-current-weather-for-a-city)
-9. [API reference](#api-reference)
-
 ---
 
-# Overview
+# Overview { data-toc-label="Overview" }
 
 The _OpenWeatherMap_ API is a weather data service that provides access to comprehensive data sourced from global and local models, satellites, radars, and weather stations. Developers can use the API to retrieve current weather conditions, hourly and daily forecasts, historical data, and bulk weather information for multiple locations worldwide.
 
@@ -40,7 +29,7 @@ This guide is intended for developers who want to integrate real-time, forecaste
 
 ---
 
-# Base URL
+# Base URL { data-toc-label="Base URL" }
 
 OpenWeather uses multiple service hosts. 
 
@@ -56,7 +45,7 @@ All requests _must_ use **HTTPS**. For the correct path and parameters, see each
 
 ---
 
-# Authentication
+# Authentication { data-toc-label="Authentication" }
 
 The OpenWeatherMap API uses [API keys](#create-more-api-keys) to authenticate requests. All API requests _must_ be made over HTTPS. Calls made over plain HTTP and API requests without authentication _will fail_.
 
@@ -74,7 +63,7 @@ Where **appid=123abc456def** is your dedicated API key (passed as a query parame
 
 ---
 
-# Rate limits
+# Rate limits { data-toc-label="Rate limits" }
 
 A rate limit is the number of requests the API can receive in a specific time period. Rate limiting ensures efficient API performance and prevents abuse. Once the limit is reached, API requests from the client will fail.
 
@@ -150,7 +139,7 @@ except Exception as e:
 ```
 ---
 
-# HTTP status and error codes
+# HTTP status and error codes { data-toc-label="HTTP status and error codes" }
 
 Errors and statuses are returned with appropriate HTTP status codes and a structured JSON body.
 
@@ -176,7 +165,7 @@ Errors and statuses are returned with appropriate HTTP status codes and a struct
 
 ---
 
-# Pagination
+# Pagination { data-toc-label="Pagination" }
 
 Pagination allows you to retrieve large sets of data in smaller, manageable chunks by using specific parameters to limit the amount of data sent in each API response. 
 
@@ -202,7 +191,7 @@ GET https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=51.5085&lon=-0.1
 > **Note:** `cnt` only limits the number of results. It does _not_ provide true pagination (such as page numbers or offsets). To retrieve additional data, you must send separate requests with different parameters.
 ---
 
-# Getting started
+# Getting started { data-toc-label="Getting started" }
 
 Create an account, which generates your API key. You can create additional API keys on your account page, and edit, delete, or deactivate your keys.
 
@@ -260,7 +249,7 @@ When you created your account, the OpenWeatherMap API generated a default API ke
 
 ---
 
-# Tutorial: Get current weather for a city
+# Tutorial: Get current weather for a city { data-toc-label="Tutorial: Get current weather for a city" }
 
 This tutorial describes how to retrieve the current weather for a specific city. It involves using your API key and testing it with curl (Client URL) to verify that the OpenWeatherMap API returns a valid response.
 
@@ -382,7 +371,7 @@ If you get a similar response, you're all set up with the OpenWeatherMap API.
 
 > **Note:** For more information about the JSON objects in the API response, see [API Reference](#api-reference).
 
-# API reference
+# API reference { data-toc-label="API reference" }
 
 The OpenWeatherMap API is designed to help developers integrate weather-based data into applications by providing clear examples, endpoint details, and request/response formats.
 

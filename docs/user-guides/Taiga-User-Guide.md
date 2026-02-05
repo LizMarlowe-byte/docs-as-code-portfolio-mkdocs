@@ -1,16 +1,9 @@
 # Taiga User Guide
 The _Taiga User Guide_ is a comprehensive guide for Agile project managers that describes an Agile project management tool.
 
-## Table of Contents
-1. [Introduction to Taiga](#introduction-to-taiga)
-2. [Getting started](#getting-started)
-3. [Defining project settings](#defining-project-settings)
-4. [Scrum project workflow](#scrum-project-workflow)
-5. [Scrum backlog management](#scrum-backlog-management)
-6. [Scrum sprint execution](#scrum-sprint-execution)
-7. [Project management beyond Scrum](#project-management-beyond-scrum)
+---
 
-# Introduction to Taiga
+# Introduction to Taiga { data-toc-label="Introduction to Taiga" }
 
 _Taiga_ is an open-source project management tool with an intuitive interface and comprehensive support for Agile methodologies, including Scrum and Kanban.
 
@@ -83,7 +76,7 @@ There are two main types of deployment options:
 
 This guide is intended for project managers and team leads who manage work using Agile methodologies, including Scrum and Kanban frameworks.
 
-# Getting started
+# Getting started { data-toc-label="Getting started" }
 
 Create your account for the Taiga Cloud Basic deployment option. Then, set up your first project in Taiga.
 
@@ -192,7 +185,7 @@ You can create a Scrum or Kanban project. You can also copy an existing project 
 > 💡 **Tip:** Before creating your user stories, you might find it useful to define your project settings, including adding team members to your project, customizing specific Agile entities (such as custom fields and adding new story points), and defining project modules and roles. If that is your preferred workflow, see [Defining project settings](#defining-project-settings).
 
 
-# Defining project settings
+# Defining project settings { data-toc-label="Defining project settings" }
 
 Define specific settings for your project, including updating project details, adding team members to the project, defining role permissions, and customizing specific Taiga attributes.
 
@@ -435,7 +428,7 @@ For example, you might want to add an issue type that is related to work that is
 
 ---
 
-# Scrum project workflow
+# Scrum project workflow { data-toc-label="Scrum project workflow" }
 
 In Scrum, work typically moves through two main phases: 
 
@@ -460,7 +453,7 @@ The following table summarizes each step in the workflow.
 |5                 |**[Assign user stories to a sprint](#assign-user-stories-to-a-sprint)**   |Sprint Execution        |From the backlog, according to deployment priorities, related work, and development dependencies, determine which user stories should be assigned to upcoming sprints, and assign them accordingly.| For the sprint, _DLogix-S1_, assign the following user stories: _Change UI Labels_, _Create New Filters_, and _Enhance Search_. 
 |6                 |**[Track progress and complete user stories](#track-progress-and-complete-user-stories)**        |Sprint Execution        |During a sprint, track the status of user stories on a sprint taskboard. During the daily standups, discuss any blockers, issues, and dependencies, and try to resolve them so that members can complete the work defined in the relevant stories. At the end of a sprint, all stories should have a completed status. |One week into the _DLogix-S1_ sprint, the stories, _Change UI Labels_ and _Create New Filters_ are _In Progress_, and _Enhance Search_ has a dependency on another team that is currently being resolved.
 
-# Scrum backlog management
+# Scrum backlog management { data-toc-label="Scrum backlog management" }
 
 During backlog management, you prepare and prioritize work by creating the key entities you will use to manage work on a daily basis: _epics_, _user stories_, and _tasks_. Managing these entities and following the Scrum workflow helps you organize and prioritize work, with the goal of delivering value within the defined timebox.
 
@@ -660,7 +653,7 @@ The system saves the new task.
 
 [Scrum sprint execution](#scrum-sprint-execution)
 
-# Scrum sprint execution
+# Scrum sprint execution { data-toc-label="Scrum sprint execution" }
 
 During sprint execution, you deliver the work that was prepared during backlog management. This phase includes planning sprints, assigning prioritized user stories to the sprint backlog, and coordinating daily progress. 
 
@@ -840,7 +833,7 @@ During the daily standups, discuss any blockers, issues, and dependencies, and t
 
 --- 
 
-# Project management beyond Scrum
+# Project management beyond Scrum { data-toc-label="Project management beyond scrum" }
 
 Beyond Scrum, Taiga supports other project management methodologies. In addition to organizing work into timeboxed sprints and managing tasks and user stories, you can configure Taiga to use a Kanban board for a higher-level view of project progress. Issues may be tracked independently of sprints, and the Team Board can be utilized for any type of project to display team member roles, skills, and contributions.
 

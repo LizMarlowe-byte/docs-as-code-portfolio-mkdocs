@@ -1,15 +1,9 @@
 # Docmost User Guide
 The _Docmost User Guide_ is a comprehensive guide for end users that describes a collaborative wiki platform. 
 
-## Table of Contents
-1. [Introduction to Docmost](#introduction-to-docmost)
-2. [Getting started](#getting-started)
-3. [Managing workspaces](#managing-workspaces)
-4. [Managing spaces](#managing-spaces)
-5. [Managing groups](#managing-groups)
-6. [Managing pages](#managing-pages)
+---
 
-# Introduction to Docmost
+# Introduction to Docmost { data-toc-label="Introduction to Docmost" }
 
 _Docmost_ is an open-source collaborative wiki that provides easy and robust content creation and real-time collaboration.
 
@@ -80,7 +74,7 @@ Here's what you do:
 
 This guide is intended for users who want to create and share content in a wiki format and collaborate with other users.
 
-# Getting started
+# Getting started { data-toc-label="Getting started" }
 
 Set up your account for the cloud-hosted version of Docmost. Then, set up your profile and preferences.
 
@@ -172,7 +166,7 @@ After setting up your Docmost account, define your profile settings and preferen
 |Default page edit mode|Select one of the following: <ul><li>**Edit**: Opens every page in **Edit** mode by default.</li><li>**Read**: Opens every page in **Read** mode by default. To make any edits on a page, change the mode to **Edit**.</li></ul>
 
 
-# Managing workspaces
+# Managing workspaces { data-toc-label="Managing workspaces" }
 
 Create and customize your _**workspace**_, which is the top-level entity for organizing your content, user roles, and permissions.  After creating your workspace, invite others to collaborate within it.
 
@@ -359,7 +353,7 @@ You can delete a member from a workspace.
    The system deletes the member from the workspace. They no longer appear under the **Members** tab.
   
 
-# Managing spaces
+# Managing spaces { data-toc-label="Managing spaces" }
 
 Create **_spaces_**, which are dedicated, organized areas within your workspace that group together documents, permissions, and collaborators by project, team, or purpose. You can add members to spaces and manage their permissions. You can also export spaces for backup, migration, or offline use.
 
@@ -602,7 +596,7 @@ If you no longer need a space, you can delete it. For example, you created a spa
 
    The system deletes the space, including all of its pages, comments, attachments, and permissions.
 
-# Managing Groups
+# Managing Groups { data-toc-label="Managing groups" }
 
 Create **_groups_**, which allow you to manage user permissions for multiple users simultaneously. Instead of assigning roles and privileges to individual users, assign them to a group, simplifying access control across your workspace.
 
@@ -805,7 +799,7 @@ If needed, you can delete a group.
 
 
 
-# Managing pages
+# Managing pages { data-toc-label="Managing pages" }
 
 Within a space, create and manage individual documents, or **_pages_**, which contain the content itself. Each page contains specific content for the space, such as a department's budget, project roadmap, or annual goals.
 

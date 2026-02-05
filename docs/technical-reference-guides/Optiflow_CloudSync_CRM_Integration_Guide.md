@@ -1,13 +1,9 @@
 # Optiflow CloudSync CRM Integration Guide
 The _Optiflow CloudSync CRM Integration Guide_ describes the system integration between the Optiflow system and the CloudSync CRM system.
 
-## Table of Contents
-1. [Introduction to the Optiflow-CloudSync CRM integration](#introduction-to-the-optiflow-cloudsync-crm-integration)
-2. [Customer CloudSync CRM setup](#customer-cloudsync-crm-setup)
-
 ---
 
-# Introduction to the Optiflow-CloudSync CRM integration
+# Introduction to the Optiflow-CloudSync CRM integration { data-toc-label="Introduction to the Optiflow-CloudSync CRM integration" }
 
 In the _Optiflow–CloudSync CRM_ integration, CloudSync supplies customer engagement, ticket data, and real-time visibility updates from the CloudSync CRM system to the Optiflow system.
 
@@ -100,7 +96,7 @@ The workflow includes the following steps:
 | 3    | Optiflow    | Deploy CloudSync CRM Adapter | Optiflow enables the adapter, and populates it with the required parameters to supply the data points required for the Optiflow tenant.    |
 
 
-# Customer CloudSync CRM Setup
+# Customer CloudSync CRM Setup { data-toc-label="Customer CloudSync CRM Setup" }
 
 The customer administrator needs to set up the access flow from their CloudSync tenant to the Optiflow adapter.
 
