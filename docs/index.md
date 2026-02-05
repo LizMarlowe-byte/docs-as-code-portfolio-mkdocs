@@ -24,19 +24,19 @@ This MkDocs site is **Project 1 of 4** in the series.
 
 ## ⚙️ What I Built Using MkDocs { data-toc-label="What I Built Using MkDocs" }
 
-### 🔧 Full Docs-as-Code Workflow { data-toc-label="Full Docs-as-Code Workflow" }
+### 🔧 Full Docs-as-Code Workflow
 - Authored content in Markdown  
 - Managed version control with Git  
 - Used `mkdocs.yml` for site configuration and navigation  
 - Applied Material for MkDocs for polished UI/UX  
 - Implemented Markdown extensions, code highlighting, and enhanced navigation features  
 
-### 🚀 Automated Build & Publish Pipeline { data-toc-label="Automated Build & Publish Pipeline" }
+### 🚀 Automated Build & Publish Pipeline 
 - Configured GitHub Pages for deployment  
 - Integrated repo metadata (Edit on GitHub, View Source)  
 - Structured the project to match real-world engineering documentation patterns  
 
-### 📚 Organized Documentation Examples { data-toc-label="Organized Documentation Examples" }
+### 📚 Organized Documentation Examples 
 This site includes samples across multiple documentation types:
 
 - **User Guides**  
@@ -72,7 +72,7 @@ This project helped me practice:
 
 This MkDocs site is the foundation for a broader exploration of modern static documentation engines.
 
-### **Portfolio Roadmap** { data-toc-label="Portfolio Roadmap" }
+### **Portfolio Roadmap** 
 1. **MkDocs** — ✔️ Completed  
 2. **Hugo** — Work in progress  
 3. **Docusaurus** — Coming soon  

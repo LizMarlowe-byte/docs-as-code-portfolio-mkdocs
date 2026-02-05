@@ -12,7 +12,6 @@ theme:
       accent: deep purple
   features:
     - navigation.sections
-    - navigation.expand
     - navigation.indexes
     - toc.follow
     - content.code.copy
@@ -28,6 +27,7 @@ markdown_extensions:
   - toc:
       title: "Table of Contents"   # <-- add this line
       permalink: true
+      toc_depth: 2
   - tables
   - fenced_code
   - attr_list
