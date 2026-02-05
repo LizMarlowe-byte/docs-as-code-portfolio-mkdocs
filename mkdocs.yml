@@ -21,12 +21,12 @@ theme:
 
 plugins:
   - search
-  # - tags   # enable if you’ve installed mkdocs-material>=9.x and want tagging UI
 
 markdown_extensions:
   - admonition
   - footnotes
   - toc:
+      title: "Table of Contents"   # <-- add this line
       permalink: true
   - tables
   - fenced_code
@@ -43,10 +43,6 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  # ✅ New, supported emoji extension:
-  - material.extensions.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
   - About this Site: index.md
@@ -62,4 +58,4 @@ nav:
       - technical-reference-guides/Optiflow_CloudSync_CRM_Integration_Guide.md
       - technical-reference-guides/AuroraOps-Platform-5.2.0-Release-Notes.md
 
-strict: true   # keep strict on once warnings are gone
+strict: true
