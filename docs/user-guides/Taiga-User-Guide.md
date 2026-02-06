@@ -3,7 +3,7 @@ The _Taiga User Guide_ is a comprehensive guide for Agile project managers that 
 
 ---
 
-# Introduction to Taiga { data-toc-label="Introduction to Taiga" }
+## Introduction to Taiga { data-toc-label="Introduction to Taiga" }
 
 _Taiga_ is an open-source project management tool with an intuitive interface and comprehensive support for Agile methodologies, including Scrum and Kanban.
 
@@ -14,7 +14,7 @@ _Taiga_ is an open-source project management tool with an intuitive interface an
 * [Key features](#key-features)
 * [Target audience](#target-audience)
 
-## Overview
+### Overview
 
 Taiga helps project managers organize, track, and prioritize work using Agile methodologies, including Scrum and Kanban frameworks. As a powerful alternative to Jira or Trello, Taiga helps teams define deliverables, align priorities, and maintain transparency across ongoing activities and resource allocation.
 
@@ -29,7 +29,7 @@ As Taiga offers robust customization options, you can easily configure and custo
 --- 
 
 
-## Taiga deployment options
+### Taiga deployment options
 
 When choosing the best deployment option, consider your team’s size, familiarity with Linux and Docker, and the required level of technical support.
 
@@ -62,7 +62,7 @@ There are two main types of deployment options:
 > **Note:** For updated pricing information for all deployment options, see [Taiga's website](https://taiga.io/ "Taiga's website").
 
 
-## Key features
+### Key features
 
 - **Intuitive project management tool for Agile methodologies**: Organize, track, and prioritize work based on Agile entities using a user-friendly, intuitive user interface.
 - **Daily team stand-up management**: Drag and drop stories and tasks into clear status swim lanes on a Sprint Taskboard or Kanban board.
@@ -72,11 +72,11 @@ There are two main types of deployment options:
 - **Wiki content management**: Add content to a wiki, including documentation, specs, and out-of-the-box project information.
 - **Team collaboration and engagement**: Highlight team member skills and contributions on the unique Team page, such as nominating a _Bug Hunter_ for issue reporting.
 
-## Target audience
+### Target audience
 
 This guide is intended for project managers and team leads who manage work using Agile methodologies, including Scrum and Kanban frameworks.
 
-# Getting started { data-toc-label="Getting started" }
+## Getting started { data-toc-label="Getting started" }
 
 Create your account for the Taiga Cloud Basic deployment option. Then, set up your first project in Taiga.
 
@@ -85,7 +85,7 @@ Create your account for the Taiga Cloud Basic deployment option. Then, set up yo
 * [Create your account](#create-your-account)
 * [Create a project](#create-a-project)
 
-## Create your account
+### Create your account
 
 Create your account using the Taiga Cloud Basic deployment option.
 
@@ -117,7 +117,7 @@ Create your account using the Taiga Cloud Basic deployment option.
 
    After you create an account, you can create your first [project](#create-a-project). 
 
-## Create a project
+### Create a project
 
 Create a _project_, which is the top-level container for organizing your team's work. For example, in a Scrum environment, a project can contain all of your epics, stories, tasks, and issues related to a specific software release.
 
@@ -185,7 +185,7 @@ You can create a Scrum or Kanban project. You can also copy an existing project 
 > 💡 **Tip:** Before creating your user stories, you might find it useful to define your project settings, including adding team members to your project, customizing specific Agile entities (such as custom fields and adding new story points), and defining project modules and roles. If that is your preferred workflow, see [Defining project settings](#defining-project-settings).
 
 
-# Defining project settings { data-toc-label="Defining project settings" }
+## Defining project settings { data-toc-label="Defining project settings" }
 
 Define specific settings for your project, including updating project details, adding team members to the project, defining role permissions, and customizing specific Taiga attributes.
 
@@ -199,7 +199,7 @@ Define specific settings for your project, including updating project details, a
 * [Create a custom field](#create-a-custom-field)
 * [Add a new issue type](#add-a-new-issue-type)
 
-## Update project details
+### Update project details
 
 Update existing project settings (such as name, description, logo, owner, and public/private status). The fields are the same as during creation unless noted. For first-time setup, see [Create a project](#create-a-project). The items below call out update-only behaviors and additional options.
 
@@ -245,7 +245,7 @@ For field definitions shown during project creation (such as visibility and desc
 > **Note:** If needed, you can also delete the project from this screen.
 
 
-## Add new members
+### Add new members
 
 Add new members whom you want to contribute to your project. Typically, this includes people who have the skills and experience to do the stories and tasks you created (or plan on creating) in the backlog. It can also include managers, like a scrum master, who manages the team.
 
@@ -305,7 +305,7 @@ Add new members whom you want to contribute to your project. Typically, this inc
 
 > **Note:** If needed, you can delete members from this screen by selecting the **Delete member** icon.
 
-## Define role permissions
+### Define role permissions
 
 You can update the default permissions for defined roles (including **Design**, **Front**, **Back**, **Product Owner**, **Stakeholder**, and **External User** roles). In addition, you can create new roles and define specific permissions for these roles.
 
@@ -346,7 +346,7 @@ Role permissions help control who can create, edit, or delete Agile entities, su
 7. To create a new role, select **+ New Role** and set permissions for the new role.
 
 
-## Create a custom field
+### Create a custom field
 
 When creating a new Agile entity in Taiga (such as an epic, user story, or task), there are default fields that define the entity. For example, when creating a new user story, some of the default fields include **Subject**, **Description**, and **Points**. To customize these entities for your project, you can add custom fields.
 
@@ -392,7 +392,7 @@ When creating a new Agile entity in Taiga (such as an epic, user story, or task)
 
 ---
 
-## Add a new issue type
+### Add a new issue type
 
 By default, the types of issues included in a project include **Bug**, **Question**, and **Enhancement**. You can add new issue types to your project, as required. 
 
@@ -428,7 +428,7 @@ For example, you might want to add an issue type that is related to work that is
 
 ---
 
-# Scrum project workflow { data-toc-label="Scrum project workflow" }
+## Scrum project workflow { data-toc-label="Scrum project workflow" }
 
 In Scrum, work typically moves through two main phases: 
 
@@ -453,7 +453,7 @@ The following table summarizes each step in the workflow.
 |5                 |**[Assign user stories to a sprint](#assign-user-stories-to-a-sprint)**   |Sprint Execution        |From the backlog, according to deployment priorities, related work, and development dependencies, determine which user stories should be assigned to upcoming sprints, and assign them accordingly.| For the sprint, _DLogix-S1_, assign the following user stories: _Change UI Labels_, _Create New Filters_, and _Enhance Search_. 
 |6                 |**[Track progress and complete user stories](#track-progress-and-complete-user-stories)**        |Sprint Execution        |During a sprint, track the status of user stories on a sprint taskboard. During the daily standups, discuss any blockers, issues, and dependencies, and try to resolve them so that members can complete the work defined in the relevant stories. At the end of a sprint, all stories should have a completed status. |One week into the _DLogix-S1_ sprint, the stories, _Change UI Labels_ and _Create New Filters_ are _In Progress_, and _Enhance Search_ has a dependency on another team that is currently being resolved.
 
-# Scrum backlog management { data-toc-label="Scrum backlog management" }
+## Scrum backlog management { data-toc-label="Scrum backlog management" }
 
 During backlog management, you prepare and prioritize work by creating the key entities you will use to manage work on a daily basis: _epics_, _user stories_, and _tasks_. Managing these entities and following the Scrum workflow helps you organize and prioritize work, with the goal of delivering value within the defined timebox.
 
@@ -463,7 +463,7 @@ During backlog management, you prepare and prioritize work by creating the key e
 * [Create a user story](#create-a-user-story)
 * [Create a task](#create-a-task)
 
-## Create an epic
+### Create an epic
 
 Create an _epic_, which groups related user stories. Together, the user stories in an epic encapsulate work towards a specific product development. 
 
@@ -520,7 +520,7 @@ Review the [Scrum project workflow](#scrum-project-workflow)
 
 [**Create a user story**](#create-a-user-story)
 
-## Create a user story
+### Create a user story
 
 Create a _user story_ that defines specific development needed to accomplish the goal of the epic.
 
@@ -591,7 +591,7 @@ For example, in the epic called _User Management Accessibility Redesign_, create
 
 [Create a task](#create-a-task)
 
-## Create a task
+### Create a task
 
 Within each user story, create a _task_, which breaks up story work into smaller, manageable chunks that different members of the team can work on. 
 
@@ -653,7 +653,7 @@ The system saves the new task.
 
 [Scrum sprint execution](#scrum-sprint-execution)
 
-# Scrum sprint execution { data-toc-label="Scrum sprint execution" }
+## Scrum sprint execution { data-toc-label="Scrum sprint execution" }
 
 During sprint execution, you deliver the work that was prepared during backlog management. This phase includes planning sprints, assigning prioritized user stories to the sprint backlog, and coordinating daily progress. 
 
@@ -665,7 +665,7 @@ Teams work collaboratively to complete stories within the sprint’s timebox, re
 * [Assign user stories to a sprint](#assign-user-stories-to-a-sprint)
 * [Track progress and complete user stories](#track-progress-and-complete-user-stories)
 
-## Create a sprint
+### Create a sprint
 
 Create a _sprint_, a timeboxed period for completing user stories. Typically, multiple sprints are created well in advance of their start dates.
 
@@ -709,7 +709,7 @@ Complete all steps in [Scrum backlog management](#scrum-backlog-management)
 
 [Assign user stories to a sprint](#assign-user-stories-to-a-sprint)
 
-## Assign user stories to a sprint
+### Assign user stories to a sprint
 
 From the backlog, according to deployment priorities, related work, and development dependencies, determine which user stories should be assigned to upcoming sprints, and assign them accordingly.
 
@@ -751,7 +751,7 @@ The application calculates your velocity based on your story points allocated to
 
 [Track progress and complete user stories](#track-progress-and-complete-user-stories)
 
-## Track progress and complete user stories
+### Track progress and complete user stories
 
 During a sprint, track the status of user stories on the **Sprint Taskboard**. 
 
@@ -833,7 +833,7 @@ During the daily standups, discuss any blockers, issues, and dependencies, and t
 
 --- 
 
-# Project management beyond Scrum { data-toc-label="Project management beyond scrum" }
+## Project management beyond Scrum
 
 Beyond Scrum, Taiga supports other project management methodologies. In addition to organizing work into timeboxed sprints and managing tasks and user stories, you can configure Taiga to use a Kanban board for a higher-level view of project progress. Issues may be tracked independently of sprints, and the Team Board can be utilized for any type of project to display team member roles, skills, and contributions.
 
@@ -845,7 +845,7 @@ Beyond Scrum, Taiga supports other project management methodologies. In addition
 * [Manage the team board](#manage-the-team-board)
 
 
-## Manage a Kanban board
+### Manage a Kanban board
 
 Kanban is a high-level workflow-based Agile software development methodology for managing product development. Using Kanban, work is managed on cards, like virtual index cards or post-it notes, where each card details specific work to be completed. The Kanban board is used to track progress by moving each card from one stage to the next until completion.
 
@@ -901,7 +901,7 @@ Kanban is a high-level workflow-based Agile software development methodology for
 
 --- 
  
-## Manage issues
+### Manage issues
 
 Every project encounters issues, which may include bugs, questions, dependencies, or required enhancements necessary for completion. In Taiga, issues can be managed independently of Scrum or Kanban boards, allowing you to separate core work items from blockers and ancillary tasks. This approach helps maintain focus on primary deliverables while tracking and resolving obstacles efficiently.
 
@@ -968,7 +968,7 @@ Every project encounters issues, which may include bugs, questions, dependencies
 6. As needed, change the status of issues as required until completion.
 
 
-## Manage the team board
+### Manage the team board
 
 In Taiga, the team board can be utilized for any project type to display team member roles, skills, and contributions. It provides a centralized view of the people working on a project, including their roles, assignments, progress, strengths and skills. It helps teams align around shared objectives and manage capacity more effectively.
 

@@ -1,9 +1,10 @@
 # AuroraOps Platform 5.2.0 Release Notes
+
 The _AuroraOps Platform 5.2.0 Release Notes_ summarizes the new features, product enhancements, resolved issues, and known issues in **AuroraOps Platform 5.2.0**.
 
 ---
 
-<h1 id="auroraOps-platform-5.2.0-overview">📄 AuroraOps Platform 5.2.0 overview</h1> { data-toc-label="AuroraOps Platform 5.2.0 overview" }
+## <h2 id="auroraOps-5.2.0-overview">📄 AuroraOps 5.2.0 overview</h2> 
 
 **Release Version:** 5.2.0  
 **Release Date:** February 5, 2026
@@ -14,15 +15,15 @@ For questions or support, contact the AuroraOps Support Team at *support@aurorao
 
 ---
 
-<h1 id="target-audience">🎯 Target audience</h1> { data-toc-label="Target audience" }
+## <h2 id="target-audience">🎯 Target audience</h2>
 
 This document is intended for customers and partners who need to understand what’s new or improved in the AuroraOps Platform 5.2.0 release.
 
 ---
 
-<h1 id="new-features--enhancements">🚀 New features & enhancements </h1> { data-toc-label="New features & enhancements" }
+## <h2 id="new-features">🚀 New features </h2> 
 
-## 1. New sign-in flow
+### 1. New sign-in flow
 
 Along with new graphics, the system sign-in page features a new flow that supports multiple authentication methods. 
 
@@ -34,25 +35,25 @@ When an employee enters their user name, the system presents a screen appropriat
 
 ---
 
-## 2. Limit concurrent user sessions
+### 2. Limit concurrent user sessions
 
 You can now limit the number of concurrent sessions for each user. You can limit the number of IP addresses per user and/or the number of sessions a user can have per IP address. In mobile deployments, the service provider can set the user limits for each tenant.
 
 ---
 
-## 3. New Authentication Configuration Guide
+### 3. New Authentication Configuration Guide
 
 To consolidate authentication information, a new _Authentication Configuration Guide_ has been developed. This guide replaces the _SAML_, _OpenID Connect_, and _Active Directory Validation Tool_ guides.
 
 ---
 
-## 4. Support for multiple certificate authorities
+### 4. Support for multiple certificate authorities
 
 The platform now supports multiple certificate authorities. It is no longer required to have the same root certificate authority certificates deployed on system servers.
 
 ---
 
-## 5. Unified logging
+### 5. Unified logging
 
 This release unifies log retention and centralizes the management of logging levels across all sub‑systems. To support unified logging, the Recorded Sessions logger was updated to be consistent with other loggers.
 
@@ -65,7 +66,7 @@ This utility enables users to:
 
 ---
 
-## 6. API rate limiting controls 
+### 6. API rate limiting controls 
 
 Administrators can now configure tenant-level API rate limits from the AuroraOps Admin Console.
 
@@ -77,7 +78,7 @@ Administrators can now:
 
 ---
 
-## 7. SSO role mapping 
+### 7. SSO role mapping 
 
 AuroraOps now supports mapping SAML or OIDC attributes to AuroraOps user roles during login.
 
@@ -89,7 +90,7 @@ This includes:
 
 ---
 
-<h1 id="resolved-issues">🛠 Resolved issues </h1> { data-toc-label="Resolved issues" }
+## <h2 id="resolved-issues">🛠 Resolved issues </h2> 
 
 | Issue ID | Description | Resolution |
 |:----------|:-------------|:------------|
@@ -100,38 +101,38 @@ This includes:
 
 ---
 
-<h1 id="known-issues">⚠️ Known issues </h1> { data-toc-label="Known issues" }
+## <h2 id="known-issues">⚠️ Known issues </h2>
 
 
-## 1. Delayed webhook delivery under high load
+### 1. Delayed webhook delivery under high load
 Under very high API traffic, webhook dispatch may experience a delay of up to 45 seconds.  
 **Workaround:** Enable auto-retry in the Notification Settings page.
 
 ---
 
-## 2. Inaccurate CPU metric spikes on the Monitoring dashboard
+### 2. Inaccurate CPU metric spikes on the Monitoring dashboard
 Some tenants may see intermittent CPU spikes due to metrics sampling drift.  
 **Status:** Fix planned for version 5.2.1 (hotfix scheduled).
 
 ---
 
-## 3. Incomplete auto-generated API documentation for custom connectors
+### 3. Incomplete auto-generated API documentation for custom connectors
 Descriptions for custom connector schemas may generate without sample payloads.  
 **Workaround:** Refer to the _Connector Developer Guide_ for sample schema definitions.
 
 ---
 
-## 4. Saving a search twice produces an error
+### 4. Saving a search twice produces an error
 When saving from the **Advanced Search** dialog box, clicking the **Save** button twice can result in error notifications. The search has been saved and the notifications can be noted and ignored.
 **Workaround:** Save one search, log out and log back into the system, and save the next search.
 
 ---
 
-## 5. Limitation on Scheduling screen when groups are created during user session
+### 5. Limitation on Scheduling screen when groups are created during user session
 A user creates a group, configures a scheduling period for the group, and assigns it to a queue. The user navigates to the Scheduling screen, but is unable to edit any scheduling values or run any other actions for the newly created group.
 **Workaround:** Refresh the Scheduling screen. After refreshing the screen, the user privileges are updated and all the actions the user is entitled to are enabled.
 
-<h1 id="hotfixes">🔧 Hotfixes</h1> { data-toc-label="Hotfixes" }
+## <h2 id="hotfixes">🔧 Hotfixes</h2>
 
 | Hotfix ID | Release Date | Affected Version(s) | Description | Status |
 |:-----------|:--------------|:---------------------|:-------------|:--------|
@@ -141,9 +142,9 @@ A user creates a group, configures a scheduling period for the group, and assign
 
 ---
 
-<h1 id="additional-notes">📚 Additional notes </h1> { data-toc-label="Additional notes" }
+## <h2 id="additional-notes">📚 Additional notes </h2>
 
-## Deprecations
+### Deprecations
 
 - The Legacy File Importer API (`/v1/import`) will be deprecated in version **5.3.0**.  
 
@@ -151,7 +152,7 @@ A user creates a group, configures a scheduling period for the group, and assign
 
 ---
 
-## Upgrade Considerations
+### Upgrade Considerations
 
 - A service restart is required for tenants using the Workflow Orchestrator.  
 

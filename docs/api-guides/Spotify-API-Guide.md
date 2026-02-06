@@ -3,13 +3,13 @@ The _Spotify API Guide_ describes a RESTful API that provides access to comprehe
 
 ---
 
-# Overview { data-toc-label="Overview" }
+## Overview { data-toc-label="Overview" }
 
 _Spotify_ is a leading digital audio streaming service that gives you access to millions of songs, podcasts, and videos. Spotify is accessible for free with ads or through a paid Premium plan for ad-free listening, offline downloads, and higher audio quality. It allows users to create playlists, discover new music, and listen using various devices, including phones, computers, and tablets.
 
 The _Spotify Web API_ is a RESTful API with different endpoints that return JSON metadata about music artists, albums, and tracks, directly from the Spotify Data Catalog. It allows developers to build applications that interact with Spotify's music data and features, allowing them to retrieve music information, manage playlists, control playback, and access user data through standard web requests (RESTful). It provides access to Spotify's catalog (including artists, albums, and tracks), and user features, using authorization flows like Client Credentials for app data and Authorization Code for user-specific actions.
 
-## Common use cases
+### Common use cases
 
 - **Access catalog information**: Developers can retrieve metadata about artists, albums, tracks, and podcasts, including cover art, release dates, popularity ratings, and links to 30-second audio previews.
 
@@ -23,7 +23,7 @@ The _Spotify Web API_ is a RESTful API with different endpoints that return JSON
 
 - **Display profile data**: Users can authorize third-party web applications to display their personal profile information and playlists.
 
-## Technical details
+### Technical details
 
 - Supports resource-oriented endpoints under **https://api.spotify.com**, such as /albums, /artists, /tracks, and /playlists.
 - Supports standard HTTP methods: GET, POST, PUT, DELETE (204 responses when applicable).
@@ -31,13 +31,13 @@ The _Spotify Web API_ is a RESTful API with different endpoints that return JSON
 - Uses JSON exclusively; XML/HTML not natively supported.
 - Utilizes OAuth 2.0 with multiple flows for authentication and authorization, and requires the `Bearer` header with an access token.
 
-## Target audience
+### Target audience
 
 This guide is intended for developers who want to integrate Spotify features into web, mobile, or backend applications. It assumes familiarity with HTTP requests, JSON, and basic command-line tools, such as curl. No prior experience with OAuth 2.0 is required. The authentication section provides a clear, task‑oriented explanation to help new integrators get started quickly.
 
 ---
 
-# Base URL { data-toc-label="Base URL" }
+## Base URL { data-toc-label="Base URL" }
 
 All API requests are made to the following base URL. When constructing requests, append the endpoint paths to this root URL. For security, the API is served over **HTTPS**, and all endpoints are versioned.
 
@@ -48,13 +48,13 @@ https://api.spotify.com
 
 ---
 
-# Authentication { data-toc-label="Authentication" }
+## Authentication { data-toc-label="Authentication" }
 
 In the Spotify Web API, users grant consent for specific scopes to a registered client application. The application (server-side) authenticates to Spotify using its **client ID and client secret** (never exposed to end users) and requests access tokens to call the API. The server authenticates and authorizes the clients, and sends them access tokens, which are used by the clients to make API requests on behalf of the user or application.
 
 Access to protected resources is determined by one or several _scopes_. Scopes allow the application to access specific functionality (such as reading a playlist, modifying your library, or streaming) on behalf of a user. The set of scopes set during authorization determines the access permissions that the user is asked to grant.
 
-## OAuth authorization framework in Spotify
+### OAuth authorization framework in Spotify
 
 Spotify implements the [OAuth2](https://datatracker.ietf.org/doc/html/rfc6749) standard accordingly:
 
@@ -72,7 +72,7 @@ Spotify implements the [OAuth2](https://datatracker.ietf.org/doc/html/rfc6749) s
 |4       |Client |Spotify Server| The client uses the access token to send a request to access specific resources on behalf of the user or application.|
 
 
-## Spotify implements three OAuth grant types 
+### Spotify implements three OAuth grant types 
 
 The [OAuth2](https://datatracker.ietf.org/doc/html/rfc6749) standard defines four grant types (or flows) for authentication. Spotify implements three of these grant types.
 
@@ -92,13 +92,13 @@ Select the right grant type for the application you are building:
 
 ---
 
-# Rate limits { data-toc-label="Rate limits" }
+## Rate limits { data-toc-label="Rate limits" }
 
 A rate limit is the number of requests the API can receive in a specific time period. Rate limiting ensures efficient API performance and prevents abuse. Once the limit is reached, API requests from the client will fail.
 
 Spotify applies rate limiting and returns **429 Too Many Requests** when your app exceeds allowed thresholds. The exact limits are **not publicly documented** and may vary by app. Use the `Retry-After` response header to back off and retry after the indicated number of seconds.
 
-## 429 error response
+### 429 error response
 
 Use the information in the 429 response to slow down the number of API requests that it makes to the Web API. The header of the 429 response includes a `Retry-After` parameter with a value in seconds. Consider waiting for the number of seconds before your app calls the Web API again.
 
@@ -120,7 +120,7 @@ For example, the following 429 response contains a `Retry-After` header set to 3
 
 ```
 
-## App access modes (user access quotas)
+### App access modes (user access quotas)
 
 These modes control which users can access your app, and not the per‑second rate limit:
 
@@ -207,7 +207,7 @@ To apply for this mode, your business or organization first needs to be an appro
 
   If you have successfully submitted your app for review, **Sent** is displayed in blue on your app detail page. The app review team will review your form, evaluate it for compliance with Spotify's [Developer Policy](https://developer.spotify.com/policy), and send you feedback to the email address associated with your Spotify account. This review process can take up to 6 weeks.
 
-## Rate limit techniques
+### Rate limit techniques
 
 - **Use extended quota mode**: If you want your app to be used by many Spotify users at the same time, apply for extended quota mode.
 
@@ -220,11 +220,11 @@ To apply for this mode, your business or organization first needs to be an appro
 
 ---
 
-# HTTP status and error codes { data-toc-label="HTTP status and error codes" }
+## HTTP status and error codes { data-toc-label="HTTP status and error codes" }
 
 Spotify's Web API follows standard HTTP status codes, paired with JSON responses. 
 
-## Common HTTP status codes
+### Common HTTP status codes
 
 |Code           |Description |When It Occurs|
 |:--------------|:----------|:-------------|
@@ -242,7 +242,7 @@ Spotify's Web API follows standard HTTP status codes, paired with JSON responses
 |502            |Bad Gateway           | Error from upstream server                 |
 |503            |Service Unavailable   | Temporary server unavailability            |
 
-## Error response format
+### Error response format
 
 Most error codes (4xx or 5xx) adhere to this JSON format:
 
@@ -260,7 +260,7 @@ Most error codes (4xx or 5xx) adhere to this JSON format:
 
 ---
 
-# Pagination { data-toc-label="Pagination" }
+## Pagination { data-toc-label="Pagination" }
 
 Pagination allows you to retrieve large sets of data in smaller, manageable chunks by using specific parameters to limit the amount of data sent in each API response. 
 
@@ -288,7 +288,7 @@ Note the following:
 
 - To control page size and the starting point, use the `limit` and `offset` parameters.
 
-## Example: API request and response using pagination
+### Example: API request and response using pagination
 
 Here’s how to request the second page of playlists and what the response looks like:
 
@@ -319,7 +319,7 @@ curl "https://api.spotify.com/v1/me/playlists?offset=20&limit=20" \
 
 ---
 
-# Getting started { data-toc-label="Getting started" }
+## Getting started { data-toc-label="Getting started" }
 
 From the Spotify Developer Dashboard, set up your account. Then, create your first app, which provides you with a _client ID_ and _client secret_. Finally, request an _access token_, which is a string that contains the credentials and permissions you need to access a given resource. 
 
@@ -333,7 +333,7 @@ Every access token is valid for 1 hour. Include the `Authorization` header in yo
 
 - [Request an access token](#request-an-access-token)
 
-## Set up your account
+### Set up your account
 
 Set up your Spotify Web API account on the Spotify Developer Dashboard.
 
@@ -363,7 +363,7 @@ Set up your Spotify Web API account on the Spotify Developer Dashboard.
 
 ---
 
-## Create an app
+### Create an app
 
 After you set up your account, you can create your first app on the Spotify Developer Dashboard. 
 
@@ -417,7 +417,7 @@ By default, every app you create starts in _development_ mode, which limits usag
 
 However, if you want to define an _unlimited_ number of users, your organization can apply for [extended quota mode](#apply-for-extended-quota-mode). For details on both modes, see [App access modes (user access quotas)](#app-access-modes-user-access-quotas).
 
-## Request an access token
+### Request an access token
 
 You can now request an _access token_, which is a string that contains the credentials and permissions used to access a given resource (such as artists, albums, or tracks) or user data (for example, your profile or playlists).
 
@@ -488,25 +488,19 @@ The response returns an access token that is valid for 1 hour (or 3600 seconds).
 ```
 To use the access token, you must include the `Authorization` header in your API requests, where the value is the valid access token following the format: `Bearer <Access Token>`.
 
-For example: 
-
-```bash
--H "Authorization: Bearer <access_token>"
-
-```
 ---
 
-# Tutorial: Request artist data { data-toc-label="Tutorial: Request artist data" }
+## Tutorial: Request artist data { data-toc-label="Tutorial: Request artist data" }
 
 This tutorial describes how to retrieve information about an artist. It involves appending the Spotify ID of the artist to the **Get Artist** endpoint, and including the access token using the `Authorization` header in the API request. 
 
 > **Note:** The request includes using curl (Client URL) for the HTTP request.
 
-## Before you begin
+### Before you begin
 
 Complete all of the [Getting started](#getting-started) tasks, including setting up an account, creating an app, and requesting an access token.
 
-## Step 1: Get the Spotify ID of an artist
+### Step 1: Get the Spotify ID of an artist
 
 For the **Get Artist** endpoint, you need the **Spotify ID** of the artist. 
 
@@ -520,7 +514,7 @@ Use the Spotify Desktop App to get the **Spotify ID**:
 
    The Spotify ID is the final path segment in the URL, after `open.spotify.com/artist/`. For example, in `https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb`, the ID is `4Z8W4fKeB5YxbusRsdQVPb`.
 
-## Step 2: Start the API request with the **Get Artist** endpoint
+### Step 2: Start the API request with the **Get Artist** endpoint
 
 Append the Spotify ID to the **Get Artist** endpoint (**https://api.spotify.com/v1/artists/{artist_id}**).
 
@@ -532,7 +526,7 @@ curl "https://api.spotify.com/v1/artists/4Z8W4fKeB5YxbusRsdQVPb" \
 
 ```
 
-## Step 3: Include the access token in the API request
+### Step 3: Include the access token in the API request
 
 Include an access token (recently generated) using the `Authorization` header.
 
@@ -543,62 +537,18 @@ curl "https://api.spotify.com/v1/artists/4Z8W4fKeB5YxbusRsdQVPb" \
      -H "Authorization: Bearer BQDBKJ5eo5jxbtpWjVOj7ryS84khybFpP_lTqzV7uV-T_m0cTfwvdn5BnBSKPxKgEb11"
 ```
 
-## Step 4: Verify a successful response
+### Step 4: Verify a successful response
 
 Verify that the API returns a successful JSON response, which includes information about the artist.
 
-For example:
 
-```
-{
-  "external_urls": {
-    "spotify": "https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb"
-  },
-  "followers": {
-    "href": null,
-    "total": 7625607
-  },
-  "genres": [
-    "alternative rock",
-    "art rock",
-    "melancholia",
-    "oxford indie",
-    "permanent wave",
-    "rock"
-  ],
-  "href": "https://api.spotify.com/v1/artists/4Z8W4fKeB5YxbusRsdQVPb",
-  "id": "4Z8W4fKeB5YxbusRsdQVPb",
-  "images": [
-    {
-      "height": 640,
-      "url": "https://i.scdn.co/image/ab6761610000e5eba03696716c9ee605006047fd",
-      "width": 640
-    },
-    {
-      "height": 320,
-      "url": "https://i.scdn.co/image/ab67616100005174a03696716c9ee605006047fd",
-      "width": 320
-    },
-    {
-      "height": 160,
-      "url": "https://i.scdn.co/image/ab6761610000f178a03696716c9ee605006047fd",
-      "width": 160
-    }
-  ],
-  "name": "Radiohead",
-  "popularity": 79,
-  "type": "artist",
-  "uri": "spotify:artist:4Z8W4fKeB5YxbusRsdQVPb"
-}
-
-```
 ---
 
-# API reference { data-toc-label="API reference" }
+## API reference { data-toc-label="API reference" }
 
 The Spotify Web API Reference is designed to help developers integrate Spotify features into applications by providing clear examples, endpoint details, and request/response formats.
 
-## API reference overview
+### API reference overview
 
 The API reference provides curated examples of Spotify Web API endpoints for portfolio purposes. Endpoints are grouped by resource type for easier navigation. 
 
@@ -613,7 +563,7 @@ Each endpoint includes the following data:
 - Response example
 - Response elements
 
-### Resource groups and endpoints
+#### Resource groups and endpoints
 
 The following table summarizes the resource groups and their associated endpoints included in this guide:
 
@@ -633,7 +583,7 @@ The following table summarizes the resource groups and their associated endpoint
 |                           |                                                                                        |**[Remove playlist items](#remove-playlist-items)**|Removes one or more items from a user's playlist.
 
 
-### Headers
+#### Headers
 
 The following headers are commonly used:
 
@@ -643,7 +593,7 @@ The following headers are commonly used:
 |`Content-Type` |Media type of the request body.| conditional |Note: <ul><li>Use **application/json** for JSON request bodies (such as POST/PUT with a body).</li><li> Use **application/x-www-form-urlencoded** for token requests.</li><li>Omit when there is no body (such as a simple GET).</li></ul>|
 
 
-### Error responses
+#### Error responses
 
 All endpoints return errors in a consistent JSON format when something goes wrong. The response includes an error object with two fields:
 
@@ -663,11 +613,11 @@ For example:
 ```
 For more information, see [HTTP Status and Error Codes](#http-status-and-error-codes).
 
-## Albums 🎵
+### Albums 🎵
 
 Endpoints related to retrieving metadata for a single or multiple music albums, including tracks, artists, and availability by market.
 
-### Endpoints
+#### Endpoints
 
 - [Get album](#get-album)
 - [Save albums for current user](#save-albums-for-current-user)
@@ -677,15 +627,15 @@ Endpoints related to retrieving metadata for a single or multiple music albums, 
 
 Retrieves Spotify catalog information for a single album.
 
-### Method
+#### Method
 
 GET
 
-### Endpoint
+#### Endpoint
 
 https://api.spotify.com/v1/albums/{id}
 
-### Request syntax
+#### Request syntax
 
 ```
 GET https://api.spotify.com/v1/albums/{id}
@@ -694,14 +644,14 @@ Authorization: Bearer <access_token>
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
 |`id`            |Spotify ID of the album.    |string|required |The Spotify ID is the base-62 identifier found at the end of the Spotify URI for an album. <br>To get the Spotify ID of an album, from the Spotify Desktop Client, right-click on the album name. <br>For example: **6rqhFgbbKwnb9MLmUQDhG6**|
 |`market`        |[ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)|string|optional |Note: <ul><li>If a country code is specified, only content that is available in that market will be returned.</li><li>If a valid user access token is specified in the request header, the country associated with the user account will take priority over this parameter.</li><li>If neither market or user country are provided, the content is considered unavailable for the client.</li></ul>|
 
-### Request example
+#### Request example
 
 ```
 curl --request GET \
@@ -710,7 +660,7 @@ curl --request GET \
 
 ```
 
-### Response example
+#### Response example
 
 ```
 
@@ -820,7 +770,7 @@ curl --request GET \
 
 ```
 
-### Response elements
+#### Response elements
 
 |Element        |Description                |Type    |Notes|
 |:--------------|:--------------------------|:-------|:-----| 
@@ -867,15 +817,15 @@ curl --request GET \
 
 Saves one or more albums to the current user's music library.
 
-### Method
+#### Method
 
 PUT
 
-### Endpoint
+#### Endpoint
 
 https://api.spotify.com/v1/me/albums 
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -885,20 +835,20 @@ Authorization: Bearer <access_token>
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
 |`ids`            |Comma-separated list of the Spotify IDs for albums.|string|required |Maximum number of IDs: 20. Example:`ids`= **382ObEPsp2rxGrnsizN5TX,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc** |
 
-### PUT body
+#### PUT body
 
 |Element        |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
 |`ids`            |JSON array of Spotify IDs. |array of strings| optional  |A maximum of 50 items can be specified in one request. <br>Example: "**4iV5W9uYEdYUVa79Axb7Rh**", "**1301WleyT98MSxVHPZCA6M**". <br>If the `ids` parameter is present in the query string, any IDs listed in the body are ignored. |
 
 
-### Request example
+#### Request example
 
 ```
 
@@ -914,7 +864,7 @@ curl --request PUT \
 
 ```
 
-### Response example
+#### Response example
 
 If successful (**200** status code), the album is saved.
 
@@ -923,15 +873,15 @@ If successful (**200** status code), the album is saved.
 
 Removes one or more albums from the current user's music library.
 
-### Method
+#### Method
 
 DELETE
 
-### Endpoint
+#### Endpoint
 
 https://api.spotify.com/v1/me/albums
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -941,20 +891,20 @@ Authorization: Bearer <access_token>
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
 |`ids`            |Comma-separated list of the Spotify IDs for albums.|string|required |Maximum number of IDs: 20. <br>Example:`ids`= **382ObEPsp2rxGrnsizN5TX,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc** |
 
-### DELETE body
+#### DELETE body
 
 |Element        |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
 |`ids`            |JSON array of Spotify IDs. |array of strings| optional  |A maximum of 50 items can be specified in one request. <br>Example: "**4iV5W9uYEdYUVa79Axb7Rh**", "**1301WleyT98MSxVHPZCA6M**". <br>If the `ids` parameter is present in the query string, any IDs listed in the body are ignored. |
 
 
-### Request example
+#### Request example
 
 ```
 
@@ -970,16 +920,16 @@ curl --request DELETE \
 
 ```
 
-### Response example
+#### Response example
 
 If successful (**200** status code), the specified albums have been removed from the library.
 
 
-## Artists 👤
+### Artists 👤
 
 Endpoints related to retrieving Spotify catalog information for a single or multiple artists by their unique Spotify IDs.
 
-### Endpoints
+#### Endpoints
 
 - [Get several artists](#get-several-artists)
 - [Get artist's top tracks](#get-artists-top-tracks)
@@ -988,15 +938,15 @@ Endpoints related to retrieving Spotify catalog information for a single or mult
 
 Retrieves Spotify catalog information for several artists based on their Spotify IDs.
 
-### Method
+#### Method
 
 GET
 
-### Endpoint
+#### Endpoint
 
 https://api.spotify.com/v1/artists
 
-### Request syntax
+#### Request syntax
 
 ```
 GET https://api.spotify.com/v1/artists
@@ -1011,7 +961,7 @@ Authorization: Bearer <access_token>
 |`ids`          |Comma-separated list of Spotify artist IDs.|string|required |Maximum number of IDs: 50. <br>Example: `ids`= **2CIMQHirSU0MQqyYHq0eOx,57dN52uHvrHOxijzpIgu3E,1vCWHaC5f2uS3yhpwWbIA6**|
 
 
-### Request example
+#### Request example
 
 ```
 
@@ -1021,7 +971,7 @@ curl --request GET \
 
 ```
 
-### Response example
+#### Response example
 
 ```
 {
@@ -1057,7 +1007,7 @@ curl --request GET \
 
 ```
 
-### Response elements
+#### Response elements
 
 |Element        |Description|Type    |Notes|
 |:--------------|:----------|:-------|-----| 
@@ -1083,15 +1033,15 @@ curl --request GET \
 
 Retrieves Spotify catalog information about an artist's top tracks by country.
 
-### Method
+#### Method
 
 GET
 
-### Endpoint
+#### Endpoint
 
 https://api.spotify.com/v1/artists/{id}/top-tracks
 
-### Request syntax
+#### Request syntax
 
 ```
 GET https://api.spotify.com/v1/artists/{id}/top-tracks
@@ -1100,14 +1050,14 @@ Authorization: Bearer <access_token>
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
 |`id`            |Spotify ID of the artist.    |string|required |The Spotify ID is the base-62 identifier found at the end of the Spotify URI for an artist. <br>To get the Spotify ID of an artist, from the Spotify Desktop Client, right-click on the artist name. <br>For example: **6rqhFgbbKwnb9MLmUQDhG6**|
 |`market`        |[ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)|string|optional |Note:<ul><li>If a country code is specified, only content that is available in that market will be returned.</li><li> If a valid user access token is specified in the request header, the country associated with the user account will take priority over this parameter.</li><li> If neither market or user country are provided, the content is considered unavailable for the client.</li></ul> Example: `market`= **ES**|
 
-### Request example
+#### Request example
 
 ```
 
@@ -1117,7 +1067,7 @@ curl --request GET \
 
 ```
 
-### Response example
+#### Response example
 
 ```
 {
@@ -1209,7 +1159,7 @@ curl --request GET \
 }
 ```
 
-### Response elements
+#### Response elements
 
 |Element        |Description|Type    |Notes|
 |:--------------|:----------|:-------|-----| 
@@ -1232,11 +1182,11 @@ curl --request GET \
 |`tracks.artists`        | Artists who performed the track. |array of simplified artist objects |Each artist object includes a link in `href` to more detailed information about the artist.|
 
 <a id="player"></a>
-## Player ▶️
+### Player ▶️
 
 Endpoints related to performing playback actions on a specific device.
 
-### Endpoints
+#### Endpoints
 
 - [Get available devices](#get-available-devices)
 - [Pause playback](#pause-playback)
@@ -1246,15 +1196,15 @@ Endpoints related to performing playback actions on a specific device.
 
 Retrieves information about a user's available Spotify Connect devices. Availability can vary by device type and compatibility. Therefore, some devices might _not_ appear in the response.
 
-### Method
+#### Method
 
 GET
 
-### Endpoint
+#### Endpoint
 
 https://api.spotify.com/v1/me/player/devices
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -1264,12 +1214,12 @@ Authorization: Bearer <access_token>
 
 ```
 
-### Query parameters
+#### Query parameters
 
 No query parameters are supported for this endpoint.
 
 
-### Request example
+#### Request example
 
 ```
 
@@ -1279,7 +1229,7 @@ curl --request GET \
 
 ```
 
-### Response example
+#### Response example
 
 ```
 {
@@ -1299,7 +1249,7 @@ curl --request GET \
 
 ```
 
-### Response elements
+#### Response elements
 
 |Element        |Description|Type    |Notes|
 |:--------------|:----------|:-------|-----| 
@@ -1317,15 +1267,15 @@ curl --request GET \
 
 Pauses playback on a user's account. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.
 
-### Method
+#### Method
 
 PUT
 
-### Endpoint 
+#### Endpoint 
 
 https://api.spotify.com/v1/me/player/pause
 
-### Request syntax
+#### Request syntax
 
 ```
 PUT https://api.spotify.com/v1/me/player/pause
@@ -1333,14 +1283,14 @@ PUT https://api.spotify.com/v1/me/player/pause
 Authorization: Bearer <access_token>
 
 ```
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
 |`device_id`    |ID of the device this command is targeting. |string |optional  |If not supplied, this user's currently active device is the target. Example: `device_id`= **0d1841b0976bae2a3a310dd74c0f3df354899bc8** |
 
 
-### Request example
+#### Request example
 
 ```
 
@@ -1350,7 +1300,7 @@ curl --request PUT \
 
 ```
 
-### Response example
+#### Response example
 
 If successful (**204** status code), playback on the device is paused.
 
@@ -1360,15 +1310,15 @@ Skips to the next track in the user's queue.
 
 > _**Note:** This API only works for users who have Spotify Premium. The order of execution is _not_ guaranteed when you use this API with other Player API endpoints.
 
-### Method
+#### Method
 
 POST
 
-### Endpoint 
+#### Endpoint 
 
 https://api.spotify.com/v1/me/player/next
 
-### Request syntax
+#### Request syntax
 
 ```
 POST https://api.spotify.com/v1/me/player/next
@@ -1376,13 +1326,13 @@ POST https://api.spotify.com/v1/me/player/next
 Authorization: Bearer <access_token>
 
 ```
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
 |`device_id`    |ID of the device this command is targeting. |string |optional  |If not supplied, this user's currently active device is the target. Example: `device_id`= **0d1841b0976bae2a3a310dd74c0f3df354899bc8** |
 
-### Request example
+#### Request example
 
 ```
 
@@ -1392,16 +1342,16 @@ curl --request POST \
 
 ```
 
-### Response example
+#### Response example
 
 If successful (**204** status code), the device skips to the next track in the queue.
 
 
-## Playlists 📂
+### Playlists 📂
 
 Endpoints related to performing actions on a specific playlist owned by a Spotify user.
 
-### Endpoints
+#### Endpoints
 
 - [Get playlist](#get-playlist)
 - [Update playlist items](#update-playlist-items)
@@ -1412,15 +1362,15 @@ Endpoints related to performing actions on a specific playlist owned by a Spotif
 
 Retrieves a playlist owned by a Spotify user.
 
-### Method
+#### Method
 
 GET
 
-### Endpoint
+#### Endpoint
 
  https://api.spotify.com/v1/playlists/{playlist_id}
 
-### Request syntax
+#### Request syntax
 
 ```
 GET https://api.spotify.com/v1/playlists/{playlist_id}
@@ -1429,7 +1379,7 @@ Authorization: Bearer <access_token>
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
@@ -1437,7 +1387,7 @@ Authorization: Bearer <access_token>
 |`market`        |[ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)|string|optional |Note:<ul><li>If a country code is specified, only content that is available in that market will be returned.</li><li> If a valid user access token is specified in the request header, the country associated with the user account will take priority over this parameter.</li><li> If neither market or user country are provided, the content is considered unavailable for the client.</li></ul>|
 
 
-### Request example
+#### Request example
 
 ```
 
@@ -1447,7 +1397,7 @@ curl --request GET \
 
 ```
 
-### Response example
+#### Response example
 
 ```
 {
@@ -1590,7 +1540,7 @@ curl --request GET \
 
 ```
 
-### Response elements
+#### Response elements
 
 |Element        |Description|Type    |Notes|
 |:--------------|:----------|:-------|-----| 
@@ -1622,15 +1572,15 @@ curl --request GET \
 
 Reorders or replaces items in a playlist, depending on the request's parameters. Replacing items in a playlist overwrites its existing items. This operation can be used for replacing or clearing items in a playlist.
 
-### Method
+#### Method
 
 PUT
 
-### Endpoint
+#### Endpoint
 
 https://api.spotify.com/v1/playlists/{playlist_id}/tracks
 
-### Request syntax
+#### Request syntax
 
 ```
 PUT https://api.spotify.com/v1/playlists/{playlist_id}/tracks
@@ -1651,14 +1601,14 @@ Content-Type: application/json
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
 |`playlist_id`            |Spotify ID of the playlist.    |string|required |The Spotify ID is the base-62 identifier found at the end of the Spotify URI for a playlist. <br>To get the Spotify ID of a playlist, from the Spotify Desktop Client, right-click on the playlist name. <br>For example: **3cEYpjA9oz9GiPac4AsH4n**|
 |`uris`         | Comma-separated list of Spotify URIs to update, which can be track or episode URIs.|string| optional | Examples: `uris`= **spotify:track:4iV5W9uYEdYUVa79Axb7Rh**,**spotify:track:1301WleyT98MSxVHPZCA6M**,**spotify:episode:512ojhOuo1ktJprKbVcKyQ**. <br>A maximum of 100 items can be updated in one request.|
 
-### PUT body
+#### PUT body
 
 |Element        |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
@@ -1668,7 +1618,7 @@ Content-Type: application/json
 |`range_length`        |Number of items to be reordered.    |integer|optional  | Range of items to be reordered begins from the `range_start` position, and includes the `range_length` subsequent items. <br>Example: To move the items at index 9-10 to the start of the playlist:<ul><li>Set `range_start` to **9**.</li><li>Set `range_length` to **2**.</li></ul>|
 |`snapshot_id`         |Snapshot ID of the playlist against which you want to make the changes.|string |optional|   |
 
-### Request example
+#### Request example
 
 ```
 curl --request PUT \
@@ -1683,7 +1633,7 @@ curl --request PUT \
 
 ```
 
-### Response example
+#### Response example
 
 If successful (**200** status code), the API returns the snapshot ID for the updated playlist.
 
@@ -1700,15 +1650,15 @@ For example:
 
 Adds one or more items to a user's playlist.
 
-### Method
+#### Method
 
 POST
 
-### Endpoint
+#### Endpoint
 
 https://api.spotify.com/v1/playlists/{playlist_id}/tracks
 
-### Request syntax
+#### Request syntax
 
 ```
 POST https://api.spotify.com/v1/playlists/{playlist_id}/tracks
@@ -1731,7 +1681,7 @@ Content-Type: application/json
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
@@ -1739,14 +1689,14 @@ Content-Type: application/json
 |`position`               | Position to which to insert the items, based on a zero-based index.| integer |optional |Note:<ul><li>To insert items in the first position, enter: `position`=0.</li><li> To insert items in the third position, enter: `position`=3.</li><li> If omitted, items are appended to the playlist.</li><li> Items are added in the order in which they are listed in the query string or request body. </li></ul>
 |`uris`         | Comma-separated list of Spotify URIs to add, which can be track or episode URIs.|string| optional | Example: `uris`= **spotify:track:4iV5W9uYEdYUVa79Axb7Rh**,**spotify:track:1301WleyT98MSxVHPZCA6M**,**spotify:episode:512ojhOuo1ktJprKbVcKyQ**. Note:<ul><li>A maximum of 100 items can be added in one request.</li><li> When adding a large number of items, it is recommended to pass them in the request body. For example: `uris`=[**spotify%3Atrack%3A4iV5W9uYEdYUVa79Axb7Rh**,**spotify%3Atrack%3A1301WleyT98MSxVHPZCA6M**]</li></ul> |
 
-### POST body
+#### POST body
 
 |Element        |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
 |`uris`        |Array of Spotify URIs (tracks or episodes).|array|required|Provide as a query parameter or in the request body. Max 100 items.|
 |`position`    | Position to which to insert the items, based on a zero-based index.| integer |optional |Note:<ul><li>To insert items in the first position, enter: `position`=0.</li><li> To insert items in the third position, enter: `position`=3.</li><li> If omitted, items are appended to the playlist.</li><li> Items are added in the order in which they appear in the uris array. For example: `uris`: [**"spotify:track:4iV5W9uYEdYUVa79Axb7Rh","spotify:track:1301WleyT98MSxVHPZCA6M"**], `position`: **3**}</li></ul>
 
-### Request example
+#### Request example
 
 ```
 curl --request POST \
@@ -1762,7 +1712,7 @@ curl --request POST \
 
 ```
 
-### Response example
+#### Response example
 
 If successful (**201** status code), the API returns the snapshot ID for the updated playlist.
 
@@ -1779,15 +1729,15 @@ For example:
 
 Removes one or more items from a user's playlist.
 
-### Method
+#### Method
 
 DELETE
 
-### Endpoint
+#### Endpoint
 
 https://api.spotify.com/v1/playlists/{playlist_id}/tracks
 
-### Request syntax
+#### Request syntax
 
 ```
 DELETE https://api.spotify.com/v1/playlists/{playlist_id}/tracks
@@ -1814,13 +1764,13 @@ Content-Type: application/json
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
 |`playlist_id`  |Spotify ID of the playlist.    |string|required |The Spotify ID is the base-62 identifier found at the end of the Spotify URI for a playlist. <br>To get the Spotify ID of a playlist, from the Spotify Desktop Client, right-click on the playlist name. <br>For example: **3cEYpjA9oz9GiPac4AsH4n**|
 
-### DELETE body
+#### DELETE body
 
 |Element        |Description|Type  |Required|Notes|
 |:--------------|:----------|:-----|:-------|-----| 
@@ -1828,7 +1778,7 @@ Content-Type: application/json
 |`tracks.uri`    | Spotify URI.| string |required|    |
 |`snapshot_id`   | Snapshot ID of the playlist against which you want to make the changes. The API validates that the specified items exist in the specified positions, and then makes the updates, even if more recent updates have been made to the playlist.|string|required|     |
 
-### Request example
+#### Request example
 
 ```
 curl --request DELETE \
@@ -1846,7 +1796,7 @@ curl --request DELETE \
 
 ```
 
-### Response example
+#### Response example
 
 If successful (**200** status code), the API returns the snapshot ID for the updated playlist.
 

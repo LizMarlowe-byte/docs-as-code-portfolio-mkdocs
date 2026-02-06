@@ -3,11 +3,11 @@ The _OpenWeatherMap API Guide_ describes a RESTful API that provides access to c
 
 ---
 
-# Overview { data-toc-label="Overview" }
+## Overview { data-toc-label="Overview" }
 
 The _OpenWeatherMap_ API is a weather data service that provides access to comprehensive data sourced from global and local models, satellites, radars, and weather stations. Developers can use the API to retrieve current weather conditions, hourly and daily forecasts, historical data, and bulk weather information for multiple locations worldwide.
 
-## Common use cases
+### Common use cases
 
 - Build real-time weather dashboards for websites or applications.
 - Check weather forecasts for outdoor events and trigger contingency plans for extreme conditions.
@@ -16,20 +16,20 @@ The _OpenWeatherMap_ API is a weather data service that provides access to compr
 - Adjust energy consumption based on temperature trends.
 - Send emergency alerts for severe weather conditions, such as storms, hurricanes, and floods.
 
-## Technical details
+### Technical details
 
 - Organized around REST principles with resource-oriented URLs.
 - Supports JSON by default, with optional XML and HTML formats.
 - Uses query parameters, standard HTTP response codes, and API key–based authentication.
 
 
-## Target audience
+### Target audience
 
 This guide is intended for developers who want to integrate real-time, forecasted, or historical weather data into web, mobile, IoT, or backend applications using the OpenWeatherMap API. It assumes basic familiarity with HTTP requests, JSON, and API keys. Developers new to weather APIs can follow the step-by-step tutorial to get started quickly, while experienced developers can use the reference sections to implement specific products and query parameters.
 
 ---
 
-# Base URL { data-toc-label="Base URL" }
+## Base URL { data-toc-label="Base URL" }
 
 OpenWeather uses multiple service hosts. 
 
@@ -45,11 +45,11 @@ All requests _must_ use **HTTPS**. For the correct path and parameters, see each
 
 ---
 
-# Authentication { data-toc-label="Authentication" }
+## Authentication { data-toc-label="Authentication" }
 
 The OpenWeatherMap API uses [API keys](#create-more-api-keys) to authenticate requests. All API requests _must_ be made over HTTPS. Calls made over plain HTTP and API requests without authentication _will fail_.
 
-## Headers
+### Headers
 
 OpenWeather authenticates via the `appid` **query parameter** (no auth header). Include `appid` in every request.
 
@@ -63,13 +63,13 @@ Where **appid=123abc456def** is your dedicated API key (passed as a query parame
 
 ---
 
-# Rate limits { data-toc-label="Rate limits" }
+## Rate limits { data-toc-label="Rate limits" }
 
 A rate limit is the number of requests the API can receive in a specific time period. Rate limiting ensures efficient API performance and prevents abuse. Once the limit is reached, API requests from the client will fail.
 
 Rate limits and billing vary by _product_ and _subscription_. For example, **One Call API 3.0 (by call)** includes **1,000 calls/day free**, and then **$0.0015 per call** beyond that daily quota. Before you ship, check each product’s pricing and limits. 
 
-## Subscription Plans
+### Subscription Plans
 
 Each tier offers specific rate limits and monthly quotas for API calls:
 
@@ -84,74 +84,18 @@ Each tier offers specific rate limits and monthly quotas for API calls:
 > _**Note:** These values are intentionally normalized for portfolio demonstration and do _not_ reflect current OpenWeatherMap pricing tiers.
 
 
-## Handling 429 errors (Too Many Requests)
+### Handling 429 errors (Too Many Requests)
 
 If your application exceeds per‑minute or daily quotas, the API responds with an HTTP 429 error response. Implement exponential backoff and honor the `Retry-After` header (when available). Consider caching frequently requested data and batching requests. In addition, select a subscription tier aligned with your expected load. If repeated 429s occur, reduce call frequency or upgrade your plan.
 
-### Example: 429 error response
-
-```python
-import time
-import requests
-
-API_KEY = "YOUR_API_KEY"
-BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
-PARAMS = {"q": "London", "appid": API_KEY}
-
-def call_owm_with_backoff(url, params, max_retries=5, base_delay=1.0):
-    """Call OWM with exponential backoff on 429. Stops on non-retryable errors."""
-    attempt = 0
-
-    while True:
-        resp = requests.get(url, params=params, timeout=10)
-        if resp.status_code == 200:
-            return resp.json()
-
-        if resp.status_code == 429:
-            # Try to honor Retry-After if server provides it
-            retry_after = resp.headers.get("Retry-After")
-            if retry_after is not None:
-                delay = float(retry_after)
-            else:
-                # Exponential backoff with jitter
-                delay = base_delay * (2 ** attempt) + (0.25 * time.time() % 0.25)
-
-            attempt += 1
-            if attempt > max_retries:
-                raise RuntimeError(
-                    f"Rate limit exceeded: too many 429 responses (attempts={attempt})."
-                )
-
-            print(f"Received 429. Backing off for {delay:.2f}s (attempt {attempt}/{max_retries})...")
-            time.sleep(delay)
-            continue
-
-        # For other HTTP errors, raise with details
-        resp.raise_for_status()
-
-# Usage
-try:
-    data = call_owm_with_backoff(BASE_URL, PARAMS)
-    print("Weather:", data.get("weather"))
-except Exception as e:
-    print(f"Request failed: {e}")
-
-```
 ---
 
-# HTTP status and error codes { data-toc-label="HTTP status and error codes" }
+## HTTP status and error codes { data-toc-label="HTTP status and error codes" }
 
 Errors and statuses are returned with appropriate HTTP status codes and a structured JSON body.
 
-## Example: JSON error response (400)
 
-```json
-
-{"cod": "400", "message": "bad query"}
-
-```
-
-## Common HTTP status codes
+### Common HTTP status codes
 
 |Code           |Description|When It Occurs|
 |:--------------|:----------|:-------------|
@@ -165,13 +109,13 @@ Errors and statuses are returned with appropriate HTTP status codes and a struct
 
 ---
 
-# Pagination { data-toc-label="Pagination" }
+## Pagination { data-toc-label="Pagination" }
 
 Pagination allows you to retrieve large sets of data in smaller, manageable chunks by using specific parameters to limit the amount of data sent in each API response. 
 
 Unlike many APIs, OpenWeatherMap does _not_ support traditional pagination mechanisms, such as `limit`, `offset`, or `page` parameters. Instead, it provides a simple way to control the number of results returned using the `cnt` parameter on certain endpoints.
 
-## How `cnt` works
+### How `cnt` works
 
 The `cnt` parameter specifies the maximum number of data points to return in the response. 
 
@@ -191,7 +135,7 @@ GET https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=51.5085&lon=-0.1
 > **Note:** `cnt` only limits the number of results. It does _not_ provide true pagination (such as page numbers or offsets). To retrieve additional data, you must send separate requests with different parameters.
 ---
 
-# Getting started { data-toc-label="Getting started" }
+## Getting started { data-toc-label="Getting started" }
 
 Create an account, which generates your API key. You can create additional API keys on your account page, and edit, delete, or deactivate your keys.
 
@@ -200,7 +144,7 @@ Create an account, which generates your API key. You can create additional API k
 - [Create an account](#create-an-account)
 - [Create more API keys](#create-more-api-keys)
 
-## Create an account
+### Create an account
 
 To get started using the OpenWeatherMap API, create an account. Once your account is created, the system generates your default API key.
 
@@ -229,7 +173,7 @@ To get started using the OpenWeatherMap API, create an account. Once your accoun
 > **Note:** Always make sure to use your API key in every API call.
 
 
-## Create more API keys
+### Create more API keys
 
 When you created your account, the OpenWeatherMap API generated a default API key for you. If needed, you can create additional API keys.
 
@@ -249,13 +193,13 @@ When you created your account, the OpenWeatherMap API generated a default API ke
 
 ---
 
-# Tutorial: Get current weather for a city { data-toc-label="Tutorial: Get current weather for a city" }
+## Tutorial: Get current weather for a city { data-toc-label="Tutorial: Get current weather for a city" }
 
 This tutorial describes how to retrieve the current weather for a specific city. It involves using your API key and testing it with curl (Client URL) to verify that the OpenWeatherMap API returns a valid response.
 
 > **Note:** Curl is a command-line tool used to transfer data to or from a server using various protocols - most commonly **HTTP** and **HTTPS**.
 
-## Before you begin
+### Before you begin
 
 - Complete all of the [Getting Started](#getting-started) tasks, including creating an account and getting an API key.
 
@@ -264,11 +208,11 @@ This tutorial describes how to retrieve the current weather for a specific city.
    - For _macOS/Linux_, it is usually pre-installed. 
    - For _Windows_, [download and install curl](https://curl.se/windows/) or use Git Bash.
 
-## Step 1: Copy your API key
+### Step 1: Copy your API key
 
 From your [account page](https://home.openweathermap.org/api_keys), copy your API key. You will need this key for all API requests.
 
-## Step 2: Get geographic coordinates of a location
+### Step 2: Get geographic coordinates of a location
 
 Many OpenWeather endpoints accept city names (`q`), zip or postal codes, or coordinates. Some products (such as **One Call API 3.0**) require coordinates. In practice, using the Geocoding API to resolve to `lat`/`lon` is the most reliable way to target the correct location, especially for ambiguous city names.
 
@@ -323,7 +267,7 @@ Based on this response, the geographic coordinates for London, England are: `lat
 
 > **Note:** This sample shows a subset of the full response. The actual response includes additional objects for the specified range.
 
-## Step 3: Retrieve current weather data for London, England
+### Step 3: Retrieve current weather data for London, England
 
 Now that you know the geographic coordinates you need, run another API request that specifies retrieving the current weather for London, England.
 
@@ -341,7 +285,7 @@ Where the query parameters are:
 - `lon`: Longitude coordinate of the location.
 - `appid=<YOUR_API_KEY>`: Your unique API key.
 
-## Step 4: Verify a successful response
+### Step 4: Verify a successful response
 
 A successful response returns a 200 HTTP status code and JSON objects containing the current weather for London (using the geographic coordinates).
 
@@ -371,11 +315,11 @@ If you get a similar response, you're all set up with the OpenWeatherMap API.
 
 > **Note:** For more information about the JSON objects in the API response, see [API Reference](#api-reference).
 
-# API reference { data-toc-label="API reference" }
+## API reference { data-toc-label="API reference" }
 
 The OpenWeatherMap API is designed to help developers integrate weather-based data into applications by providing clear examples, endpoint details, and request/response formats.
 
-## API reference overview
+### API reference overview
 
 The API reference provides curated examples of OpenWeatherMap API endpoints for portfolio purposes. Endpoints are grouped by resource type for easier navigation.
 
@@ -390,7 +334,7 @@ Each endpoint includes the following data:
 - Response example
 - Response elements
 
-### Resource groups and endpoints
+#### Resource groups and endpoints
 
 The following table summarizes the resource groups and their associated endpoints included in this guide:
 
@@ -407,11 +351,11 @@ The following table summarizes the resource groups and their associated endpoint
 |                                 |             |**[Get forecasted weather data in bulk](#get-forecasted-weather-data-in-bulk)**|Retrieves and downloads up-to-date forecasted weather data for numerous cities and zip codes in Europe, England, and the United States.|
 |                                 |             |**[Get 7-day archived weather data in bulk](#get-7-day-archived-weather-data-in-bulk)**|Retrieves and downloads updated 7-day archived weather data (current and forecasted) for numerous cities and zip codes in Europe, England, and the United States.
 
-### Headers
+#### Headers
 
 The OpenWeatherMap API does _not_ require headers in the API requests.
 
-### Error responses
+#### Error responses
 
 OpenWeather error payloads typically return a simple object with `cod` and `message` (strings or numbers).
 
@@ -423,7 +367,7 @@ For example:
 
 ```
 
-### HTTP methods in OpenWeatherMap 
+#### HTTP methods in OpenWeatherMap 
 
 All OpenWeatherMap API endpoints are designed for data retrieval _only_, so they use **HTTP GET** requests by default. There are no POST, PUT, or DELETE methods because the API does _not_ allow creating, updating, or deleting resources—only retrieving weather data.
 
@@ -443,29 +387,29 @@ curl -X GET "https://api.openweathermap.org/data/2.5/weather?q=London&appid=<YOU
 
 ```
 
-## Current and forecast weather data 🌤 
+### Current and forecast weather data 🌤 
 
 Endpoints related to retrieving current and forecast weather data. You can retrieve hourly and daily forecast data.
 
-### Endpoints
+#### Endpoints
 
 - [Get current weather data](#get-current-weather-data)
 - [Get hourly forecast data](#get-hourly-forecast-data)
 - [Get daily forecast data](#get-daily-forecast-data)
 
-### Get current weather data
+#### Get current weather data
 
 Retrieves current weather data for any location on the globe. The data is collected and processed from different sources, such as global and local weather models, satellites, radars, and a vast network of weather stations. Data is available in JSON, XML, or HTML formats.
 
-### Method
+#### Method
 
 GET (see [HTTP methods in OpenWeatherMap](#http-methods-in-openweathermap)).
 
-### Endpoint
+#### Endpoint
 
 https://api.openweathermap.org/data/2.5/weather
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -473,7 +417,7 @@ https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API k
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description                                                                              |Type  |Required|Notes                     |
 |:--------------|:----------------------------------------------------------------------------------------|:-----|:-------|--------------------------| 
@@ -485,7 +429,7 @@ https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API k
 |`lang`         |Language in which the response is displayed.                                             |string|optional|Default is **en**.
 
 
-### Request example
+#### Request example
 
 ```
 
@@ -493,7 +437,7 @@ https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={API k
 
 ```
 
-### Response example
+#### Response example
 
 ```
 
@@ -535,7 +479,7 @@ https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={API k
 
 ```              
 
-### Response elements
+#### Response elements
 
 |Element        |Description                                                                               |Type    |Notes|
 |:--------------|:---------------------------------------------------------------------------------------- |:-------|------| 
@@ -565,19 +509,19 @@ https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={API k
 |`clouds`| Top-level `clouds` key whose value is an object containing data about the cloud conditions.      |object|
 |`clouds.all`| Current percentage of cloudiness.                                                            |number|
                                             
-## Get hourly forecast data
+### Get hourly forecast data
 
 Retrieves hourly forecast data for any location on the globe. You can retrieve weather forecast data for up to 4 days in advance for every hour during the specified time period. Response data is available in JSON or XML formats.
 
-### Method
+#### Method
 
 GET (see [HTTP methods in OpenWeatherMap](#http-methods-in-openweathermap)).
 
-### Endpoint
+#### Endpoint
 
 https://pro.openweathermap.org/data/2.5/forecast/hourly
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -585,7 +529,7 @@ https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appi
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description                                                                              |Type  |Required|Notes                     |
 |:--------------|:----------------------------------------------------------------------------------------|:-----|:-------|--------------------------| 
@@ -597,14 +541,14 @@ https://pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appi
 |`lang`         |Language in which the response is displayed.                                             |string|optional|Default is **en**.          |
 
 
-### Request example
+#### Request example
 
 ```
 https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=44.34&lon=10.99&appid={API key}
 
 ```
 
-### Response example
+#### Response example
 
 ```
                     
@@ -766,7 +710,7 @@ https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=44.34&lon=10.99&appi
                                       
 ```              
 
-### Response elements
+#### Response elements
 
 |Element        |Description                                                                               |Type    |Notes|
 |:--------------|:---------------------------------------------------------------------------------------- |:-------|------| 
@@ -804,21 +748,21 @@ https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=44.34&lon=10.99&appi
 |`list.dt_txt`| Local date/time string for the forecast timestamp.                                         |string|Local time (string).|
 
 
-## Get daily forecast data
+### Get daily forecast data
 
 Retrieves daily forecast data for any location on the globe. You can retrieve weather forecast data for up to 16 days in advance. Response data is available in JSON or XML formats.
 
 > _**Note:** This endpoint is deprecated in the real API. It is included here for portfolio purposes _only_. Prefer One Call API v3 (**/data/3.0/onecall**) for daily forecasts. 
 
-### Method
+#### Method
 
 GET (see [HTTP methods in OpenWeatherMap](#http-methods-in-openweathermap)).
 
-### Endpoint
+#### Endpoint
 
 https://api.openweathermap.org/data/2.5/forecast/daily
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -826,7 +770,7 @@ https://api.openweathermap.org/data/2.5/forecast/daily?lat=44.34&lon=10.99&appid
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description                                                                              |Type  |Required|Notes                     |
 |:--------------|:----------------------------------------------------------------------------------------|:-----|:-------|--------------------------| 
@@ -839,7 +783,7 @@ https://api.openweathermap.org/data/2.5/forecast/daily?lat=44.34&lon=10.99&appid
 |`lang`         |Language in which the response is displayed.                                             |string|optional|Default is **en**.          |
 
 
-### Request example
+#### Request example
 
 ```
 
@@ -847,7 +791,7 @@ https://api.openweathermap.org/data/2.5/forecast/daily?lat=44.34&lon=10.99&appid
 
 ```
 
-### Response example
+#### Response example
 
 ```
                  
@@ -965,7 +909,7 @@ https://api.openweathermap.org/data/2.5/forecast/daily?lat=44.34&lon=10.99&appid
                                                                         
 ```              
 
-### Response elements
+#### Response elements
 
 |Element        |Description                                                                               |Type    |Notes|
 |:--------------|:---------------------------------------------------------------------------------------- |:-------|------| 
@@ -1004,30 +948,30 @@ https://api.openweathermap.org/data/2.5/forecast/daily?lat=44.34&lon=10.99&appid
 |`list.snow`|Forecasted snowfall for the day.                                       |number| Unit: **mm**.|
 |`list.pop`| Probability of precipitation on the specified day.                       |number| Valid values are between **0** and **1**, where **0**=0%, and **1**=100%. For example, a value of **0.5** would be a 50% chance of precipitation for the specified day.
 
-## Historical weather data 🕰 
+### Historical weather data 🕰 
 
 Endpoints related to retrieving historical weather data. You can retrieve hourly historical weather data for any location on the globe, and download this data in JSON or CSV formats. In addition, you can retrieve aggregated statistical data for the current year. Lastly, you can retrieve accumulated temperature and precipitation data for a specific time period in the past.
 
-### Endpoints
+#### Endpoints
 
 - [Get hourly historical weather data](#get-hourly-historical-weather-data)
 - [Get aggregated annual statistical weather data](#get-aggregated-annual-statistical-weather-data)
 - [Get accumulated temperature data](#get-accumulated-temperature-data)
 - [Get accumulated precipitation data](#get-accumulated-precipitation-data)
 
-### Get hourly historical weather data
+#### Get hourly historical weather data
 
 Retrieves hourly historical weather data for any location on the globe. You can also download this data in JSON or CSV formats - see the [History Bulk](https://openweathermap.org/history-bulk) and the [History Forecast Bulk](https://openweathermap.org/api/history-forecast-bulk) APIs. 
 
-### Method
+#### Method
 
 GET (see [HTTP methods in OpenWeatherMap](#http-methods-in-openweathermap)).
 
-### Endpoint
+#### Endpoint
 
 https://history.openweathermap.org/data/2.5/history/city
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -1035,7 +979,7 @@ https://history.openweathermap.org/data/2.5/history/city?lat={lat}&lon={lon}&app
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description                                                                              |Type  |Required|Notes                     |
 |:--------------|:----------------------------------------------------------------------------------------|:-----|:-------|--------------------------| 
@@ -1049,14 +993,14 @@ https://history.openweathermap.org/data/2.5/history/city?lat={lat}&lon={lon}&app
 
 
 
-### Request example
+#### Request example
 
 ```
 https://history.openweathermap.org/data/2.5/history/city?lat=41.85&lon=-87.65&appid={API key}
 
 ```
 
-### Response example
+#### Response example
 
 ```                   
 {
@@ -1095,7 +1039,7 @@ https://history.openweathermap.org/data/2.5/history/city?lat=41.85&lon=-87.65&ap
 
 ```              
 
-### Response elements
+#### Response elements
 
 |Element        |Description                                                                               |Type    |Notes|
 |:--------------|:---------------------------------------------------------------------------------------- |:-------|------| 
@@ -1145,15 +1089,15 @@ All statistical weather data can only be obtained in JSON format. The frequency 
 
 > **Note:** This endpoint does _not_ return real historical data. It returns statistically calculated data based on real historical data for a specific period of time.
 
-### Method
+#### Method
 
 GET (see [HTTP methods in OpenWeatherMap](#http-methods-in-openweathermap)).
 
-### Endpoint
+#### Endpoint
 
 https://history.openweathermap.org/data/2.5/aggregated/year
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -1161,7 +1105,7 @@ https://history.openweathermap.org/data/2.5/aggregated/year?lat={lat}&lon={lon}&
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description                                                                              |Type  |Required|
 |:--------------|:----------------------------------------------------------------------------------------|:-----|:-------| 
@@ -1169,14 +1113,14 @@ https://history.openweathermap.org/data/2.5/aggregated/year?lat={lat}&lon={lon}&
 |`lon`          |Longitude coordinate of the location.|number|required|                                                                             
 |`appid`        |Your unique API key, which you can access on your account page.                          |string|required|
 
-### Request example
+#### Request example
 
 ```
 https://history.openweathermap.org/data/2.5/aggregated/year?lat=35&lon=139&appid={API key}
 
 ```
 
-### Response example
+#### Response example
 
 ```                   
                      
@@ -1254,7 +1198,7 @@ https://history.openweathermap.org/data/2.5/aggregated/year?lat=35&lon=139&appid
                                       
 ```              
 
-### Response elements
+#### Response elements
 
 |Element        |Description                                                                               |Type    |Notes|
 |:--------------|:---------------------------------------------------------------------------------------- |:-------|------| 
@@ -1314,15 +1258,15 @@ https://history.openweathermap.org/data/2.5/aggregated/year?lat=35&lon=139&appid
 
 Retrieves accumulated temperature data for a specific location within a specified date range. Accumulated _temperature_ is the sum, measured in degrees, by which the actual air temperature rises above or falls below a threshold level during the specified date range. 
 
-### Method
+#### Method
 
 GET (see [HTTP methods in OpenWeatherMap](#http-methods-in-openweathermap)).
 
-### Endpoint
+#### Endpoint
 
 https://history.openweathermap.org/data/2.5/history/accumulated_temperature
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -1330,7 +1274,7 @@ https://history.openweathermap.org/data/2.5/history/accumulated_temperature?lat=
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description                                                                              |Type  |Required|Notes
 |:--------------|:----------------------------------------------------------------------------------------|:-----|:-------|--------| 
@@ -1341,7 +1285,7 @@ https://history.openweathermap.org/data/2.5/history/accumulated_temperature?lat=
 |`end`          |End date until which you want to retrieve data.                                                    |string|required|Date is in Unix, UTC. For example: **1589445367**.        |
 |`threshold`    |Minimum temperature by which to retrieve accumulated temperature data.            |number|optional| All values smaller than the set value for `threshold` are _not_ included in the accumulated temperature data.       |
 
-### Request example
+#### Request example
 
 ```
 
@@ -1349,7 +1293,7 @@ https://history.openweathermap.org/data/2.5/history/accumulated_temperature?lat=
 
 ```
 
-### Response example
+#### Response example
 
 ```                   
               
@@ -1362,7 +1306,7 @@ https://history.openweathermap.org/data/2.5/history/accumulated_temperature?lat=
 ```     
 > **Note:** This sample shows a subset of the full response. The actual response includes additional objects for the specified range.        
 
-### Response elements
+#### Response elements
 
 |Element        |Description                                                                               |Type    |Notes|
 |:--------------|:---------------------------------------------------------------------------------------- |:-------|------| 
@@ -1374,15 +1318,15 @@ https://history.openweathermap.org/data/2.5/history/accumulated_temperature?lat=
 
 Retrieves accumulated precipitation for a specific location within a specified date range. Accumulated _precipitation_ is the sum, measured in millimeters, of daily precipitation during the specified date range.
 
-### Method
+#### Method
 
 GET (see [HTTP methods in OpenWeatherMap](#http-methods-in-openweathermap)).
 
-### Endpoint
+#### Endpoint
 
 https://history.openweathermap.org/data/2.5/history/accumulated_precipitation
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -1390,7 +1334,7 @@ https://history.openweathermap.org/data/2.5/history/accumulated_precipitation?la
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description                                                                              |Type  |Required|Notes
 |:--------------|:----------------------------------------------------------------------------------------|:-----|:-------|--------| 
@@ -1400,14 +1344,14 @@ https://history.openweathermap.org/data/2.5/history/accumulated_precipitation?la
 |`start`        |Start date from which you want to retrieve data.                                         |string|required|Date is in Unix, UTC. For example: **1586445367**.        |        
 |`end`          |End date until which you want to retrieve data.                                          |string|required|Date is in Unix, UTC. For example: **1589445367**.        
 
-### Request example
+#### Request example
 
 ```
 https://history.openweathermap.org/data/2.5/history/accumulated_precipitation?lat=51.51&lon=-0.12&start=1586853378&end=1589445367&appid={API key}
 
 ```
 
-### Response example
+#### Response example
 
 ```                                       
 {
@@ -1419,7 +1363,7 @@ https://history.openweathermap.org/data/2.5/history/accumulated_precipitation?la
 ```    
 > **Note:** This sample shows a subset of the full response. The actual response includes additional objects for the specified range.        
 
-### Response elements
+#### Response elements
 
 |Element        |Description                                                                               |Type    |Notes|
 |:--------------|:---------------------------------------------------------------------------------------- |:-------|------| 
@@ -1429,29 +1373,29 @@ https://history.openweathermap.org/data/2.5/history/accumulated_precipitation?la
 
 > The `threshold` parameter is _not_ used. The whole amount of precipitation data is provided for a specific period.
 
-## Bulk download of weather data 📦 
+### Bulk download of weather data 📦 
 
 Endpoints related to retrieving and downloading up-to-date current, forecasted, and 7-day historical weather data for numerous cities and zip code areas in Europe, England, and the United States in JSON or CSV file formats.
 
-### Endpoints 
+#### Endpoints 
 
 - [Get current weather data in bulk](#get-current-weather-data-in-bulk)
 - [Get forecasted weather data in bulk](#get-forecasted-weather-data-in-bulk)
 - [Get 7-day archived weather data in bulk](#get-7-day-archived-weather-data-in-bulk)
 
-### Get current weather data in bulk
+#### Get current weather data in bulk
 
 Retrieves and downloads updated current weather data for numerous cities and zip codes in Europe, England, and the United States in JSON or CSV file formats. 
 
-### Method
+#### Method
 
 GET (see [HTTP methods in OpenWeatherMap](#http-methods-in-openweathermap)).
 
-### Endpoint
+#### Endpoint
 
 https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -1459,14 +1403,14 @@ https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}?appid={API key}
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description                                                                              |Type  |Required|Notes
 |:--------------|:----------------------------------------------------------------------------------------|:-----|:-------|--------| 
 |`{BULK_FILE-NAME}`|Filename of the file that contains current weather data for the bulk list of locations you want. |number|required|For the list of files, see [Current weather bulks](https://openweathermap.org/bulk#bulk_current).   |                                                                         
 |`appid`        |Your unique API key, which you can access on your account page.                          |string|required|        |
 
-### Request example
+#### Request example
 
 ```
 
@@ -1474,7 +1418,7 @@ https://bulk.openweathermap.org/snapshot/weather_14.json.gz?appid={API key}
 
 ```
 
-### Download the bulk file
+#### Download the bulk file
 
 1. As described in [Request syntax](#request-syntax), construct the API request:
 
@@ -1505,15 +1449,15 @@ where **{BULK_FILE_NAME}** is one of the following five files that contains curr
 
 Retrieves and downloads up-to-date forecasted weather data for numerous cities and zip codes in Europe, England, and the United States in JSON or CSV file formats. 
 
-### Method
+#### Method
 
 GET (see [HTTP methods in OpenWeatherMap](#http-methods-in-openweathermap)).
 
-### Endpoint
+#### Endpoint
 
 https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -1521,14 +1465,14 @@ https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}?appid={API key}
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description                                                                              |Type  |Required|Notes
 |:--------------|:----------------------------------------------------------------------------------------|:-----|:-------|--------| 
 |`{BULK_FILE-NAME}`|Filename of the file that contains forecasted weather data for the bulk list of locations you want. |number|required|For the list of files, see [Forecast bulks](https://openweathermap.org/bulk#forecasts).   |                                                                         
 |`appid`        |Your unique API key, which you can access on your account page.                          |string|required|        |
 
-### Request example
+#### Request example
 
 ```
 
@@ -1536,7 +1480,7 @@ https://bulk.openweathermap.org/snapshot/hourly1h_zip.eu.json.gz?appid={API key}
 
 ```
 
-### Download the bulk file
+#### Download the bulk file
 
 1. As described in [Request syntax](#request-syntax), construct the API request:
 
@@ -1567,15 +1511,15 @@ where **{BULK_FILE_NAME}** is one of the following five files that contains fore
 
 Retrieves and downloads updated 7-day archived weather data (current and forecasted) for numerous cities and zip codes in Europe, England, and the United States in JSON or CSV file formats. 
 
-### Method
+#### Method
 
 GET (see [HTTP methods in OpenWeatherMap](#http-methods-in-openweathermap)).
 
-### Endpoint
+#### Endpoint
 
 https://bulk.openweathermap.org/archive/{BULK_FILE_NAME}
 
-### Request syntax
+#### Request syntax
 
 ```
 
@@ -1583,14 +1527,14 @@ https://bulk.openweathermap.org/archive/{BULK_FILE_NAME}?appid={API key}
 
 ```
 
-### Query parameters
+#### Query parameters
 
 |Parameter      |Description                                                                              |Type  |Required|Notes
 |:--------------|:----------------------------------------------------------------------------------------|:-----|:-------|--------| 
 |`{BULK_FILE-NAME}`|Filename of the file that contains archived weather data for the bulk list of locations you want. |number|required|For the list of files, see [7-day archive of current and forecast weather bulks files](https://openweathermap.org/bulk#bulk_archive).   |                                                                         
 |`appid`        |Your unique API key, which you can access on your account page.                          |string|required|        |
 
-### Request example
+#### Request example
 
 ```
 
@@ -1598,7 +1542,7 @@ https://bulk.openweathermap.org/archive/weather_zip_uk_011020_2000.csv.gz?appid=
 
 ```
 
-### Download the bulk file
+#### Download the bulk file
 
 1. As described in [Request syntax](#request-syntax), construct the API request:
 

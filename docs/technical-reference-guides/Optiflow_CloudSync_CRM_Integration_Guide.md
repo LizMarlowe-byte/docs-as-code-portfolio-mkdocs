@@ -3,7 +3,7 @@ The _Optiflow CloudSync CRM Integration Guide_ describes the system integration 
 
 ---
 
-# Introduction to the Optiflow-CloudSync CRM integration { data-toc-label="Introduction to the Optiflow-CloudSync CRM integration" }
+## Optiflow-CloudSync CRM integration 
 
 In the _Optiflow–CloudSync CRM_ integration, CloudSync supplies customer engagement, ticket data, and real-time visibility updates from the CloudSync CRM system to the Optiflow system.
 
@@ -14,7 +14,7 @@ In the _Optiflow–CloudSync CRM_ integration, CloudSync supplies customer engag
 - [Data retrieval flow](#data-retrieval-flow)
 - [Customer onboarding](#customer-onboarding)
 
-## Overview
+### Overview
 
 The Optiflow–CloudSync CRM integration uses a _push_ method, where data is pushed to Optiflow by CloudSync. _No data is sent from Optiflow back to CloudSync_.
 
@@ -31,7 +31,7 @@ This integration supports users of the **CloudSync Service Hub**, utilizing **Ch
 
 > The Optiflow–CloudSync CRM integration uses the available **CloudSync API suite** and does _not_ require installing any packages in your CloudSync environment. Some minor setup in CloudSync is required to provide authentication and populate the APIs with the required data.
 
-### Integration feeds
+#### Integration feeds
 
 The three types of feeds available in the Optiflow–CloudSync CRM integration include:
 
@@ -39,7 +39,7 @@ The three types of feeds available in the Optiflow–CloudSync CRM integration i
 - **Support Ticket Trends (STT):** Supplies historical data about ticket volumes and resolution times (used for forecasting and resource planning).
 - **Live Session Monitoring (LSM):** Provides real-time visibility into active chat or video sessions (used for operational dashboards).
 
-### Configure adapters for feeds
+#### Configure adapters for feeds
 
 Configure the relevant adapters in Optiflow to receive the feeds you want:
 
@@ -49,11 +49,11 @@ Configure the relevant adapters in Optiflow to receive the feeds you want:
 |Support Ticket Trends (STT)           |STT Adapter                 |Ticket volume and resolution insights  |
 |Live Session Monitoring (LSM)         |LSM Adapter                 |Real-time session visibility           |
 
-## Target audience
+### Target audience
 
 This guide is intended for technical users who want to integrate Optiflow with CloudSync CRM using the platform’s supported APIs, authentication workflows, and configuration tools.
 
-## Data retrieval flow
+### Data retrieval flow
 
 In the Optiflow–CloudSync CRM integration, CloudSync CRM pushes new events (Push Topics, Change Data Capture, or User Data) to the CloudSync CRM Adapter in the Optiflow system. 
 
@@ -81,7 +81,7 @@ The following diagram illustrates this data flow, and the accompanying table des
 
 ---
 
-## Customer onboarding
+### Customer onboarding
 
 The customer onboarding tasks for the Optiflow–CloudSync CRM integration are done by Optiflow and the customer.
 
@@ -96,7 +96,7 @@ The workflow includes the following steps:
 | 3    | Optiflow    | Deploy CloudSync CRM Adapter | Optiflow enables the adapter, and populates it with the required parameters to supply the data points required for the Optiflow tenant.    |
 
 
-# Customer CloudSync CRM Setup { data-toc-label="Customer CloudSync CRM Setup" }
+## Customer CloudSync CRM Setup { data-toc-label="Customer CloudSync CRM Setup" }
 
 The customer administrator needs to set up the access flow from their CloudSync tenant to the Optiflow adapter.
 
@@ -117,7 +117,7 @@ Obtain a public certificate file named **cloudsync.crt** from an Optiflow engine
 |7     |[Generate a consumer key](#generate-a-consumer-key)|Generate the API access credentials from the Integration Connected App.|
 |8     |[Validate the integration configurations](#validate-the-integration-configurations)|To validate that everything is configured correctly for the integration, use the Postman collection to ensure you receive a successful response.|
 
-## Enable change data capture
+### Enable change data capture
 
 If you are processing STT and CIM APIs, select the relevant CDC (Change Data Capture) entities for the integration, which can include: **SupportTicket**, **ChatSession**, **UserPresence**, and **VideoSession** objects.
 
@@ -147,7 +147,7 @@ Log on to the CloudSync tenant application as an administrator.
 
 [Create a new user and service account](#create-a-new-user-and-service-account)
 
-## Create a new user and service account
+### Create a new user and service account
 
 Create a new user and associate the user with a service account, which is used by the integration to authenticate between CloudSync and Optiflow.
 
@@ -185,7 +185,7 @@ Create a new user and associate the user with a service account, which is used b
 
 [Create a permission set](#create-a-permission-set)
 
-## Create a permission set
+### Create a permission set
 
 Create a new permission set to be used by the integration. You can define specific attributes for the permission set, including the label, API name, and license.
 
@@ -213,7 +213,7 @@ Create a new permission set to be used by the integration. You can define specif
 
 [Assign a permission set to a user](#assign-a-permission-set-to-a-user)
 
-## Assign a permission set to a user
+### Assign a permission set to a user
 
 Once you create the permission set, assign it to a specific user.
 
@@ -243,7 +243,7 @@ Once you create the permission set, assign it to a specific user.
 
 [Create a connected app](#create-a-connected-app)
 
-## Create a connected app
+### Create a connected app
 
 Create the Integration Connected App, which is used to authenticate communication between CloudSync and Optiflow. It also provides security and limits related to the access of data in the integration.
 
@@ -297,7 +297,7 @@ Create the Integration Connected App, which is used to authenticate communicatio
 
 [Configure connected app policies](#configure-connected-app-policies)
 
-## Configure connected app policies
+### Configure connected app policies
 
 For the new Integration Connected App, configure system administration permissions and app policies.
 
@@ -327,7 +327,7 @@ For the new Integration Connected App, configure system administration permissio
 
 [Generate a consumer key](#generate-a-consumer-key)
 
-## Generate a consumer key
+### Generate a consumer key
 
 Generate the API access credentials from the Integration Connected App.
 
@@ -353,7 +353,7 @@ Generate the API access credentials from the Integration Connected App.
 
 [Validate the integration configurations](#validate-the-integration-configurations)
 
-## Validate the integration configurations
+### Validate the integration configurations
 
 To validate that everything is configured correctly for the integration, use the Postman collection to ensure you receive a successful response.
 
