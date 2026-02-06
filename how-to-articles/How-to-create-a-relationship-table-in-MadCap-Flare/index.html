@@ -223,15 +223,40 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
     
   
-    About this Site
+    🌐 Doc Site Using MkDocs
   
 
     
@@ -239,7 +264,26 @@
   
   
 
-      </a>
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    🌐 Doc Site Using MkDocs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -270,7 +314,9 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -280,7 +326,7 @@
   <span class="md-ellipsis">
     
   
-    User Guides
+    📘 User Guides
   
 
     
@@ -296,7 +342,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    User Guides
+    📘 User Guides
   
 
           </label>
@@ -391,7 +437,9 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -401,7 +449,7 @@
   <span class="md-ellipsis">
     
   
-    API Guides
+    🧩 API Guides
   
 
     
@@ -417,7 +465,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    API Guides
+    🧩 API Guides
   
 
           </label>
@@ -522,7 +570,7 @@
   <span class="md-ellipsis">
     
   
-    How-To Articles
+    🛠️ How-To Articles
   
 
     
@@ -538,7 +586,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    How-To Articles
+    🛠️ How-To Articles
   
 
           </label>
@@ -731,7 +779,9 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -741,7 +791,7 @@
   <span class="md-ellipsis">
     
   
-    Technical Reference Guides
+    📚 Technical Reference Guides
   
 
     
@@ -757,7 +807,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Technical Reference Guides
+    📚 Technical Reference Guides
   
 
           </label>
@@ -949,7 +999,9 @@
 
 
 <h1 id="how-to-create-a-relationship-table-in-madcap-flare">How to create a relationship table in MadCap Flare<a class="headerlink" href="#how-to-create-a-relationship-table-in-madcap-flare" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
 <p>This article provides step-by-step instructions for creating a relationship table in MadCap Flare for content developers.</p>
+</div>
 <hr />
 <h2 id="overview"><h2 id="overview">📝 Overview</h2><a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>In MadCap Flare, <em>relationship tables</em> allow you to create groups of related topics and define how they link to each other. Unlike regular cross-references, links in relationship tables are dynamic. Because related links are generated at build time from the table, removing a topic from a row (or the project) prevents stale links from appearing after you rebuild.</p>
@@ -1036,13 +1088,15 @@
 <hr />
 <h2 id="steps"><h2 id="steps">📌 Steps</h2><a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
 <p>To automatically and dynamically link related topics in a guide, create a relationship table. You can edit a relationship table at any time. When working in a project with multiple TOCs, create a new relationship table for each TOC.</p>
-<p><strong>Steps:</strong></p>
+<details class="note">
+<summary>Steps</summary>
 <p><a href="#1-add-relationship-table">1. Add Relationship Table</a><br />
 <a href="#2-set-up-your-toc">2. Set up your TOC</a><br />
 <a href="#3-create-row-in-the-table">3. Create Row in the Table</a><br />
 <a href="#4-add-topics-to-the-row">4. Add Topics to the Row</a><br />
 <a href="#5-link-same-topic-types-to-each-other">5. Link Same Topic Types to Each Other</a><br />
 <a href="#6-final-steps">6. Final Steps</a></p>
+</details>
 <h3 id="1-add-relationship-table">1. Add Relationship Table<a class="headerlink" href="#1-add-relationship-table" title="Permanent link">&para;</a></h3>
 <p>From Project Organizer, add a new relationship table.</p>
 <ol>
@@ -1259,6 +1313,12 @@
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
       </main>
       
         <footer class="md-footer">
@@ -1288,7 +1348,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
