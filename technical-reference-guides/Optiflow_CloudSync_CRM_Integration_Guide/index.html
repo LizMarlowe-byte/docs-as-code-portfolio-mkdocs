@@ -653,6 +653,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optiflow CloudSync CRM Integration Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -669,6 +687,49 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of Contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#optiflow-cloudsync-crm-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optiflow-CloudSync CRM integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customer-cloudsync-crm-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer CloudSync CRM Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -732,6 +793,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of Contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#optiflow-cloudsync-crm-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optiflow-CloudSync CRM integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customer-cloudsync-crm-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer CloudSync CRM Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -750,7 +841,7 @@
 <h1 id="optiflow-cloudsync-crm-integration-guide">Optiflow CloudSync CRM Integration Guide<a class="headerlink" href="#optiflow-cloudsync-crm-integration-guide" title="Permanent link">&para;</a></h1>
 <p>The <em>Optiflow CloudSync CRM Integration Guide</em> describes the system integration between the Optiflow system and the CloudSync CRM system.</p>
 <hr />
-<h1 id="introduction-to-the-optiflow-cloudsync-crm-integration">Introduction to the Optiflow-CloudSync CRM integration<a class="headerlink" href="#introduction-to-the-optiflow-cloudsync-crm-integration" title="Permanent link">&para;</a></h1>
+<h2 id="optiflow-cloudsync-crm-integration">Optiflow-CloudSync CRM integration<a class="headerlink" href="#optiflow-cloudsync-crm-integration" title="Permanent link">&para;</a></h2>
 <p>In the <em>Optiflow–CloudSync CRM</em> integration, CloudSync supplies customer engagement, ticket data, and real-time visibility updates from the CloudSync CRM system to the Optiflow system.</p>
 <p><strong>Topics:</strong></p>
 <ul>
@@ -759,7 +850,7 @@
 <li><a href="#data-retrieval-flow">Data retrieval flow</a></li>
 <li><a href="#customer-onboarding">Customer onboarding</a></li>
 </ul>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
 <p>The Optiflow–CloudSync CRM integration uses a <em>push</em> method, where data is pushed to Optiflow by CloudSync. <em>No data is sent from Optiflow back to CloudSync</em>.</p>
 <p>Within CloudSync, the objects from which data is pushed for the integration include:</p>
 <ul>
@@ -773,14 +864,14 @@
 <blockquote>
 <p>The Optiflow–CloudSync CRM integration uses the available <strong>CloudSync API suite</strong> and does <em>not</em> require installing any packages in your CloudSync environment. Some minor setup in CloudSync is required to provide authentication and populate the APIs with the required data.</p>
 </blockquote>
-<h3 id="integration-feeds">Integration feeds<a class="headerlink" href="#integration-feeds" title="Permanent link">&para;</a></h3>
+<h4 id="integration-feeds">Integration feeds<a class="headerlink" href="#integration-feeds" title="Permanent link">&para;</a></h4>
 <p>The three types of feeds available in the Optiflow–CloudSync CRM integration include:</p>
 <ul>
 <li><strong>Customer Interaction Metrics (CIM):</strong> Provides details about customer engagement across channels.</li>
 <li><strong>Support Ticket Trends (STT):</strong> Supplies historical data about ticket volumes and resolution times (used for forecasting and resource planning).</li>
 <li><strong>Live Session Monitoring (LSM):</strong> Provides real-time visibility into active chat or video sessions (used for operational dashboards).</li>
 </ul>
-<h3 id="configure-adapters-for-feeds">Configure adapters for feeds<a class="headerlink" href="#configure-adapters-for-feeds" title="Permanent link">&para;</a></h3>
+<h4 id="configure-adapters-for-feeds">Configure adapters for feeds<a class="headerlink" href="#configure-adapters-for-feeds" title="Permanent link">&para;</a></h4>
 <p>Configure the relevant adapters in Optiflow to receive the feeds you want:</p>
 <table>
 <thead>
@@ -808,9 +899,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="target-audience">Target audience<a class="headerlink" href="#target-audience" title="Permanent link">&para;</a></h2>
+<h3 id="target-audience">Target audience<a class="headerlink" href="#target-audience" title="Permanent link">&para;</a></h3>
 <p>This guide is intended for technical users who want to integrate Optiflow with CloudSync CRM using the platform’s supported APIs, authentication workflows, and configuration tools.</p>
-<h2 id="data-retrieval-flow">Data retrieval flow<a class="headerlink" href="#data-retrieval-flow" title="Permanent link">&para;</a></h2>
+<h3 id="data-retrieval-flow">Data retrieval flow<a class="headerlink" href="#data-retrieval-flow" title="Permanent link">&para;</a></h3>
 <p>In the Optiflow–CloudSync CRM integration, CloudSync CRM pushes new events (Push Topics, Change Data Capture, or User Data) to the CloudSync CRM Adapter in the Optiflow system. </p>
 <p>The CloudSync CRM Adapter:</p>
 <ul>
@@ -868,7 +959,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="customer-onboarding">Customer onboarding<a class="headerlink" href="#customer-onboarding" title="Permanent link">&para;</a></h2>
+<h3 id="customer-onboarding">Customer onboarding<a class="headerlink" href="#customer-onboarding" title="Permanent link">&para;</a></h3>
 <p>The customer onboarding tasks for the Optiflow–CloudSync CRM integration are done by Optiflow and the customer.</p>
 <p>Most of the setup for this integration is done by Optiflow. However, there are required setup tasks that the customer needs to do in CloudSync, including providing authentication for the API calls, and setting up the data that is pushed to the CloudSync CRM adapter in Optiflow. This includes, but is not limited to, the connected app, push topics, and change data capture setup.</p>
 <p>The workflow includes the following steps:</p>
@@ -902,7 +993,7 @@
 </tr>
 </tbody>
 </table>
-<h1 id="customer-cloudsync-crm-setup">Customer CloudSync CRM Setup<a class="headerlink" href="#customer-cloudsync-crm-setup" title="Permanent link">&para;</a></h1>
+<h2 id="customer-cloudsync-crm-setup">Customer CloudSync CRM Setup<a class="headerlink" href="#customer-cloudsync-crm-setup" title="Permanent link">&para;</a></h2>
 <p>The customer administrator needs to set up the access flow from their CloudSync tenant to the Optiflow adapter.</p>
 <p><strong>Before you begin</strong></p>
 <p>Obtain a public certificate file named <strong>cloudsync.crt</strong> from an Optiflow engineer.</p>
@@ -958,7 +1049,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="enable-change-data-capture">Enable change data capture<a class="headerlink" href="#enable-change-data-capture" title="Permanent link">&para;</a></h2>
+<h3 id="enable-change-data-capture">Enable change data capture<a class="headerlink" href="#enable-change-data-capture" title="Permanent link">&para;</a></h3>
 <p>If you are processing STT and CIM APIs, select the relevant CDC (Change Data Capture) entities for the integration, which can include: <strong>SupportTicket</strong>, <strong>ChatSession</strong>, <strong>UserPresence</strong>, and <strong>VideoSession</strong> objects.</p>
 <p><strong>Before you begin</strong></p>
 <p>Log on to the CloudSync tenant application as an administrator.</p>
@@ -987,7 +1078,7 @@
 <p>The CDC entities that you selected are included in the integration.</p>
 <p><strong>What to do next?</strong></p>
 <p><a href="#create-a-new-user-and-service-account">Create a new user and service account</a></p>
-<h2 id="create-a-new-user-and-service-account">Create a new user and service account<a class="headerlink" href="#create-a-new-user-and-service-account" title="Permanent link">&para;</a></h2>
+<h3 id="create-a-new-user-and-service-account">Create a new user and service account<a class="headerlink" href="#create-a-new-user-and-service-account" title="Permanent link">&para;</a></h3>
 <p>Create a new user and associate the user with a service account, which is used by the integration to authenticate between CloudSync and Optiflow.</p>
 <p><strong>Before you begin</strong></p>
 <p><a href="#enable-change-data-capture">Enable change data capture</a></p>
@@ -1048,7 +1139,7 @@
 <p>The system verifies the email account, and changes the <strong>Verify</strong> link next to the <strong>Email</strong> field to: <strong>Verified</strong>. The integration uses this user account to authenticate between CloudSync and Optiflow.                     </p>
 <p><strong>What to do next?</strong></p>
 <p><a href="#create-a-permission-set">Create a permission set</a></p>
-<h2 id="create-a-permission-set">Create a permission set<a class="headerlink" href="#create-a-permission-set" title="Permanent link">&para;</a></h2>
+<h3 id="create-a-permission-set">Create a permission set<a class="headerlink" href="#create-a-permission-set" title="Permanent link">&para;</a></h3>
 <p>Create a new permission set to be used by the integration. You can define specific attributes for the permission set, including the label, API name, and license.</p>
 <p><strong>Before you begin</strong></p>
 <p><a href="#create-a-new-user-and-service-account">Create a new user and service account</a></p>
@@ -1091,7 +1182,7 @@
 </ol>
 <p><strong>What to do next?</strong></p>
 <p><a href="#assign-a-permission-set-to-a-user">Assign a permission set to a user</a></p>
-<h2 id="assign-a-permission-set-to-a-user">Assign a permission set to a user<a class="headerlink" href="#assign-a-permission-set-to-a-user" title="Permanent link">&para;</a></h2>
+<h3 id="assign-a-permission-set-to-a-user">Assign a permission set to a user<a class="headerlink" href="#assign-a-permission-set-to-a-user" title="Permanent link">&para;</a></h3>
 <p>Once you create the permission set, assign it to a specific user.</p>
 <p><strong>Before you begin</strong></p>
 <p><a href="#create-a-permission-set">Create a permission set</a></p>
@@ -1122,7 +1213,7 @@
 </ol>
 <p><strong>What to do next?</strong></p>
 <p><a href="#create-a-connected-app">Create a connected app</a></p>
-<h2 id="create-a-connected-app">Create a connected app<a class="headerlink" href="#create-a-connected-app" title="Permanent link">&para;</a></h2>
+<h3 id="create-a-connected-app">Create a connected app<a class="headerlink" href="#create-a-connected-app" title="Permanent link">&para;</a></h3>
 <p>Create the Integration Connected App, which is used to authenticate communication between CloudSync and Optiflow. It also provides security and limits related to the access of data in the integration.</p>
 <p><strong>Before you begin</strong></p>
 <p><a href="#assign-a-permission-set-to-a-user">Assign a permission set to a user</a></p>
@@ -1195,7 +1286,7 @@
 </ol>
 <p><strong>What to do next?</strong></p>
 <p><a href="#configure-connected-app-policies">Configure connected app policies</a></p>
-<h2 id="configure-connected-app-policies">Configure connected app policies<a class="headerlink" href="#configure-connected-app-policies" title="Permanent link">&para;</a></h2>
+<h3 id="configure-connected-app-policies">Configure connected app policies<a class="headerlink" href="#configure-connected-app-policies" title="Permanent link">&para;</a></h3>
 <p>For the new Integration Connected App, configure system administration permissions and app policies.</p>
 <p><strong>Before you begin</strong></p>
 <p><a href="#create-a-connected-app">Create a connected app</a></p>
@@ -1228,7 +1319,7 @@
 </ol>
 <p><strong>What to do next?</strong></p>
 <p><a href="#generate-a-consumer-key">Generate a consumer key</a></p>
-<h2 id="generate-a-consumer-key">Generate a consumer key<a class="headerlink" href="#generate-a-consumer-key" title="Permanent link">&para;</a></h2>
+<h3 id="generate-a-consumer-key">Generate a consumer key<a class="headerlink" href="#generate-a-consumer-key" title="Permanent link">&para;</a></h3>
 <p>Generate the API access credentials from the Integration Connected App.</p>
 <p><strong>Before you begin</strong></p>
 <p><a href="#configure-connected-app-policies">Configure connected app policies</a></p>
@@ -1255,7 +1346,7 @@
 </ol>
 <p><strong>What to do next?</strong></p>
 <p><a href="#validate-the-integration-configurations">Validate the integration configurations</a></p>
-<h2 id="validate-the-integration-configurations">Validate the integration configurations<a class="headerlink" href="#validate-the-integration-configurations" title="Permanent link">&para;</a></h2>
+<h3 id="validate-the-integration-configurations">Validate the integration configurations<a class="headerlink" href="#validate-the-integration-configurations" title="Permanent link">&para;</a></h3>
 <p>To validate that everything is configured correctly for the integration, use the Postman collection to ensure you receive a successful response.</p>
 <p><strong>Before you begin</strong></p>
 <p><a href="#generate-a-consumer-key">Generate a consumer key</a></p>
