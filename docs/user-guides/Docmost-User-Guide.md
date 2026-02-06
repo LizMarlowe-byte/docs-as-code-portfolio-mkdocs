@@ -3,7 +3,7 @@ The _Docmost User Guide_ is a comprehensive guide for end users that describes a
 
 ---
 
-# Introduction to Docmost { data-toc-label="Introduction to Docmost" }
+## Introduction to Docmost { data-toc-label="Introduction to Docmost" }
 
 _Docmost_ is an open-source collaborative wiki that provides easy and robust content creation and real-time collaboration.
 
@@ -14,7 +14,7 @@ _Docmost_ is an open-source collaborative wiki that provides easy and robust con
 * [Key features](#key-features)
 * [Target audience](#target-audience)
 
-## Overview
+### Overview
 
 Docmost allows multiple users to work on the same page in real time without overwriting the content of other users. It is an open-source collaborative wiki that provides an alternative to Notion and Confluence. You can use Docmost to manage a wiki, knowledge base, or even project documentation.
 
@@ -31,7 +31,7 @@ Using a rich text editor with built-in support for multiple diagramming tools, y
 ---
 
 
-## Workspaces, spaces, and pages
+### Workspaces, spaces, and pages
 
 In Docmost, a **_workspace_** is the top-level entity for organizing your documentation and collaboration efforts. It includes all your content, user roles, and permissions. 
 
@@ -61,7 +61,7 @@ Here's what you do:
 
 ---
 
-## Key features
+### Key features
 
 - **Collaborative real-time, rich text editor**: Work together with other users on the same pages in real time using a rich text editor.
 - **Highly organized collaboration areas**: Create _spaces_ to organize your content by team, projects, or departments for easy and targeted collaboration.
@@ -70,11 +70,11 @@ Here's what you do:
 - **Optimized search functionality**: Find the information you need quickly and easily with powerful search capabilities.
 - **File import and export integration**: Import and export pages in Markdown and HTML formats.
 
-## Target audience
+### Target audience
 
 This guide is intended for users who want to create and share content in a wiki format and collaborate with other users.
 
-# Getting started { data-toc-label="Getting started" }
+## Getting started { data-toc-label="Getting started" }
 
 Set up your account for the cloud-hosted version of Docmost. Then, set up your profile and preferences.
 
@@ -83,7 +83,7 @@ Set up your account for the cloud-hosted version of Docmost. Then, set up your p
 * [Set up your account](#set-up-your-account)
 * [Set your profile settings and preferences](#set-your-profile-settings-and-preferences)
 
-## Set up your account
+### Set up your account
 
 Set up your account for Docmost, which provides you with web-based, thin client access through your browser. 
 
@@ -113,7 +113,7 @@ As soon as you create your workspace, the system displays the Docmost Home scree
 
 ---
 
-## Set your profile settings and preferences
+### Set your profile settings and preferences
 
 After setting up your Docmost account, define your profile settings and preferences.
 
@@ -166,7 +166,7 @@ After setting up your Docmost account, define your profile settings and preferen
 |Default page edit mode|Select one of the following: <ul><li>**Edit**: Opens every page in **Edit** mode by default.</li><li>**Read**: Opens every page in **Read** mode by default. To make any edits on a page, change the mode to **Edit**.</li></ul>
 
 
-# Managing workspaces { data-toc-label="Managing workspaces" }
+## Managing workspaces { data-toc-label="Managing workspaces" }
 
 Create and customize your _**workspace**_, which is the top-level entity for organizing your content, user roles, and permissions.  After creating your workspace, invite others to collaborate within it.
 
@@ -178,7 +178,7 @@ Create and customize your _**workspace**_, which is the top-level entity for org
 * [Revoke invitation to a member](#revoke-invitation-to-a-member)
 * [Delete a member from a workspace](#delete-a-member-from-a-workspace)
 
-## Define workspace settings
+### Define workspace settings
 
 Customize the default workspace according to your needs. You can change the icon, name, and hostname for your workspace.
 
@@ -216,7 +216,7 @@ Customize the default workspace according to your needs. You can change the icon
 
 ---
 
-## Invite members to a workspace
+### Invite members to a workspace
 
 Invite people to collaborate in your workspace. Assign the invited members to either an **Admin** or **Member** role. In addition, assign the members to groups to which you want them to have access in your workspace.
 
@@ -286,7 +286,7 @@ Invite people to collaborate in your workspace. Assign the invited members to ei
 |Role           |Role of the member, which can be one of the following:<ul><li>**Owner**: Can perform all operations related to the workspace, including inviting and deleting members, editing workspace settings, managing spaces and users within the workspace, assigning roles to all members, and deleting the workspace.</li><li>**Admin**: Can invite and delete members, edit workspace settings, manage spaces and users within the workspace, and assign roles to all members. The Admin role _cannot_ delete the workspace.</li><li>**Member**: Has access to assigned spaces and can contribute content based on specific permissions.</li></ul>
 |...            |Deletes the member.
 
-## Resend invitation to a member
+### Resend invitation to a member
 
 After sending an invitation to a member, you can resend the invitation. This is helpful if you have not received a response from the member.
 
@@ -307,7 +307,7 @@ After sending an invitation to a member, you can resend the invitation. This is 
    The system resends the invitation to the selected member.
 
 
-## Revoke invitation to a member
+### Revoke invitation to a member
 
 After sending an invitation to a member, you can revoke the invitation. This is helpful if you accidentally send an invitation to the wrong person.
 
@@ -330,7 +330,7 @@ After sending an invitation to a member, you can revoke the invitation. This is 
    The system revokes the invitation to the selected member, and removes the invited member from the **Pending** tab.
 
 
-## Delete a member from a workspace
+### Delete a member from a workspace
 
 You can delete a member from a workspace.
 
@@ -353,7 +353,7 @@ You can delete a member from a workspace.
    The system deletes the member from the workspace. They no longer appear under the **Members** tab.
   
 
-# Managing spaces { data-toc-label="Managing spaces" }
+## Managing spaces { data-toc-label="Managing spaces" }
 
 Create **_spaces_**, which are dedicated, organized areas within your workspace that group together documents, permissions, and collaborators by project, team, or purpose. You can add members to spaces and manage their permissions. You can also export spaces for backup, migration, or offline use.
 
@@ -366,7 +366,7 @@ Create **_spaces_**, which are dedicated, organized areas within your workspace 
 * [Export a space](#export-a-space)
 * [Delete a space](#delete-a-space)
 
-## Create a space
+### Create a space
 
 Within your workspace, create a new space to group together documents, permissions, and collaborators by project, team, or purpose.
 
@@ -402,7 +402,7 @@ Within your workspace, create a new space to group together documents, permissio
 
 ---
 
-## Edit space settings
+### Edit space settings
 
 After creating a space, you can edit a space's settings.
 
@@ -437,7 +437,7 @@ After creating a space, you can edit a space's settings.
    The system updates the settings.
 
 
-## Add members to a space
+### Add members to a space
 
 Add individual members to a space for collaboration. Set specific permission levels for each member.
 
@@ -482,7 +482,7 @@ Add individual members to a space for collaboration. Set specific permission lev
 > 💡 **Tip:** If you want to assign different roles to different members, complete these steps for members for whom you want to assign the _same_ role. Then, repeat these steps for members for whom you want to assign a _different_ role. 
 
 
-## Remove a member from a space
+### Remove a member from a space
 
 You can remove a member from a space.
 
@@ -515,7 +515,7 @@ You can remove a member from a space.
    The system removes the member from the space. They no longer appear under the **Members** tab.
 
 
-## Export a space
+### Export a space
 
 You can export a space in both Markdown and HTML formats for backup, migration, or offline use. Exporting a space allows you to have external access to all content within a space, including all pages and attachments.
 
@@ -562,7 +562,7 @@ You can export a space in both Markdown and HTML formats for backup, migration, 
 
    Your exported file has been saved successfully.
 
-## Delete a space
+### Delete a space
 
 If you no longer need a space, you can delete it. For example, you created a space for a small group of members and they have merged into a bigger group that belongs to a different space.
 
@@ -596,7 +596,7 @@ If you no longer need a space, you can delete it. For example, you created a spa
 
    The system deletes the space, including all of its pages, comments, attachments, and permissions.
 
-# Managing Groups { data-toc-label="Managing groups" }
+## Managing Groups { data-toc-label="Managing groups" }
 
 Create **_groups_**, which allow you to manage user permissions for multiple users simultaneously. Instead of assigning roles and privileges to individual users, assign them to a group, simplifying access control across your workspace.
 
@@ -614,7 +614,7 @@ All users are assigned to a default group called **Everyone**.
 * [Remove a member from a group](#remove-a-member-from-a-group)
 * [Delete a group](#delete-a-group)
 
-## Create a group
+### Create a group
 
 Create a group to manage user permissions for multiple users simultaneously.
 
@@ -650,7 +650,7 @@ Create a group to manage user permissions for multiple users simultaneously.
 
 ---
 
-## Edit group settings
+### Edit group settings
 
 After creating a group, you can edit the group's name and description. This is helpful if the name or purpose of the group changed after you created it.
 
@@ -680,7 +680,7 @@ After creating a group, you can edit the group's name and description. This is h
 
 The system saves your updates.
 
-## Grant group access to a space
+### Grant group access to a space
 
 Instead of adding _individual_ members to a space, you can add _groups_. Assign a specific set of permissions to the entire group. Groups make it easy to grant multiple users access at the same time. In addition, creating groups ensures members have the correct permissions for working in the space.
 
@@ -720,7 +720,7 @@ Instead of adding _individual_ members to a space, you can add _groups_. Assign 
 >[!NOTE]
 > If a user has been added as an individual member _and_ as a group member to the _same_ space with _different_ permission levels, the highest permission level applies. For example,  Alex Smith has been added as a member to the space, **Research & Development**, with **Can View** permissions. Alex has also been added to the group, **Core Engineering Team**, which has **Can Edit** permissions to this space. Therefore, Alex has edit privileges for this space. 
 
-## Add a member to a group
+### Add a member to a group
 
 After creating a group, you can easily add a member to the group.
 
@@ -746,7 +746,7 @@ After creating a group, you can easily add a member to the group.
 
 The system adds the member to the group.
 
-## Remove a member from a group
+### Remove a member from a group
 
 If needed, you can easily remove a member from the group.
 
@@ -772,7 +772,7 @@ If needed, you can easily remove a member from the group.
 
    The system removes the member from the group.
 
-## Delete a group
+### Delete a group
 
 If needed, you can delete a group.
 
@@ -799,7 +799,7 @@ If needed, you can delete a group.
 
 
 
-# Managing pages { data-toc-label="Managing pages" }
+## Managing pages { data-toc-label="Managing pages" }
 
 Within a space, create and manage individual documents, or **_pages_**, which contain the content itself. Each page contains specific content for the space, such as a department's budget, project roadmap, or annual goals.
 
@@ -812,7 +812,7 @@ Within a space, create and manage individual documents, or **_pages_**, which co
 * [Import a page](#import-a-page)
 * [Export a page](#export-a-page)
 
-## Create a page
+### Create a page
 
 Create a page, which contains content within a space. For example, for the _Human Resources_ space, create a page that describes the department's annual goals.
 
@@ -864,7 +864,7 @@ Create a page, which contains content within a space. For example, for the _Huma
 |6     |Displays **Open** and **Resolved** comments on the page.
 |7     |Allows you to **Edit**, **Resolve**, and **Delete** comments on the page.
 
-## Move a page to a different space
+### Move a page to a different space
 
 You can easily move a page to a different space. This is helpful if the content on the page is more suitable for a different space. 
 
@@ -892,7 +892,7 @@ You can easily move a page to a different space. This is helpful if the content 
 
    The system moves the page to the selected space.
 
-## Copy a page to a different space
+### Copy a page to a different space
 
 You can easily copy a page to a different space. This allows you to include the same content in multiple spaces, if needed.
 
@@ -920,7 +920,7 @@ You can easily copy a page to a different space. This allows you to include the 
 
    The system copies the page to the selected space.
 
-## Duplicate a page to the same space
+### Duplicate a page to the same space
 
 You can duplicate a page to the same space. This is helpful if you want to create a page that is similar to an existing page with modifications. Duplicate the page, and then modify the duplicated page as needed.
 
@@ -946,7 +946,7 @@ You can duplicate a page to the same space. This is helpful if you want to creat
 
 ---
 
-## Import a page
+### Import a page
 
 You can import pages to a specific space in HTML and Markdown formats. You can also import pages from Notion and Confluence. This allows you to add pages sourced from external content in your space, and share the content with all space members.
 
@@ -982,7 +982,7 @@ You can import pages to a specific space in HTML and Markdown formats. You can a
 
    The system imports the file into the selected space.
 
-## Export a page
+### Export a page
 
 You can export a page in either Markdown or HTML format for external use. You can select whether to include all subpages and attachments in the exported file.
 
