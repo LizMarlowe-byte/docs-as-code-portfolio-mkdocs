@@ -225,12 +225,6 @@
   
     
     
-      
-        
-          
-        
-      
-    
     
     
       
@@ -238,19 +232,18 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
-          <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -264,9 +257,8 @@
   
   
 
-            </a>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
@@ -279,6 +271,32 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -296,12 +314,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
       
@@ -309,14 +321,14 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -419,12 +431,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
       
@@ -432,14 +438,14 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -542,10 +548,6 @@
   
     
     
-      
-        
-      
-    
     
     
       
@@ -553,14 +555,14 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -637,12 +639,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
       
@@ -650,6 +646,8 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
@@ -915,9 +913,10 @@
 </ul>
 <p>Optiflow also requests updates for mapping purposes to ensure usernames, statuses, and groups remain synchronized for ease of use and setup.</p>
 <p>This integration supports users of the <strong>CloudSync Service Hub</strong>, utilizing <strong>Chat Sessions</strong>, <strong>Video Support</strong>, and <strong>Support Ticket</strong> channels. The real-time monitoring feed leverages CloudSync’s Omnichannel presence to display active sessions in Optiflow dashboards.</p>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The Optiflow–CloudSync CRM integration uses the available <strong>CloudSync API suite</strong> and does <em>not</em> require installing any packages in your CloudSync environment. Some minor setup in CloudSync is required to provide authentication and populate the APIs with the required data.</p>
-</blockquote>
+</div>
 <h4 id="integration-feeds">Integration feeds<a class="headerlink" href="#integration-feeds" title="Permanent link">&para;</a></h4>
 <p>The three types of feeds available in the Optiflow–CloudSync CRM integration include:</p>
 <ul>
@@ -1117,19 +1116,20 @@
 </li>
 <li>
 <p>Select <strong>Change Data Capture</strong>.</p>
+<p>The <strong>Change Data Capture</strong> screen is displayed. In <strong>Available Entities</strong>, the system displays the CDC entities that are available to be selected for the change data capture service for the integration.</p>
+</li>
+<li>
+<p>From <strong>Available Entities</strong>, move the relevant CDC entities that are in scope for the integration to <strong>Selected Entities</strong>, which can include:<ul><li><strong>SupportTicket</strong></li><li><strong>ChatSession</strong></li><li><strong>VideoSession</strong></li><li><strong>UserPresence</strong></li></ul></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only select the entities that are included in the integration. For example, if chats are not included, do <em>not</em> select <strong>ChatSession</strong>.</p>
+</div>
+</li>
+<li>
+<p>Select <strong>Save</strong>.</p>
+<p>The CDC entities that you selected are included in the integration.</p>
 </li>
 </ol>
-<p>The <strong>Change Data Capture</strong> screen is displayed. In <strong>Available Entities</strong>, the system displays the CDC entities that are available to be selected for the change data capture service for the integration.</p>
-<ol>
-<li>From <strong>Available Entities</strong>, move the relevant CDC entities that are in scope for the integration to <strong>Selected Entities</strong>, which can include:<ul><li><strong>SupportTicket</strong></li><li><strong>ChatSession</strong></li><li><strong>VideoSession</strong></li><li><strong>UserPresence</strong></li></ul></li>
-</ol>
-<blockquote>
-<p><strong>Note:</strong> Only select the entities that are included in the integration. For example, if chats are not included, do <em>not</em> select <strong>ChatSession</strong>.</p>
-</blockquote>
-<ol>
-<li>Select <strong>Save</strong>.</li>
-</ol>
-<p>The CDC entities that you selected are included in the integration.</p>
 <p><strong>What to do next?</strong></p>
 <p><a href="#create-a-new-user-and-service-account">Create a new user and service account</a></p>
 <h3 id="create-a-new-user-and-service-account">Create a new user and service account<a class="headerlink" href="#create-a-new-user-and-service-account" title="Permanent link">&para;</a></h3>
@@ -1146,8 +1146,6 @@
 </li>
 <li>
 <p>On the <strong>New User</strong> screen, complete the following mandatory fields for the user:</p>
-</li>
-</ol>
 <table>
 <thead>
 <tr>
@@ -1178,19 +1176,19 @@
 </tr>
 </tbody>
 </table>
-<ol>
+</li>
 <li>
 <p>Select <strong>Save</strong>.       </p>
 </li>
 <li>
 <p>Next to the <strong>Email</strong> field, select the <strong>Verify</strong> link to send a verification email to the user, and click <strong>OK</strong>.</p>
+<p>The system sends an email to the user with a link to verify the account. </p>
+</li>
+<li>
+<p>From the <em>Welcome to CloudSync!</em> email, select <strong>Verify Account</strong>.     </p>
+<p>The system verifies the email account, and changes the <strong>Verify</strong> link next to the <strong>Email</strong> field to: <strong>Verified</strong>. The integration uses this user account to authenticate between CloudSync and Optiflow.                     </p>
 </li>
 </ol>
-<p>The system sends an email to the user with a link to verify the account. </p>
-<ol>
-<li>From the <em>Welcome to CloudSync!</em> email, select <strong>Verify Account</strong>.     </li>
-</ol>
-<p>The system verifies the email account, and changes the <strong>Verify</strong> link next to the <strong>Email</strong> field to: <strong>Verified</strong>. The integration uses this user account to authenticate between CloudSync and Optiflow.                     </p>
 <p><strong>What to do next?</strong></p>
 <p><a href="#create-a-permission-set">Create a permission set</a></p>
 <h3 id="create-a-permission-set">Create a permission set<a class="headerlink" href="#create-a-permission-set" title="Permanent link">&para;</a></h3>
@@ -1207,8 +1205,6 @@
 </li>
 <li>
 <p>On the <strong>Permission Set Create</strong> screen, complete the following mandatory fields:</p>
-</li>
-</ol>
 <table>
 <thead>
 <tr>
@@ -1231,8 +1227,10 @@
 </tr>
 </tbody>
 </table>
-<ol>
-<li>Select <strong>Save</strong>.</li>
+</li>
+<li>
+<p>Select <strong>Save</strong>.</p>
+</li>
 </ol>
 <p><strong>What to do next?</strong></p>
 <p><a href="#assign-a-permission-set-to-a-user">Assign a permission set to a user</a></p>
@@ -1247,10 +1245,8 @@
 </li>
 <li>
 <p>At the upper right of the <strong>Current Assignments</strong> page, select <strong>Add Assignment</strong>.</p>
-</li>
-</ol>
 <p>The system displays all users in a list.</p>
-<ol>
+</li>
 <li>
 <p>In the search text box, enter the user you created in <a href="#create-a-new-user-and-service-account">Create a new user and service account</a>.</p>
 </li>
@@ -1259,11 +1255,11 @@
 </li>
 <li>
 <p>Set the expiration date for the assignment, and select <strong>Assign</strong>.</p>
-</li>
-</ol>
 <p>The system displays a confirmation message, stating that the assignments were successful.</p>
-<ol>
-<li>Select <strong>Done</strong>.</li>
+</li>
+<li>
+<p>Select <strong>Done</strong>.</p>
+</li>
 </ol>
 <p><strong>What to do next?</strong></p>
 <p><a href="#create-a-connected-app">Create a connected app</a></p>
@@ -1284,7 +1280,7 @@
 </li>
 <li>
 <p>On the <strong>New Connected App</strong> screen, under <strong>Basic Information</strong>, complete the following mandatory fields:</p>
-</li>
+<ul>
 <li>
 <p><strong>Connected App Name</strong></p>
 </li>
@@ -1293,6 +1289,8 @@
 </li>
 <li>
 <p><strong>Contact Email</strong> (must be a valid email address)</p>
+</li>
+</ul>
 </li>
 <li>
 <p>From <strong>API (Enable OAuth Settings)</strong>, select <strong>Enable OAuth Settings</strong>.</p>
@@ -1357,10 +1355,8 @@
 </li>
 <li>
 <p>In <strong>Client Credentials Flow</strong>, in the <strong>Run As</strong> field, browse, and select the user you created for the integration.</p>
-</li>
-</ol>
 <p>The Client Credentials Flow defines the permissions used in the system-to-system communication. These permissions are defined for the user in the integration.</p>
-<ol>
+</li>
 <li>
 <p>Select <strong>Save</strong>.</p>
 </li>
@@ -1406,13 +1402,13 @@
 <p><a href="#generate-a-consumer-key">Generate a consumer key</a></p>
 <p><strong>Procedure</strong></p>
 <ol>
-<li>Open your Postman collection.</li>
-</ol>
+<li>
+<p>Open your Postman collection.</p>
 <p>If you are working with a CloudSync sandbox instance, make sure to use the following endpoint: https://test.cloudsync.com/services/oauth2/token (instead of the production endpoint: https://login.cloudsync.com/services/oauth2/token).</p>
-<ol>
+</li>
 <li>
 <p>On the <strong>Variables</strong> tab, update the following key-value pairs with your credentials:</p>
-</li>
+<ul>
 <li>
 <p>grant_type: <strong>urn:ietf:params:oauth:grant-type:jwt-bearer</strong></p>
 </li>
@@ -1425,13 +1421,15 @@
 <li>
 <p>cloudsyncTokenEndpoint: <strong><Your CloudSync Token Endpoint></strong></p>
 </li>
+</ul>
+</li>
 <li>
 <p>Select <strong>Send</strong>.</p>
-</li>
-</ol>
 <p>If the configuration was defined correctly, the system displays a success response (200) when executing the Postman request.</p>
-<ol>
-<li>Upon receiving a success response (200), share the results with Optiflow for the CloudSync integration.</li>
+</li>
+<li>
+<p>Upon receiving a success response (200), share the results with Optiflow for the CloudSync integration.</p>
+</li>
 </ol>
 
 
@@ -1488,7 +1486,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.instant", "navigation.top", "navigation.tracking", "navigation.prune", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

@@ -225,12 +225,6 @@
   
     
     
-      
-        
-          
-        
-      
-    
     
     
       
@@ -238,19 +232,18 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
-          <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -264,9 +257,8 @@
   
   
 
-            </a>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
@@ -279,6 +271,32 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -296,12 +314,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
       
@@ -309,14 +321,14 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -421,12 +433,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
       
@@ -434,6 +440,8 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
@@ -690,10 +698,6 @@
   
     
     
-      
-        
-      
-    
     
     
       
@@ -701,14 +705,14 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -783,12 +787,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
       
@@ -796,14 +794,14 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1235,8 +1233,6 @@
 </li>
 <li>
 <p>In the <strong>Full Name</strong> and <strong>Email</strong> fields, enter the name and email address of the first user you want to add, and select <strong>Add user</strong>.</p>
-</li>
-</ol>
 <hr />
 <p><img alt="Add user to authenticate with your app" src="../../images/Spotify_7.png" title="Add user to authenticate with your app" /></p>
 <hr />
@@ -1244,6 +1240,8 @@
 <hr />
 <p><img alt="Authenticated user added" src="../../images/Spotify_8.png" title="Authenticated user added" /></p>
 <hr />
+</li>
+</ol>
 <h3 id="apply-for-extended-quota-mode">Apply for extended quota mode<a class="headerlink" href="#apply-for-extended-quota-mode" title="Permanent link">&para;</a></h3>
 <p>If you want your app to be used by many Spotify users at the same time, your organization can apply for the <em>extended</em> quota mode, which has a much higher rate limit than development mode. </p>
 <p>To apply for this mode, your business or organization first needs to be an approved Spotify partner, which involves completing and submitting a Partner Application Form. Upon approval, you can then complete and submit a Quota Extension Request Form from the Developer Dashboard. The Spotify App Review Team reviews your request, tests your app and sends you feedback via email about your request.</p>
@@ -1251,16 +1249,18 @@
 <ul>
 <li>
 <p>Complete the <a href="#getting-started">getting started</a> tasks: </p>
-</li>
+<ul>
 <li>
 <p><a href="#set-up-your-account">Set up your account</a></p>
 </li>
 <li>
 <p><a href="#create-an-app">Create an app</a></p>
 </li>
+</ul>
+</li>
 <li>
 <p>Verify that your organization or business:</p>
-</li>
+<ul>
 <li>
 <p>Is an established business entity (legally registered business or organization)</p>
 </li>
@@ -1274,26 +1274,28 @@
 <p>Is available in key Spotify markets</p>
 </li>
 </ul>
+</li>
+</ul>
 <p><strong>Procedure</strong>:</p>
 <ol>
-<li>Complete the <a href="https://docs.google.com/forms/d/1O87xdPP1zWUDyHnduwbEFpcjA57JOaefCgBShKjAqlo">Partner Application Form</a>.</li>
-</ol>
+<li>
+<p>Complete the <a href="https://docs.google.com/forms/d/1O87xdPP1zWUDyHnduwbEFpcjA57JOaefCgBShKjAqlo">Partner Application Form</a>.</p>
 <p>Spotify will review your submitted form and send a response by email. If Spotify approves your <a href="https://docs.google.com/forms/d/1O87xdPP1zWUDyHnduwbEFpcjA57JOaefCgBShKjAqlo">Partner Application Form</a>, continue to the next step.</p>
-<ol>
+</li>
 <li>
 <p>From the <a href="https://developer.spotify.com/dashboard">Dashboard</a> page, select the app for which you want to request extended quota mode.</p>
 </li>
 <li>
 <p>From the <strong>Quota Extension Request</strong> tab, complete the Quota Extension Request Form, which includes four main sections.</p>
-</li>
-</ol>
 <hr />
 <p><img alt="Quota Extension Request Form" src="../../images/Spotify_9.png" title="Quota Extension Request Form" /></p>
 <hr />
-<ol>
-<li>When you have completed the form, select <strong>Submit</strong>.</li>
-</ol>
+</li>
+<li>
+<p>When you have completed the form, select <strong>Submit</strong>.</p>
 <p>If you have successfully submitted your app for review, <strong>Sent</strong> is displayed in blue on your app detail page. The app review team will review your form, evaluate it for compliance with Spotify's <a href="https://developer.spotify.com/policy">Developer Policy</a>, and send you feedback to the email address associated with your Spotify account. This review process can take up to 6 weeks.</p>
+</li>
+</ol>
 <h3 id="rate-limit-techniques">Rate limit techniques<a class="headerlink" href="#rate-limit-techniques" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -1450,9 +1452,10 @@
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  &quot;total&quot;: 85
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>}
 </span></code></pre></div>
-<blockquote>
-<p><strong>Note:</strong> If the response is null, you have reached the last page.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the response is null, you have reached the last page.</p>
+</div>
 <hr />
 <h2 id="getting-started">🚀 Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>From the Spotify Developer Dashboard, set up your account. Then, create your first app, which provides you with a <em>client ID</em> and <em>client secret</em>. Finally, request an <em>access token</em>, which is a string that contains the credentials and permissions you need to access a given resource. </p>
@@ -1510,8 +1513,6 @@
 </li>
 <li>
 <p>On the <strong>Create app</strong> page, complete the fields.</p>
-</li>
-</ol>
 <hr />
 <p><img alt="Create New App - Add Redirect URIs" src="../../images/Spotify_2.png" title="Create New App - Add Redirect URIs" /></p>
 <hr />
@@ -1549,9 +1550,9 @@
 </tr>
 </tbody>
 </table>
-<ol>
-<li>Select <strong>Save</strong>.</li>
-</ol>
+</li>
+<li>
+<p>Select <strong>Save</strong>.</p>
 <hr />
 <p><img alt="Save New App Settings" src="../../images/Spotify_3.png" title="Save New App Settings" /></p>
 <hr />
@@ -1559,13 +1560,16 @@
 <hr />
 <p><img alt="New App Created" src="../../images/Spotify_4.png" title="New App Created" /></p>
 <hr />
+</li>
+</ol>
 <p>By default, every app you create starts in <em>development</em> mode, which limits usage to up to 25 specified users. If you want to share your app with up to 25 users, <a href="#define-authenticated-users-in-development-mode">define authenticated users in development mode</a>. </p>
 <p>However, if you want to define an <em>unlimited</em> number of users, your organization can apply for <a href="#apply-for-extended-quota-mode">extended quota mode</a>. For details on both modes, see <a href="#app-access-modes-user-access-quotas">App access modes (user access quotas)</a>.</p>
 <h3 id="request-an-access-token">Request an access token<a class="headerlink" href="#request-an-access-token" title="Permanent link">&para;</a></h3>
 <p>You can now request an <em>access token</em>, which is a string that contains the credentials and permissions used to access a given resource (such as artists, albums, or tracks) or user data (for example, your profile or playlists).</p>
-<blockquote>
-<p><strong>Note:</strong> Spotify uses the OAuth2 standard for authorization, which defines four grant types (or flows) to request and get an access token. Spotify implements three of them: Authorization Code, Authorization Code with PKCE Extension, and Client Credentials. This getting started task utilizes the Client Credentials flow. For more information, see <a href="#spotify-implements-three-oauth-grant-types">Spotify implements three OAuth grant types</a>.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Spotify uses the OAuth2 standard for authorization, which defines four grant types (or flows) to request and get an access token. Spotify implements three of them: Authorization Code, Authorization Code with PKCE Extension, and Client Credentials. This getting started task utilizes the Client Credentials flow. For more information, see <a href="#spotify-implements-three-oauth-grant-types">Spotify implements three OAuth grant types</a>.</p>
+</div>
 <p><strong>Before you begin</strong></p>
 <ul>
 <li>
@@ -1573,49 +1577,50 @@
 </li>
 <li>
 <p>Verify that curl is installed on your computer:</p>
-</li>
+<ul>
 <li>For <em>macOS/Linux</em>, it is usually pre-installed. </li>
 <li>For <em>Windows</em>, <a href="https://curl.se/windows/">download and install curl</a> or use Git Bash.</li>
 </ul>
-<blockquote>
-<p><strong>Note:</strong> Curl is a command-line tool used to transfer data to or from a server using various protocols - most commonly <strong>HTTP</strong> and <strong>HTTPS</strong>.</p>
-</blockquote>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Curl is a command-line tool used to transfer data to or from a server using various protocols - most commonly <strong>HTTP</strong> and <strong>HTTPS</strong>.</p>
+</div>
 <p><strong>Procedure</strong></p>
 <ol>
-<li>From the <a href="https://developer.spotify.com/dashboard">Dashboard</a>, select the app you just created.</li>
-</ol>
+<li>
+<p>From the <a href="https://developer.spotify.com/dashboard">Dashboard</a>, select the app you just created.</p>
 <hr />
 <p><img alt="Select new app from dashboard" src="../../images/Spotify_5.png" title="Select new app from dashboard" /></p>
 <hr />
-<ol>
+</li>
 <li>
 <p>From the <strong>Basic Information</strong> tab, access your client ID and client secret:</p>
-</li>
+<ul>
 <li>
 <p><strong>Client ID</strong>: The client ID is displayed in the <strong>Client ID</strong> field. To copy it, click the copy icon in the corner.</p>
 </li>
 <li>
 <p><strong>Client Secret</strong>: To view the client secret, select <strong>View client secret</strong>. To copy it, click the copy icon in the corner.</p>
 </li>
-</ol>
+</ul>
 <hr />
 <p><img alt="View client ID and client secret" src="../../images/Spotify_6.png" title="View client ID and client secret" /></p>
 <hr />
-<ol>
+</li>
 <li>
 <p>Using the <strong>Client Credentials</strong> authorization flow, send an API request with the following information:</p>
-</li>
-<li>
-<p>Send a <strong>POST</strong> request to the token endpoint URI.</p>
-</li>
+<ul>
+<li>Send a <strong>POST</strong> request to the token endpoint URI.</li>
 <li>Add the <code>Content-Type</code> header: <strong>application/x-www-form-urlencoded</strong>.</li>
 <li>Add an <code>Authorization</code> header using <strong>HTTP Basic</strong> with <code>base64(client_id:client_secret)</code>.</li>
 <li>Set the body parameter: <code>grant_type=client_credentials</code>.</li>
-</ol>
+</ul>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://accounts.spotify.com/api/token&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">     </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">     </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Basic &lt;base64(client_id:client_secret)&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">     </span>-d<span class="w"> </span><span class="s2">&quot;grant_type=client_credentials&quot;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Basic &lt;base64(client_id:client_secret)&gt;&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;grant_type=client_credentials&quot;</span>
 </span></code></pre></div>
 <p>The response returns an access token that is valid for 1 hour (or 3600 seconds). After that time, the token expires and you need to request a new one.</p>
 <p><div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>{
@@ -1625,12 +1630,15 @@
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>}
 </span></code></pre></div>
 To use the access token, you must include the <code>Authorization</code> header in your API requests, where the value is the valid access token following the format: <code>Bearer &lt;Access Token&gt;</code>.</p>
+</li>
+</ol>
 <hr />
 <h2 id="tutorial-request-artist-data">🎤 Tutorial: Request artist data<a class="headerlink" href="#tutorial-request-artist-data" title="Permanent link">&para;</a></h2>
 <p>This tutorial describes how to retrieve information about an artist. It involves appending the Spotify ID of the artist to the <strong>Get Artist</strong> endpoint, and including the access token using the <code>Authorization</code> header in the API request. </p>
-<blockquote>
-<p><strong>Note:</strong> The request includes using curl (Client URL) for the HTTP request.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The request includes using curl (Client URL) for the HTTP request.</p>
+</div>
 <h3 id="before-you-begin">Before you begin<a class="headerlink" href="#before-you-begin" title="Permanent link">&para;</a></h3>
 <p>Complete all of the <a href="#getting-started">Getting started</a> tasks, including setting up an account, creating an app, and requesting an access token.</p>
 <h3 id="step-1-get-the-spotify-id-of-an-artist">Step 1: Get the Spotify ID of an artist<a class="headerlink" href="#step-1-get-the-spotify-id-of-an-artist" title="Permanent link">&para;</a></h3>
@@ -1645,9 +1653,9 @@ To use the access token, you must include the <code>Authorization</code> header 
 </li>
 <li>
 <p>Select <strong>Share</strong> &gt; <strong>Copy link to artist</strong>. </p>
+<p>The Spotify ID is the final path segment in the URL, after <code>open.spotify.com/artist/</code>. For example, in <code>https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb</code>, the ID is <code>4Z8W4fKeB5YxbusRsdQVPb</code>.</p>
 </li>
 </ol>
-<p>The Spotify ID is the final path segment in the URL, after <code>open.spotify.com/artist/</code>. For example, in <code>https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb</code>, the ID is <code>4Z8W4fKeB5YxbusRsdQVPb</code>.</p>
 <h3 id="step-2-start-the-api-request-with-the-get-artist-endpoint">Step 2: Start the API request with the <strong>Get Artist</strong> endpoint<a class="headerlink" href="#step-2-start-the-api-request-with-the-get-artist-endpoint" title="Permanent link">&para;</a></h3>
 <p>Append the Spotify ID to the <strong>Get Artist</strong> endpoint (<strong>https://api.spotify.com/v1/artists/{artist_id}</strong>).</p>
 <p>For example:</p>
@@ -2918,9 +2926,10 @@ For more information, see <a href="#http-status-and-error-codes">HTTP Status and
 <p>If successful (<strong>204</strong> status code), playback on the device is paused.</p>
 <h3 id="skip-to-next">Skip to next<a class="headerlink" href="#skip-to-next" title="Permanent link">&para;</a></h3>
 <p>Skips to the next track in the user's queue. </p>
-<blockquote>
-<p><em><strong>Note:</strong> This API only works for users who have Spotify Premium. The order of execution is _not</em> guaranteed when you use this API with other Player API endpoints.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This API only works for users who have Spotify Premium. The order of execution is <em>not</em> guaranteed when you use this API with other Player API endpoints.</p>
+</div>
 <h4 id="method_7">Method<a class="headerlink" href="#method_7" title="Permanent link">&para;</a></h4>
 <p>POST</p>
 <h4 id="endpoint_7">Endpoint<a class="headerlink" href="#endpoint_7" title="Permanent link">&para;</a></h4>
@@ -3681,7 +3690,7 @@ For more information, see <a href="#http-status-and-error-codes">HTTP Status and
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.instant", "navigation.top", "navigation.tracking", "navigation.prune", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

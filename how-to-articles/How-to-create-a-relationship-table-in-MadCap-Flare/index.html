@@ -225,12 +225,6 @@
   
     
     
-      
-        
-          
-        
-      
-    
     
     
       
@@ -238,19 +232,18 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
-          <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -264,9 +257,8 @@
   
   
 
-            </a>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
@@ -279,6 +271,32 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -296,12 +314,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
       
@@ -309,14 +321,14 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -419,12 +431,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
       
@@ -432,14 +438,14 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -544,10 +550,6 @@
   
     
     
-      
-        
-      
-    
     
     
       
@@ -555,6 +557,8 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
@@ -761,12 +765,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
       
@@ -774,14 +772,14 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1082,9 +1080,10 @@
 <p>Basic familiarity with MadCap Flare is assumed; this guide does <em>not</em> cover introductory concepts.</p>
 </li>
 </ul>
-<blockquote>
-<p><strong>Note:</strong> It’s OK if your guide currently includes a <strong>Related topics</strong> element. After creating a relationship table, you can replace the existing element entirely or use both—keeping <strong>Related topics</strong> in some chapters and the relationship table in others.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s OK if your guide currently includes a <strong>Related topics</strong> element. After creating a relationship table, you can replace the existing element entirely or use both—keeping <strong>Related topics</strong> in some chapters and the relationship table in others.</p>
+</div>
 <hr />
 <h2 id="steps"><h2 id="steps">📌 Steps</h2><a class="headerlink" href="#steps" title="Permanent link">&para;</a></h2>
 <p>To automatically and dynamically link related topics in a guide, create a relationship table. You can edit a relationship table at any time. When working in a project with multiple TOCs, create a new relationship table for each TOC.</p>
@@ -1105,15 +1104,13 @@
 </li>
 <li>
 <p>From <strong>Project</strong>, right-click the <strong>Advanced</strong> folder and select <strong>Add Relationship Table</strong>.</p>
-</li>
-</ol>
 <hr />
 <p><img alt="Add relationship table" src="../../images/Create_rel_table2.png" title="Add relationship table" /></p>
 <hr />
-<ol>
+</li>
 <li>
 <p>On the <strong>Add File</strong> screen:</p>
-</li>
+<ol>
 <li>
 <p>Under <strong>Source</strong>, leave the default <strong>New from template</strong>. </p>
 </li>
@@ -1131,37 +1128,41 @@
 <hr />
 <p><img alt="Relationship table added" src="../../images/Create_rel_table4.png" title="Relationship table added" /></p>
 <hr />
+</li>
+</ol>
 <h3 id="2-set-up-your-toc">2. Set up your TOC<a class="headerlink" href="#2-set-up-your-toc" title="Permanent link">&para;</a></h3>
 <p>To easily move the topics from your TOC to your relationship table, move your TOC to appear alongside your relationship table.</p>
 <ol>
-<li>By selecting the five lines that appear in the corner of your TOC file, click and drag your TOC.</li>
-</ol>
+<li>
+<p>By selecting the five lines that appear in the corner of your TOC file, click and drag your TOC.</p>
 <hr />
 <p><img alt="Click and drag your TOC" src="../../images/Create_rel_table5.png" title="Click and drag your TOC" /></p>
 <hr />
-<ol>
-<li>When you do that, Flare displays multiple shaded squares, prompting you to place the TOC in a specific location on the screen. For example, to place the TOC on the right side, select the square that is shaded on the right.</li>
-</ol>
+</li>
+<li>
+<p>When you do that, Flare displays multiple shaded squares, prompting you to place the TOC in a specific location on the screen. For example, to place the TOC on the right side, select the square that is shaded on the right.</p>
 <hr />
 <p><img alt="Place TOC in shaded square" src="../../images/Create_rel_table6.png" title="Place TOC in shaded square" /></p>
 <hr />
-<ol>
-<li>From your TOC, navigate to the chapter that includes the topics you want to add to the relationship table.</li>
-</ol>
+</li>
+<li>
+<p>From your TOC, navigate to the chapter that includes the topics you want to add to the relationship table.</p>
 <hr />
 <p><img alt="Navigate to chapter in TOC" src="../../images/Create_rel_table7.png" title="Navigate to chapter in TOC" /></p>
 <hr />
+</li>
+</ol>
 <h3 id="3-create-row-in-the-table">3. Create Row in the Table<a class="headerlink" href="#3-create-row-in-the-table" title="Permanent link">&para;</a></h3>
 <p>Create the first row in your relationship table. </p>
 <ol>
-<li>From the <strong>Row Name</strong> column in your relationship table, right-click and select <strong>Row Properties</strong>.</li>
-</ol>
+<li>
+<p>From the <strong>Row Name</strong> column in your relationship table, right-click and select <strong>Row Properties</strong>.</p>
 <hr />
 <p><img alt="Select Row Properties" src="../../images/Create_rel_table8.png" title="Select Row Properties" /></p>
 <hr />
-<ol>
-<li>In the <strong>Row Type</strong> field, enter the name of the row (or subject), and click <strong>OK</strong>. <br>For example, I want to put links to topics related to getting up and running in an application called Workforce Optimization. Therefore, the name of my row is <strong>Getting Started</strong>.</li>
-</ol>
+</li>
+<li>
+<p>In the <strong>Row Type</strong> field, enter the name of the row (or subject), and click <strong>OK</strong>. <br>For example, I want to put links to topics related to getting up and running in an application called Workforce Optimization. Therefore, the name of my row is <strong>Getting Started</strong>.</p>
 <hr />
 <p><img alt="Enter row name" src="../../images/Create_rel_table9.png" title="Enter row name" /></p>
 <hr />
@@ -1169,15 +1170,17 @@
 <hr />
 <p><img alt="Row created" src="../../images/Create_rel_table10.png" title="Row created" /></p>
 <hr />
+</li>
+</ol>
 <h3 id="4-add-topics-to-the-row">4. Add Topics to the Row<a class="headerlink" href="#4-add-topics-to-the-row" title="Permanent link">&para;</a></h3>
 <p>From your TOC, drag and drop the relevant topics to the row in your relationship table.</p>
 <ol>
-<li>Review your TOC to determine which topics should be linked in the row.</li>
-</ol>
+<li>
+<p>Review your TOC to determine which topics should be linked in the row.</p>
 <p>For example, for my <strong>Getting Started</strong> row, I want to link the concept topic, <em>Workforce Optimization overview</em>, with the other topics in that chapter. I also want to link the two task topics, <em>Sign in to the portal</em> and <em>Sign out of the portal</em>, to each other.</p>
-<ol>
-<li>Drag and drop the topics to the relevant topic type column. </li>
-</ol>
+</li>
+<li>
+<p>Drag and drop the topics to the relevant topic type column. </p>
 <p>For example:</p>
 <ul>
 <li>
@@ -1193,31 +1196,35 @@
 <hr />
 <p><img alt="Drag and drop topics" src="../../images/Create_rel_table11.png" title="Drag and drop topics" /></p>
 <hr />
+</li>
+</ol>
 <h3 id="5-link-same-topic-types-to-each-other">5. Link Same Topic Types to Each Other<a class="headerlink" href="#5-link-same-topic-types-to-each-other" title="Permanent link">&para;</a></h3>
 <p>By default, <em>different</em> topic types in the same row in your relationship table will link to one another. To link topics of the <em>same</em> topic type to each other, define them as a <strong>Family</strong>.</p>
 <ol>
-<li>From the first topic to be included in the <strong>Family</strong>, right-click and select <strong>Cell Properties</strong>.</li>
-</ol>
+<li>
+<p>From the first topic to be included in the <strong>Family</strong>, right-click and select <strong>Cell Properties</strong>.</p>
 <hr />
 <p><img alt="Select Cell Properties" src="../../images/Create_rel_table12.png" title="Select Cell Properties" /></p>
 <hr />
-<ol>
-<li>On the <strong>Cell Properties</strong> screen, from the <strong>Collection Type</strong> drop-down list, select <strong>Family</strong>.</li>
-</ol>
+</li>
+<li>
+<p>On the <strong>Cell Properties</strong> screen, from the <strong>Collection Type</strong> drop-down list, select <strong>Family</strong>.</p>
 <hr />
 <p><img alt="Select Family for collection type" src="../../images/Create_rel_table13.png" title="Select Family for collection type" /></p>
 <hr />
-<ol>
-<li>Select <strong>OK</strong>.</li>
-</ol>
+</li>
+<li>
+<p>Select <strong>OK</strong>.</p>
 <p>The cell you selected is now shaded green, indicating that there is a <strong>Family</strong> connection between these same topic types. Now, the concept topics, <em>Workforce Optimization overview</em> and <em>Navigating WFO workspaces</em>, will link to one another. </p>
 <hr />
 <p><img alt="Family connection between topics" src="../../images/Create_rel_table14.png" title="Family connection between topics" /></p>
 <hr />
-<ol>
-<li>Repeat these steps for all topics of the same topic type that you want to link to one another.</li>
-</ol>
+</li>
+<li>
+<p>Repeat these steps for all topics of the same topic type that you want to link to one another.</p>
 <hr />
+</li>
+</ol>
 <h3 id="6-final-steps">6. Final Steps<a class="headerlink" href="#6-final-steps" title="Permanent link">&para;</a></h3>
 <p>Add all relevant topics to your relationship table. In addition, add your relationship table snippet to the end of all relevant topics, and update and build your target files. Then, review your output.</p>
 <ol>
@@ -1226,7 +1233,7 @@
 </li>
 <li>
 <p>Insert the relationship table snippet in every topic included in your relationship table:</p>
-</li>
+<ol>
 <li>
 <p>From a topic for which you want to add the relationship table snippet, scroll to the bottom of the topic (where your <strong>Related topics</strong> heading is usually inserted).</p>
 </li>
@@ -1243,19 +1250,22 @@
 <hr />
 <p><img alt="Insert relationship table snippet in topics" src="../../images/Create_rel_table15.png" title="Insert relationship table snippet in topics" /></p>
 <hr />
-<blockquote>
-<p><strong>Note:</strong> If you have existing <strong>Related topic</strong> elements and links where you are inserting the snippets, remove those elements so they do <em>not</em> appear in the output.</p>
-</blockquote>
-<ol>
-<li>For every target file, from the <strong>Relationship Table</strong> tab, select the relationship table you created. <br>This ensures the relationship table links get included in the output.</li>
-</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have existing <strong>Related topic</strong> elements and links where you are inserting the snippets, remove those elements so they do <em>not</em> appear in the output.</p>
+</div>
+</li>
+<li>
+<p>For every target file, from the <strong>Relationship Table</strong> tab, select the relationship table you created. <br>This ensures the relationship table links get included in the output.</p>
 <hr />
 <p><img alt="Select relationship table for targets" src="../../images/Create_rel_table16.png" title="Select relationship table for targets" /></p>
 <hr />
-<ol>
-<li>Build all relevant targets.</li>
-</ol>
+</li>
+<li>
+<p>Build all relevant targets.</p>
 <hr />
+</li>
+</ol>
 <h2 id="tips"><h2 id="tips">💡 Tips</h2><a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -1283,10 +1293,14 @@
 <hr />
 <p><img alt="View your output" src="../../images/Create_rel_table17.png" title="View your output" /></p>
 <hr />
-<blockquote>
-<p><strong>Note:</strong> If the links are <em>not</em> what you expected, open your relationship table, edit it, rebuild your targets, and check again. It's ok to not get it right the first time! It takes time to understand how to build the relationship tables in a way that results in the right output.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the links are <em>not</em> what you expected, open your relationship table, edit it, rebuild your targets, and check again. It's ok to not get it right the first time! It takes time to understand how to build the relationship tables in a way that results in the right output.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>For more information and technical support for MadCap Flare, see <a href="#additional-resources">Additional resources</a>.</p>
+</div>
 <hr />
 <h2 id="additional-resources"><h2 id="additional-resources">🔗 Additional resources</h2><a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1348,7 +1362,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.instant", "navigation.top", "navigation.tracking", "navigation.prune", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>

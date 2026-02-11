@@ -225,12 +225,6 @@
   
     
     
-      
-        
-          
-        
-      
-    
     
     
       
@@ -238,19 +232,18 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
-          <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -264,9 +257,8 @@
   
   
 
-            </a>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
@@ -279,6 +271,32 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this Site
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -296,12 +314,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
       
@@ -309,14 +321,14 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -421,12 +433,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
       
@@ -434,6 +440,8 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
@@ -690,10 +698,6 @@
   
     
     
-      
-        
-      
-    
     
     
       
@@ -701,14 +705,14 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -783,12 +787,6 @@
   
     
     
-      
-        
-      
-        
-      
-    
     
     
       
@@ -796,14 +794,14 @@
         
       
     
+    
+      
     
     <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -1137,9 +1135,10 @@
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p><em><strong>Note:</strong> These values are intentionally normalized for portfolio demonstration and do _not</em> reflect current OpenWeatherMap pricing tiers.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These values are intentionally normalized for portfolio demonstration and do <em>not</em> reflect current OpenWeatherMap pricing tiers.</p>
+</div>
 <h3 id="handling-429-errors-too-many-requests">Handling 429 errors (Too Many Requests)<a class="headerlink" href="#handling-429-errors-too-many-requests" title="Permanent link">&para;</a></h3>
 <p>If your application exceeds per‑minute or daily quotas, the API responds with an HTTP 429 error response. Implement exponential backoff and honor the <code>Retry-After</code> header (when available). Consider caching frequently requested data and batching requests. In addition, select a subscription tier aligned with your expected load. If repeated 429s occur, reduce call frequency or upgrade your plan.</p>
 <hr />
@@ -1207,9 +1206,10 @@
 <p>For example, the following API request returns 24 hourly forecast entries for London:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>GET https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=51.5085&amp;lon=-0.1257&amp;cnt=24&amp;appid=YOUR_API_KEY
 </span></code></pre></div>
-<blockquote>
-<p><strong>Note:</strong> <code>cnt</code> only limits the number of results. It does <em>not</em> provide true pagination (such as page numbers or offsets). To retrieve additional data, you must send separate requests with different parameters.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>cnt</code> only limits the number of results. It does <em>not</em> provide true pagination (such as page numbers or offsets). To retrieve additional data, you must send separate requests with different parameters.</p>
+</div>
 <hr />
 <h2 id="getting-started">🚀 Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>Create an account, which generates your API key. You can create additional API keys on your account page, and edit, delete, or deactivate your keys.</p>
@@ -1238,18 +1238,19 @@
 </li>
 <li>
 <p>From your email account, select to verify your email address.</p>
-</li>
-</ol>
 <p>After your email address has been successfully confirmed, you will receive another email with your API key and a link to your account.</p>
-<ol>
-<li>Access your <a href="https://home.openweathermap.org/api_keys">account page</a>.</li>
-</ol>
+</li>
+<li>
+<p>Access your <a href="https://home.openweathermap.org/api_keys">account page</a>.</p>
 <hr />
 <p><img alt="OpenWeatherMap account page" src="../../images/OpenWeather_1.png" title="OpenWeatherMap account page" /></p>
 <hr />
-<blockquote>
-<p><strong>Note:</strong> Always make sure to use your API key in every API call.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Always make sure to use your API key in every API call.</p>
+</div>
+</li>
+</ol>
 <h3 id="create-more-api-keys">Create more API keys<a class="headerlink" href="#create-more-api-keys" title="Permanent link">&para;</a></h3>
 <p>When you created your account, the OpenWeatherMap API generated a default API key for you. If needed, you can create additional API keys.</p>
 <p><strong>Procedure</strong>:</p>
@@ -1262,17 +1263,18 @@
 </li>
 <li>
 <p>Select <strong>Generate</strong>.</p>
-</li>
-</ol>
 <p>The system adds the new API key to your account. You can edit, delete, or deactivate any API key on this page.</p>
 <hr />
 <p><img alt="Add API key" src="../../images/OpenWeather_2a.png" title="Add API key" /></p>
 <hr />
+</li>
+</ol>
 <h2 id="tutorial-get-current-weather-for-a-city">🌆 Tutorial: Get current weather for a city<a class="headerlink" href="#tutorial-get-current-weather-for-a-city" title="Permanent link">&para;</a></h2>
 <p>This tutorial describes how to retrieve the current weather for a specific city. It involves using your API key and testing it with curl (Client URL) to verify that the OpenWeatherMap API returns a valid response.</p>
-<blockquote>
-<p><strong>Note:</strong> Curl is a command-line tool used to transfer data to or from a server using various protocols - most commonly <strong>HTTP</strong> and <strong>HTTPS</strong>.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Curl is a command-line tool used to transfer data to or from a server using various protocols - most commonly <strong>HTTP</strong> and <strong>HTTPS</strong>.</p>
+</div>
 <h3 id="before-you-begin">Before you begin<a class="headerlink" href="#before-you-begin" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -1280,11 +1282,11 @@
 </li>
 <li>
 <p>Verify that curl is installed on your computer:</p>
-</li>
-<li>
-<p>For <em>macOS/Linux</em>, it is usually pre-installed. </p>
-</li>
+<ul>
+<li>For <em>macOS/Linux</em>, it is usually pre-installed. </li>
 <li>For <em>Windows</em>, <a href="https://curl.se/windows/">download and install curl</a> or use Git Bash.</li>
+</ul>
+</li>
 </ul>
 <h3 id="step-1-copy-your-api-key">Step 1: Copy your API key<a class="headerlink" href="#step-1-copy-your-api-key" title="Permanent link">&para;</a></h3>
 <p>From your <a href="https://home.openweathermap.org/api_keys">account page</a>, copy your API key. You will need this key for all API requests.</p>
@@ -1349,9 +1351,10 @@
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>]
 </span></code></pre></div>
 Based on this response, the geographic coordinates for London, England are: <code>lat</code>:<strong>51.5156177</strong> and <code>lon</code>:<strong>-0.0919983</strong>.</p>
-<blockquote>
-<p><strong>Note:</strong> This sample shows a subset of the full response. The actual response includes additional objects for the specified range.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This sample shows a subset of the full response. The actual response includes additional objects for the specified range.</p>
+</div>
 <h3 id="step-3-retrieve-current-weather-data-for-london-england">Step 3: Retrieve current weather data for London, England<a class="headerlink" href="#step-3-retrieve-current-weather-data-for-london-england" title="Permanent link">&para;</a></h3>
 <p>Now that you know the geographic coordinates you need, run another API request that specifies retrieving the current weather for London, England.</p>
 <p>For example:</p>
@@ -1383,9 +1386,10 @@ Where the response elements are:</p>
 </ul>
 <p>If you get a similar response, you're all set up with the OpenWeatherMap API.</p>
 <hr />
-<blockquote>
-<p><strong>Note:</strong> For more information about the JSON objects in the API response, see <a href="#api-reference">API Reference</a>.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about the JSON objects in the API response, see <a href="#api-reference">API Reference</a>.</p>
+</div>
 <h2 id="api-reference">📘 API reference<a class="headerlink" href="#api-reference" title="Permanent link">&para;</a></h2>
 <p>The OpenWeatherMap API is designed to help developers integrate weather-based data into applications by providing clear examples, endpoint details, and request/response formats.</p>
 <h3 id="api-reference-overview">API reference overview<a class="headerlink" href="#api-reference-overview" title="Permanent link">&para;</a></h3>
@@ -2199,9 +2203,10 @@ If you want to be explicit, you can include <strong>-X GET</strong> but it's <em
 </table>
 <h3 id="get-daily-forecast-data">Get daily forecast data<a class="headerlink" href="#get-daily-forecast-data" title="Permanent link">&para;</a></h3>
 <p>Retrieves daily forecast data for any location on the globe. You can retrieve weather forecast data for up to 16 days in advance. Response data is available in JSON or XML formats.</p>
-<blockquote>
-<p><em><strong>Note:</strong> This endpoint is deprecated in the real API. It is included here for portfolio purposes _only</em>. Prefer One Call API v3 (<strong>/data/3.0/onecall</strong>) for daily forecasts. </p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This endpoint is deprecated in the real API. It is included here for portfolio purposes <em>only</em>. Prefer One Call API v3 (<strong>/data/3.0/onecall</strong>) for daily forecasts. </p>
+</div>
 <h4 id="method_2">Method<a class="headerlink" href="#method_2" title="Permanent link">&para;</a></h4>
 <p>GET (see <a href="#http-methods-in-openweathermap">HTTP methods in OpenWeatherMap</a>).</p>
 <h4 id="endpoint_2">Endpoint<a class="headerlink" href="#endpoint_2" title="Permanent link">&para;</a></h4>
@@ -2917,9 +2922,10 @@ If you want to be explicit, you can include <strong>-X GET</strong> but it's <em
 <li>Clouds</li>
 </ul>
 <p>All statistical weather data can only be obtained in JSON format. The frequency of the data update is 1 hour.</p>
-<blockquote>
-<p><strong>Note:</strong> This endpoint does <em>not</em> return real historical data. It returns statistically calculated data based on real historical data for a specific period of time.</p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This endpoint does <em>not</em> return real historical data. It returns statistically calculated data based on real historical data for a specific period of time.</p>
+</div>
 <h4 id="method_4">Method<a class="headerlink" href="#method_4" title="Permanent link">&para;</a></h4>
 <p>GET (see <a href="#http-methods-in-openweathermap">HTTP methods in OpenWeatherMap</a>).</p>
 <h4 id="endpoint_4">Endpoint<a class="headerlink" href="#endpoint_4" title="Permanent link">&para;</a></h4>
@@ -3422,9 +3428,10 @@ If you want to be explicit, you can include <strong>-X GET</strong> but it's <em
 </span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>  &quot;count&quot;: 2
 </span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>}
 </span></code></pre></div>
-<blockquote>
-<p><strong>Note:</strong> This sample shows a subset of the full response. The actual response includes additional objects for the specified range.        </p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This sample shows a subset of the full response. The actual response includes additional objects for the specified range.        </p>
+</div>
 <h4 id="response-elements_5">Response elements<a class="headerlink" href="#response-elements_5" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -3524,9 +3531,10 @@ If you want to be explicit, you can include <strong>-X GET</strong> but it's <em
 </span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>  &quot;count&quot;: 2
 </span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>}
 </span></code></pre></div>
-<blockquote>
-<p><strong>Note:</strong> This sample shows a subset of the full response. The actual response includes additional objects for the specified range.        </p>
-</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This sample shows a subset of the full response. The actual response includes additional objects for the specified range.        </p>
+</div>
 <h4 id="response-elements_6">Response elements<a class="headerlink" href="#response-elements_6" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
@@ -3558,9 +3566,10 @@ If you want to be explicit, you can include <strong>-X GET</strong> but it's <em
 </tr>
 </tbody>
 </table>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>The <code>threshold</code> parameter is <em>not</em> used. The whole amount of precipitation data is provided for a specific period.</p>
-</blockquote>
+</div>
 <h3 id="bulk-download-of-weather-data">Bulk download of weather data 📦<a class="headerlink" href="#bulk-download-of-weather-data" title="Permanent link">&para;</a></h3>
 <p>Endpoints related to retrieving and downloading up-to-date current, forecasted, and 7-day historical weather data for numerous cities and zip code areas in Europe, England, and the United States in JSON or CSV file formats.</p>
 <h4 id="endpoints_2">Endpoints<a class="headerlink" href="#endpoints_2" title="Permanent link">&para;</a></h4>
@@ -3611,11 +3620,12 @@ If you want to be explicit, you can include <strong>-X GET</strong> but it's <em
 </span></code></pre></div>
 <h4 id="download-the-bulk-file">Download the bulk file<a class="headerlink" href="#download-the-bulk-file" title="Permanent link">&para;</a></h4>
 <ol>
-<li>As described in <a href="#request-syntax">Request syntax</a>, construct the API request:</li>
-</ol>
+<li>
+<p>As described in <a href="#request-syntax">Request syntax</a>, construct the API request:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}?appid={API key}
 </span></code></pre></div>
 <p>where <strong>{BULK_FILE_NAME}</strong> is one of the following five files that contains current weather data:</p>
+<div markdown="1">
 <table>
 <thead>
 <tr>
@@ -3664,15 +3674,19 @@ If you want to be explicit, you can include <strong>-X GET</strong> but it's <em
 </tr>
 </tbody>
 </table>
-<ol>
-<li>Unpack the downloaded file by using any suitable archiver software. You will then have a JSON or CSV formatted file that is ready to use.</li>
-</ol>
-<blockquote>
-<p><strong>Note:</strong> All bulk files are available in both JSON and CSV formats. Filenames in the above table are relevant for JSON format. To download files in CSV format, change <strong>json</strong> to <strong>csv</strong> in the filename. For example, the <strong>JSON</strong> filename is <strong>weather_16.json.gz</strong>, and the <strong>CSV</strong> filename for the same data is <strong>weather_16.csv.gz</strong>.</p>
-</blockquote>
-<ol>
-<li>To download updated weather data, repeat steps #1-2 at the times indicated in the column, <strong>Updated by UTC Time</strong>, by the table in step #1. 
-   Weather data is updated in these files on a regular basis.</li>
+</div>
+</li>
+<li>
+<p>Unpack the downloaded file by using any suitable archiver software. You will then have a JSON or CSV formatted file that is ready to use.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All bulk files are available in both JSON and CSV formats. Filenames in the above table are relevant for JSON format. To download files in CSV format, change <strong>json</strong> to <strong>csv</strong> in the filename. For example, the <strong>JSON</strong> filename is <strong>weather_16.json.gz</strong>, and the <strong>CSV</strong> filename for the same data is <strong>weather_16.csv.gz</strong>.</p>
+</div>
+</li>
+<li>
+<p>To download updated weather data, repeat steps #1-2 at the times indicated in the column, <strong>Updated by UTC Time</strong>, by the table in step #1. 
+    Weather data is updated in these files on a regular basis.</p>
+</li>
 </ol>
 <h3 id="get-forecasted-weather-data-in-bulk">Get forecasted weather data in bulk<a class="headerlink" href="#get-forecasted-weather-data-in-bulk" title="Permanent link">&para;</a></h3>
 <p>Retrieves and downloads up-to-date forecasted weather data for numerous cities and zip codes in Europe, England, and the United States in JSON or CSV file formats. </p>
@@ -3716,8 +3730,8 @@ If you want to be explicit, you can include <strong>-X GET</strong> but it's <em
 </span></code></pre></div>
 <h4 id="download-the-bulk-file_1">Download the bulk file<a class="headerlink" href="#download-the-bulk-file_1" title="Permanent link">&para;</a></h4>
 <ol>
-<li>As described in <a href="#request-syntax">Request syntax</a>, construct the API request:</li>
-</ol>
+<li>
+<p>As described in <a href="#request-syntax">Request syntax</a>, construct the API request:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}?appid={API key}
 </span></code></pre></div>
 <p>where <strong>{BULK_FILE_NAME}</strong> is one of the following five files that contains forecasted weather data:</p>
@@ -3769,15 +3783,18 @@ If you want to be explicit, you can include <strong>-X GET</strong> but it's <em
 </tr>
 </tbody>
 </table>
-<ol>
-<li>Unpack the downloaded file by using any suitable archiver software. You will then have a JSON or CSV formatted file that is ready to use.</li>
-</ol>
-<blockquote>
-<p><strong>Note:</strong> All bulk files are available in both JSON and CSV formats. Filenames in the above table are relevant for JSON format. To download files in CSV format, change <strong>json</strong> to <strong>csv</strong> in the filename. For example, the <strong>JSON</strong> filename is <strong>hourly1h_14.json.gz</strong>, and the <strong>CSV</strong> filename for the same data is <strong>hourly1h_14.csv.gz</strong>.</p>
-</blockquote>
-<ol>
-<li>To download updated weather data, repeat steps #1-2 at the times indicated in the column, <strong>Updated by UTC Time</strong>, in the table in step #1. 
-   Weather data is updated in these files on a regular basis.</li>
+</li>
+<li>
+<p>Unpack the downloaded file by using any suitable archiver software. You will then have a JSON or CSV formatted file that is ready to use.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All bulk files are available in both JSON and CSV formats. Filenames in the above table are relevant for JSON format. To download files in CSV format, change <strong>json</strong> to <strong>csv</strong> in the filename. For example, the <strong>JSON</strong> filename is <strong>hourly1h_14.json.gz</strong>, and the <strong>CSV</strong> filename for the same data is <strong>hourly1h_14.csv.gz</strong>.</p>
+</div>
+</li>
+<li>
+<p>To download updated weather data, repeat steps #1-2 at the times indicated in the column, <strong>Updated by UTC Time</strong>, in the table in step #1. 
+    Weather data is updated in these files on a regular basis.</p>
+</li>
 </ol>
 <h3 id="get-7-day-archived-weather-data-in-bulk">Get 7-day archived weather data in bulk<a class="headerlink" href="#get-7-day-archived-weather-data-in-bulk" title="Permanent link">&para;</a></h3>
 <p>Retrieves and downloads updated 7-day archived weather data (current and forecasted) for numerous cities and zip codes in Europe, England, and the United States in JSON or CSV file formats. </p>
@@ -3821,19 +3838,22 @@ If you want to be explicit, you can include <strong>-X GET</strong> but it's <em
 </span></code></pre></div>
 <h4 id="download-the-bulk-file_2">Download the bulk file<a class="headerlink" href="#download-the-bulk-file_2" title="Permanent link">&para;</a></h4>
 <ol>
-<li>As described in <a href="#request-syntax">Request syntax</a>, construct the API request:</li>
-</ol>
+<li>
+<p>As described in <a href="#request-syntax">Request syntax</a>, construct the API request:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>https://bulk.openweathermap.org/archive/{BULK_FILE_NAME}?appid={API key}
 </span></code></pre></div>
 <p>where <strong>{BULK_FILE_NAME}</strong> is one of the files that contains a <a href="https://openweathermap.org/bulk#bulk_archive">7-day archive</a> of current and forecast weather data.</p>
-<ol>
-<li>Unpack the downloaded file by using any suitable archiver software. You will then have a JSON or CSV formatted file that is ready to use.</li>
-</ol>
-<blockquote>
-<p><strong>Note:</strong> All bulk files are available in both JSON and CSV formats. Filenames in the above table are relevant for JSON format. To download files in CSV format, change <strong>json</strong> to <strong>csv</strong> in the filename. For example, the <strong>JSON</strong> filename is <strong>hourly1h_zip_eu_011025_2015.json.gz</strong>, and the <strong>CSV</strong> filename for the same data is <strong>hourly1h_zip_eu_011025_2015.csv.gz</strong>.</p>
-</blockquote>
-<ol>
-<li>To download updated weather data, repeat steps #1-2 at the times indicated in the column, <strong>Available data per day, UTC time</strong>, in the table on the page, <a href="https://openweathermap.org/bulk#bulk_archive">7-day archive of current and forecast weather bulks files</a>. Weather data is updated in these files on a regular basis.</li>
+</li>
+<li>
+<p>Unpack the downloaded file by using any suitable archiver software. You will then have a JSON or CSV formatted file that is ready to use.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All bulk files are available in both JSON and CSV formats. Filenames in the above table are relevant for JSON format. To download files in CSV format, change <strong>json</strong> to <strong>csv</strong> in the filename. For example, the <strong>JSON</strong> filename is <strong>hourly1h_zip_eu_011025_2015.json.gz</strong>, and the <strong>CSV</strong> filename for the same data is <strong>hourly1h_zip_eu_011025_2015.csv.gz</strong>.</p>
+</div>
+</li>
+<li>
+<p>To download updated weather data, repeat steps #1-2 at the times indicated in the column, <strong>Available data per day, UTC time</strong>, in the table on the page, <a href="https://openweathermap.org/bulk#bulk_archive">7-day archive of current and forecast weather bulks files</a>. Weather data is updated in these files on a regular basis.</p>
+</li>
 </ol>
 
 
@@ -3890,7 +3910,7 @@ If you want to be explicit, you can include <strong>-X GET</strong> but it's <em
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.instant", "navigation.top", "navigation.tracking", "navigation.prune", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
