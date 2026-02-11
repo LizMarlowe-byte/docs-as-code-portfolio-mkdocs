@@ -1,18 +1,19 @@
 # Docmost User Guide
-The _Docmost User Guide_ is a comprehensive guide for end users that describes a collaborative wiki platform. 
+
+!!! abstract ""
+    This guide introduces _Docmost_, a collaborative wiki platform for teams and organizations. It walks you through common tasks, logical workflows, and essential features to help you create, collaborate, and manage content with confidence.
 
 ---
 
-## Introduction to Docmost { data-toc-label="Introduction to Docmost" }
+## 🧭 Introduction to Docmost
 
 _Docmost_ is an open-source collaborative wiki that provides easy and robust content creation and real-time collaboration.
 
-**Topics**:
-
-* [Overview](#overview)
-* [Workspaces, spaces, and pages](#workspaces-spaces-and-pages)
-* [Key features](#key-features)
-* [Target audience](#target-audience)
+??? note "Topics"
+    * [Overview](#overview)
+    * [Workspaces, spaces, and pages](#workspaces-spaces-and-pages)
+    * [Key features](#key-features)
+    * [Target audience](#target-audience)
 
 ### Overview
 
@@ -74,20 +75,21 @@ Here's what you do:
 
 This guide is intended for users who want to create and share content in a wiki format and collaborate with other users.
 
-## Getting started { data-toc-label="Getting started" }
+## 🚀 Getting started
 
 Set up your account for the cloud-hosted version of Docmost. Then, set up your profile and preferences.
 
-**Topics**:
-
-* [Set up your account](#set-up-your-account)
-* [Set your profile settings and preferences](#set-your-profile-settings-and-preferences)
-
+??? note "Topics"
+	* [Set up your account](#set-up-your-account)
+	* [Set your profile settings and preferences](#set-your-profile-settings-and-preferences)
+	
+	
 ### Set up your account
 
 Set up your account for Docmost, which provides you with web-based, thin client access through your browser. 
 
-> **Note:** To install the enterprise version of Docmost, refer to the [Docmost enterprise installation instructions](https://docmost.com/docs/installation/).
+!!! note
+    To install the enterprise version of Docmost, refer to the [Docmost enterprise installation instructions](https://docmost.com/docs/installation/).
 
 **Procedure**
 
@@ -119,64 +121,63 @@ After setting up your Docmost account, define your profile settings and preferen
 
 **Procedure**
 
-1. From the <img src="../images/DocMost3.png" alt="My workspace icon" title="My workspace icon" width="16" height="16"> **My workspace** drop-down list, select **My profile**.
+1. From the **My workspace** drop-down list, select **My profile**.
 
----
+    ---
 
-![Select My profile](../images/DocMost4.png "Select My profile")
+    ![Select My profile](../images/DocMost4.png "Select My profile")
 
----
+    ---
 
 2. On the **My Profile** page, update or set any relevant fields.
 
----
+    ---
 
-![Update My Profile page](../images/DocMost5.png "Update My Profile page")
+    ![Update My Profile page](../images/DocMost5.png "Update My Profile page")
 
----
+    ---
 
-|Field          |Description|
-|:--------------|:----------| 
-|Name           |Update your profile name.|
-|Email          |Update your email address.|
-|Password       |Update your password. |
-|2-step verification |_Optional_. Select **Add 2FA method** and follow the instructions to set up the 2-step authentication method.|
+    |Field          |Description|
+    |:--------------|:----------| 
+    |Name           |Update your profile name.|
+    |Email          |Update your email address.|
+    |Password       |Update your password. |
+    |2-step verification |_Optional_. Select **Add 2FA method** and follow the instructions to set up the 2-step authentication method.|
 
-3. From the <img src="../images/DocMost3.png" alt="My workspace icon" style="border: 2px solid #000; border-radius: 8px;" title="My workspace icon" width="16" height="16"> **My workspace** drop-down list, select **My preferences**.
+3. From the **My workspace** drop-down list, select **My preferences**.
 
----
+    ---
 
-![Select My preferences](../images/DocMost6.png "Select My preferences")
+    ![Select My preferences](../images/DocMost6.png "Select My preferences")
 
----
+    ---
 
 4. On the **My Preferences** page, complete the fields.
 
----
+    ---
 
-![Update My Preferences](../images/DocMost7.png "Update My Preferences")
+    ![Update My Preferences](../images/DocMost7.png "Update My Preferences")
 
----
+    ---
 
-|Field          |Description|
-|:--------------|:----------| 
-|Theme          |Select the color scheme used in the application: **Light**, **Dark**, or **System settings** (default color scheme).|
-|Language       |Set the language used on the user interface. Docmost supports 12 languages.|
-|Full Page Width|Set the page width of the application.|
-|Default page edit mode|Select one of the following: <ul><li>**Edit**: Opens every page in **Edit** mode by default.</li><li>**Read**: Opens every page in **Read** mode by default. To make any edits on a page, change the mode to **Edit**.</li></ul>
+    |Field          |Description|
+    |:--------------|:----------| 
+    |Theme          |Select the color scheme used in the application: **Light**, **Dark**, or **System settings** (default color scheme).|
+    |Language       |Set the language used on the user interface. Docmost supports 12 languages.|
+    |Full Page Width|Set the page width of the application.|
+    |Default page edit mode|Select one of the following: <ul><li>**Edit**: Opens every page in **Edit** mode by default.</li><li>**Read**: Opens every page in **Read** mode by default. To make any edits on a page, change the mode to **Edit**.</li></ul>
 
 
-## Managing workspaces { data-toc-label="Managing workspaces" }
+## 🏢 Managing workspaces
 
 Create and customize your _**workspace**_, which is the top-level entity for organizing your content, user roles, and permissions.  After creating your workspace, invite others to collaborate within it.
 
-**Topics**:
-
-* [Define workspace settings](#define-workspace-settings)
-* [Invite members to a workspace](#invite-members-to-a-workspace)
-* [Resend invitation to a member](#resend-invitation-to-a-member)
-* [Revoke invitation to a member](#revoke-invitation-to-a-member)
-* [Delete a member from a workspace](#delete-a-member-from-a-workspace)
+??? note "Topics"
+	* [Define workspace settings](#define-workspace-settings)
+	* [Invite members to a workspace](#invite-members-to-a-workspace)
+	* [Resend invitation to a member](#resend-invitation-to-a-member)
+	* [Revoke invitation to a member](#revoke-invitation-to-a-member)
+	* [Delete a member from a workspace](#delete-a-member-from-a-workspace)
 
 ### Define workspace settings
 
@@ -184,37 +185,40 @@ Customize the default workspace according to your needs. You can change the icon
 
 **Procedure**
 
-1. From the <img src="../images/DocMost3.png" alt="My workspace icon" title="My workspace icon" width="16" height="16"> **My workspace** drop-down list, select **Workspace settings**.
+1. From the **My workspace** drop-down list, select **Workspace settings**.
 
----
+    ---
 
-![Select Workspace settings](../images/DocMost11.png "Select Workspace settings")
+    ![Select Workspace settings](../images/DocMost11.png "Select Workspace settings")
 
----
+    ---
 
 2. On the **General** screen, complete the fields.
 
----
+     ---
 
-   ![Update Workspace settings](../images/DocMost13.png "Update Workspace settings")
+    ![Update Workspace settings](../images/DocMost13.png "Update Workspace settings")
 
----
-
-|Field          |Description|
-|:--------------|:----------| 
-|Icon           |To change the default icon, click the icon and select **Upload image**. Then, browse and select the icon you want.|
-|Name           |To change the name of your workspace, edit the text in this field. For example, if you want your workspace to include content for your organization, change this value to the name of your organization.|
-|Hostname       |To change your hostname, select **Change hostname**. Change the name of your hostname, and select **Change hostname** again. (You _cannot_ change the domain name, **.docmost.com**.)|
+     ---
+	<div markdown="1">
+	
+    |Field          |Description|
+    |:--------------|:----------| 
+    |Icon           |To change the default icon, click the icon and select **Upload image**. Then, browse and select the icon you want.|
+    |Name           |To change the name of your workspace, edit the text in this field. For example, if you want your workspace to include content for your organization, change this value to the name of your organization.|
+    |Hostname       |To change your hostname, select **Change hostname**. Change the name of your hostname, and select **Change hostname** again. (You _cannot_ change the domain name, **.docmost.com**.)|
+	
+	</div>
 
 3. Select **Save**.
 
-   The system updates your workspace settings in the application.
+    The system updates your workspace settings in the application.
 
----
+     ---
 
-![View updated workspace settings](../images/DocMost14.png "View updated workspace settings")
+     ![View updated workspace settings](../images/DocMost14.png "View updated workspace settings")
 
----
+     ---
 
 ### Invite members to a workspace
 
@@ -224,67 +228,79 @@ Invite people to collaborate in your workspace. Assign the invited members to ei
 
 1. From your workspace drop-down menu, select **Manage members**.
 
----
+    ---
 
-![Select Manage members](../images/DocMost15.png "Select Manage members")
+    ![Select Manage members](../images/DocMost15.png "Select Manage members")
 
----
+    ---
 
-> 💡 **Tip:** Alternatively, from the left pane, under **Settings** and **Workspace**, select **Members**.
+    !!! tip
+        Alternatively, from the left pane, under **Settings** and **Workspace**, select **Members**.
 
 2. On the **Members** page, select **Invite members**.
 
 3. On the **Invite new members** screen, complete the fields.
 
----
+    ---
 
-![Invite new members](../images/DocMost16.png "Invite new members")
+    ![Invite new members](../images/DocMost16.png "Invite new members")
 
----
+    ---
+	
+	<div markdown="1">
 
-|Field          |Description|
-|:--------------|:----------|
-|Invite by email|Enter the email addresses of the people with whom you want to collaborate. After each email address, type a comma or enter a space. You can enter up to 50 email addresses.|
-|Select role    |Select one of the following roles for all selected users:<ul><li>**Admin**: Can invite and delete members, edit workspace settings, manage spaces and users within the workspace, and assign roles to all members. The Admin role _cannot_ delete the workspace.</li><li>**Member**: Has access to assigned spaces and can contribute content based on specific permissions.</li></ul>|
-|Add to groups |Enter the groups for which you want the invited members to have access. (If you have _not_ created any groups yet, leave this field blank. You can add members to groups at a later time.)
+    |Field          |Description|
+    |:--------------|:----------|
+    |Invite by email|Enter the email addresses of the people with whom you want to collaborate. After each email address, type a comma or enter a space. You can enter up to 50 email addresses.|
+    |Select role    |Select one of the following roles for all selected users:<ul><li>**Admin**: Can invite and delete members, edit workspace settings, manage spaces and users within the workspace, and assign roles to all members. The Admin role _cannot_ delete the workspace.</li><li>**Member**: Has access to assigned spaces and can contribute content based on specific permissions.</li></ul>|
+    |Add to groups |Enter the groups for which you want the invited members to have access. (If you have _not_ created any groups yet, leave this field blank. You can add members to groups at a later time.)
+	
+	</div>
 
-> 💡 **Tip:** If you want to assign different roles to different members, send one invitation for members for whom you want to assign the _same_ role. Then, send a _different_ invitation for members for whom you want to assign a _different_ role.
+    !!! tip
+	    If you want to assign different roles to different members, send one invitation for members for whom you want to assign the _same_ role. Then, send a _different_ invitation for members for whom you want to assign a _different_ role.
 
 4. Select **Send invitation**.
 
-   The system sends an email invite to all valid email addresses.
+    The system sends an email invite to all valid email addresses.
 
 5. On the **Members** page, on the **Pending** tab, view all invited members who still need to accept their invitation.
 
----
+     ---
 
-![View all invited members who have not yet accepted the invitation](../images/DocMost17.png "View all invited members who have not yet accepted the invitation")
+    ![View all invited members who have not yet accepted the invitation](../images/DocMost17.png "View all invited members who have not yet accepted the invitation")
 
----
+     ---
+	
+	<div markdown="1">
 
-|Field          |Description|
-|:--------------|:----------| 
-|Email          |Email of the member.|
-|Role           |Role or set of permissions assigned to the member (either **Admin** or **Member**). For details about **Admin** and **Member** roles, see [Invite members to a workspace](#invite-members-to-a-workspace).|
-|Date           |Date when the invitation was sent. (If sent less than 24 hours ago, the system displays the amount of time passed since the invitation was sent. For example, 45 minutes ago.)|
-|...            |Resend or revoke the invitation for the invited member.|
+    |Field          |Description|
+    |:--------------|:----------| 
+    |Email          |Email of the member.|
+    |Role           |Role or set of permissions assigned to the member (either **Admin** or **Member**). For details about **Admin** and **Member** roles, see [Invite members to a workspace](#invite-members-to-a-workspace).|
+    |Date           |Date when the invitation was sent. (If sent less than 24 hours ago, the system displays the amount of time passed since the invitation was sent. For example, 45 minutes ago.)|
+    |...            |Resend or revoke the invitation for the invited member.|
 
-
+    </div>
 
  6. On the **Members** page, on the **Members** tab, view all invited members who have accepted their invitation.
 
----
+    ---
 
-![View all invited members who accepted the invitation](../images/DocMost19.png "View all invited members who accepted the invitation")
+    ![View all invited members who accepted the invitation](../images/DocMost19.png "View all invited members who accepted the invitation")
 
----
+    ---
+	
+	<div markdown="1">
 
-|Field          |Description|
-|:--------------|:----------| 
-|User           |Name and email of the member.
-|Status         |Status of the member, which can be either **Active** or **Inactive**. **Inactive** members have _not_ logged into the workspace for at least 30 days.
-|Role           |Role of the member, which can be one of the following:<ul><li>**Owner**: Can perform all operations related to the workspace, including inviting and deleting members, editing workspace settings, managing spaces and users within the workspace, assigning roles to all members, and deleting the workspace.</li><li>**Admin**: Can invite and delete members, edit workspace settings, manage spaces and users within the workspace, and assign roles to all members. The Admin role _cannot_ delete the workspace.</li><li>**Member**: Has access to assigned spaces and can contribute content based on specific permissions.</li></ul>
-|...            |Deletes the member.
+    |Field          |Description|
+    |:--------------|:----------| 
+    |User           |Name and email of the member.
+    |Status         |Status of the member, which can be either **Active** or **Inactive**. **Inactive** members have _not_ logged into the workspace for at least 30 days.
+    |Role           |Role of the member, which can be one of the following:<ul><li>**Owner**: Can perform all operations related to the workspace, including inviting and deleting members, editing workspace settings, managing spaces and users within the workspace, assigning roles to all members, and deleting the workspace.</li><li>**Admin**: Can invite and delete members, edit workspace settings, manage spaces and users within the workspace, and assign roles to all members. The Admin role _cannot_ delete the workspace.</li><li>**Member**: Has access to assigned spaces and can contribute content based on specific permissions.</li></ul>
+    |...            |Deletes the member.
+	
+	</div>
 
 ### Resend invitation to a member
 
@@ -319,11 +335,11 @@ After sending an invitation to a member, you can revoke the invitation. This is 
 
 3. For the member for whom you want to resend the invitation, click the three dots next to their name (**...**), and select **Revoke invitation**.
 
----
+    ---
 
-![Revoke invitation](../images/DocMost26.png "Revoke invitation")
+    ![Revoke invitation](../images/DocMost26.png "Revoke invitation")
 
----
+    ---
 
 4. At the system prompt, select **Revoke** to confirm deleting the invitation.
 
@@ -342,29 +358,28 @@ You can delete a member from a workspace.
 
 3. For the member you want to delete from the workspace, click the three dots next to their name (**...**), and select **Delete member**.
 
----
+    ---
 
-![Delete member](../images/DocMost27.png "Delete member")
+    ![Delete member](../images/DocMost27.png "Delete member")
 
----
+    ---
 
 4. At the system prompt, select **Delete** to confirm deleting the member.
 
    The system deletes the member from the workspace. They no longer appear under the **Members** tab.
   
 
-## Managing spaces { data-toc-label="Managing spaces" }
+## 🗂️ Managing spaces 
 
 Create **_spaces_**, which are dedicated, organized areas within your workspace that group together documents, permissions, and collaborators by project, team, or purpose. You can add members to spaces and manage their permissions. You can also export spaces for backup, migration, or offline use.
 
-**Topics**:
-
-* [Create a space](#create-a-space)
-* [Edit space settings](#edit-space-settings)
-* [Add members to a space](#add-members-to-a-space)
-* [Remove a member from a space](#remove-a-member-from-a-space)
-* [Export a space](#export-a-space)
-* [Delete a space](#delete-a-space)
+??? note "Topics"
+	* [Create a space](#create-a-space)
+	* [Edit space settings](#edit-space-settings)
+	* [Add members to a space](#add-members-to-a-space)
+	* [Remove a member from a space](#remove-a-member-from-a-space)
+	* [Export a space](#export-a-space)
+	* [Delete a space](#delete-a-space)
 
 ### Create a space
 
@@ -380,27 +395,31 @@ Within your workspace, create a new space to group together documents, permissio
 
 4. On the **Create space** screen, complete the fields.
 
----
+     ---
 
-![Create a space](../images/DocMost20.png "Create a space")
+     ![Create a space](../images/DocMost20.png "Create a space")
 
----
+     ---
+	
+	 <div markdown="1">
 
-|Field          |Description|
-|:--------------|:----------| 
-|Space name     |Enter the name of the space. <br>For example: **Human Resources**.|
-|Space slug     |Enter the slug for the space, which identifies the page in a unique, user-friendly way. <br>For example: **HR**.|
-|Space description |Enter the purpose of the space. <br>For example: **Includes pages related to annual goals, projections, new hiring requirements, and meeting minutes.**|
+     |Field          |Description|
+     |:--------------|:----------| 
+     |Space name     |Enter the name of the space. <br>For example: **Human Resources**.|
+     |Space slug     |Enter the slug for the space, which identifies the page in a unique, user-friendly way. <br>For example: **HR**.|
+     |Space description |Enter the purpose of the space. <br>For example: **Includes pages related to annual goals, projections, new hiring requirements, and meeting minutes.**|
+	
+	 </div>
 
 5. Select **Create**.
 
-   The system creates the new space. You are now the space admin with Full Access permissions, including adding and removing members, and editing content in the space. 
+    The system creates the new space. You are now the space admin with Full Access permissions, including adding and removing members, and editing content in the space. 
 
----
+     ---
 
-![Space created](../images/DocMost21.png "Space created")
+     ![Space created](../images/DocMost21.png "Space created")
 
----
+     ---
 
 ### Edit space settings
 
@@ -414,34 +433,35 @@ After creating a space, you can edit a space's settings.
 
 3. On the **Spaces** screen, select the space for which you want to edit settings.
 
----
+    ---
 
-![Select space to edit settings](../images/DocMost24.png "Select space to edit settings")
+    ![Select space to edit settings](../images/DocMost24.png "Select space to edit settings")
 
----
+    ---
 
 4. On the following screen, select the **Settings** tab.
 
 5. From **Settings**, update the **Icon**, **Name**, **Slug**, or **Description** fields. 
 
-   For more information on these fields, see [Create a space](#create-a-space).
+    For more information on these fields, see [Create a space](#create-a-space).
 
----
+     ---
 
-![Update space settings](../images/DocMost22.png "Update space settings")
+     ![Update space settings](../images/DocMost22.png "Update space settings")
 
----
+     ---
 
 6. Select **Save**.
 
-   The system updates the settings.
+    The system updates the settings.
 
 
 ### Add members to a space
 
 Add individual members to a space for collaboration. Set specific permission levels for each member.
 
-> 💡 **Tip:** If you want to add multiple users to a space simultaneously, [create a group](#create-a-group) and then [add the entire group as a space member](#grant-group-access-to-a-space).
+!!! tip
+    If you want to add multiple users to a space simultaneously, [create a group](#create-a-group) and then [add the entire group as a space member](#grant-group-access-to-a-space).
 
 
 **Procedure**
@@ -452,11 +472,11 @@ Add individual members to a space for collaboration. Set specific permission lev
 
 3. On the **Spaces** screen, select the space for which you want to add members.
 
----
+    ---
 
-![Select space to add members](../images/DocMost24.png "Select space to add members")
+    ![Select space to add members](../images/DocMost24.png "Select space to add members")
 
----
+    ---
 
 4. On the following screen, select the **Members** tab. 
 
@@ -464,22 +484,23 @@ Add individual members to a space for collaboration. Set specific permission lev
 
 6. On the **Add space members** screen, complete the fields.
 
----
+    ---
 
-![Add members to a space](../images/DocMost23.png "Add members to a space")
+    ![Add members to a space](../images/DocMost23.png "Add members to a space")
 
----
+    ---
 
-|Field          |Description|
-|:--------------|:----------| 
-|Add Members    |Search for and select the users you want to add as members to the space.|
-|Select role    |Select the role or set of permissions you want for the selected members:<ul><li>**Full access**: Has full access permissions to all space settings and pages.</li><li>**Can edit**: Can create and edit pages in the space.</li><li>**Can view**: Can view pages in the Space but _cannot_ edit them.</li></ul> |
+    |Field          |Description|
+    |:--------------|:----------| 
+    |Add Members    |Search for and select the users you want to add as members to the space.|
+    |Select role    |Select the role or set of permissions you want for the selected members:<ul><li>**Full access**: Has full access permissions to all space settings and pages.</li><li>**Can edit**: Can create and edit pages in the space.</li><li>**Can view**: Can view pages in the Space but _cannot_ edit them.</li></ul> |
 
-8. Select **Add**.
+7. Select **Add**.
 
-   The system adds the selected users as members to the space with the defined role. 
+    The system adds the selected users as members to the space with the defined role. 
 
-> 💡 **Tip:** If you want to assign different roles to different members, complete these steps for members for whom you want to assign the _same_ role. Then, repeat these steps for members for whom you want to assign a _different_ role. 
+    !!! tip
+        If you want to assign different roles to different members, complete these steps for members for whom you want to assign the _same_ role. Then, repeat these steps for members for whom you want to assign a _different_ role. 
 
 
 ### Remove a member from a space
@@ -494,21 +515,21 @@ You can remove a member from a space.
 
 3. On the **Spaces** screen, select the space from which you want to remove a member.
 
----
+    ---
 
-![Select space from which to remove a member](../images/DocMost24.png "Select space from which to remove a member")
+    ![Select space from which to remove a member](../images/DocMost24.png "Select space from which to remove a member")
 
----
+    ---
 
 4. On the following screen, select the **Members** tab.
 
 5. For the member you want to remove from the space, click the three dots next to their name (**...**), and select **Remove space member**.
 
----
+    ---
 
-![Remove member from space](../images/DocMost28.png "Remove member from space")
+    ![Remove member from space](../images/DocMost28.png "Remove member from space")
 
----
+    ---
 
 6. At the system prompt, select **Remove** to confirm removing the member from the space.
 
@@ -527,34 +548,34 @@ You can export a space in both Markdown and HTML formats for backup, migration, 
 
 3. On the **Spaces** screen, select the space you want to export.
 
----
+    ---
 
-![Select space to export](../images/DocMost24.png "Select space to export")
+    ![Select space to export](../images/DocMost24.png "Select space to export")
 
----
+    ---
 
 4. On the following screen, select the **Settings** tab.
 
 5. From the **Export space** section on this screen, select **Export**.
 
----
+    ---
 
-![Select Export](../images/DocMost29a.png "Select Export")
+    ![Select Export](../images/DocMost29a.png "Select Export")
 
----
+    ---
 
 6. On the **Export space** screen, complete the fields.
 
----
+    ---
 
-![Select Export Space options](../images/DocMost30a.png "Select Export Space options")
+    ![Select Export Space options](../images/DocMost30a.png "Select Export Space options")
 
----
+    ---
 
-|Field          |Description|
-|:--------------|:----------| 
-|Format         |Select the format in which you want to export the space: either **Markdown** or **HTML**.|
-|Include attachments |To include all attachments in the space in the exported file, move the toggle to the **On** position.|
+    |Field          |Description|
+    |:--------------|:----------| 
+    |Format         |Select the format in which you want to export the space: either **Markdown** or **HTML**.|
+    |Include attachments |To include all attachments in the space in the exported file, move the toggle to the **On** position.|
 
 7. Select **Export**.
 
@@ -566,7 +587,8 @@ You can export a space in both Markdown and HTML formats for backup, migration, 
 
 If you no longer need a space, you can delete it. For example, you created a space for a small group of members and they have merged into a bigger group that belongs to a different space.
 
-:warning: **Deleting a space permanently removes all pages, comments, attachments and permissions associated with the space. You _cannot_ undo this action.**
+!!! warning
+    Deleting a space permanently removes all pages, comments, attachments and permissions associated with the space. You _cannot_ undo this action.
 
 **Procedure**
 
@@ -576,43 +598,42 @@ If you no longer need a space, you can delete it. For example, you created a spa
 
 3. From the **Spaces** screen, select the space you want to delete.
 
----
+    ---
 
-![Select space to delete](../images/DocMost24.png "Select space to delete")
+    ![Select space to delete](../images/DocMost24.png "Select space to delete")
 
----
+    ---
 
 4. On the following screen, select the **Settings** tab.
 
 5. From the **Delete space** section on this screen, select **Delete**.
 
----
+    ---
 
-![Select Delete](../images/DocMost31.png "Select Delete")
+    ![Select Delete](../images/DocMost31.png "Select Delete")
 
----
+    ---
 
 6. At the system prompt, type the name of the space you want to delete and select **Confirm** to delete the space.
 
    The system deletes the space, including all of its pages, comments, attachments, and permissions.
 
-## Managing Groups { data-toc-label="Managing groups" }
+## 👥 Managing Groups
 
 Create **_groups_**, which allow you to manage user permissions for multiple users simultaneously. Instead of assigning roles and privileges to individual users, assign them to a group, simplifying access control across your workspace.
 
 All users are assigned to a default group called **Everyone**.
 
-> [!NOTE]
-> Only users with **Admin** or **Owner** roles can create, edit, and delete groups.
+!!! note
+    Only users with **Admin** or **Owner** roles can create, edit, and delete groups.
 
-**Topics**:
-
-* [Create a group](#create-a-group)
-* [Edit group settings](#edit-group-settings)
-* [Grant group access to a space](#grant-group-access-to-a-space)
-* [Add a member to a group](#add-a-member-to-a-group)
-* [Remove a member from a group](#remove-a-member-from-a-group)
-* [Delete a group](#delete-a-group)
+??? note "Topics"
+	* [Create a group](#create-a-group)
+	* [Edit group settings](#edit-group-settings)
+	* [Grant group access to a space](#grant-group-access-to-a-space)
+	* [Add a member to a group](#add-a-member-to-a-group)
+	* [Remove a member from a group](#remove-a-member-from-a-group)
+	* [Delete a group](#delete-a-group)
 
 ### Create a group
 
@@ -628,27 +649,27 @@ Create a group to manage user permissions for multiple users simultaneously.
 
 4. On the **Create group** screen, complete the fields.
 
----
+    ---
 
-![Create group](../images/DocMost47.png "Create group")
+    ![Create group](../images/DocMost47.png "Create group")
 
----
+    ---
 
-|Field          |Description|
-|:--------------|:----------| 
-|Group name     |Enter the name of the group. <br>For example: **Core Engineering Team**.|
-|Group description| Enter a description for the group. <br>For example: **Developers working on the core features for the NovaBuild release.**|
-|Add group members|Search for and enter the members you want to add to the group. <br>You can also add members at a later time.|
+    |Field          |Description|
+    |:--------------|:----------| 
+    |Group name     |Enter the name of the group. <br>For example: **Core Engineering Team**.|
+    |Group description| Enter a description for the group. <br>For example: **Developers working on the core features for the NovaBuild release.**|
+    |Add group members|Search for and enter the members you want to add to the group. <br>You can also add members at a later time.|
 
 5. Select **Create**.
 
-   On the **Manage Group** screen, the system displays the group.
+    On the **Manage Group** screen, the system displays the group.
 
----
+     ---
 
-![Group created](../images/DocMost48.png "Group created")
+     ![Group created](../images/DocMost48.png "Group created")
 
----
+     ---
 
 ### Edit group settings
 
@@ -664,21 +685,21 @@ After creating a group, you can edit the group's name and description. This is h
 
 4. On the **Manage Group** screen, from the three dots (...) on the top right, select **Edit group**.
 
----
+    ---
 
-![Edit group](../images/DocMost49.png "Edit group")
+    ![Edit group](../images/DocMost49.png "Edit group")
 
----
+    ---
 
 5. On the **Edit group** screen, update the **Group name** and **Group description** fields and select **Save**.
 
----
+    ---
 
-![Edit group name and description](../images/DocMost50.png "Edit group name and description")
+    ![Edit group name and description](../images/DocMost50.png "Edit group name and description")
 
----
+    ---
 
-The system saves your updates.
+    The system saves your updates.
 
 ### Grant group access to a space
 
@@ -696,29 +717,29 @@ Instead of adding _individual_ members to a space, you can add _groups_. Assign 
 
 5. On the **Add space members** screen, complete the fields.
 
----
+    ---
 
-![Add space members](../images/DocMost51.png "Add space members")
+    ![Add space members](../images/DocMost51.png "Add space members")
 
----
+    ---
 
-|Field          |Description|
-|:--------------|:----------| 
-|Add members    |Search for and select the group to which you want to grant access to the space.|
-|Select role    |Select one of the following permission levels:<ul><li>**Full access**: Has administrative access to all space settings and pages, and full editing privileges.</li><li>**Can edit**: Can create and edit pages in the space, but _cannot_ access space settings.</li><li>**Can view**: Can view all page content but _cannot_ edit any content.</li></ul>
+    |Field          |Description|
+    |:--------------|:----------| 
+    |Add members    |Search for and select the group to which you want to grant access to the space.|
+    |Select role    |Select one of the following permission levels:<ul><li>**Full access**: Has administrative access to all space settings and pages, and full editing privileges.</li><li>**Can edit**: Can create and edit pages in the space, but _cannot_ access space settings.</li><li>**Can view**: Can view all page content but _cannot_ edit any content.</li></ul>
 
 6. Select **Add**.
    
-   The system adds the group as a member to the space.
+      The system adds the group as a member to the space.
 
----
+      ---
 
-![Group added as a space member](../images/DocMost52.png "Group added as a space member")
+      ![Group added as a space member](../images/DocMost52.png "Group added as a space member")
 
----
+      ---
 
->[!NOTE]
-> If a user has been added as an individual member _and_ as a group member to the _same_ space with _different_ permission levels, the highest permission level applies. For example,  Alex Smith has been added as a member to the space, **Research & Development**, with **Can View** permissions. Alex has also been added to the group, **Core Engineering Team**, which has **Can Edit** permissions to this space. Therefore, Alex has edit privileges for this space. 
+    !!! note
+	    If a user has been added as an individual member _and_ as a group member to the _same_ space with _different_ permission levels, the highest permission level applies. For example,  Alex Smith has been added as a member to the space, **Research & Development**, with **Can View** permissions. Alex has also been added to the group, **Core Engineering Team**, which has **Can Edit** permissions to this space. Therefore, Alex has edit privileges for this space. 
 
 ### Add a member to a group
 
@@ -738,13 +759,13 @@ After creating a group, you can easily add a member to the group.
 
 6. Select **Add**.
 
----
+    ---
 
-![Add group member](../images/DocMost53.png "Add group member")
+    ![Add group member](../images/DocMost53.png "Add group member")
 
----
+    ---
 
-The system adds the member to the group.
+    The system adds the member to the group.
 
 ### Remove a member from a group
 
@@ -762,11 +783,11 @@ If needed, you can easily remove a member from the group.
 
 5. From the three dots (**...**) next to their name, select **Remove group member**.
 
----
+    ---
 
-![Remove group member](../images/DocMost54.png "Remove group member")
+    ![Remove group member](../images/DocMost54.png "Remove group member")
 
----
+    ---
 
 6. To confirm removing the member from the group, select **Delete**.
 
@@ -786,11 +807,11 @@ If needed, you can delete a group.
 
 4. On the **Manage Group** screen, from the three dots (...) on the top right, select **Delete group**.
 
----
+    ---
 
-![Delete group](../images/DocMost55.png "Delete group")
+    ![Delete group](../images/DocMost55.png "Delete group")
 
----
+    ---
 
 5. To confirm deleting the group, select **Delete**.
 
@@ -799,18 +820,17 @@ If needed, you can delete a group.
 
 
 
-## Managing pages { data-toc-label="Managing pages" }
+## 📄 Managing pages
 
 Within a space, create and manage individual documents, or **_pages_**, which contain the content itself. Each page contains specific content for the space, such as a department's budget, project roadmap, or annual goals.
 
-**Topics**:
-
-* [Create a page](#create-a-page)
-* [Move a page to a different space](#move-a-page-to-a-different-space)
-* [Copy a page to a different space](#copy-a-page-to-a-different-space)
-* [Duplicate a page to the same space](#duplicate-a-page-to-the-same-space)
-* [Import a page](#import-a-page)
-* [Export a page](#export-a-page)
+??? note "Topics"
+	* [Create a page](#create-a-page)
+	* [Move a page to a different space](#move-a-page-to-a-different-space)
+	* [Copy a page to a different space](#copy-a-page-to-a-different-space)
+	* [Duplicate a page to the same space](#duplicate-a-page-to-the-same-space)
+	* [Import a page](#import-a-page)
+	* [Export a page](#export-a-page)
 
 ### Create a page
 
@@ -820,49 +840,49 @@ Create a page, which contains content within a space. For example, for the _Huma
 
 1. From the Home page, select the space for which you want to create a page.
 
----
+     ---
 
-![Select space to create a page](../images/DocMost32.png "Select space to create a page")
+    ![Select space to create a page](../images/DocMost32.png "Select space to create a page")
 
----
+     ---
 
 2. From the left pane, select **+ New page**. 
 
----
+     ---
 
-![New page](../images/DocMost33.png "New page")
+     ![New page](../images/DocMost33.png "New page")
 
----
+     ---
 
 3. On the new page, type a title for the page, such as **Annual Goals**.
 
 4. Add content to the page. 
 
-   You can use the editing bar to apply headings, alignment, text formatting, links, and comments.  
+    You can use the editing bar to apply headings, alignment, text formatting, links, and comments.  
 
----
+     ---
 
-![Add content to the page](../images/DocMost34.png "Add content to the page")
+     ![Add content to the page](../images/DocMost34.png "Add content to the page")
 
----
+     ---
 
 5. Once you have added content, you can share the page with other members of the space, manage comments, and do other actions related to the page (including but not limited to _move_, _export_, _print_, and _view page history_).
 
----
+     ---
 
-![Manage the page](../images/DocMost35b.png "Manage the page")
+     ![Manage the page](../images/DocMost35b.png "Manage the page")
 
----
+     ---
 
-|Number|Description|
-|:-----|:----------| 
-|1     |Sets the page edit mode, as described in [Set your profile settings and preferences](#set-your-profile-settings-and-preferences).
-|2     |Shares the page with other members of the space.
-|3     |Displays the **Comments** pane.
-|4     |Displays the Table of Contents of the page (defined by applied headings).
-|5     |Provides additional options, including: <ul><li>**Copy link**: Copies the link to the page for sharing with other users.</li><li>**Full width**: Toggles to the full page width.</li><li>**Page history**: Displays a history of page versions.</li><li>**Move**: Moves the page to another space.</li><li>**Export**: Exports the page to an external file.</li><li>**Print PDF**: Prints a PDF of the page.</li><li>**Move to trash**: Deletes the page (moves to trash).</li></ul>  
-|6     |Displays **Open** and **Resolved** comments on the page.
-|7     |Allows you to **Edit**, **Resolve**, and **Delete** comments on the page.
+     |Number|Description|
+     |:-----|:----------| 
+     |1     |Sets the page edit mode, as described in [Set your profile settings and preferences](#set-your-profile-settings-and-preferences).
+     |2     |Shares the page with other members of the space.
+     |3     |Displays the **Comments** pane.
+     |4     |Displays the Table of Contents of the page (defined by applied headings).
+     |5     |Provides additional options, including: <ul><li>**Copy link**: Copies the link to the page for sharing with other users.</li><li>**Full width**: Toggles to the full page width.</li><li>**Page history**: Displays a history of page versions.</li><li>**Move**: Moves the page to another space.</li><li>**Export**: Exports the page to an external file.</li><li>**Print PDF**: Prints a PDF of the page.</li><li>**Move to trash**: Deletes the page (moves to trash).</li></ul>  
+     |6     |Displays **Open** and **Resolved** comments on the page.
+     |7     |Allows you to **Edit**, **Resolve**, and **Delete** comments on the page.
 
 ### Move a page to a different space
 
@@ -876,19 +896,19 @@ You can easily move a page to a different space. This is helpful if the content 
 
 3. From the left pane, hover over the page, select the three dots, and select **Move**.
 
----
+    ---
 
-![Move the page](../images/DocMost37.png "Move the page")
+    ![Move the page](../images/DocMost37.png "Move the page")
 
----
+    ---
 
 4. From **Move page**, select the space to which you want to move the page and select **Move**.
 
----
+    ---
 
-![Select the space to move the page](../images/DocMost38.png "Select the space to move the page")
+    ![Select the space to move the page](../images/DocMost38.png "Select the space to move the page")
 
----
+    ---
 
    The system moves the page to the selected space.
 
@@ -904,19 +924,19 @@ You can easily copy a page to a different space. This allows you to include the 
 
 3. From the left pane, hover over the page, select the three dots, and select **Copy to space**.
 
----
+    ---
 
-![Copy to space](../images/DocMost39.png "Copy to space")
+    ![Copy to space](../images/DocMost39.png "Copy to space")
 
----
+    ---
 
 4. From **Copy page**, select the space to which you want to copy the page and select **Copy**.
 
----
+    ---
 
-![Select the space to copy the page](../images/DocMost40.png "Select the space to copy the page")
+    ![Select the space to copy the page](../images/DocMost40.png "Select the space to copy the page")
 
----
+    ---
 
    The system copies the page to the selected space.
 
@@ -932,19 +952,19 @@ You can duplicate a page to the same space. This is helpful if you want to creat
 
 3. From the left pane, hover over the page, select the three dots and select **Duplicate**.
 
----
+     ---
 
-![Duplicate page](../images/DocMost41.png "Duplicate page")
+     ![Duplicate page](../images/DocMost41.png "Duplicate page")
 
----
+     ---
 
-   The system duplicates the page in the same space, naming it: **Copy of {page name}**. For example, if you duplicated a page called **Annual Goals**, the duplicated page is named: **Copy of Annual Goals**.
+     The system duplicates the page in the same space, naming it: **Copy of {page name}**. For example, if you duplicated a page called **Annual Goals**, the duplicated page is named: **Copy of Annual Goals**.
 
----
+     ---
 
-![Copy page to the same space](../images/DocMost42.png "Copy page to the same space")
+     ![Copy page to the same space](../images/DocMost42.png "Copy page to the same space")
 
----
+     ---
 
 ### Import a page
 
@@ -956,31 +976,31 @@ You can import pages to a specific space in HTML and Markdown formats. You can a
 
 2. From the left pane, hover over the **Pages** heading, select the three dots, and select **Import pages**.
 
----
+    ---
 
-![Import pages](../images/DocMost45.png "Import pages")
+    ![Import pages](../images/DocMost45.png "Import pages")
 
----
+    ---
 
 3. From **Import pages**, select the type of page you want to import:
 
-   - **Markdown**: Imports a page in Markdown format.
+     - **Markdown**: Imports a page in Markdown format.
 
-   - **HTML**: Imports a page in HTML format.
+     - **HTML**: Imports a page in HTML format.
 
-   - **Notion**: Imports a Notion page.
+     - **Notion**: Imports a Notion page.
 
-   - **Confluence**: Imports a Confluence page.
+     - **Confluence**: Imports a Confluence page.
 
 4. Select **Upload file**, and select the page you want to upload (in the selected format).
 
----
+     ---
 
-![Upload file](../images/DocMost46.png "Upload file")
+     ![Upload file](../images/DocMost46.png "Upload file")
 
----
+     ---
 
-   The system imports the file into the selected space.
+    The system imports the file into the selected space.
 
 ### Export a page
 
@@ -994,25 +1014,25 @@ You can export a page in either Markdown or HTML format for external use. You ca
 
 3. From the left pane, hover over the page, select the three dots, and select **Export page**.
 
----
+    ---
 
-![Export page](../images/DocMost43.png "Export page")
+    ![Export page](../images/DocMost43.png "Export page")
 
----
+    ---
 
 4. On **Export page**, complete the fields.
 
----
+    ---
 
-![Select options for exported page](../images/DocMost44.png "Select options for exported page")
+    ![Select options for exported page](../images/DocMost44.png "Select options for exported page")
 
----
+    ---
 
-|Field       |Description|
-|:-----------|:----------| 
-|Format      |Select whether to export the file in **Markdown** or **HTML** format.|
-|Include subpages |To include all subpages in the exported file, toggle this setting to the **On** position.|
-|Include attachments |To include all attachments in the exported file, toggle this setting to the **On** position.|
+    |Field       |Description|
+    |:-----------|:----------| 
+    |Format      |Select whether to export the file in **Markdown** or **HTML** format.|
+    |Include subpages |To include all subpages in the exported file, toggle this setting to the **On** position.|
+    |Include attachments |To include all attachments in the exported file, toggle this setting to the **On** position.|
 
 5. Select **Export**.
 

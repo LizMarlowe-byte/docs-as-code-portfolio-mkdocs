@@ -6,7 +6,7 @@ This site represents my work with **MkDocs** and demonstrates how I approach mod
 
 ---
 
-## 🎯 Purpose of This Project { data-toc-label="Purpose of This Project" }
+## 🎯 Purpose of This Project
 
 As a Sr. Technical Writer, I’ve used git-based workflows and developer documentation tooling in my work. 
 
@@ -22,7 +22,7 @@ This MkDocs site is **Project 1 of 4** in the series.
 
 ---
 
-## ⚙️ What I Built Using MkDocs { data-toc-label="What I Built Using MkDocs" }
+## ⚙️ What I Built Using MkDocs 
 
 ### 🔧 Full Docs-as-Code Workflow
 - Authored content in Markdown  
@@ -48,7 +48,7 @@ Each sample demonstrates clarity, structure, and audience-focused writing.
 
 ---
 
-## 🧭 Why MkDocs? { data-toc-label="Why MkDocs?" }
+## 🧭 Why MkDocs? 
 
 MkDocs is widely used for developer-facing documentation and supports:
 
@@ -68,7 +68,7 @@ This project helped me practice:
 
 ---
 
-## 🚧 What’s Next: 4‑SSG Series Roadmap { data-toc-label="What’s Next: 4‑SSG Series Roadmap" }
+## 🚧 What’s Next: 4‑SSG Series Roadmap 
 
 This MkDocs site is the foundation for a broader exploration of modern static documentation engines.
 

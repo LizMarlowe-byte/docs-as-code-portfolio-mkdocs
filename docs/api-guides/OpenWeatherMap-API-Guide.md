@@ -1,11 +1,18 @@
 # OpenWeatherMap API Guide
-The _OpenWeatherMap API Guide_ describes a RESTful API that provides access to comprehensive weather data for developers.
+
+!!! abstract ""
+    This guide describes the _OpenWeatherMap API_, a comprehensive weather data service for developers. It covers essential concepts—API hosts, authentication, rate limits, and pagination—along with a practical onboarding tutorial and a curated reference organized by resource type.
 
 ---
 
-## Overview { data-toc-label="Overview" }
+## 🌤️ Overview
 
 The _OpenWeatherMap_ API is a weather data service that provides access to comprehensive data sourced from global and local models, satellites, radars, and weather stations. Developers can use the API to retrieve current weather conditions, hourly and daily forecasts, historical data, and bulk weather information for multiple locations worldwide.
+
+??? note "Topics"
+	* [Common use cases](#common-use-cases)
+    * [Technical details](#technical-details)
+    * [Target audience](#target-audience)
 
 ### Common use cases
 
@@ -29,7 +36,7 @@ This guide is intended for developers who want to integrate real-time, forecaste
 
 ---
 
-## Base URL { data-toc-label="Base URL" }
+## 🔗 Base URL
 
 OpenWeather uses multiple service hosts. 
 
@@ -45,7 +52,7 @@ All requests _must_ use **HTTPS**. For the correct path and parameters, see each
 
 ---
 
-## Authentication { data-toc-label="Authentication" }
+## 🔐 Authentication
 
 The OpenWeatherMap API uses [API keys](#create-more-api-keys) to authenticate requests. All API requests _must_ be made over HTTPS. Calls made over plain HTTP and API requests without authentication _will fail_.
 
@@ -63,7 +70,7 @@ Where **appid=123abc456def** is your dedicated API key (passed as a query parame
 
 ---
 
-## Rate limits { data-toc-label="Rate limits" }
+## 📊 Rate limits
 
 A rate limit is the number of requests the API can receive in a specific time period. Rate limiting ensures efficient API performance and prevents abuse. Once the limit is reached, API requests from the client will fail.
 
@@ -81,7 +88,8 @@ Each tier offers specific rate limits and monthly quotas for API calls:
 |Expert         |100,000 calls/minute    |3 billion calls  |
 |Enterprise     |200,000 calls/minute    |5 billion calls  |
 
-> _**Note:** These values are intentionally normalized for portfolio demonstration and do _not_ reflect current OpenWeatherMap pricing tiers.
+!!! note
+    These values are intentionally normalized for portfolio demonstration and do _not_ reflect current OpenWeatherMap pricing tiers.
 
 
 ### Handling 429 errors (Too Many Requests)
@@ -90,7 +98,7 @@ If your application exceeds per‑minute or daily quotas, the API responds with 
 
 ---
 
-## HTTP status and error codes { data-toc-label="HTTP status and error codes" }
+## ⚠️ HTTP status and error codes
 
 Errors and statuses are returned with appropriate HTTP status codes and a structured JSON body.
 
@@ -109,7 +117,7 @@ Errors and statuses are returned with appropriate HTTP status codes and a struct
 
 ---
 
-## Pagination { data-toc-label="Pagination" }
+## ↕️ Pagination
 
 Pagination allows you to retrieve large sets of data in smaller, manageable chunks by using specific parameters to limit the amount of data sent in each API response. 
 
@@ -132,17 +140,17 @@ For example, the following API request returns 24 hourly forecast entries for Lo
 GET https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=51.5085&lon=-0.1257&cnt=24&appid=YOUR_API_KEY
 
 ```
-> **Note:** `cnt` only limits the number of results. It does _not_ provide true pagination (such as page numbers or offsets). To retrieve additional data, you must send separate requests with different parameters.
+!!! note
+    `cnt` only limits the number of results. It does _not_ provide true pagination (such as page numbers or offsets). To retrieve additional data, you must send separate requests with different parameters.
 ---
 
-## Getting started { data-toc-label="Getting started" }
+## 🚀 Getting started
 
 Create an account, which generates your API key. You can create additional API keys on your account page, and edit, delete, or deactivate your keys.
 
-**Topics**:
-
-- [Create an account](#create-an-account)
-- [Create more API keys](#create-more-api-keys)
+??? note "Topics"
+	* [Create an account](#create-an-account)
+	* [Create more API keys](#create-more-api-keys)
 
 ### Create an account
 
@@ -160,17 +168,18 @@ To get started using the OpenWeatherMap API, create an account. Once your accoun
 
 5. From your email account, select to verify your email address.
 
-   After your email address has been successfully confirmed, you will receive another email with your API key and a link to your account.
+    After your email address has been successfully confirmed, you will receive another email with your API key and a link to your account.
 
 6. Access your [account page](https://home.openweathermap.org/api_keys).
 
----
+    ---
 
-![OpenWeatherMap account page](../images/OpenWeather_1.png "OpenWeatherMap account page")
+    ![OpenWeatherMap account page](../images/OpenWeather_1.png "OpenWeatherMap account page")
 
----
+    ---
 
-> **Note:** Always make sure to use your API key in every API call.
+    !!! note
+        Always make sure to use your API key in every API call.
 
 
 ### Create more API keys
@@ -185,19 +194,20 @@ When you created your account, the OpenWeatherMap API generated a default API ke
 
 3. Select **Generate**.
 
-   The system adds the new API key to your account. You can edit, delete, or deactivate any API key on this page.
+    The system adds the new API key to your account. You can edit, delete, or deactivate any API key on this page.
 
----
+    ---
 
-![Add API key](../images/OpenWeather_2a.png "Add API key")
+    ![Add API key](../images/OpenWeather_2a.png "Add API key")
 
----
+    ---
 
-## Tutorial: Get current weather for a city { data-toc-label="Tutorial: Get current weather for a city" }
+## 🌆 Tutorial: Get current weather for a city
 
 This tutorial describes how to retrieve the current weather for a specific city. It involves using your API key and testing it with curl (Client URL) to verify that the OpenWeatherMap API returns a valid response.
 
-> **Note:** Curl is a command-line tool used to transfer data to or from a server using various protocols - most commonly **HTTP** and **HTTPS**.
+!!! info
+    Curl is a command-line tool used to transfer data to or from a server using various protocols - most commonly **HTTP** and **HTTPS**.
 
 ### Before you begin
 
@@ -205,8 +215,8 @@ This tutorial describes how to retrieve the current weather for a specific city.
 
 - Verify that curl is installed on your computer:
 
-   - For _macOS/Linux_, it is usually pre-installed. 
-   - For _Windows_, [download and install curl](https://curl.se/windows/) or use Git Bash.
+    - For _macOS/Linux_, it is usually pre-installed. 
+    - For _Windows_, [download and install curl](https://curl.se/windows/) or use Git Bash.
 
 ### Step 1: Copy your API key
 
@@ -265,7 +275,8 @@ The API response will be similar to the following:
 ```
 Based on this response, the geographic coordinates for London, England are: `lat`:**51.5156177** and `lon`:**-0.0919983**.
 
-> **Note:** This sample shows a subset of the full response. The actual response includes additional objects for the specified range.
+!!! note
+    This sample shows a subset of the full response. The actual response includes additional objects for the specified range.
 
 ### Step 3: Retrieve current weather data for London, England
 
@@ -313,9 +324,10 @@ If you get a similar response, you're all set up with the OpenWeatherMap API.
 
 ---
 
-> **Note:** For more information about the JSON objects in the API response, see [API Reference](#api-reference).
+!!! note
+    For more information about the JSON objects in the API response, see [API Reference](#api-reference).
 
-## API reference { data-toc-label="API reference" }
+## 📘 API reference
 
 The OpenWeatherMap API is designed to help developers integrate weather-based data into applications by providing clear examples, endpoint details, and request/response formats.
 
@@ -334,7 +346,7 @@ Each endpoint includes the following data:
 - Response example
 - Response elements
 
-#### Resource groups and endpoints
+### Resource groups and endpoints
 
 The following table summarizes the resource groups and their associated endpoints included in this guide:
 
@@ -351,11 +363,11 @@ The following table summarizes the resource groups and their associated endpoint
 |                                 |             |**[Get forecasted weather data in bulk](#get-forecasted-weather-data-in-bulk)**|Retrieves and downloads up-to-date forecasted weather data for numerous cities and zip codes in Europe, England, and the United States.|
 |                                 |             |**[Get 7-day archived weather data in bulk](#get-7-day-archived-weather-data-in-bulk)**|Retrieves and downloads updated 7-day archived weather data (current and forecasted) for numerous cities and zip codes in Europe, England, and the United States.
 
-#### Headers
+### Headers
 
 The OpenWeatherMap API does _not_ require headers in the API requests.
 
-#### Error responses
+### Error responses
 
 OpenWeather error payloads typically return a simple object with `cod` and `message` (strings or numbers).
 
@@ -367,7 +379,7 @@ For example:
 
 ```
 
-#### HTTP methods in OpenWeatherMap 
+### HTTP methods in OpenWeatherMap 
 
 All OpenWeatherMap API endpoints are designed for data retrieval _only_, so they use **HTTP GET** requests by default. There are no POST, PUT, or DELETE methods because the API does _not_ allow creating, updating, or deleting resources—only retrieving weather data.
 
@@ -752,7 +764,8 @@ https://pro.openweathermap.org/data/2.5/forecast/hourly?lat=44.34&lon=10.99&appi
 
 Retrieves daily forecast data for any location on the globe. You can retrieve weather forecast data for up to 16 days in advance. Response data is available in JSON or XML formats.
 
-> _**Note:** This endpoint is deprecated in the real API. It is included here for portfolio purposes _only_. Prefer One Call API v3 (**/data/3.0/onecall**) for daily forecasts. 
+!!! note
+    This endpoint is deprecated in the real API. It is included here for portfolio purposes _only_. Prefer One Call API v3 (**/data/3.0/onecall**) for daily forecasts. 
 
 #### Method
 
@@ -1087,7 +1100,8 @@ Using this endpoint, you can request basic statistical data for the following we
 
 All statistical weather data can only be obtained in JSON format. The frequency of the data update is 1 hour.
 
-> **Note:** This endpoint does _not_ return real historical data. It returns statistically calculated data based on real historical data for a specific period of time.
+!!! note
+    This endpoint does _not_ return real historical data. It returns statistically calculated data based on real historical data for a specific period of time.
 
 #### Method
 
@@ -1304,7 +1318,9 @@ https://history.openweathermap.org/data/2.5/history/accumulated_temperature?lat=
 }
                                                    
 ```     
-> **Note:** This sample shows a subset of the full response. The actual response includes additional objects for the specified range.        
+
+!!! note
+    This sample shows a subset of the full response. The actual response includes additional objects for the specified range.        
 
 #### Response elements
 
@@ -1361,7 +1377,8 @@ https://history.openweathermap.org/data/2.5/history/accumulated_precipitation?la
 }
                                                    
 ```    
-> **Note:** This sample shows a subset of the full response. The actual response includes additional objects for the specified range.        
+!!! note
+    This sample shows a subset of the full response. The actual response includes additional objects for the specified range.        
 
 #### Response elements
 
@@ -1371,7 +1388,8 @@ https://history.openweathermap.org/data/2.5/history/accumulated_precipitation?la
 |`rain`         |Accumulated precipitation for the date.                      |number  |Unit: **mm**.|
 |`count`        |Number of data measurements used in the accumulation of this data.                        |integer|               |
 
-> The `threshold` parameter is _not_ used. The whole amount of precipitation data is provided for a specific period.
+!!! note
+    The `threshold` parameter is _not_ used. The whole amount of precipitation data is provided for a specific period.
 
 ### Bulk download of weather data 📦 
 
@@ -1422,28 +1440,33 @@ https://bulk.openweathermap.org/snapshot/weather_14.json.gz?appid={API key}
 
 1. As described in [Request syntax](#request-syntax), construct the API request:
 
-```
+    ```
 
-https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}?appid={API key}
+    https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}?appid={API key}
 
-```
+    ```
 
-where **{BULK_FILE_NAME}** is one of the following five files that contains current weather data:
+    where **{BULK_FILE_NAME}** is one of the following five files that contains current weather data:
+	
+	<div markdown="1">
 
-|Seq.|Filename       |Number of Locations      |Updated by UTC Time|Notes
-|:---|:--------------|:------------------------|:------------------|-----------------|
-|1   |weather_14.json.gz| 22,635 cities        |1 time/hour (00:10, 01:10, 02:10,...)|For a list of all cities included in the file, see [Consolidated City List](https://bulk.openweathermap.org/sample/current.city.list.json.gz).|
-|2   |weather_16.json.gz| 209,579 cities       |1 time/hour (00:20, 01:20, 02:20,...)|For a list of all cities included in the file, See [Extended City List](https://bulk.openweathermap.org/sample/city.list.json.gz).|
-|3   |weather_zip.eu.json.gz| 153,952 EU zip codes|1 time/hour (00:20, 01:20, 02:20,...)|
-|4   |weather_zip.us.json.gz| 41,959 US zip codes|1 time/hour (00:20, 01:20, 02:20,...)|
-|5   |weather_zip.uk.json.gz| 15,225 UK postcodes|1 time/hour (00:20, 01:20, 02:20,...)|
+    |Seq.|Filename       |Number of Locations      |Updated by UTC Time|Notes
+    |:---|:--------------|:------------------------|:------------------|-----------------|
+    |1   |weather_14.json.gz| 22,635 cities        |1 time/hour (00:10, 01:10, 02:10,...)|For a list of all cities included in the file, see [Consolidated City List](https://bulk.openweathermap.org/sample/current.city.list.json.gz).|
+    |2   |weather_16.json.gz| 209,579 cities       |1 time/hour (00:20, 01:20, 02:20,...)|For a list of all cities included in the file, See [Extended City List](https://bulk.openweathermap.org/sample/city.list.json.gz).|
+    |3   |weather_zip.eu.json.gz| 153,952 EU zip codes|1 time/hour (00:20, 01:20, 02:20,...)|
+    |4   |weather_zip.us.json.gz| 41,959 US zip codes|1 time/hour (00:20, 01:20, 02:20,...)|
+    |5   |weather_zip.uk.json.gz| 15,225 UK postcodes|1 time/hour (00:20, 01:20, 02:20,...)|
+	
+	</div>
 
 2. Unpack the downloaded file by using any suitable archiver software. You will then have a JSON or CSV formatted file that is ready to use.
 
-> **Note:** All bulk files are available in both JSON and CSV formats. Filenames in the above table are relevant for JSON format. To download files in CSV format, change **json** to **csv** in the filename. For example, the **JSON** filename is **weather_16.json.gz**, and the **CSV** filename for the same data is **weather_16.csv.gz**.
+    !!! note
+        All bulk files are available in both JSON and CSV formats. Filenames in the above table are relevant for JSON format. To download files in CSV format, change **json** to **csv** in the filename. For example, the **JSON** filename is **weather_16.json.gz**, and the **CSV** filename for the same data is **weather_16.csv.gz**.
 
 3. To download updated weather data, repeat steps #1-2 at the times indicated in the column, **Updated by UTC Time**, by the table in step #1. 
-   Weather data is updated in these files on a regular basis.
+    Weather data is updated in these files on a regular basis.
 
 ### Get forecasted weather data in bulk
 
@@ -1484,28 +1507,29 @@ https://bulk.openweathermap.org/snapshot/hourly1h_zip.eu.json.gz?appid={API key}
 
 1. As described in [Request syntax](#request-syntax), construct the API request:
 
-```
+    ```
 
-https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}?appid={API key}
+    https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}?appid={API key}
 
-```
+    ```
 
-where **{BULK_FILE_NAME}** is one of the following five files that contains forecasted weather data:
+    where **{BULK_FILE_NAME}** is one of the following five files that contains forecasted weather data:
 
-|Seq.|Filename       |Number of Locations      |Updated by UTC Time|Notes
-|:---|:--------------|:------------------------|:------------------|-----------------|
-|1   |hourly1h_14.json.gz| 22,635 cities        |4 times/day (03:00, 09:00, 15:00, 21:00)|For a list of all cities included in the file, see [Consolidated City List](https://bulk.openweathermap.org/sample/current.city.list.json.gz).|
-|2   |hourly1h_16.json.gz| 209,579 cities       |4 times/day (03:00, 09:00, 15:00, 21:00)|For a list of all cities included in the file, See [Extended City List](https://bulk.openweathermap.org/sample/city.list.json.gz).|
-|3   |hourly1h_zip.eu.json.gz| 153,952 EU zip codes|2 times/day (08:00, 20:00)|
-|4   |hourly1h_zip.us.json.gz| 41,959 US zip codes|2 times/day (08:00, 20:00)|
-|5   |hourly1h_zip.uk.json.gz| 15,225 UK postcodes|2 times/day (08:00, 20:00)|
+    |Seq.|Filename       |Number of Locations      |Updated by UTC Time|Notes
+    |:---|:--------------|:------------------------|:------------------|-----------------|
+    |1   |hourly1h_14.json.gz| 22,635 cities        |4 times/day (03:00, 09:00, 15:00, 21:00)|For a list of all cities included in the file, see [Consolidated City List](https://bulk.openweathermap.org/sample/current.city.list.json.gz).|
+    |2   |hourly1h_16.json.gz| 209,579 cities       |4 times/day (03:00, 09:00, 15:00, 21:00)|For a list of all cities included in the file, See [Extended City List](https://bulk.openweathermap.org/sample/city.list.json.gz).|
+    |3   |hourly1h_zip.eu.json.gz| 153,952 EU zip codes|2 times/day (08:00, 20:00)|
+    |4   |hourly1h_zip.us.json.gz| 41,959 US zip codes|2 times/day (08:00, 20:00)|
+    |5   |hourly1h_zip.uk.json.gz| 15,225 UK postcodes|2 times/day (08:00, 20:00)|
 
 2. Unpack the downloaded file by using any suitable archiver software. You will then have a JSON or CSV formatted file that is ready to use.
 
-> **Note:** All bulk files are available in both JSON and CSV formats. Filenames in the above table are relevant for JSON format. To download files in CSV format, change **json** to **csv** in the filename. For example, the **JSON** filename is **hourly1h_14.json.gz**, and the **CSV** filename for the same data is **hourly1h_14.csv.gz**.
+    !!! note
+        All bulk files are available in both JSON and CSV formats. Filenames in the above table are relevant for JSON format. To download files in CSV format, change **json** to **csv** in the filename. For example, the **JSON** filename is **hourly1h_14.json.gz**, and the **CSV** filename for the same data is **hourly1h_14.csv.gz**.
 
 3. To download updated weather data, repeat steps #1-2 at the times indicated in the column, **Updated by UTC Time**, in the table in step #1. 
-   Weather data is updated in these files on a regular basis.
+    Weather data is updated in these files on a regular basis.
 
 ### Get 7-day archived weather data in bulk
 
@@ -1546,18 +1570,19 @@ https://bulk.openweathermap.org/archive/weather_zip_uk_011020_2000.csv.gz?appid=
 
 1. As described in [Request syntax](#request-syntax), construct the API request:
 
-```
+    ```
 
-https://bulk.openweathermap.org/archive/{BULK_FILE_NAME}?appid={API key}
+    https://bulk.openweathermap.org/archive/{BULK_FILE_NAME}?appid={API key}
 
-```
+    ```
 
-where **{BULK_FILE_NAME}** is one of the files that contains a [7-day archive](https://openweathermap.org/bulk#bulk_archive) of current and forecast weather data.
+    where **{BULK_FILE_NAME}** is one of the files that contains a [7-day archive](https://openweathermap.org/bulk#bulk_archive) of current and forecast weather data.
 
 
 2. Unpack the downloaded file by using any suitable archiver software. You will then have a JSON or CSV formatted file that is ready to use.
 
-> **Note:** All bulk files are available in both JSON and CSV formats. Filenames in the above table are relevant for JSON format. To download files in CSV format, change **json** to **csv** in the filename. For example, the **JSON** filename is **hourly1h_zip_eu_011025_2015.json.gz**, and the **CSV** filename for the same data is **hourly1h_zip_eu_011025_2015.csv.gz**.
+    !!! note
+        All bulk files are available in both JSON and CSV formats. Filenames in the above table are relevant for JSON format. To download files in CSV format, change **json** to **csv** in the filename. For example, the **JSON** filename is **hourly1h_zip_eu_011025_2015.json.gz**, and the **CSV** filename for the same data is **hourly1h_zip_eu_011025_2015.csv.gz**.
 
 3. To download updated weather data, repeat steps #1-2 at the times indicated in the column, **Available data per day, UTC time**, in the table on the page, [7-day archive of current and forecast weather bulks files](https://openweathermap.org/bulk#bulk_archive). Weather data is updated in these files on a regular basis.
 

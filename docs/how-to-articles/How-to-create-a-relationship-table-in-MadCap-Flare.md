@@ -1,7 +1,8 @@
 # How to create a relationship table in MadCap Flare
 
-This article provides step-by-step instructions for creating a relationship table in MadCap Flare for content developers.
-
+!!! abstract ""
+    This article provides step-by-step instructions for creating a relationship table in MadCap Flare for content developers.
+	
 ---
 
 ## <h2 id="overview">📝 Overview</h2>
@@ -54,7 +55,8 @@ This example shows a relationship table for a _Getting Started_ chapter, with co
 
 - Basic familiarity with MadCap Flare is assumed; this guide does _not_ cover introductory concepts.
 
-> **Note:** It’s OK if your guide currently includes a **Related topics** element. After creating a relationship table, you can replace the existing element entirely or use both—keeping **Related topics** in some chapters and the relationship table in others.
+!!! note
+    It’s OK if your guide currently includes a **Related topics** element. After creating a relationship table, you can replace the existing element entirely or use both—keeping **Related topics** in some chapters and the relationship table in others.
 
 ---
 
@@ -62,14 +64,13 @@ This example shows a relationship table for a _Getting Started_ chapter, with co
 
 To automatically and dynamically link related topics in a guide, create a relationship table. You can edit a relationship table at any time. When working in a project with multiple TOCs, create a new relationship table for each TOC.
 
-**Steps:**
-
-[1. Add Relationship Table](#1-add-relationship-table)  
-[2. Set up your TOC](#2-set-up-your-toc)  
-[3. Create Row in the Table](#3-create-row-in-the-table)  
-[4. Add Topics to the Row](#4-add-topics-to-the-row)  
-[5. Link Same Topic Types to Each Other](#5-link-same-topic-types-to-each-other)  
-[6. Final Steps](#6-final-steps)
+??? note "Steps"
+	[1. Add Relationship Table](#1-add-relationship-table)  
+	[2. Set up your TOC](#2-set-up-your-toc)  
+	[3. Create Row in the Table](#3-create-row-in-the-table)  
+	[4. Add Topics to the Row](#4-add-topics-to-the-row)  
+	[5. Link Same Topic Types to Each Other](#5-link-same-topic-types-to-each-other)  
+	[6. Final Steps](#6-final-steps)
 
 
 ### 1. Add Relationship Table 
@@ -80,33 +81,33 @@ From Project Organizer, add a new relationship table.
 
 2. From **Project**, right-click the **Advanced** folder and select **Add Relationship Table**.
 
----
+    ---
 
-![Add relationship table](../images/Create_rel_table2.png "Add relationship table")
+    ![Add relationship table](../images/Create_rel_table2.png "Add relationship table")
 
----
+    ---
 
 3. On the **Add File** screen:
 
-   1. Under **Source**, leave the default **New from template**. 
+    1. Under **Source**, leave the default **New from template**. 
 
-   2. For **File Name**, enter a filename for the relationship table. 
+    2. For **File Name**, enter a filename for the relationship table. 
 
-   3. Select **Add**.
+    3. Select **Add**.
 
----
+    ---
 
-![Add file](../images/Create_rel_table3.png "Add file")
+    ![Add file](../images/Create_rel_table3.png "Add file")
 
----
+    ---
 
-  The system saves the relationship table in the **Advanced** folder. On the right pane, you now have an empty relationship table that you can start filling in with your related topics.
+    The system saves the relationship table in the **Advanced** folder. On the right pane, you now have an empty relationship table that you can start filling in with your related topics.
 
----
+    ---
 
-![Relationship table added](../images/Create_rel_table4.png "Relationship table added")
+    ![Relationship table added](../images/Create_rel_table4.png "Relationship table added")
 
----
+    ---
   
 ### 2. Set up your TOC
 
@@ -114,27 +115,27 @@ To easily move the topics from your TOC to your relationship table, move your TO
 
 1. By selecting the five lines that appear in the corner of your TOC file, click and drag your TOC.
 
----
+    ---
 
-![Click and drag your TOC](../images/Create_rel_table5.png "Click and drag your TOC")
+    ![Click and drag your TOC](../images/Create_rel_table5.png "Click and drag your TOC")
 
----
+    ---
 
 2. When you do that, Flare displays multiple shaded squares, prompting you to place the TOC in a specific location on the screen. For example, to place the TOC on the right side, select the square that is shaded on the right.
 
----
+    ---
 
-![Place TOC in shaded square](../images/Create_rel_table6.png "Place TOC in shaded square")
+    ![Place TOC in shaded square](../images/Create_rel_table6.png "Place TOC in shaded square")
 
----
+    ---
 
 3. From your TOC, navigate to the chapter that includes the topics you want to add to the relationship table.
 
----
+    ---
 
-![Navigate to chapter in TOC](../images/Create_rel_table7.png "Navigate to chapter in TOC")
+    ![Navigate to chapter in TOC](../images/Create_rel_table7.png "Navigate to chapter in TOC")
 
----
+    ---
 
 ### 3. Create Row in the Table
 
@@ -142,27 +143,27 @@ Create the first row in your relationship table.
 
 1. From the **Row Name** column in your relationship table, right-click and select **Row Properties**.
 
----
+    ---
 
-![Select Row Properties](../images/Create_rel_table8.png "Select Row Properties")
+    ![Select Row Properties](../images/Create_rel_table8.png "Select Row Properties")
 
----
+    ---
 
 2. In the **Row Type** field, enter the name of the row (or subject), and click **OK**. <br>For example, I want to put links to topics related to getting up and running in an application called Workforce Optimization. Therefore, the name of my row is **Getting Started**.
 
----
+    ---
 
-![Enter row name](../images/Create_rel_table9.png "Enter row name")
+    ![Enter row name](../images/Create_rel_table9.png "Enter row name")
 
----
+    ---
 
-The system displays the name of the row in the **Row Name** column.
+    The system displays the name of the row in the **Row Name** column.
 
----
+    ---
 
-![Row created](../images/Create_rel_table10.png "Row created")
+    ![Row created](../images/Create_rel_table10.png "Row created")
 
----
+    ---
 
 ### 4. Add Topics to the Row
 
@@ -170,23 +171,23 @@ From your TOC, drag and drop the relevant topics to the row in your relationship
 
 1. Review your TOC to determine which topics should be linked in the row.
 
-   For example, for my **Getting Started** row, I want to link the concept topic, _Workforce Optimization overview_, with the other topics in that chapter. I also want to link the two task topics, _Sign in to the portal_ and _Sign out of the portal_, to each other.
+    For example, for my **Getting Started** row, I want to link the concept topic, _Workforce Optimization overview_, with the other topics in that chapter. I also want to link the two task topics, _Sign in to the portal_ and _Sign out of the portal_, to each other.
 
 2. Drag and drop the topics to the relevant topic type column. 
 
-   For example:
+    For example:
 
-   - Drag and drop the concept topics, _Workforce Optimization overview_ and _Navigating WFO workspaces_, to the **concept** column. 
+    - Drag and drop the concept topics, _Workforce Optimization overview_ and _Navigating WFO workspaces_, to the **concept** column. 
 
-   - Drag and drop the task topics, _Sign in to the portal_ and _Sign out of the portal_, to the **task** column. 
+    - Drag and drop the task topics, _Sign in to the portal_ and _Sign out of the portal_, to the **task** column. 
 
-   - Drag and drop the reference topic, _Quick access icons_, to the **reference** column.
+    - Drag and drop the reference topic, _Quick access icons_, to the **reference** column.
 
----
+    ---
 
-![Drag and drop topics](../images/Create_rel_table11.png "Drag and drop topics")
+    ![Drag and drop topics](../images/Create_rel_table11.png "Drag and drop topics")
 
----
+    ---
 
 ### 5. Link Same Topic Types to Each Other
 
@@ -194,33 +195,33 @@ By default, _different_ topic types in the same row in your relationship table w
 
 1. From the first topic to be included in the **Family**, right-click and select **Cell Properties**.
 
----
+    ---
 
-![Select Cell Properties](../images/Create_rel_table12.png "Select Cell Properties")
+    ![Select Cell Properties](../images/Create_rel_table12.png "Select Cell Properties")
 
----
+    ---
 
 2. On the **Cell Properties** screen, from the **Collection Type** drop-down list, select **Family**.
 
----
+    ---
 
-![Select Family for collection type](../images/Create_rel_table13.png "Select Family for collection type")
+    ![Select Family for collection type](../images/Create_rel_table13.png "Select Family for collection type")
 
----
+    ---
 
 3. Select **OK**.
 
-   The cell you selected is now shaded green, indicating that there is a **Family** connection between these same topic types. Now, the concept topics, _Workforce Optimization overview_ and _Navigating WFO workspaces_, will link to one another. 
+    The cell you selected is now shaded green, indicating that there is a **Family** connection between these same topic types. Now, the concept topics, _Workforce Optimization overview_ and _Navigating WFO workspaces_, will link to one another. 
 
----
+    ---
 
-![Family connection between topics](../images/Create_rel_table14.png "Family connection between topics")
+    ![Family connection between topics](../images/Create_rel_table14.png "Family connection between topics")
 
----
+    ---
 
 4. Repeat these steps for all topics of the same topic type that you want to link to one another.
 
----
+    ---
 
 ### 6. Final Steps
 
@@ -230,33 +231,34 @@ Add all relevant topics to your relationship table. In addition, add your relati
 
 2. Insert the relationship table snippet in every topic included in your relationship table:
 
-   1. From a topic for which you want to add the relationship table snippet, scroll to the bottom of the topic (where your **Related topics** heading is usually inserted).
+    1. From a topic for which you want to add the relationship table snippet, scroll to the bottom of the topic (where your **Related topics** heading is usually inserted).
 
-   2. Go to **Content Explorer**.
+    2. Go to **Content Explorer**.
 
-   3. From the **Content** folder, go to **Resources** and **Snippets**.
+    3. From the **Content** folder, go to **Resources** and **Snippets**.
 
-   4. From the **Snippets** folder, drag the snippet, **mast_RelTable.flsnp**, to the bottom of the topic.
+    4. From the **Snippets** folder, drag the snippet, **mast_RelTable.flsnp**, to the bottom of the topic.
 
----
+    ---
 
-![Insert relationship table snippet in topics](../images/Create_rel_table15.png "Insert relationship table snippet in topics")
+    ![Insert relationship table snippet in topics](../images/Create_rel_table15.png "Insert relationship table snippet in topics")
 
----
+    ---
 
-> **Note:** If you have existing **Related topic** elements and links where you are inserting the snippets, remove those elements so they do _not_ appear in the output.
+    !!! note
+        If you have existing **Related topic** elements and links where you are inserting the snippets, remove those elements so they do _not_ appear in the output.
 
 3. For every target file, from the **Relationship Table** tab, select the relationship table you created. <br>This ensures the relationship table links get included in the output.
 
----
+    ---
 
-![Select relationship table for targets](../images/Create_rel_table16.png "Select relationship table for targets")
+    ![Select relationship table for targets](../images/Create_rel_table16.png "Select relationship table for targets")
 
----
+    ---
 
 4. Build all relevant targets.
 
----
+    ---
 
 ## <h2 id="tips">💡 Tips</h2>
 
@@ -284,9 +286,11 @@ View your output. Make sure that the related topics generated by your relationsh
 
 ---
 
-> **Note:** If the links are _not_ what you expected, open your relationship table, edit it, rebuild your targets, and check again. It's ok to not get it right the first time! It takes time to understand how to build the relationship tables in a way that results in the right output.
+!!! note
+    If the links are _not_ what you expected, open your relationship table, edit it, rebuild your targets, and check again. It's ok to not get it right the first time! It takes time to understand how to build the relationship tables in a way that results in the right output.
 
-For more information and technical support for MadCap Flare, see [Additional resources](#additional-resources).
+!!! info
+    For more information and technical support for MadCap Flare, see [Additional resources](#additional-resources).
 
 ---
 

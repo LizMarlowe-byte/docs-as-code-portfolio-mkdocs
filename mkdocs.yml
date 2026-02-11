@@ -12,7 +12,10 @@ theme:
       accent: deep purple
   features:
     - navigation.sections
-    - navigation.indexes
+    - navigation.instant
+    - navigation.top
+    - navigation.tracking
+    - navigation.prune
     - toc.follow
     - content.code.copy
     - search.suggest
@@ -45,17 +48,21 @@ markdown_extensions:
       custom_checkbox: true
 
 nav:
-  - About this Site: index.md
-  - User Guides:
-      - user-guides/Docmost-User-Guide.md
-      - user-guides/Taiga-User-Guide.md
-  - API Guides:
-      - api-guides/OpenWeatherMap-API-Guide.md
-      - api-guides/Spotify-API-Guide.md
-  - How-To Articles:
-      - how-to-articles/How-to-create-a-relationship-table-in-MadCap-Flare.md
-  - Technical Reference Guides:
-      - technical-reference-guides/Optiflow_CloudSync_CRM_Integration_Guide.md
-      - technical-reference-guides/AuroraOps-Platform-5.2.0-Release-Notes.md
+  - 🌐 Doc Site Using MkDocs:
+        - About this Site: index.md
 
+  - 📘 User Guides:
+         - user-guides/Docmost-User-Guide.md
+         - user-guides/Taiga-User-Guide.md
+
+  - 🧩 API Guides:
+         - api-guides/OpenWeatherMap-API-Guide.md
+         - api-guides/Spotify-API-Guide.md
+
+  - 🛠️ How-To Articles:
+         - how-to-articles/How-to-create-a-relationship-table-in-MadCap-Flare.md
+
+  - 📚 Technical Reference Guides:
+         - technical-reference-guides/Optiflow_CloudSync_CRM_Integration_Guide.md
+         - technical-reference-guides/AuroraOps-Platform-5.2.0-Release-Notes.md
 strict: true

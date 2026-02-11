@@ -1,13 +1,20 @@
 # Spotify Web API Guide
-The _Spotify API Guide_ describes a RESTful API that provides access to comprehensive music data for developers.
+
+!!! abstract ""
+    This guide describes the _Spotify Web API_, a powerful REST API that enables developers to access Spotify’s music catalog and user data. It covers conceptual overviews (OAuth flows, app access modes, rate limiting), a task‑based tutorial, and a curated API reference with realistic examples and parameter tables.
 
 ---
 
-## Overview { data-toc-label="Overview" }
+## 🎧 Overview
 
 _Spotify_ is a leading digital audio streaming service that gives you access to millions of songs, podcasts, and videos. Spotify is accessible for free with ads or through a paid Premium plan for ad-free listening, offline downloads, and higher audio quality. It allows users to create playlists, discover new music, and listen using various devices, including phones, computers, and tablets.
 
 The _Spotify Web API_ is a RESTful API with different endpoints that return JSON metadata about music artists, albums, and tracks, directly from the Spotify Data Catalog. It allows developers to build applications that interact with Spotify's music data and features, allowing them to retrieve music information, manage playlists, control playback, and access user data through standard web requests (RESTful). It provides access to Spotify's catalog (including artists, albums, and tracks), and user features, using authorization flows like Client Credentials for app data and Authorization Code for user-specific actions.
+
+??? note "Topics"
+	* [Common use cases](#common-use-cases)
+    * [Technical details](#technical-details)
+    * [Target audience](#target-audience)
 
 ### Common use cases
 
@@ -37,7 +44,7 @@ This guide is intended for developers who want to integrate Spotify features int
 
 ---
 
-## Base URL { data-toc-label="Base URL" }
+## 🔗 Base URL
 
 All API requests are made to the following base URL. When constructing requests, append the endpoint paths to this root URL. For security, the API is served over **HTTPS**, and all endpoints are versioned.
 
@@ -48,7 +55,7 @@ https://api.spotify.com
 
 ---
 
-## Authentication { data-toc-label="Authentication" }
+## 🔐 Authentication
 
 In the Spotify Web API, users grant consent for specific scopes to a registered client application. The application (server-side) authenticates to Spotify using its **client ID and client secret** (never exposed to end users) and requests access tokens to call the API. The server authenticates and authorizes the clients, and sends them access tokens, which are used by the clients to make API requests on behalf of the user or application.
 
@@ -92,7 +99,7 @@ Select the right grant type for the application you are building:
 
 ---
 
-## Rate limits { data-toc-label="Rate limits" }
+## 📊 Rate limits
 
 A rate limit is the number of requests the API can receive in a specific time period. Rate limiting ensures efficient API performance and prevents abuse. Once the limit is reached, API requests from the client will fail.
 
@@ -149,19 +156,19 @@ Complete the [getting started](#getting-started) tasks:
 
 3. In the **Full Name** and **Email** fields, enter the name and email address of the first user you want to add, and select **Add user**.
 
----
+    ---
 
-![Add user to authenticate with your app](../images/Spotify_7.png "Add user to authenticate with your app")
+    ![Add user to authenticate with your app](../images/Spotify_7.png "Add user to authenticate with your app")
 
----
+    ---
 
-The user you added can now authenticate with your app. You can define a total of 25 authenticated users in development mode. To define an unlimited number of users, [apply for extended quota mode](#apply-for-extended-quota-mode).
+    The user you added can now authenticate with your app. You can define a total of 25 authenticated users in development mode. To define an unlimited number of users, [apply for extended quota mode](#apply-for-extended-quota-mode).
 
----
+    ---
 
-![Authenticated user added](../images/Spotify_8.png "Authenticated user added")
+    ![Authenticated user added](../images/Spotify_8.png "Authenticated user added")
 
----
+    ---
 
 ### Apply for extended quota mode
 
@@ -173,39 +180,39 @@ To apply for this mode, your business or organization first needs to be an appro
 
 - Complete the [getting started](#getting-started) tasks: 
 
-  - [Set up your account](#set-up-your-account)
+    - [Set up your account](#set-up-your-account)
 
-  - [Create an app](#create-an-app)
+    - [Create an app](#create-an-app)
 
 - Verify that your organization or business:
 
-  - Is an established business entity (legally registered business or organization)
+    - Is an established business entity (legally registered business or organization)
 
-  - Operates an active, launched service
+    - Operates an active, launched service
 
-  - Maintains a minimum of at least 250K active users
+    - Maintains a minimum of at least 250K active users
 
-  - Is available in key Spotify markets
+    - Is available in key Spotify markets
 
 **Procedure**:
 
 1. Complete the [Partner Application Form](https://docs.google.com/forms/d/1O87xdPP1zWUDyHnduwbEFpcjA57JOaefCgBShKjAqlo).
 
-   Spotify will review your submitted form and send a response by email. If Spotify approves your [Partner Application Form](https://docs.google.com/forms/d/1O87xdPP1zWUDyHnduwbEFpcjA57JOaefCgBShKjAqlo), continue to the next step.
+    Spotify will review your submitted form and send a response by email. If Spotify approves your [Partner Application Form](https://docs.google.com/forms/d/1O87xdPP1zWUDyHnduwbEFpcjA57JOaefCgBShKjAqlo), continue to the next step.
 
 2. From the [Dashboard](https://developer.spotify.com/dashboard) page, select the app for which you want to request extended quota mode.
 
 3. From the **Quota Extension Request** tab, complete the Quota Extension Request Form, which includes four main sections.
 
----
+    ---
 
-![Quota Extension Request Form](../images/Spotify_9.png "Quota Extension Request Form")
+    ![Quota Extension Request Form](../images/Spotify_9.png "Quota Extension Request Form")
 
----
+    ---
 
 4. When you have completed the form, select **Submit**.
 
-  If you have successfully submitted your app for review, **Sent** is displayed in blue on your app detail page. The app review team will review your form, evaluate it for compliance with Spotify's [Developer Policy](https://developer.spotify.com/policy), and send you feedback to the email address associated with your Spotify account. This review process can take up to 6 weeks.
+    If you have successfully submitted your app for review, **Sent** is displayed in blue on your app detail page. The app review team will review your form, evaluate it for compliance with Spotify's [Developer Policy](https://developer.spotify.com/policy), and send you feedback to the email address associated with your Spotify account. This review process can take up to 6 weeks.
 
 ### Rate limit techniques
 
@@ -220,7 +227,7 @@ To apply for this mode, your business or organization first needs to be an appro
 
 ---
 
-## HTTP status and error codes { data-toc-label="HTTP status and error codes" }
+## ⚠️ HTTP status and error codes
 
 Spotify's Web API follows standard HTTP status codes, paired with JSON responses. 
 
@@ -260,7 +267,7 @@ Most error codes (4xx or 5xx) adhere to this JSON format:
 
 ---
 
-## Pagination { data-toc-label="Pagination" }
+## ↕️ Pagination
 
 Pagination allows you to retrieve large sets of data in smaller, manageable chunks by using specific parameters to limit the amount of data sent in each API response. 
 
@@ -315,23 +322,21 @@ curl "https://api.spotify.com/v1/me/playlists?offset=20&limit=20" \
 
 ```
 
-> **Note:** If the response is null, you have reached the last page.
+!!! note
+    If the response is null, you have reached the last page.
 
 ---
 
-## Getting started { data-toc-label="Getting started" }
+## 🚀 Getting started
 
 From the Spotify Developer Dashboard, set up your account. Then, create your first app, which provides you with a _client ID_ and _client secret_. Finally, request an _access token_, which is a string that contains the credentials and permissions you need to access a given resource. 
 
 Every access token is valid for 1 hour. Include the `Authorization` header in your API requests using: `Bearer <access_token>`.
 
-**Topics**:
-
-- [Set up your account](#set-up-your-account)
-  
-- [Create an app](#create-an-app)
-
-- [Request an access token](#request-an-access-token)
+??? note "Topics"
+	* [Set up your account](#set-up-your-account)
+	* [Create an app](#create-an-app)
+	* [Request an access token](#request-an-access-token)
 
 ### Set up your account
 
@@ -379,39 +384,39 @@ An app provides the _client ID_ and _client secret_ you need to request an acces
 
 2. On the **Create app** page, complete the fields.
 
----
+    ---
 
-![Create New App - Add Redirect URIs](../images/Spotify_2.png "Create New App - Add Redirect URIs")
+    ![Create New App - Add Redirect URIs](../images/Spotify_2.png "Create New App - Add Redirect URIs")
 
----
+    ---
 
-|Field          |Description |
-|:--------------|:----------|
-|App name       |Enter the name of the application.|
-|App description |Enter a description of the application.|
-|Website         |Optional_. Enter the Web domain or URL that allows users to get more information about your application.|
-|Redirect URIs   |Enter one or more URIs where users can be redirected after authentication success or failure, and select **Add**. <br>These URIs enable the Spotify authentication service to automatically invoke your app every time the user logs in. For example: http://127.0.0.1:8080/. <br>Note that on iOS apps, the redirect URI must adhere to the following:<ul><li>All of the characters are lowercase.</li><li>Prefix _must_ be unique to your application. (It cannot be a general prefix like http.) NOTE: The prefix must only be used by your application for authenticating Spotify. If you already have a URL scheme handled by your application for other uses, do _not_ reuse it.</li><li>Include a path after the first pair of forward slashes. <br>For example, if your app name is _Get My Fav Music Stats_, a good candidate for the redirect URI could be: `get-my-fav-music-stats-login://callback`.</li></ul>|
-|Which API/SDKs are you planning to use?|Select the type of APIs/SDKs you are planning to use for the app.|
-|I understand and agree with Spotify's Developer Terms of Service and Design Guidelines. | Select the terms of service.
+    |Field          |Description |
+    |:--------------|:----------|
+    |App name       |Enter the name of the application.|
+    |App description |Enter a description of the application.|
+    |Website         |Optional_. Enter the Web domain or URL that allows users to get more information about your application.|
+    |Redirect URIs   |Enter one or more URIs where users can be redirected after authentication success or failure, and select **Add**. <br>These URIs enable the Spotify authentication service to automatically invoke your app every time the user logs in. For example: http://127.0.0.1:8080/. <br>Note that on iOS apps, the redirect URI must adhere to the following:<ul><li>All of the characters are lowercase.</li><li>Prefix _must_ be unique to your application. (It cannot be a general prefix like http.) NOTE: The prefix must only be used by your application for authenticating Spotify. If you already have a URL scheme handled by your application for other uses, do _not_ reuse it.</li><li>Include a path after the first pair of forward slashes. <br>For example, if your app name is _Get My Fav Music Stats_, a good candidate for the redirect URI could be: `get-my-fav-music-stats-login://callback`.</li></ul>|
+    |Which API/SDKs are you planning to use?|Select the type of APIs/SDKs you are planning to use for the app.|
+    |I understand and agree with Spotify's Developer Terms of Service and Design Guidelines. | Select the terms of service.
 
 3. Select **Save**.
 
----
+    ---
 
-![Save New App Settings](../images/Spotify_3.png "Save New App Settings")
+    ![Save New App Settings](../images/Spotify_3.png "Save New App Settings")
 
----
-
-
-The application adds the app you created. 
-
----
+    ---
 
 
-![New App Created](../images/Spotify_4.png "New App Created")
+    The application adds the app you created. 
+
+    ---
 
 
----
+    ![New App Created](../images/Spotify_4.png "New App Created")
+
+
+    ---
 
 By default, every app you create starts in _development_ mode, which limits usage to up to 25 specified users. If you want to share your app with up to 25 users, [define authenticated users in development mode](#define-authenticated-users-in-development-mode). 
 
@@ -421,80 +426,83 @@ However, if you want to define an _unlimited_ number of users, your organization
 
 You can now request an _access token_, which is a string that contains the credentials and permissions used to access a given resource (such as artists, albums, or tracks) or user data (for example, your profile or playlists).
 
-> **Note:** Spotify uses the OAuth2 standard for authorization, which defines four grant types (or flows) to request and get an access token. Spotify implements three of them: Authorization Code, Authorization Code with PKCE Extension, and Client Credentials. This getting started task utilizes the Client Credentials flow. For more information, see [Spotify implements three OAuth grant types](#spotify-implements-three-oauth-grant-types).
+!!! note
+    Spotify uses the OAuth2 standard for authorization, which defines four grant types (or flows) to request and get an access token. Spotify implements three of them: Authorization Code, Authorization Code with PKCE Extension, and Client Credentials. This getting started task utilizes the Client Credentials flow. For more information, see [Spotify implements three OAuth grant types](#spotify-implements-three-oauth-grant-types).
 
 **Before you begin**
 
 - [Create an app](#create-an-app)
 
 - Verify that curl is installed on your computer:
-   - For _macOS/Linux_, it is usually pre-installed. 
-   - For _Windows_, [download and install curl](https://curl.se/windows/) or use Git Bash.
+    - For _macOS/Linux_, it is usually pre-installed. 
+    - For _Windows_, [download and install curl](https://curl.se/windows/) or use Git Bash.
 
-> **Note:** Curl is a command-line tool used to transfer data to or from a server using various protocols - most commonly **HTTP** and **HTTPS**.
+!!! info
+    Curl is a command-line tool used to transfer data to or from a server using various protocols - most commonly **HTTP** and **HTTPS**.
 
 **Procedure**
 
 1. From the [Dashboard](https://developer.spotify.com/dashboard), select the app you just created.
 
----
+    ---
 
 
-![Select new app from dashboard](../images/Spotify_5.png "Select new app from dashboard")
+    ![Select new app from dashboard](../images/Spotify_5.png "Select new app from dashboard")
 
 
----
+    ---
 
 2. From the **Basic Information** tab, access your client ID and client secret:
 
-   - **Client ID**: The client ID is displayed in the **Client ID** field. To copy it, click the copy icon in the corner.
+    - **Client ID**: The client ID is displayed in the **Client ID** field. To copy it, click the copy icon in the corner.
 
-   - **Client Secret**: To view the client secret, select **View client secret**. To copy it, click the copy icon in the corner.
+    - **Client Secret**: To view the client secret, select **View client secret**. To copy it, click the copy icon in the corner.
 
----
-
-
-![View client ID and client secret](../images/Spotify_6.png "View client ID and client secret")
+    ---
 
 
----
+    ![View client ID and client secret](../images/Spotify_6.png "View client ID and client secret")
+
+
+    ---
 
 3. Using the **Client Credentials** authorization flow, send an API request with the following information:
 
-   - Send a **POST** request to the token endpoint URI.
-   - Add the `Content-Type` header: **application/x-www-form-urlencoded**.
-   - Add an `Authorization` header using **HTTP Basic** with `base64(client_id:client_secret)`.
-   - Set the body parameter: `grant_type=client_credentials`.
+    - Send a **POST** request to the token endpoint URI.
+    - Add the `Content-Type` header: **application/x-www-form-urlencoded**.
+    - Add an `Authorization` header using **HTTP Basic** with `base64(client_id:client_secret)`.
+    - Set the body parameter: `grant_type=client_credentials`.
 
 
-```bash
-curl -X POST "https://accounts.spotify.com/api/token" \
+    ```bash
+    curl -X POST "https://accounts.spotify.com/api/token" \
      -H "Content-Type: application/x-www-form-urlencoded" \
      -H "Authorization: Basic <base64(client_id:client_secret)>" \
      -d "grant_type=client_credentials"
 
-```
+    ```
 
-The response returns an access token that is valid for 1 hour (or 3600 seconds). After that time, the token expires and you need to request a new one.
+    The response returns an access token that is valid for 1 hour (or 3600 seconds). After that time, the token expires and you need to request a new one.
 
-```
+    ```
 
-{
-  "access_token": "BQDBKJ5eo5jxbtpWjVOj7ryS84khybFpP_lTqzV7uV-T_m0cTfwvdn5BnBSKPxKgEb11",
-  "token_type": "Bearer",
-  "expires_in": 3600
-}
+    {
+      "access_token": "BQDBKJ5eo5jxbtpWjVOj7ryS84khybFpP_lTqzV7uV-T_m0cTfwvdn5BnBSKPxKgEb11",
+      "token_type": "Bearer",
+      "expires_in": 3600
+    }
 
-```
-To use the access token, you must include the `Authorization` header in your API requests, where the value is the valid access token following the format: `Bearer <Access Token>`.
+    ```
+    To use the access token, you must include the `Authorization` header in your API requests, where the value is the valid access token following the format: `Bearer <Access Token>`.
 
 ---
 
-## Tutorial: Request artist data { data-toc-label="Tutorial: Request artist data" }
+## 🎤 Tutorial: Request artist data
 
 This tutorial describes how to retrieve information about an artist. It involves appending the Spotify ID of the artist to the **Get Artist** endpoint, and including the access token using the `Authorization` header in the API request. 
 
-> **Note:** The request includes using curl (Client URL) for the HTTP request.
+!!! info
+    The request includes using curl (Client URL) for the HTTP request.
 
 ### Before you begin
 
@@ -512,7 +520,7 @@ Use the Spotify Desktop App to get the **Spotify ID**:
 
 3. Select **Share** > **Copy link to artist**. 
 
-   The Spotify ID is the final path segment in the URL, after `open.spotify.com/artist/`. For example, in `https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb`, the ID is `4Z8W4fKeB5YxbusRsdQVPb`.
+    The Spotify ID is the final path segment in the URL, after `open.spotify.com/artist/`. For example, in `https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb`, the ID is `4Z8W4fKeB5YxbusRsdQVPb`.
 
 ### Step 2: Start the API request with the **Get Artist** endpoint
 
@@ -544,7 +552,7 @@ Verify that the API returns a successful JSON response, which includes informati
 
 ---
 
-## API reference { data-toc-label="API reference" }
+## 📘 API reference
 
 The Spotify Web API Reference is designed to help developers integrate Spotify features into applications by providing clear examples, endpoint details, and request/response formats.
 
@@ -563,7 +571,7 @@ Each endpoint includes the following data:
 - Response example
 - Response elements
 
-#### Resource groups and endpoints
+### Resource groups and endpoints
 
 The following table summarizes the resource groups and their associated endpoints included in this guide:
 
@@ -583,7 +591,7 @@ The following table summarizes the resource groups and their associated endpoint
 |                           |                                                                                        |**[Remove playlist items](#remove-playlist-items)**|Removes one or more items from a user's playlist.
 
 
-#### Headers
+### Headers
 
 The following headers are commonly used:
 
@@ -593,7 +601,7 @@ The following headers are commonly used:
 |`Content-Type` |Media type of the request body.| conditional |Note: <ul><li>Use **application/json** for JSON request bodies (such as POST/PUT with a body).</li><li> Use **application/x-www-form-urlencoded** for token requests.</li><li>Omit when there is no body (such as a simple GET).</li></ul>|
 
 
-#### Error responses
+### Error responses
 
 All endpoints return errors in a consistent JSON format when something goes wrong. The response includes an error object with two fields:
 
@@ -1308,7 +1316,8 @@ If successful (**204** status code), playback on the device is paused.
 
 Skips to the next track in the user's queue. 
 
-> _**Note:** This API only works for users who have Spotify Premium. The order of execution is _not_ guaranteed when you use this API with other Player API endpoints.
+!!! note
+    This API only works for users who have Spotify Premium. The order of execution is _not_ guaranteed when you use this API with other Player API endpoints.
 
 #### Method
 

@@ -1,18 +1,19 @@
 # Optiflow CloudSync CRM Integration Guide
-The _Optiflow CloudSync CRM Integration Guide_ describes the system integration between the Optiflow system and the CloudSync CRM system.
+
+!!! abstract ""
+    This guide describes the system integration between the Optiflow system and the CloudSync CRM system.
 
 ---
 
-## Optiflow-CloudSync CRM integration 
+## 🔗 Optiflow-CloudSync CRM integration 
 
 In the _Optiflow–CloudSync CRM_ integration, CloudSync supplies customer engagement, ticket data, and real-time visibility updates from the CloudSync CRM system to the Optiflow system.
 
-**Topics:**
-
-- [Overview](#overview)
-- [Target audience](#target-audience)
-- [Data retrieval flow](#data-retrieval-flow)
-- [Customer onboarding](#customer-onboarding)
+??? note "Topics"
+	* [Overview](#overview)
+	* [Target audience](#target-audience)
+	* [Data retrieval flow](#data-retrieval-flow)
+	* [Customer onboarding](#customer-onboarding)
 
 ### Overview
 
@@ -29,7 +30,8 @@ Optiflow also requests updates for mapping purposes to ensure usernames, statuse
 
 This integration supports users of the **CloudSync Service Hub**, utilizing **Chat Sessions**, **Video Support**, and **Support Ticket** channels. The real-time monitoring feed leverages CloudSync’s Omnichannel presence to display active sessions in Optiflow dashboards.
 
-> The Optiflow–CloudSync CRM integration uses the available **CloudSync API suite** and does _not_ require installing any packages in your CloudSync environment. Some minor setup in CloudSync is required to provide authentication and populate the APIs with the required data.
+!!! note
+    The Optiflow–CloudSync CRM integration uses the available **CloudSync API suite** and does _not_ require installing any packages in your CloudSync environment. Some minor setup in CloudSync is required to provide authentication and populate the APIs with the required data.
 
 #### Integration feeds
 
@@ -96,7 +98,7 @@ The workflow includes the following steps:
 | 3    | Optiflow    | Deploy CloudSync CRM Adapter | Optiflow enables the adapter, and populates it with the required parameters to supply the data points required for the Optiflow tenant.    |
 
 
-## Customer CloudSync CRM Setup { data-toc-label="Customer CloudSync CRM Setup" }
+## 🛠️ Customer CloudSync CRM setup
 
 The customer administrator needs to set up the access flow from their CloudSync tenant to the Optiflow adapter.
 
@@ -133,15 +135,16 @@ Log on to the CloudSync tenant application as an administrator.
 
 3. Select **Change Data Capture**.
 
-   The **Change Data Capture** screen is displayed. In **Available Entities**, the system displays the CDC entities that are available to be selected for the change data capture service for the integration.
+    The **Change Data Capture** screen is displayed. In **Available Entities**, the system displays the CDC entities that are available to be selected for the change data capture service for the integration.
 
 4. From **Available Entities**, move the relevant CDC entities that are in scope for the integration to **Selected Entities**, which can include:<ul><li>**SupportTicket**</li><li>**ChatSession**</li><li>**VideoSession**</li><li>**UserPresence**</li></ul>
 
-> **Note:** Only select the entities that are included in the integration. For example, if chats are not included, do _not_ select **ChatSession**.
+    !!! note
+        Only select the entities that are included in the integration. For example, if chats are not included, do _not_ select **ChatSession**.
 
 5. Select **Save**.
 
-  The CDC entities that you selected are included in the integration.
+    The CDC entities that you selected are included in the integration.
 
 **What to do next?**
 
@@ -163,23 +166,23 @@ Create a new user and associate the user with a service account, which is used b
 
 3. On the **New User** screen, complete the following mandatory fields for the user:
 
-|Field                         |Description                                                                 |
-|:-----------------------------|:---------------------------------------------------------------------------|
-|Last Name                     |Last name of the user.|
-|Alias                         |Shorter name representing the user. |
-|Email                         |User's valid email address, which is also used for verification in a later step.|
-|Username                      |Value that reflects the service account user for the integration. The username is shared with the Optiflow engineer at the end of the customer onboarding setup.|
-|Nickname                      |Short name for the user or service account.|
+    |Field                         |Description                                                                 |
+    |:-----------------------------|:---------------------------------------------------------------------------|
+    |Last Name                     |Last name of the user.|
+    |Alias                         |Shorter name representing the user. |
+    |Email                         |User's valid email address, which is also used for verification in a later step.|
+    |Username                      |Value that reflects the service account user for the integration. The username is shared with the Optiflow engineer at the end of the customer onboarding setup.|
+    |Nickname                      |Short name for the user or service account.|
 
 4. Select **Save**.       
 
 5. Next to the **Email** field, select the **Verify** link to send a verification email to the user, and click **OK**.
 
-   The system sends an email to the user with a link to verify the account. 
+    The system sends an email to the user with a link to verify the account. 
 
 6. From the _Welcome to CloudSync!_ email, select **Verify Account**.     
 
-   The system verifies the email account, and changes the **Verify** link next to the **Email** field to: **Verified**. The integration uses this user account to authenticate between CloudSync and Optiflow.                     
+    The system verifies the email account, and changes the **Verify** link next to the **Email** field to: **Verified**. The integration uses this user account to authenticate between CloudSync and Optiflow.                     
 
 **What to do next?**
 
@@ -201,11 +204,11 @@ Create a new permission set to be used by the integration. You can define specif
 
 3. On the **Permission Set Create** screen, complete the following mandatory fields:
 
-|Field                         |Description                                                                 |
-|:-----------------------------|:---------------------------------------------------------------------------|
-|Label                         |Name of the permission set that displays in the tenant application. |
-|API Name                      |Name of the permission set that is used for the API name. |
-|License                       |CloudSync API Integration. |
+    |Field                         |Description                                                                 |
+    |:-----------------------------|:---------------------------------------------------------------------------|
+    |Label                         |Name of the permission set that displays in the tenant application. |
+    |API Name                      |Name of the permission set that is used for the API name. |
+    |License                       |CloudSync API Integration. |
 
 4. Select **Save**.
 
@@ -227,7 +230,7 @@ Once you create the permission set, assign it to a specific user.
 
 2. At the upper right of the **Current Assignments** page, select **Add Assignment**.
 
-   The system displays all users in a list.
+    The system displays all users in a list.
 
 3. In the search text box, enter the user you created in [Create a new user and service account](#create-a-new-user-and-service-account).
 
@@ -235,7 +238,7 @@ Once you create the permission set, assign it to a specific user.
 
 5. Set the expiration date for the assignment, and select **Assign**.
 
-   The system displays a confirmation message, stating that the assignments were successful.
+    The system displays a confirmation message, stating that the assignments were successful.
 
 6. Select **Done**.
 
@@ -261,11 +264,11 @@ Create the Integration Connected App, which is used to authenticate communicatio
 
 4. On the **New Connected App** screen, under **Basic Information**, complete the following mandatory fields:
 
-   - **Connected App Name**
+    - **Connected App Name**
 
-   - **API Name**
+    - **API Name**
 
-   - **Contact Email** (must be a valid email address)
+    - **Contact Email** (must be a valid email address)
 
 5. From **API (Enable OAuth Settings)**, select **Enable OAuth Settings**.
 
@@ -277,19 +280,19 @@ Create the Integration Connected App, which is used to authenticate communicatio
 
 9. Add the following **Available OAuth Scopes** to **Selected OAuth Scopes**:
 
-     - **Manage user data via APIs (api)**
+    - **Manage user data via APIs (api)**
 
-     - **Perform requests at any time (refresh_token, offline_access)**
+    - **Perform requests at any time (refresh_token, offline_access)**
 
 10. Verify the following are selected:
 
-      - **Require Proof Key for Code Exchange (PKCE) Extension for Supported Authorization Flows**
+    - **Require Proof Key for Code Exchange (PKCE) Extension for Supported Authorization Flows**
 
-      - **Require Secret for Web Server Flow**
+    - **Require Secret for Web Server Flow**
 
-      - **Require Secret for Refresh Token Flow**
+    - **Require Secret for Refresh Token Flow**
 
-      - **Enable Client Credentials Flow**
+    - **Enable Client Credentials Flow**
 
 11. Select **Save**, and then **Continue**.
 
@@ -315,7 +318,7 @@ For the new Integration Connected App, configure system administration permissio
 
 4. In **Client Credentials Flow**, in the **Run As** field, browse, and select the user you created for the integration.
 
-   The Client Credentials Flow defines the permissions used in the system-to-system communication. These permissions are defined for the user in the integration.
+    The Client Credentials Flow defines the permissions used in the system-to-system communication. These permissions are defined for the user in the integration.
 
 5. Select **Save**.
 
@@ -365,21 +368,21 @@ To validate that everything is configured correctly for the integration, use the
 
 1. Open your Postman collection.
 
-   If you are working with a CloudSync sandbox instance, make sure to use the following endpoint: https://test.cloudsync.com/services/oauth2/token (instead of the production endpoint: https://login.cloudsync.com/services/oauth2/token).
+    If you are working with a CloudSync sandbox instance, make sure to use the following endpoint: https://test.cloudsync.com/services/oauth2/token (instead of the production endpoint: https://login.cloudsync.com/services/oauth2/token).
 
 2. On the **Variables** tab, update the following key-value pairs with your credentials:
 
-   - grant_type: **urn:ietf:params:oauth:grant-type:jwt-bearer**
+    - grant_type: **urn:ietf:params:oauth:grant-type:jwt-bearer**
 
-   - userID: **<Your username>**
+    - userID: **<Your username>**
 
-   - consumerKey: **<Your Consumer Key copied from the previous step>**
+    - consumerKey: **<Your Consumer Key copied from the previous step>**
 
-   - cloudsyncTokenEndpoint: **<Your CloudSync Token Endpoint>**
+    - cloudsyncTokenEndpoint: **<Your CloudSync Token Endpoint>**
 
 3. Select **Send**.
 
-   If the configuration was defined correctly, the system displays a success response (200) when executing the Postman request.
+    If the configuration was defined correctly, the system displays a success response (200) when executing the Postman request.
 
 4. Upon receiving a success response (200), share the results with Optiflow for the CloudSync integration.
 

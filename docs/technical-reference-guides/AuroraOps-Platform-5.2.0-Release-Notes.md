@@ -1,6 +1,7 @@
 # AuroraOps Platform 5.2.0 Release Notes
 
-The _AuroraOps Platform 5.2.0 Release Notes_ summarizes the new features, product enhancements, resolved issues, and known issues in **AuroraOps Platform 5.2.0**.
+!!! abstract ""
+    This document summarizes the new features, product enhancements, resolved issues, and known issues in **AuroraOps Platform 5.2.0**.
 
 ---
 
@@ -23,6 +24,9 @@ This document is intended for customers and partners who need to understand what
 
 ## <h2 id="new-features">🚀 New features </h2> 
 
+This release introduces several new features designed to enhance usability, improve workflow efficiency, and expand the platform’s core capabilities.
+	
+	
 ### 1. New sign-in flow
 
 Along with new graphics, the system sign-in page features a new flow that supports multiple authentication methods. 
