@@ -42,10 +42,10 @@ This portfolio series is my opportunity to:
 
 These examples demonstrate structured, audience‑focused documentation across multiple content types:
 
-- [User Guides](https://github.com/LizMarlowe-byte/docs-as-code-portfolio-mkdocs/tree/main/docs/user-guides)
-- [API Guides](https://github.com/LizMarlowe-byte/docs-as-code-portfolio-mkdocs/tree/main/docs/api-guides)
-- [How To Articles](https://github.com/LizMarlowe-byte/docs-as-code-portfolio-mkdocs/tree/main/docs/how-to-articles)
-- [Technical Reference Guides](https://github.com/LizMarlowe-byte/docs-as-code-portfolio-mkdocs/tree/main/docs/technical-reference-guides)
+- /user-guides/
+- /api-guides/
+- /how-to-articles/
+- /technical-reference-guides/
 
 ---
 
