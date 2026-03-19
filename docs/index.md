@@ -1,89 +1,60 @@
-# 📘 Doc Site Using MkDocs Project
+# Doc Site Using MkDocs
 
-Welcome to the first project in my **Docs-as-Code Portfolio Series**, where I’m building and publishing documentation sites using four different static site generators (SSGs): **MkDocs**, **Hugo**, **Docusaurus**, and **Jekyll**.
+Welcome to the first project in my **Docs‑as‑Code Portfolio Series**, where I’m building and publishing documentation sites using four different static site generators (SSGs): **MkDocs**, **Hugo**, **Docusaurus**, and **Jekyll**.
 
-This site represents my work with **MkDocs** and demonstrates how I approach modern documentation workflows—from information architecture and content strategy to build automation and publishing.
+This repo represents my work with **MkDocs** and demonstrates how I approach modern documentation workflows—from information architecture and content strategy to build automation and publishing.
 
 ---
 
 ## 🎯 Purpose of This Project
 
-As a Sr. Technical Writer, I’ve used git-based workflows and developer documentation tooling in my work. 
+As a Sr. Technical Writer, I use git‑based workflows and developer‑centric tooling.
 
 This portfolio series is my opportunity to:
 
-- Strengthen and demonstrate my docs-as-code skills  
+- Strengthen and demonstrate my docs‑as‑code skills  
 - Explore and compare popular SSGs used in engineering teams  
 - Showcase real examples of my technical writing  
 - Build documentation sites end‑to‑end using best practices  
-- Create a curated, public-facing writing and tooling portfolio  
-
-This MkDocs site is **Project 1 of 4** in the series.
+- Create a curated, public‑facing writing and tooling portfolio  
 
 ---
 
-## ⚙️ What I Built Using MkDocs 
+## ⚙️ What I Built Using **MkDocs**
 
-### 🔧 Full Docs-as-Code Workflow
-- Authored content in Markdown  
-- Managed version control with Git  
-- Used `mkdocs.yml` for site configuration and navigation  
-- Applied Material for MkDocs for polished UI/UX  
-- Implemented Markdown extensions, code highlighting, and enhanced navigation features  
+### 🔧 Workflow & Architecture
+- Authored content in Markdown, with support from Material‑enhanced formatting  
+- Structured the site using `mkdocs.yml` for navigation, metadata, and hierarchy  
+- Applied Material for MkDocs for a polished, professional UI/UX  
+- Leveraged Markdown extensions (admonitions, code highlighting, callouts)  
+- Organized content into clear sections: user guides, APIs, how‑tos, and reference docs  
 
-### 🚀 Automated Build & Publish Pipeline 
-- Configured GitHub Pages for deployment  
-- Integrated repo metadata (Edit on GitHub, View Source)  
-- Structured the project to match real-world engineering documentation patterns  
-
-### 📚 Organized Documentation Examples 
-This site includes samples across multiple documentation types:
-
-- **User Guides**  
-- **API Guides**  
-- **How-To Articles**  
-- **Technical Reference Guides**
-
-Each sample demonstrates clarity, structure, and audience-focused writing.
+### 🚀 Build & Delivery
+- Local development with `mkdocs serve`  
+- Production builds using `mkdocs build`  
+- Deployed to GitHub Pages with automated publishing  
+- Integrated “Edit on GitHub” and source metadata for easy doc contribution  
+- Optimized navigation and search using Material‑native features  
 
 ---
 
-## 🧭 Why MkDocs? 
+## 📚 Organized Documentation Examples  
 
-MkDocs is widely used for developer-facing documentation and supports:
+These examples demonstrate structured, audience‑focused documentation across multiple content types:
 
-- Simple configuration  
-- Extensive theme ecosystem  
-- Excellent Markdown support  
-- Fast builds and intuitive structure  
-
-This project helped me practice:
-
-- YAML configuration  
-- Theme customization  
-- Navigation design  
-- Markdown extensions  
-- Site optimization features  
-- Tags, metadata, and search enhancements  
+- [User Guides](https://github.com/LizMarlowe-byte/docs-as-code-portfolio-mkdocs/tree/main/docs/user-guides)
+- [API Guides](https://github.com/LizMarlowe-byte/docs-as-code-portfolio-mkdocs/tree/main/docs/api-guides)
+- [How To Articles](https://github.com/LizMarlowe-byte/docs-as-code-portfolio-mkdocs/tree/main/docs/how-to-articles)
+- [Technical Reference Guides](https://github.com/LizMarlowe-byte/docs-as-code-portfolio-mkdocs/tree/main/docs/technical-reference-guides)
 
 ---
 
-## 🚧 What’s Next: 4‑SSG Series Roadmap 
+## 🧱 Tech Stack
+- MkDocs for static generation (Markdown‑based)  
+- Material for MkDocs for UI, extensions, and enhanced navigation  
+- YAML‑driven configuration via `mkdocs.yml`  
+- GitHub Pages for hosting  
+- Python tooling (`mkdocs`, theme plugins, Markdown extensions)
 
-This MkDocs site is the foundation for a broader exploration of modern static documentation engines.
-
-### **Portfolio Roadmap** 
-1. **MkDocs** — ✔️ Completed  
-2. **Hugo** — Work in progress  
-3. **Docusaurus** — Coming soon  
-4. **Jekyll** — Final project  
-
-At the end of the series, I’ll publish a comparative write‑up covering:
-
-- Setup experience  
-- Customization flexibility  
-- Community and plugin ecosystems  
-- Docs-as-code workflows  
-- Best use cases for each SSG  
-
----
+**Source & CI:**  
+[Repository](https://github.com/LizMarlowe-byte/docs-as-code-portfolio-mkdocs) ·  [Actions](https://github.com/LizMarlowe-byte/docs-as-code-portfolio-mkdocs/actions)
