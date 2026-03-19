@@ -1,4 +1,8 @@
 ---
 title: "API Guides"
-summary: "This curated collection of API guides showcases clear, structured documentation that helps developers integrate and extend applications effectively."
+summary: "API reference materials, authentication details, endpoint descriptions, and request/response examples."
 ---
+
+# API Guides
+
+This section provides API reference documentation, including authentication instructions, endpoint overviews, request and response examples, and best practices for integrating with external systems. These guides help developers quickly understand and work with each API.
