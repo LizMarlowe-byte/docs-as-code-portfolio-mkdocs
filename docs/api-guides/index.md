@@ -1,3 +1,6 @@
 # API Guides
 
-This section provides API reference documentation, including authentication instructions, endpoint overviews, request and response examples, and best practices for integrating with external systems. These guides help developers quickly understand and work with each API.
+This curated collection of API guides showcases clear, structured documentation that helps developers integrate and extend applications effectively:
+
+- [OpenWeatherMap API Guide](OpenWeatherMap-API-Guide.md)
+- [Spotify API Guide](Spotify-API-Guide.md)
