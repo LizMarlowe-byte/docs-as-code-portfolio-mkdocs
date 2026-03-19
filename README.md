@@ -1,5 +1,7 @@
 # Doc Site Using MkDocs
 
+🔗 **Live Site:** https://lizmarlowe-byte.github.io/docs-as-code-portfolio-mkdocs/
+
 Welcome to the first project in my **Docs‑as‑Code Portfolio Series**, where I’m building and publishing documentation sites using four different static site generators (SSGs): **MkDocs**, **Hugo**, **Docusaurus**, and **Jekyll**.
 
 This repo represents my work with **MkDocs** and demonstrates how I approach modern documentation workflows—from information architecture and content strategy to build automation and publishing.
