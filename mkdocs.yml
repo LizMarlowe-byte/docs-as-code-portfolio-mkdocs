@@ -51,18 +51,23 @@ nav:
   - 🌐 Doc Site Using MkDocs:
       - About this Site: index.md
 
-  - 📘 User Guides:user-guides/index.md
+  - 📘 User Guides:
+      - user-guides/index.md
       - Docmost User Guide: user-guides/Docmost-User-Guide.md
       - Taiga User Guide: user-guides/Taiga-User-Guide.md
 
-  - 🧩 API Guides:api-guides/index.md
+  - 🧩 API Guides:
+      - api-guides/index.md
       - OpenWeatherMap API Guide: api-guides/OpenWeatherMap-API-Guide.md
       - Spotify API Guide: api-guides/Spotify-API-Guide.md
 
-  - 🛠️ How-To Articles:how-to-articles/index.md
+  - 🛠️ How-To Articles:
+      - how-to-articles/index.md
       - How to create a relationship table in MadCap Flare: how-to-articles/How-to-create-a-relationship-table-in-MadCap-Flare.md
 
-  - 📚 Technical Reference Guides:technical-reference-guides/index.md
+  - 📚 Technical Reference Guides:
+      - technical-reference-guides/index.md
       - Optiflow CloudSync CRM Integration Guide: technical-reference-guides/Optiflow_CloudSync_CRM_Integration_Guide.md
       - AuroraOps Platform 5.2.0 Release Notes: technical-reference-guides/AuroraOps-Platform-5.2.0-Release-Notes.md
+
 strict: true
