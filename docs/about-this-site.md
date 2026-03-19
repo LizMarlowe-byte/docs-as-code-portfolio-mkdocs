@@ -42,10 +42,10 @@ This portfolio series is my opportunity to:
 
 These examples demonstrate structured, audience‑focused documentation across multiple content types:
 
-- /user-guides/
-- /api-guides/
-- /how-to-articles/
-- /technical-reference-guides/
+- [User Guides](/docs-as-code-portfolio-mkdocs/user-guides/)
+- [API Guides](/docs-as-code-portfolio-mkdocs/api-guides/)
+- [How‑To Articles](/docs-as-code-portfolio-mkdocs/how-to-articles/)
+- [Technical Reference Guides](/docs-as-code-portfolio-mkdocs/technical-reference-guides/)
 
 ---
 
